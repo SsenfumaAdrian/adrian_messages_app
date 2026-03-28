@@ -27,19 +27,36 @@ class BrandingColumn extends StatelessWidget {
       children: [
         LogoCard(size: logoSize),
         const SizedBox(height: 28),
-        Text(
-          "Adrian Messages",
+        RichText(
           textAlign: textAlign,
-          style: TextStyle(
-            fontFamily: 'Inter-Bold',
-            fontSize: headlineFontSize,
-            color: Palette.textPrimary,
-            letterSpacing: -1,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "Sophisticated intelligence, ",
+                style: TextStyle(
+                  fontFamily: 'Inter-Bold',
+                  fontSize: headlineFontSize,
+                  color: Palette.textPrimary,
+                  letterSpacing: -1,
+                  height: 1.05,
+                ),
+              ),
+              TextSpan(
+                text: "uniquely yours.",
+                style: TextStyle(
+                  fontFamily: 'Inter-Bold',
+                  fontSize: headlineFontSize,
+                  color: Palette.accentCyan,
+                  letterSpacing: -1,
+                  height: 1.05,
+                ),
+              ),
+            ],
           ),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 14),
         Text(
-          "Secure, liquid-glass messaging with adaptive intelligence.",
+          "Access your personal digital estate. Secure, private, and exceptionally capable.",
           textAlign: textAlign,
           style: TextStyle(
             fontFamily: 'Inter-Regular',
