@@ -1,16 +1,33 @@
-# adrian_messages_app
+# 💧 Adrian Messages: The Liquid Glass Revolution
 
-A new Flutter project.
+Adrian Messages is a high-performance, refractive messaging ecosystem designed to surpass legacy giants (WhatsApp, iMessage, Signal). It utilizes a modular **Stitch Architecture** and the **Flutter 3.41+ Impeller Engine** to deliver a 120Hz glassmorphic experience.
 
-## Getting Started
+## 🏗️ The Stitch Workflow
 
-This project is a starting point for a Flutter application.
+Every component in this repository follows the **Stitch Pattern**:
 
-A few resources to get you started if this is your first Flutter project:
+1. **Refractive UI**: All views are built using `LiquidGlassContainer`.
+2. **Modular Aggregation**: Messages are "stitched" into summaries via `StitchAggregator`.
+3. **Crystallized Security**: Private data is stored in the `LiquidVault`.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Getting Started
+
+### 1. Prerequisites
+
+* **Flutter SDK**: `^3.24.0` or higher (Required for Impeller Shaders).
+* **Hardware**: iOS (Metal) or Android (Vulkan) compatible device for 120Hz rendering.
+* **Assets**: Ensure `Inter-Bold.ttf`, `Inter-Medium.ttf`, and `Inter-Regular.ttf` are in `assets/fonts/`.
+
+### 2. Installation
+
+```bash
+# Clone the repository
+git clone [https://github.com/adrian/messages-liquid.git](https://github.com/adrian/messages-liquid.git)
+
+# Install 'Stitched' dependencies
+flutter pub get
+
+# Pre-warm the Liquid Shaders
+flutter run --release --enable-impeller
