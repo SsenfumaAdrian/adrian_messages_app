@@ -36,6 +36,22 @@ flutter:
     - family: Inter-SemiBold
       fonts:
         - asset: assets/fonts/Inter-SemiBold.ttf
+          
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Manrope-ExtraBold.ttf
+          weight: 800
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+          
 
   # Enabling high-end shaders for the Liquid Engine
   shaders:

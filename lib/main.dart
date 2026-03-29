@@ -1,5 +1,7 @@
 // FILE: lib/main.dart
 
+import 'package:adrian_messages/core/constants/palette.dart';
+import 'package:adrian_messages/core/navigation/liquid_router.dart';
 import 'package:flutter/material.dart';
 import 'core/theme/liquid_theme.dart';
 import 'ui/screens/liquid_splash_screen.dart';
@@ -19,6 +21,10 @@ class AdrianMessagesApp extends StatelessWidget {
       theme: LiquidTheme.darkTheme,
       // Starts with Splash animation, then flows to Onboarding
       home: LiquidSplashScreen(),
+      initialRoute: LiquidRouter.splash,
+      routes: LiquidRouter.routes,
+      onGenerateRoute: LiquidRouter.onGenerateRoute,
+      theme: Palette.lightTheme, // ← was using wrong dark theme
     );
   }
 }

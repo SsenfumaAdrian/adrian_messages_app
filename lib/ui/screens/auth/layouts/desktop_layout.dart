@@ -31,6 +31,7 @@ class DesktopLayout extends StatelessWidget {
           alignment: const Alignment(0.88, 0.0),
           child: GlassLoginCard(
             maxWidth: math.min(460, size.width * 0.38),
+            maxHeight: 560,
           ),
         ),
 

@@ -1,41 +1,7 @@
-import 'package:flutter/material.dart';
-import '../../../core/constants/palette.dart';
+// FILE: lib/ui/screens/components/logo_card.dart
+//
+// Re-exports the canonical LogoCard from ui/components so that
+// MobileLayout and any other screen-level code can import from here
+// without duplicating the widget.
 
-class LogoCard extends StatelessWidget {
-  const LogoCard({super.key, this.size = 96});
-  final double size;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Palette.accentCyan, Palette.accentBlue],
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Palette.accentCyan.withOpacity(0.35),
-            blurRadius: 22,
-            spreadRadius: 2,
-          ),
-        ],
-      ),
-      child: Center(
-        child: Text(
-          "A",
-          style: TextStyle(
-            fontFamily: 'Inter-Bold',
-            fontSize: size * 0.42,
-            color: Colors.black,
-            letterSpacing: -1,
-          ),
-        ),
-      ),
-    );
-  }
-}
+export '../../components/logo_card.dart' show LogoCard;

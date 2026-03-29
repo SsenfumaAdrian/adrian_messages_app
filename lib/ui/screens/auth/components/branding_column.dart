@@ -1,6 +1,12 @@
-import 'package:adrian_messages/core/constants/palette.dart';
+// FILE: lib/ui/screens/auth/components/branding_column.dart
+//
+// Used by DesktopLayout and TabletLayout.
+// LogoCard now accepts [rounded] — matches the splash screen logo exactly.
+
 import 'package:flutter/material.dart';
-import '../../components/logo_card.dart';
+
+import '../../../../core/constants/palette.dart';
+import '../../../components/logo_card.dart';
 
 class BrandingColumn extends StatelessWidget {
   const BrandingColumn({
@@ -18,51 +24,50 @@ class BrandingColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final alignment = centerAlign ? CrossAxisAlignment.center : CrossAxisAlignment.start;
+    final alignment =
+        centerAlign ? CrossAxisAlignment.center : CrossAxisAlignment.start;
     final textAlign = centerAlign ? TextAlign.center : TextAlign.left;
 
     return Column(
       crossAxisAlignment: alignment,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        LogoCard(size: logoSize),
-        const SizedBox(height: 28),
+        // rounded: true → matches the splash screen logo style
+        LogoCard(size: logoSize, rounded: true),
+
+        const SizedBox(height: 36),
+
         RichText(
           textAlign: textAlign,
           text: TextSpan(
-            children: [
+            style: TextStyle(
+              fontFamily: 'Inter-Bold',
+              fontSize: headlineFontSize,
+              color: Palette.textPrimary,
+              letterSpacing: -1,
+              height: 1.05,
+            ),
+            children: const [
+              TextSpan(text: 'Sophisticated intelligence, '),
               TextSpan(
-                text: "Sophisticated intelligence, ",
-                style: TextStyle(
-                  fontFamily: 'Inter-Bold',
-                  fontSize: headlineFontSize,
-                  color: Palette.textPrimary,
-                  letterSpacing: -1,
-                  height: 1.05,
-                ),
-              ),
-              TextSpan(
-                text: "uniquely yours.",
-                style: TextStyle(
-                  fontFamily: 'Inter-Bold',
-                  fontSize: headlineFontSize,
-                  color: Palette.accentCyan,
-                  letterSpacing: -1,
-                  height: 1.05,
-                ),
+                text: 'uniquely yours.',
+                style: TextStyle(color: Palette.accentCyan),
               ),
             ],
           ),
         ),
+
         const SizedBox(height: 14),
+
         Text(
-          "Access your personal digital estate. Secure, private, and exceptionally capable.",
+          'Access your personal digital estate. Secure, private,\n'
+          'and exceptionally capable.',
           textAlign: textAlign,
           style: TextStyle(
             fontFamily: 'Inter-Regular',
             fontSize: subFontSize,
             color: Palette.textMuted,
-            height: 1.3,
+            height: 1.4,
           ),
         ),
       ],

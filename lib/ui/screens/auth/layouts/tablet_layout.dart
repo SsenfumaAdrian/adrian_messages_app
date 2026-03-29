@@ -26,7 +26,7 @@ class TabletLayout extends StatelessWidget {
             SizedBox(height: 48),
 
             // Fixed-width Glass Card so it doesn't stretch too wide
-            GlassLoginCard(maxWidth: 500),
+            GlassLoginCard(maxWidth: 500, maxHeight: 560),
 
             SizedBox(height: 48),
 

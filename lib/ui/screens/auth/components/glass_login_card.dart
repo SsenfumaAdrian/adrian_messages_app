@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 import '../../components/glass_text_field.dart';
 
 class GlassLoginCard extends StatefulWidget {
-  const GlassLoginCard({super.key, required this.maxWidth});
+  const GlassLoginCard({
+    super.key,
+    required this.maxWidth,
+    this.maxHeight,
+  });
   final double maxWidth;
+  final double? maxHeight;
 
   @override
   State<GlassLoginCard> createState() => _GlassLoginCardState();
@@ -16,11 +21,14 @@ class _GlassLoginCardState extends State<GlassLoginCard> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: widget.maxWidth),
+      constraints: BoxConstraints(
+        maxWidth: widget.maxWidth,
+        maxHeight: widget.maxHeight ?? double.infinity,
+      ),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 26),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 22),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(22),
+          borderRadius: BorderRadius.circular(26),
           gradient: const LinearGradient(
             colors: [Color(0xCC0F2A55), Color(0xAA0B1F3C)],
             begin: Alignment.topLeft,
@@ -57,7 +65,7 @@ class _GlassLoginCardState extends State<GlassLoginCard> {
                 height: 1.4,
               ),
             ),
-            const SizedBox(height: 22),
+            const SizedBox(height: 20),
             const GlassTextField(
               label: "Email or Phone",
               hint: "name@adrian.ai",
@@ -74,7 +82,7 @@ class _GlassLoginCardState extends State<GlassLoginCard> {
               onSuffixTap: () =>
                   setState(() => _showPassword = !_showPassword),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 14),
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
@@ -94,7 +102,7 @@ class _GlassLoginCardState extends State<GlassLoginCard> {
                 ),
               ),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 10),
             ClipRRect(
               borderRadius: BorderRadius.circular(14),
               child: DecoratedBox(
