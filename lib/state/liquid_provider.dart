@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../../data/mock/dummy_data.dart';
 
 class LiquidProvider extends ChangeNotifier {
-  List<Map<String, dynamic>> _chats = DummyData.chatList;
-  List<String> _selectedForStitch = [];
+  final List<Map<String, dynamic>> _chats = DummyData.chatList;
+  final List<String> _selectedForStitch = [];
 
   List<Map<String, dynamic>> get chats => _chats;
   List<String> get selectedForStitch => _selectedForStitch;

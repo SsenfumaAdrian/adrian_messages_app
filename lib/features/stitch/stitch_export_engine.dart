@@ -1,7 +1,5 @@
 // FILE: lib/features/stitch/stitch_export_engine.dart
 
-import 'dart:io';
-import 'package:flutter/services.dart';
 
 class StitchExportEngine {
   /// Converts a Stitch object into a formatted string for export.
@@ -12,7 +10,7 @@ class StitchExportEngine {
     final String content = stitchData['content'];
 
     // Creating a 'Refractive Document' structure
-    String document = """
+    final String document = """
     ADRIAN MESSAGES | STITCH EXPORT
     -------------------------------
     Generated: $timestamp

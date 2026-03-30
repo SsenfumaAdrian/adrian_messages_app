@@ -6,7 +6,7 @@ import 'liquid_glass_container.dart';
 
 class LiquidVideoPlayer extends StatefulWidget {
   final String videoUrl;
-  const LiquidVideoPlayer({Key? key, required this.videoUrl}) : super(key: key);
+  const LiquidVideoPlayer({super.key, required this.videoUrl});
 
   @override
   _LiquidVideoPlayerState createState() => _LiquidVideoPlayerState();

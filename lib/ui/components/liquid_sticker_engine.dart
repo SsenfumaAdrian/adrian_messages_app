@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 
 class LiquidSticker extends StatelessWidget {
   final String stickerId;
-  const LiquidSticker({Key? key, required this.stickerId}) : super(key: key);
+  const LiquidSticker({super.key, required this.stickerId});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 140,
       height: 140,
       child: Stack(

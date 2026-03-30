@@ -23,35 +23,35 @@ class _ContactsScreenState extends State<ContactsScreen>
   String _query = '';
 
   static final _contacts = [
-    _Contact(
+    const _Contact(
         name: 'Elena Vance', role: 'Design Lead', online: true, initials: 'EV'),
-    _Contact(
+    const _Contact(
         name: 'Marcus Reid', role: 'Engineering', online: true, initials: 'MR'),
-    _Contact(
+    const _Contact(
         name: 'Sarah Miller',
         role: 'Product Manager',
         online: false,
         initials: 'SM'),
-    _Contact(
+    const _Contact(
         name: 'James Okonkwo',
         role: 'Data Science',
         online: true,
         initials: 'JO'),
-    _Contact(
+    const _Contact(
         name: 'Priya Sharma',
         role: 'Legal & Compliance',
         online: false,
         initials: 'PS'),
-    _Contact(
+    const _Contact(
         name: 'Leo Fontaine', role: 'Marketing', online: true, initials: 'LF'),
   ];
 
   static final _circles = [
-    _Circle(
+    const _Circle(
         name: 'Project Alpha', members: 8, icon: Icons.rocket_launch_outlined),
-    _Circle(name: 'Design Team', members: 5, icon: Icons.palette_outlined),
-    _Circle(name: 'Leadership', members: 4, icon: Icons.shield_outlined),
-    _Circle(name: 'All Hands', members: 24, icon: Icons.groups_outlined),
+    const _Circle(name: 'Design Team', members: 5, icon: Icons.palette_outlined),
+    const _Circle(name: 'Leadership', members: 4, icon: Icons.shield_outlined),
+    const _Circle(name: 'All Hands', members: 24, icon: Icons.groups_outlined),
   ];
 
   @override
@@ -173,7 +173,7 @@ class _Header extends StatelessWidget {
                 color: Palette.onSurface,
                 onPressed: () => Navigator.maybePop(context),
               ),
-              Text(
+              const Text(
                 'Contacts & Circles',
                 style: TextStyle(
                   fontFamily: Palette.fontDisplay,
@@ -200,19 +200,19 @@ class _Header extends StatelessWidget {
                 fontSize: 14,
                 color: Palette.onSurface,
               ),
-              decoration: InputDecoration(
-                prefixIcon: const Icon(
+              decoration: const InputDecoration(
+                prefixIcon: Icon(
                   Icons.search_rounded,
                   color: Palette.outline,
                   size: 20,
                 ),
                 hintText: 'Search people or circles…',
-                hintStyle: const TextStyle(
+                hintStyle: TextStyle(
                   color: Palette.outline,
                   fontSize: 14,
                 ),
                 border: InputBorder.none,
-                contentPadding: const EdgeInsets.symmetric(vertical: 14),
+                contentPadding: EdgeInsets.symmetric(vertical: 14),
               ),
             ),
           ),
@@ -224,7 +224,7 @@ class _Header extends StatelessWidget {
             controller: tabs,
             labelColor: Palette.primary,
             unselectedLabelColor: Palette.outline,
-            labelStyle: TextStyle(
+            labelStyle: const TextStyle(
               fontFamily: Palette.fontDisplay,
               fontSize: 13,
               fontWeight: FontWeight.w700,
@@ -353,7 +353,7 @@ class _ContactTile extends StatelessWidget {
               children: [
                 Text(
                   contact.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: Palette.fontDisplay,
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
@@ -441,7 +441,7 @@ class _CircleTile extends StatelessWidget {
               children: [
                 Text(
                   circle.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: Palette.fontDisplay,
                     fontSize: 15,
                     fontWeight: FontWeight.w700,

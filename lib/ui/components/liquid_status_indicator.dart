@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 
 class LiquidStatusIndicator extends StatefulWidget {
   final bool isOnline;
-  const LiquidStatusIndicator({Key? key, required this.isOnline})
-      : super(key: key);
+  const LiquidStatusIndicator({super.key, required this.isOnline});
 
   @override
   _LiquidStatusIndicatorState createState() => _LiquidStatusIndicatorState();

@@ -31,7 +31,7 @@ class _State extends State<GroupCreationScreen> {
               Text('Add Icon', style: TextStyle(fontSize: 10, color: Palette.outline, fontWeight: FontWeight.w600)),
             ])),
           const SizedBox(height: 8),
-          Text('Circle Icon', style: const TextStyle(fontSize: 12, color: Palette.onSurfaceVariant)),
+          const Text('Circle Icon', style: TextStyle(fontSize: 12, color: Palette.onSurfaceVariant)),
         ])),
         const SizedBox(height: 28),
 

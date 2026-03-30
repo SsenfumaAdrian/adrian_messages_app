@@ -10,11 +10,11 @@ class StitchCreatorOverlay extends StatelessWidget {
   final VoidCallback onConfirm;
 
   const StitchCreatorOverlay({
-    Key? key,
+    super.key,
     required this.count,
     required this.onCancel,
     required this.onConfirm,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

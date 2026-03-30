@@ -62,7 +62,7 @@ class _State extends State<PrivacySecurityScreen> {
                       const SizedBox(height: 8),
                       ClipRRect(
                           borderRadius: BorderRadius.circular(4),
-                          child: LinearProgressIndicator(
+                          child: const LinearProgressIndicator(
                               value: 0.92,
                               minHeight: 6,
                               backgroundColor: Colors.white24,
@@ -75,7 +75,7 @@ class _State extends State<PrivacySecurityScreen> {
                     ])),
             const SizedBox(height: 24),
 
-            _SectionHeader('Encryption'),
+            const _SectionHeader('Encryption'),
             _SecurityTile(
                 title: 'End-to-End Encryption',
                 sub: 'All messages are E2E encrypted by default',
@@ -90,7 +90,7 @@ class _State extends State<PrivacySecurityScreen> {
                 onChanged: (v) => setState(() => _biometric = v)),
             const SizedBox(height: 20),
 
-            _SectionHeader('Privacy Controls'),
+            const _SectionHeader('Privacy Controls'),
             _SecurityTile(
                 title: 'Screen Lock',
                 sub: 'Auto-lock after 1 minute of inactivity',
@@ -111,7 +111,7 @@ class _State extends State<PrivacySecurityScreen> {
                 onChanged: (v) => setState(() => _vpn = v)),
             const SizedBox(height: 20),
 
-            _SectionHeader('Audit & Access'),
+            const _SectionHeader('Audit & Access'),
             _ArrowTile(
                 icon: Icons.history_rounded,
                 title: 'Security Audit Log',
@@ -129,7 +129,7 @@ class _State extends State<PrivacySecurityScreen> {
                 onTap: () {}),
             const SizedBox(height: 20),
 
-            _SectionHeader('Data & Privacy'),
+            const _SectionHeader('Data & Privacy'),
             _ArrowTile(
                 icon: Icons.download_rounded,
                 title: 'Export My Data',
@@ -152,7 +152,7 @@ class _SectionHeader extends StatelessWidget {
   Widget build(BuildContext ctx) => Padding(
       padding: const EdgeInsets.only(left: 4, bottom: 10),
       child: Text(title,
-          style: TextStyle(
+          style: const TextStyle(
               fontFamily: Palette.fontDisplay,
               fontSize: 13,
               fontWeight: FontWeight.w800,

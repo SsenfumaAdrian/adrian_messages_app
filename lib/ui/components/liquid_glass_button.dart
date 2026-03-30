@@ -9,11 +9,11 @@ class LiquidGlassButton extends StatefulWidget {
   final Color? tint;
 
   const LiquidGlassButton({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.child,
     this.tint,
-  }) : super(key: key);
+  });
 
   @override
   _LiquidGlassButtonState createState() => _LiquidGlassButtonState();

@@ -9,7 +9,7 @@ class LiquidDissolvingBubble extends StatelessWidget {
   final bool isMe;
   final bool isDissolving;
 
-  const LiquidDissolvingBubble({
+  const LiquidDissolvingBubble({super.key, 
     required this.text,
     required this.isMe,
     this.isDissolving = false,

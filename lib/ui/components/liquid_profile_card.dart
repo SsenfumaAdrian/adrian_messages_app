@@ -9,11 +9,11 @@ class LiquidProfileCard extends StatelessWidget {
   final String avatarUrl;
 
   const LiquidProfileCard({
-    Key? key,
+    super.key,
     required this.userName,
     required this.status,
     required this.avatarUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

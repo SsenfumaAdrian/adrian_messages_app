@@ -1,12 +1,10 @@
 // FILE: lib/ui/components/liquid_sync_indicator.dart
 
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 class LiquidSyncIndicator extends StatefulWidget {
   final double progress;
-  const LiquidSyncIndicator({Key? key, required this.progress})
-      : super(key: key);
+  const LiquidSyncIndicator({super.key, required this.progress});
 
   @override
   _LiquidSyncIndicatorState createState() => _LiquidSyncIndicatorState();

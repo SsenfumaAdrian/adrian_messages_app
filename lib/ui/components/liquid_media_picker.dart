@@ -7,6 +7,8 @@ class LiquidMediaPicker extends StatelessWidget {
   final List<String> mockImages =
       List.generate(12, (i) => "https://picsum.photos/200?random=$i");
 
+  LiquidMediaPicker({super.key});
+
   @override
   Widget build(BuildContext context) {
     return LiquidGlassContainer(

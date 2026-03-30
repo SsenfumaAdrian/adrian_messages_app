@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dashboard_screen.dart';
 
 class TermsScreen extends StatelessWidget {
-  const TermsScreen({Key? key}) : super(key: key);
+  const TermsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class TermsScreen extends StatelessWidget {
               height: 60,
               child: ElevatedButton(
                 onPressed: () => Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (_) => DashboardScreen())),
+                    MaterialPageRoute(builder: (_) => const DashboardScreen())),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF1A237E),
                     shape: RoundedRectangleBorder(

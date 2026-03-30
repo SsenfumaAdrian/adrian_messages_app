@@ -15,21 +15,21 @@ class CommunicationInsightsScreen extends StatelessWidget {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // KPI row
-            Row(children: [
+            const Row(children: [
               Expanded(
                   child: _KpiCard(
                       label: 'Msgs Sent',
                       value: '1,248',
                       delta: '+12%',
                       up: true)),
-              const SizedBox(width: 12),
+              SizedBox(width: 12),
               Expanded(
                   child: _KpiCard(
                       label: 'Avg Response',
                       value: '4.2 min',
                       delta: '-8%',
                       up: true)),
-              const SizedBox(width: 12),
+              SizedBox(width: 12),
               Expanded(
                   child: _KpiCard(
                       label: 'Active Circles',
@@ -57,7 +57,7 @@ class CommunicationInsightsScreen extends StatelessWidget {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Weekly Activity',
+                          const Text('Weekly Activity',
                               style: TextStyle(
                                   fontFamily: Palette.fontDisplay,
                                   fontSize: 14,
@@ -125,7 +125,7 @@ class CommunicationInsightsScreen extends StatelessWidget {
                         ]))),
             const SizedBox(height: 20),
 
-            Text('Top Contacts',
+            const Text('Top Contacts',
                 style: TextStyle(
                     fontFamily: Palette.fontDisplay,
                     fontSize: 16,
@@ -144,7 +144,7 @@ class CommunicationInsightsScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16)),
                 child: Row(children: [
                   Text('${e.key + 1}',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontFamily: Palette.fontDisplay,
                           fontSize: 16,
                           fontWeight: FontWeight.w800,
@@ -214,7 +214,7 @@ class _KpiCard extends StatelessWidget {
                 fontWeight: FontWeight.w600)),
         const SizedBox(height: 4),
         Text(value,
-            style: TextStyle(
+            style: const TextStyle(
                 fontFamily: Palette.fontDisplay,
                 fontSize: 18,
                 fontWeight: FontWeight.w800,

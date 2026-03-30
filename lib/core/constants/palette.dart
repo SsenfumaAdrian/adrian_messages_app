@@ -129,7 +129,7 @@ class Palette {
         ),
         scaffoldBackgroundColor: darkBackground,
         fontFamily: fontBody,
-        textTheme: _textTheme(Color(0xFFE9ECF5)),
+        textTheme: _textTheme(const Color(0xFFE9ECF5)),
       );
 
   static TextTheme _textTheme(Color baseColor) => TextTheme(
@@ -206,7 +206,7 @@ class Palette {
           fontWeight: FontWeight.w400,
           color: baseColor,
         ),
-        bodySmall: TextStyle(
+        bodySmall: const TextStyle(
           fontFamily: fontBody,
           fontSize: 12,
           fontWeight: FontWeight.w400,
@@ -220,14 +220,14 @@ class Palette {
           letterSpacing: 0.1,
           color: baseColor,
         ),
-        labelMedium: TextStyle(
+        labelMedium: const TextStyle(
           fontFamily: fontBody,
           fontSize: 11,
           fontWeight: FontWeight.w500,
           letterSpacing: 0.5,
           color: onSurfaceVariant,
         ),
-        labelSmall: TextStyle(
+        labelSmall: const TextStyle(
           fontFamily: fontBody,
           fontSize: 10,
           fontWeight: FontWeight.w500,

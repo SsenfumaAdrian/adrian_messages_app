@@ -10,11 +10,11 @@ class LiquidGlassContainer extends StatelessWidget {
   final EdgeInsets padding;
 
   const LiquidGlassContainer({
-    Key? key,
+    super.key,
     required this.child,
     this.borderRadius = 24.0,
     this.padding = const EdgeInsets.all(16.0),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

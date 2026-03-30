@@ -42,8 +42,8 @@ class _State extends State<VoiceStudioScreen>
             width: 260,
             color: Palette.surfaceContainerLow,
             child: Column(children: [
-              Padding(
-                  padding: const EdgeInsets.all(16),
+              const Padding(
+                  padding: EdgeInsets.all(16),
                   child: Row(children: [
                     Text('Library',
                         style: TextStyle(
@@ -51,7 +51,7 @@ class _State extends State<VoiceStudioScreen>
                             fontSize: 15,
                             fontWeight: FontWeight.w800,
                             color: Palette.primary)),
-                    const Spacer(),
+                    Spacer(),
                     Icon(Icons.add_circle_outline_rounded,
                         color: Palette.primary, size: 20),
                   ])),
@@ -111,14 +111,14 @@ class _State extends State<VoiceStudioScreen>
                       const SizedBox(height: 20),
 
                       // Time
-                      Row(children: [
+                      const Row(children: [
                         Text('03:45',
                             style: TextStyle(
                                 fontFamily: Palette.fontDisplay,
                                 fontSize: 32,
                                 fontWeight: FontWeight.w800,
                                 color: Palette.onSurface)),
-                        const Text(' / 12:45',
+                        Text(' / 12:45',
                             style: TextStyle(
                                 fontSize: 18, color: Palette.outline)),
                       ]),
@@ -190,14 +190,14 @@ class _State extends State<VoiceStudioScreen>
                       const SizedBox(height: 28),
 
                       // AI tools
-                      Text('AI Tools',
+                      const Text('AI Tools',
                           style: TextStyle(
                               fontFamily: Palette.fontDisplay,
                               fontSize: 16,
                               fontWeight: FontWeight.w800,
                               color: Palette.primary)),
                       const SizedBox(height: 12),
-                      Wrap(spacing: 10, runSpacing: 10, children: [
+                      const Wrap(spacing: 10, runSpacing: 10, children: [
                         _AiChip(
                             label: 'Transcribe',
                             icon: Icons.subtitles_outlined),
@@ -253,7 +253,7 @@ class _CtrlBtn extends StatelessWidget {
       child: Container(
           width: size,
           height: size,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color: Palette.surfaceContainerHigh, shape: BoxShape.circle),
           child: Icon(icon, color: Palette.primary, size: size * 0.5)));
 }

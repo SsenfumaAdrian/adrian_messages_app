@@ -73,7 +73,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   @override
   void dispose() {
     _pageCtrl.dispose();
-    for (final c in _fadeCtls) c.dispose();
+    for (final c in _fadeCtls) {
+      c.dispose();
+    }
     super.dispose();
   }
 
@@ -114,9 +116,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               child: Row(
                 children: [
                   // Logo mark
-                  LogoCard(size: 40, rounded: true),
+                  const LogoCard(size: 40, rounded: true),
                   const SizedBox(width: 10),
-                  Text(
+                  const Text(
                     'Adrian Messages',
                     style: TextStyle(
                       fontFamily: Palette.fontDisplay,
@@ -129,7 +131,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                   TextButton(
                     onPressed: () => LiquidRouter.clearAndGo(
                         context, LiquidRouter.conversations),
-                    child: Text(
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                         fontFamily: Palette.fontBody,
@@ -221,7 +223,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                           children: [
                             Text(
                               isLast ? "Let's Go" : 'Continue',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: Palette.fontDisplay,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w700,
@@ -343,7 +345,7 @@ class _PageContent extends StatelessWidget {
           // ── Headline ─────────────────────────────────────
           Text(
             page.tagline,
-            style: TextStyle(
+            style: const TextStyle(
               fontFamily: Palette.fontDisplay,
               fontSize: 32,
               fontWeight: FontWeight.w800,

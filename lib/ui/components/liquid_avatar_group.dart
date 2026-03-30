@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class LiquidAvatarGroup extends StatelessWidget {
   final List<String> urls;
-  const LiquidAvatarGroup({Key? key, required this.urls}) : super(key: key);
+  const LiquidAvatarGroup({super.key, required this.urls});
 
   @override
   Widget build(BuildContext context) {

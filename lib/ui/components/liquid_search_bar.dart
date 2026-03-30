@@ -5,7 +5,7 @@ import 'liquid_glass_container.dart';
 
 class LiquidSearchBar extends StatefulWidget {
   final Function(String) onSearch;
-  const LiquidSearchBar({Key? key, required this.onSearch}) : super(key: key);
+  const LiquidSearchBar({super.key, required this.onSearch});
 
   @override
   _LiquidSearchBarState createState() => _LiquidSearchBarState();

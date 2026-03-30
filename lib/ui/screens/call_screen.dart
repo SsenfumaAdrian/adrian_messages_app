@@ -76,7 +76,7 @@ class _CallScreenState extends State<CallScreen>
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               child: Row(children: [
-                _GlassBadge(
+                const _GlassBadge(
                     label: 'End-to-End Encrypted',
                     icon: Icons.lock_rounded,
                     color: Palette.accentCyan),

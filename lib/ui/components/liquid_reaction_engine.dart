@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class LiquidReactionEngine extends StatefulWidget {
   final Widget child;
-  const LiquidReactionEngine({Key? key, required this.child}) : super(key: key);
+  const LiquidReactionEngine({super.key, required this.child});
 
   @override
   _LiquidReactionEngineState createState() => _LiquidReactionEngineState();

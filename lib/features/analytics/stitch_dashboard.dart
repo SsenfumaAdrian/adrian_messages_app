@@ -5,6 +5,8 @@ import '../../ui/components/liquid_glass_container.dart';
 import 'stitch_insights.dart';
 
 class StitchAnalyticsDashboard extends StatelessWidget {
+  const StitchAnalyticsDashboard({super.key});
+
   @override
   Widget build(BuildContext context) {
     final insights = StitchInsights.getTopTopics();
@@ -30,21 +32,21 @@ class StitchAnalyticsDashboard extends StatelessWidget {
             // Glass Bar Chart mapping topics to frequency
             ...insights.entries
                 .map((entry) => _buildAnalyticsBar(entry.key, entry.value))
-                .toList(),
+                ,
 
             const SizedBox(height: 48),
-            LiquidGlassContainer(
+            const LiquidGlassContainer(
               borderRadius: 24,
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Column(
                 children: [
-                  const Icon(Icons.psychology_outlined,
+                  Icon(Icons.psychology_outlined,
                       color: Colors.blueAccent, size: 32),
-                  const SizedBox(height: 16),
-                  const Text("Predictive Insight",
+                  SizedBox(height: 16),
+                  Text("Predictive Insight",
                       style: TextStyle(fontFamily: 'Inter-Bold', fontSize: 16)),
-                  const SizedBox(height: 8),
-                  const Text(
+                  SizedBox(height: 8),
+                  Text(
                     "You've discussed 'Project Alpha' across 3 different threads. Stitch them into a single briefing?",
                     textAlign: TextAlign.center,
                     style: TextStyle(

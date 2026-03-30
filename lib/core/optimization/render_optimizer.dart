@@ -1,7 +1,6 @@
 // FILE: lib/core/optimization/render_optimizer.dart
 
 import 'dart:ui';
-import 'package:flutter/rendering.dart';
 
 class RenderOptimizer {
   /// Pre-warms the GPU shaders for BackdropFilter.
@@ -9,7 +8,7 @@ class RenderOptimizer {
   static void initializeGpuCache() {
     // We force a tiny, invisible render of a glass element
     // to prime the Impeller engine's cache.
-    SceneBuilder builder = SceneBuilder();
+    final SceneBuilder builder = SceneBuilder();
     builder.pushBackdropFilter(ImageFilter.blur(sigmaX: 25, sigmaY: 25));
     builder.pop();
     builder.build();

@@ -3,8 +3,6 @@
 // Entry point defined in main.dart → LiquidSplashScreen().
 // Shows an animated logo on the marble background, then navigates to AuthScreen.
 
-import 'dart:math' as math;
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 

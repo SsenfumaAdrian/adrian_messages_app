@@ -45,7 +45,7 @@ class _MarblePainter extends CustomPainter {
     // Soft streaks moving across the frame
     final streakShader = LinearGradient(
       begin: Alignment(-1.0 + 0.3 * math.sin(t * 0.6), -1),
-      end: Alignment(1, 1),
+      end: const Alignment(1, 1),
       colors: [
         Colors.white.withOpacity(0.05),
         Colors.transparent,
@@ -67,7 +67,7 @@ class _MarblePainter extends CustomPainter {
       ..color = Colors.white.withOpacity(0.015)
       ..style = PaintingStyle.fill;
     final rand = math.Random(42);
-    final speckles = 240;
+    const speckles = 240;
     for (var i = 0; i < speckles; i++) {
       final dx = rand.nextDouble() * size.width;
       final dy = rand.nextDouble() * size.height;

@@ -3,7 +3,6 @@
 import 'package:adrian_messages/core/constants/palette.dart';
 import 'package:adrian_messages/core/navigation/liquid_router.dart';
 import 'package:flutter/material.dart';
-import 'core/theme/liquid_theme.dart';
 import 'ui/screens/liquid_splash_screen.dart';
 
 void main() {
@@ -11,7 +10,7 @@ void main() {
 }
 
 class AdrianMessagesApp extends StatelessWidget {
-  const AdrianMessagesApp({Key? key}) : super(key: key);
+  const AdrianMessagesApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class AdrianMessagesApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: LiquidTheme.darkTheme,
       // Starts with Splash animation, then flows to Onboarding
-      home: LiquidSplashScreen(),
+      home: const LiquidSplashScreen(),
       initialRoute: LiquidRouter.splash,
       routes: LiquidRouter.routes,
       onGenerateRoute: LiquidRouter.onGenerateRoute,

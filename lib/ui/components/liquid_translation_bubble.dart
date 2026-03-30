@@ -8,10 +8,10 @@ class LiquidTranslationBubble extends StatelessWidget {
   final String translatedText;
 
   const LiquidTranslationBubble({
-    Key? key,
+    super.key,
     required this.originalText,
     required this.translatedText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

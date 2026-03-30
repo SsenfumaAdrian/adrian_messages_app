@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 
 class HandshakeVisualizer extends StatefulWidget {
+  const HandshakeVisualizer({super.key});
+
   @override
   _HandshakeVisualizerState createState() => _HandshakeVisualizerState();
 }

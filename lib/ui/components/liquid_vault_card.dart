@@ -7,8 +7,7 @@ class LiquidVaultCard extends StatelessWidget {
   final String title;
   final VoidCallback onUnlock;
 
-  const LiquidVaultCard({Key? key, required this.title, required this.onUnlock})
-      : super(key: key);
+  const LiquidVaultCard({super.key, required this.title, required this.onUnlock});
 
   @override
   Widget build(BuildContext context) {

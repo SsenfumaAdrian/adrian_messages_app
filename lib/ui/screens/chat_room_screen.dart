@@ -7,7 +7,7 @@ import '../components/liquid_glass_button.dart';
 class ChatRoomScreen extends StatelessWidget {
   final String chatName;
 
-  const ChatRoomScreen({Key? key, required this.chatName}) : super(key: key);
+  const ChatRoomScreen({super.key, required this.chatName});
 
   @override
   Widget build(BuildContext context) {
@@ -43,11 +43,11 @@ class ChatRoomScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: LiquidGlassContainer(
                         borderRadius: 30,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const TextField(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: TextField(
                           decoration: InputDecoration(
                             hintText: "Type a message...",
                             border: InputBorder.none,

@@ -8,8 +8,7 @@ class LiquidBottomNav extends StatelessWidget {
   final Function(int) onTap;
 
   const LiquidBottomNav(
-      {Key? key, required this.currentIndex, required this.onTap})
-      : super(key: key);
+      {super.key, required this.currentIndex, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,7 @@ class LiquidBottomNav extends StatelessWidget {
   }
 
   Widget _buildNavItem(IconData icon, int index) {
-    bool isActive = currentIndex == index;
+    final bool isActive = currentIndex == index;
     return GestureDetector(
       onTap: () => onTap(index),
       child: Icon(

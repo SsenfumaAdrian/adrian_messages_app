@@ -86,7 +86,7 @@ class _DesktopLayout extends StatelessWidget {
                   filters: filters,
                   filterIndex: filterIndex,
                   onFilter: onFilter),
-              Expanded(child: _ConversationFeed()),
+              const Expanded(child: _ConversationFeed()),
             ],
           ),
         ),
@@ -118,7 +118,7 @@ class _MobileLayout extends StatelessWidget {
     return Column(
       children: [
         _TopBar(filters: filters, filterIndex: filterIndex, onFilter: onFilter),
-        Expanded(child: _ConversationFeed()),
+        const Expanded(child: _ConversationFeed()),
         _BottomNav(selectedIndex: navIndex, onSelect: onNav),
       ],
     );
@@ -151,12 +151,12 @@ class _Sidebar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Brand mark
-          Padding(
-            padding: const EdgeInsets.fromLTRB(28, 40, 28, 32),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(28, 40, 28, 32),
             child: Row(
               children: [
                 LogoCard(size: 36, rounded: true),
-                const SizedBox(width: 10),
+                SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -294,7 +294,7 @@ class _TopBar extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Title row
-                  Row(
+                  const Row(
                     children: [
                       Text(
                         'Messages',
@@ -306,12 +306,12 @@ class _TopBar extends StatelessWidget {
                           letterSpacing: -0.5,
                         ),
                       ),
-                      const Spacer(),
+                      Spacer(),
                       // Search button
                       _IconBtn(icon: Icons.search_rounded),
-                      const SizedBox(width: 4),
+                      SizedBox(width: 4),
                       _IconBtn(icon: Icons.tune_rounded),
-                      const SizedBox(width: 4),
+                      SizedBox(width: 4),
                       _IconBtn(icon: Icons.edit_square),
                     ],
                   ),
@@ -516,7 +516,7 @@ class _ConversationTile extends StatelessWidget {
                       Expanded(
                         child: Text(
                           chat['name'] as String,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontFamily: Palette.fontDisplay,
                             fontSize: 15,
                             fontWeight: FontWeight.w700,

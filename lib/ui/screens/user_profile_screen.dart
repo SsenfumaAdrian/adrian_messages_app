@@ -64,15 +64,15 @@ class _State extends State<UserProfileScreen> {
                     )),
               ]),
               const SizedBox(height: 14),
-              Text('Alex Mercer',
+              const Text('Alex Mercer',
                   style: TextStyle(
                       fontFamily: Palette.fontDisplay,
                       fontSize: 22,
                       fontWeight: FontWeight.w800,
                       color: Palette.onSurface)),
               const SizedBox(height: 4),
-              Text('alex@adrian.ai',
-                  style: const TextStyle(
+              const Text('alex@adrian.ai',
+                  style: TextStyle(
                       fontSize: 13, color: Palette.onSurfaceVariant)),
               const SizedBox(height: 8),
               Container(
@@ -90,7 +90,7 @@ class _State extends State<UserProfileScreen> {
           ),
           const SizedBox(height: 32),
 
-          _Section(title: 'Account', children: [
+          const _Section(title: 'Account', children: [
             _EditTile(label: 'Display Name', value: 'Alex Mercer'),
             _EditTile(label: 'Username', value: '@alex.mercer'),
             _EditTile(label: 'Status', value: 'Available for deep work 🎯'),
@@ -123,16 +123,16 @@ class _State extends State<UserProfileScreen> {
                 sub: 'Receive alerts',
                 value: _notifications,
                 onChanged: (v) => setState(() => _notifications = v)),
-            _ArrowTile(
+            const _ArrowTile(
                 label: 'Change Password', icon: Icons.lock_reset_rounded),
-            _ArrowTile(
+            const _ArrowTile(
                 label: 'Two-Factor Authentication',
                 icon: Icons.verified_user_outlined),
-            _ArrowTile(label: 'Active Sessions', icon: Icons.devices_rounded),
+            const _ArrowTile(label: 'Active Sessions', icon: Icons.devices_rounded),
           ]),
           const SizedBox(height: 20),
 
-          _Section(title: 'Subscription', children: [
+          const _Section(title: 'Subscription', children: [
             _ArrowTile(
                 label: 'Manage Plan', icon: Icons.workspace_premium_rounded),
             _ArrowTile(
@@ -177,7 +177,7 @@ class _Section extends StatelessWidget {
         Padding(
             padding: const EdgeInsets.only(left: 4, bottom: 10),
             child: Text(title,
-                style: TextStyle(
+                style: const TextStyle(
                     fontFamily: Palette.fontDisplay,
                     fontSize: 13,
                     fontWeight: FontWeight.w800,

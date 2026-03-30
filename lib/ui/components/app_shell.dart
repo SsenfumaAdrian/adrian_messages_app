@@ -109,11 +109,11 @@ class _Sidebar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Brand
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 32, 24, 28),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(24, 32, 24, 28),
               child: Row(children: [
-                const LogoCard(size: 36, rounded: true),
-                const SizedBox(width: 10),
+                LogoCard(size: 36, rounded: true),
+                SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -126,7 +126,7 @@ class _Sidebar extends StatelessWidget {
                           height: 1,
                         )),
                     Text('Intelligent Correspondent',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 8.5,
                           fontWeight: FontWeight.w700,
                           letterSpacing: 0.7,
@@ -210,10 +210,10 @@ class _Sidebar extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 10),
-                Expanded(
+                const Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text('Alex Mercer',
                           style: TextStyle(
                               fontSize: 12,
@@ -282,9 +282,9 @@ class _Header extends StatelessWidget {
             ),
             ...actions,
             const SizedBox(width: 4),
-            _IconBtn(icon: Icons.search_rounded),
+            const _IconBtn(icon: Icons.search_rounded),
             const SizedBox(width: 4),
-            _IconBtn(icon: Icons.account_circle_outlined),
+            const _IconBtn(icon: Icons.account_circle_outlined),
           ]),
         ),
       ),
@@ -450,7 +450,7 @@ class SectionTitle extends StatelessWidget {
       children: [
         Expanded(
           child: Text(text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: Palette.fontDisplay,
                 fontSize: 20,
                 fontWeight: FontWeight.w800,

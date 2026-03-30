@@ -8,13 +8,13 @@ class TabletLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 40),
+        padding: EdgeInsets.symmetric(vertical: 60, horizontal: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
+          children: [
             // Centered Branding
             BrandingColumn(
               headlineFontSize: 42,
