@@ -22,22 +22,22 @@ class _State extends State<PrivacySecurityScreen> {
       activeRoute: LiquidRouter.privacy,
       title: 'Privacy & Security',
       child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // Security score card
             Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(22),
+                padding: EdgeInsets.all(22),
                 decoration: BoxDecoration(
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                         colors: [Palette.primary, Color(0xFF163A72)]),
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.3),
+                          color: Palette.primary.withValues(alpha: 0.3),
                           blurRadius: 24,
-                          offset: const Offset(0, 8))
+                          offset: Offset(0, 8))
                     ]),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -150,7 +150,7 @@ class _SectionHeader extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext ctx) => Padding(
-      padding: const EdgeInsets.only(left: 4, bottom: 10),
+      padding: EdgeInsets.only(left: 4, bottom: 10),
       child: Text(title,
           style: const TextStyle(
               fontFamily: Palette.fontDisplay,
@@ -173,8 +173,8 @@ class _SecurityTile extends StatelessWidget {
   final ValueChanged<bool> onChanged;
   @override
   Widget build(BuildContext ctx) => Container(
-      margin: const EdgeInsets.only(bottom: 10),
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      margin: EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
           color: Palette.surfaceContainerLowest,
           borderRadius: BorderRadius.circular(16)),
@@ -220,8 +220,8 @@ class _ArrowTile extends StatelessWidget {
   Widget build(BuildContext ctx) => GestureDetector(
       onTap: onTap,
       child: Container(
-          margin: const EdgeInsets.only(bottom: 10),
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+          margin: EdgeInsets.only(bottom: 10),
+          padding: EdgeInsets.symmetric(horizontal: 14, vertical: 12),
           decoration: BoxDecoration(
               color: Palette.surfaceContainerLowest,
               borderRadius: BorderRadius.circular(16)),

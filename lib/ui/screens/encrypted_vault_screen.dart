@@ -52,10 +52,10 @@ class EncryptedVaultScreen extends StatelessWidget {
       child: Column(children: [
         // Vault header
         Container(
-          margin: const EdgeInsets.all(20),
-          padding: const EdgeInsets.all(20),
+          margin: EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-              gradient: const LinearGradient(
+              gradient: LinearGradient(
                   colors: [Color(0xFF00363D), Color(0xFF004F58)]),
               borderRadius: BorderRadius.circular(22)),
           child: Row(children: [
@@ -86,17 +86,17 @@ class EncryptedVaultScreen extends StatelessWidget {
         ),
         // Upload button
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: GestureDetector(
             onTap: () {},
             child: Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                   color: Palette.surfaceContainerLow,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                      color: Palette.outlineVariant.withOpacity(0.3),
+                      color: Palette.outlineVariant.withValues(alpha: 0.3),
                       style: BorderStyle.solid)),
               child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -117,19 +117,19 @@ class EncryptedVaultScreen extends StatelessWidget {
         // File list
         Expanded(
             child: ListView.separated(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           itemCount: _files.length,
           separatorBuilder: (_, __) => const SizedBox(height: 10),
           itemBuilder: (_, i) {
             final f = _files[i];
             return Container(
-              padding: const EdgeInsets.all(14),
+              padding: EdgeInsets.all(14),
               decoration: BoxDecoration(
                   color: Palette.surfaceContainerLowest,
                   borderRadius: BorderRadius.circular(18),
                   boxShadow: [
                     BoxShadow(
-                        color: Palette.primary.withOpacity(0.04),
+                        color: Palette.primary.withValues(alpha: 0.04),
                         blurRadius: 10)
                   ]),
               child: Row(children: [
@@ -137,7 +137,7 @@ class EncryptedVaultScreen extends StatelessWidget {
                     width: 44,
                     height: 44,
                     decoration: BoxDecoration(
-                        color: Palette.primary.withOpacity(0.08),
+                        color: Palette.primary.withValues(alpha: 0.08),
                         borderRadius: BorderRadius.circular(13)),
                     child: Icon(f.$4, color: Palette.primary, size: 22)),
                 const SizedBox(width: 12),
@@ -174,9 +174,9 @@ class _Badge extends StatelessWidget {
   final Color color;
   @override
   Widget build(BuildContext context) => Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-          color: color.withOpacity(0.12),
+          color: color.withValues(alpha: 0.12),
           borderRadius: BorderRadius.circular(99)),
       child: Text(label,
           style: TextStyle(

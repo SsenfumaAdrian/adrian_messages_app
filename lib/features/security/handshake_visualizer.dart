@@ -6,7 +6,8 @@ class HandshakeVisualizer extends StatefulWidget {
   const HandshakeVisualizer({super.key});
 
   @override
-  _HandshakeVisualizerState createState() => _HandshakeVisualizerState();
+  @override
+  State<HandshakeVisualizer> createState() => _HandshakeVisualizerState();
 }
 
 class _HandshakeVisualizerState extends State<HandshakeVisualizer>
@@ -18,7 +19,7 @@ class _HandshakeVisualizerState extends State<HandshakeVisualizer>
     super.initState();
     _pulseController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: Duration(seconds: 2),
     )..repeat(reverse: true);
   }
 
@@ -27,10 +28,10 @@ class _HandshakeVisualizerState extends State<HandshakeVisualizer>
     return ScaleTransition(
       scale: Tween<double>(begin: 1.0, end: 1.1).animate(_pulseController),
       child: Container(
-        padding: const EdgeInsets.all(8),
+        padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.greenAccent.withOpacity(0.1),
+          color: Colors.greenAccent.withValues(alpha: 0.1),
         ),
         child: const Icon(Icons.enhanced_encryption_rounded,
             color: Colors.greenAccent, size: 16),

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#c2dcff",
+                        "on-primary-container": "#8b99ac",
+                        "on-background": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary": "#0e1c2b",
+                        "on-secondary-fixed": "#001d36",
+                        "tertiary-fixed-dim": "#00daf3",
+                        "background": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-fixed": "#001f24",
+                        "tertiary": "#001f24",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#9cf0ff",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed": "#0f1c2c",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#d6e4f9",
+                        "on-secondary-container": "#48617e",
+                        "tertiary-container": "#00363d",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#bac8dc",
+                        "surface": "#f8f9fa",
+                        "surface-container-high": "#e7e8e9",
+                        "outline": "#767683",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-fixed": "#d1e4ff",
+                        "secondary-fixed-dim": "#afc9ea",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#bac8dc",
+                        "surface-container": "#edeeef",
+                        "primary-container": "#233141",
+                        "surface-tint": "#525f71",
+                        "surface-dim": "#d9dadb",
+                        "on-secondary-fixed-variant": "#2f4865",
+                        "secondary": "#47607e",
+                        "on-surface-variant": "#454652",
+                        "on-primary-fixed-variant": "#3a4859",
+                        "on-tertiary-container": "#00a7bb",
+                        "inverse-surface": "#2e3132",
+                        "outline-variant": "#c6c5d4",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e1c2b; /* Explicit Obsidian Blue for this high-security screen */
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-tertiary-fixed-dim selection:text-primary">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-[#edeeef] flex flex-col p-6 gap-8 font-['Manrope'] text-sm font-medium tonal-shift no-border">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#0e1c2b] flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<div>
+<h1 class="font-extrabold text-[#0e1c2b] text-lg leading-none">Adrian</h1>
+<p class="text-[10px] uppercase tracking-widest text-[#454652] opacity-70">Concierge</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<!-- Chats -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#454652] hover:bg-slate-200 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span>Chats</span>
+</a>
+<!-- Vault -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#454652] hover:bg-slate-200 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span>Vault</span>
+</a>
+<!-- Security (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#0e1c2b] text-white rounded-xl shadow-lg scale-105-hover transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span>Security</span>
+</a>
+<!-- Insights -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#454652] hover:bg-slate-200 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Insights</span>
+</a>
+<!-- Archive -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#454652] hover:bg-slate-200 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Archive</span>
+</a>
+</nav>
+<div class="flex flex-col gap-2 border-t border-slate-200 pt-6">
+<a class="flex items-center gap-3 px-4 py-2 text-[#454652] hover:bg-slate-200 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Help</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#454652] hover:bg-slate-200 rounded-xl transition-all text-error" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 min-h-screen bg-[#0e1c2b] text-[#f8f9fa]">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-40 bg-slate-50/10 backdrop-blur-xl flex justify-between items-center px-10 py-4 no-border shadow-none">
+<div class="flex items-center gap-4">
+<span class="font-['Manrope'] font-bold tracking-tighter text-xl text-[#f8f9fa]">Security Console</span>
+<span class="h-4 w-[1px] bg-white/20"></span>
+<nav class="flex gap-6 text-sm">
+<a class="text-white font-bold border-b-2 border-[#00daf3] py-1" href="#">Biometrics</a>
+<a class="text-slate-400 hover:text-white transition-colors py-1" href="#">Encryption</a>
+<a class="text-slate-400 hover:text-white transition-colors py-1" href="#">Sessions</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-full border border-white/10">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+<span class="text-xs font-medium tracking-wide">SYSTEM ARMED</span>
+</div>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-colors" data-icon="settings">settings</button>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full border border-white/20 object-cover" data-alt="portrait of a professional man with a confident expression in low-key studio lighting with dark blue shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVNLX-38HZrm7Nn3nmJaOTNltAwMzIjxSMXIttUFkhEGBPf_khbu4U0XOu2YMn-0QQ_pLFQQy0Xl67QGky6tsF5fXGJlSkkCUuBCSAmYAiQQspZ971mZg1kDHqVOjh6PGvuOmjSiRYQDltWZrKeq260xcHGfkisBUt_zWvWyZRGD5T7t9NTItood7BwSuCvfERiuv7IMxpBlfm9Ig9003IkfGE3sI4X418N7P3VMuIbJuQ4Ry877nMFZR7zUOJrZyUM7UE4whmV8kV"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="px-10 py-12 max-w-7xl mx-auto">
+<header class="mb-12">
+<h2 class="text-4xl font-headline font-extrabold tracking-tight mb-2">Hardware &amp; Biometrics</h2>
+<p class="text-on-primary-container max-w-2xl font-body">Manage the physical anchors of your digital identity. Adrian uses multi-layered hardware verification and behavioral entropy to ensure zero-knowledge access.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Registered Keys Section (Col 1-7) -->
+<section class="col-span-12 lg:col-span-7 space-y-6">
+<div class="bg-primary-container rounded-3xl p-8 border border-white/5 relative overflow-hidden">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-xl font-headline font-bold mb-1">Registered Hardware Keys</h3>
+<p class="text-sm text-on-primary-container">Physical FIDO2/WebAuthn authenticators</p>
+</div>
+<button class="bg-tertiary-fixed-dim text-primary px-5 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                                Add New Key
+                            </button>
+</div>
+<div class="space-y-4">
+<!-- Key Item 1 -->
+<div class="group flex items-center justify-between p-5 bg-white/5 rounded-2xl border border-white/5 hover:border-white/10 transition-all">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 bg-[#00daf3]/10 rounded-xl flex items-center justify-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-3xl" data-icon="vpn_key">vpn_key</span>
+</div>
+<div>
+<p class="font-bold text-lg leading-tight">Primary Yubikey 5C</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="text-xs text-on-primary-container">Last used: 2 mins ago</span>
+<span class="w-1 h-1 rounded-full bg-white/20"></span>
+<span class="text-xs text-tertiary-fixed-dim font-medium uppercase tracking-wider">Trusted</span>
+</div>
+</div>
+</div>
+<button class="text-error opacity-40 hover:opacity-100 transition-opacity p-2 hover:bg-error/10 rounded-lg flex items-center gap-2 text-xs font-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete_forever">delete_forever</span>
+                                    REVOKE
+                                </button>
+</div>
+<!-- Key Item 2 -->
+<div class="group flex items-center justify-between p-5 bg-white/5 rounded-2xl border border-white/5 hover:border-white/10 transition-all">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-white/40">
+<span class="material-symbols-outlined text-3xl" data-icon="phonelink_lock">phonelink_lock</span>
+</div>
+<div>
+<p class="font-bold text-lg leading-tight">MacBook Pro TouchID</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="text-xs text-on-primary-container">Last used: Yesterday, 14:22</span>
+<span class="w-1 h-1 rounded-full bg-white/20"></span>
+<span class="text-xs text-on-primary-container font-medium uppercase tracking-wider">Active</span>
+</div>
+</div>
+</div>
+<button class="text-error opacity-40 hover:opacity-100 transition-opacity p-2 hover:bg-error/10 rounded-lg flex items-center gap-2 text-xs font-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete_forever">delete_forever</span>
+                                    REVOKE
+                                </button>
+</div>
+<!-- Key Item 3 -->
+<div class="group flex items-center justify-between p-5 bg-white/5 rounded-2xl border border-white/5 hover:border-white/10 transition-all">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-white/40">
+<span class="material-symbols-outlined text-3xl" data-icon="usb">usb</span>
+</div>
+<div>
+<p class="font-bold text-lg leading-tight">Backup Google Titan</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="text-xs text-on-primary-container">Last used: 12 days ago</span>
+<span class="w-1 h-1 rounded-full bg-white/20"></span>
+<span class="text-xs text-on-primary-container font-medium uppercase tracking-wider">Cold Storage</span>
+</div>
+</div>
+</div>
+<button class="text-error opacity-40 hover:opacity-100 transition-opacity p-2 hover:bg-error/10 rounded-lg flex items-center gap-2 text-xs font-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete_forever">delete_forever</span>
+                                    REVOKE
+                                </button>
+</div>
+</div>
+</div>
+<!-- FaceID / TouchID Quick Settings -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary-container p-6 rounded-3xl border border-white/5 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="face">face</span>
+</div>
+<div class="flex-grow">
+<p class="text-sm font-bold">FaceID Recognition</p>
+<p class="text-[10px] text-on-primary-container">Active for all sessions</p>
+</div>
+<div class="w-10 h-5 bg-tertiary-fixed-dim rounded-full flex items-center justify-end px-1">
+<div class="w-3 h-3 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="bg-primary-container p-6 rounded-3xl border border-white/5 flex items-center gap-4 opacity-50">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
+</div>
+<div class="flex-grow">
+<p class="text-sm font-bold">TouchID Pattern</p>
+<p class="text-[10px] text-on-primary-container">Device incompatible</p>
+</div>
+<div class="w-10 h-5 bg-white/10 rounded-full flex items-center justify-start px-1">
+<div class="w-3 h-3 bg-white/30 rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Behavioral Biometrics Section (Col 8-12) -->
+<section class="col-span-12 lg:col-span-5 flex flex-col gap-6">
+<div class="bg-white/5 rounded-3xl p-8 border border-white/5 flex-grow relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-xl font-headline font-bold mb-1">Behavioral Biometrics</h3>
+<p class="text-sm text-on-primary-container mb-8">Analyzing unique typing rhythm and interaction velocity.</p>
+<!-- Visualization -->
+<div class="h-48 flex items-end justify-between gap-1 mb-6">
+<div class="w-full bg-[#00daf3] rounded-t opacity-20" style="height: 30%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-40" style="height: 45%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-30" style="height: 25%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-60" style="height: 70%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-80" style="height: 55%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-100" style="height: 90%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-70" style="height: 65%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-40" style="height: 35%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-20" style="height: 15%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-50" style="height: 40%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-90" style="height: 80%;"></div>
+<div class="w-full bg-[#00daf3] rounded-t opacity-30" style="height: 20%;"></div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-primary-container">Confidence Score</span>
+<span class="font-bold text-tertiary-fixed-dim">98.4%</span>
+</div>
+<div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="w-[98.4%] h-full bg-tertiary-fixed-dim shadow-[0_0_8px_#00daf3]"></div>
+</div>
+<p class="text-[11px] text-on-primary-container italic">Your cadence matches established patterns from 14 verified sessions.</p>
+</div>
+</div>
+<!-- Decorative background element -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-tertiary-fixed-dim/5 rounded-full blur-3xl"></div>
+</div>
+<div class="bg-primary-container rounded-3xl p-6 border border-white/5">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-error/10 text-error rounded-lg">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">Continuous Authentication</h4>
+<p class="text-xs text-on-primary-container mt-1 leading-relaxed">System will automatically lock and require hardware key if behavioral entropy drops below 75% threshold.</p>
+</div>
+</div>
+</div>
+<!-- Security Insights Mini Card -->
+<div class="bg-gradient-to-br from-[#233141] to-[#0e1c2b] rounded-3xl p-8 border border-white/10 overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-white/10 text-6xl" data-icon="security">security</span>
+</div>
+<h4 class="text-lg font-headline font-bold mb-4">Security Level: Maximum</h4>
+<div class="flex gap-2 mb-6">
+<div class="flex-grow h-1 bg-[#00daf3] rounded-full"></div>
+<div class="flex-grow h-1 bg-[#00daf3] rounded-full"></div>
+<div class="flex-grow h-1 bg-[#00daf3] rounded-full"></div>
+<div class="flex-grow h-1 bg-white/20 rounded-full"></div>
+</div>
+<button class="w-full py-3 bg-white/5 hover:bg-white/10 rounded-xl text-xs font-bold transition-all border border-white/10">
+                            DOWNLOAD AUDIT LOG
+                        </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Floating Secure Session Badge -->
+<div class="fixed bottom-8 right-8 z-50">
+<div class="bg-white/5 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/10 flex items-center gap-4 shadow-2xl">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-[#00daf3] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="hub">hub</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary-container border border-white/20 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+</div>
+</div>
+<div>
+<p class="text-[10px] text-on-primary-container font-bold uppercase tracking-widest">End-to-End Status</p>
+<p class="text-sm font-bold text-white">Encrypted &amp; Verified</p>
+</div>
+</div>
+</div>
+</body></html>

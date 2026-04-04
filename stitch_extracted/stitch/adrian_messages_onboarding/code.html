@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-variant": "#e1e3e4",
+            "surface": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#001f24",
+            "tertiary-fixed-dim": "#00daf3",
+            "error-container": "#ffdad6",
+            "surface-bright": "#f8f9fa",
+            "tertiary": "#001f24",
+            "on-primary-fixed": "#0f1c2c",
+            "on-primary-fixed-variant": "#3a4859",
+            "tertiary-fixed": "#9cf0ff",
+            "on-secondary-fixed-variant": "#2f4865",
+            "surface-container": "#edeeef",
+            "primary": "#0e1c2b",
+            "error": "#ba1a1a",
+            "background": "#f8f9fa",
+            "inverse-surface": "#2e3132",
+            "inverse-primary": "#bac8dc",
+            "secondary-fixed-dim": "#afc9ea",
+            "on-secondary-container": "#48617e",
+            "surface-tint": "#525f71",
+            "outline": "#767683",
+            "surface-container-highest": "#e1e3e4",
+            "inverse-on-surface": "#f0f1f2",
+            "outline-variant": "#c6c5d4",
+            "surface-container-high": "#e7e8e9",
+            "secondary-fixed": "#d1e4ff",
+            "on-primary-container": "#8b99ac",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#00363d",
+            "on-tertiary-container": "#00a7bb",
+            "on-surface": "#191c1d",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "secondary": "#47607e",
+            "on-surface-variant": "#454652",
+            "on-tertiary-fixed-variant": "#004f58",
+            "primary-container": "#233141",
+            "on-error": "#ffffff",
+            "secondary-container": "#c2dcff",
+            "on-background": "#191c1d",
+            "primary-fixed-dim": "#bac8dc",
+            "primary-fixed": "#d6e4f9",
+            "surface-container-low": "#f3f4f5",
+            "on-secondary-fixed": "#001d36"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Inter", "sans-serif"],
+            "label": ["Inter", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-effect {
+      background: rgba(248, 249, 250, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .primary-gradient {
+      background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased overflow-hidden">
+  <!-- Suppressed Shell: SideNav and BottomNavBar are excluded per Task-Focused/Onboarding suppression rule -->
+  <!-- Top Navigation Utility -->
+  <nav class="fixed top-0 left-0 right-0 h-20 flex justify-between items-center px-10 z-50">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center text-white bg-[#1A237E]">
+        <span class="material-symbols-outlined text-lg" data-icon="concierge">concierge</span>
+      </div>
+      <span class="font-display font-bold text-2xl tracking-tighter text-[#1A237E]">Adrian Messages</span>
+    </div>
+    <button class="text-on-surface-variant font-label font-medium hover:text-primary transition-colors">Skip</button>
+  </nav>
+  <main class="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-12">
+    <!-- Main Content Area: Bento-inspired Visual Canvas -->
+    <div class="max-w-6xl w-full px-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+      <!-- Visual Section (Asymmetric Bento Grid) -->
+      <div class="md:col-span-7 grid grid-cols-6 grid-rows-6 gap-4 h-[500px]">
+        <!-- Main Feature Card: Secure Messaging -->
+        <div
+          class="col-span-4 row-span-4 bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm flex flex-col">
+          <div class="h-2/3 relative">
+            <img class="w-full h-full object-cover"
+              data-alt="Modern dark technology interior with blue circuit lines and glowing digital locks, representing high-end encrypted security and data privacy"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKJKtnlAYFuH0deREeoyxgdxmul9AMV5Od9DG4_gbOjKavB1Z2ERzLk5Ct1VnOoqSq-ZipM0Y9UdyPASwSLF04oqM4NZADLyV1bKPx2qxeWNU97dhQiP303gNlVh2ga0vJCJdkf452zvnvJKXpP2oeWhBqpOKbrD30b8KXYbOO7poiKJA2jCE59P0vUEe6_UfpZMKNebBD-RCF9Two1V0KOxRPCR2WhtbaR_oxl9Ds_QbGx16m4Czq_RSCMRgksUQwjvw8xT8DC3uY" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="lock"
+                style="font-variation-settings: 'FILL' 1;">lock</span>
+              <span class="font-headline font-bold text-lg text-primary">Absolute Privacy</span>
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Military-grade encryption ensures your
+              conversations stay between you and your circle. No compromises.</p>
+          </div>
+        </div>
+        <!-- Secondary Card: Group Dynamics -->
+        <div
+          class="col-span-2 row-span-3 bg-primary-container rounded-3xl p-6 flex flex-col justify-end text-white overflow-hidden relative">
+          <div class="absolute -top-4 -right-4 opacity-10">
+            <span class="material-symbols-outlined text-8xl" data-icon="groups">groups</span>
+          </div>
+          <span class="material-symbols-outlined mb-4 text-tertiary-fixed-dim" data-icon="hub">hub</span>
+          <h3 class="font-headline font-bold text-base mb-1">Circles</h3>
+          <p class="text-on-primary-container text-xs">Collaborate with ease in elegantly managed group spaces.</p>
+        </div>
+        <!-- Small Utility: Sync -->
+        <div
+          class="col-span-2 row-span-3 bg-surface-container-high rounded-3xl p-6 flex flex-col items-center justify-center text-center">
+          <span class="material-symbols-outlined text-3xl text-primary mb-3" data-icon="sync">sync</span>
+          <span
+            class="font-headline font-bold text-xs uppercase tracking-widest text-on-surface-variant">Continuous</span>
+          <p class="font-label font-semibold text-primary text-sm">Cross-Device Sync</p>
+        </div>
+        <!-- Floating Editorial Element -->
+        <div class="col-span-4 row-span-2 bg-white rounded-3xl p-6 flex items-center gap-6 shadow-sm">
+          <div class="flex -space-x-3">
+            <img class="w-12 h-12 rounded-full border-2 border-white object-cover"
+              data-alt="Professional portrait of a woman with a confident expression in soft studio lighting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRrbp8cBfBbf-dK7yikrKO2n6P7-trPeDyyK8-n7TQUr_Ioer1m2jkUn3BbPf7AfAUIX4lS5ayOqfPPujj2KRZPamwdd2Cid-T4F9nZemxanijlgLE2egPMKJap4w0NkC0pqy2rIwci5pgf9a4VYrZN-VaSz6QzcrzmCA7xerDsGGXIx6ZCs71YeXTwUwbfpRSiEbuBSOU7kRf0L4PdeqwnYunfQ8lLCfYUyYYx_aJ_HuuYPepLJYdrFhrbHpBzkgwvPcDAANBnSLD" />
+            <img class="w-12 h-12 rounded-full border-2 border-white object-cover"
+              data-alt="Close-up of a smiling man with professional attire in a bright office environment"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWRt7mrKNBOlS0LNFSj-dzwRsk6hM97irqGPI4WhAQp6NiXroqnxxkI3bHn8S12HLcgyvyyd4nrDuP_kp6j0fK-Whp96KSRHapyCEjs2T25g2SgKL1qiEJGU002y0G6pdY97IYzSQ9j7QFvJHEDrK8E83eO_SOfkLfs93ajeAkfsw2XeZGTK4efRozV9FXOfttKOmVGEp-__pSW-TI_7LvFEAvkAKE2mwW57x473CbmQhtrEJ4IaWoqqPWUDiTFd3ZJXcw4Soh4zTH" />
+            <div
+              class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-xs font-bold text-primary border-2 border-white">
+              +12</div>
+          </div>
+          <div class="flex-1">
+            <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+              <div class="h-full w-3/4 primary-gradient rounded-full"></div>
+            </div>
+            <p class="text-[10px] text-on-surface-variant mt-2 font-medium">9.2k active specialists online now</p>
+          </div>
+        </div>
+      </div>
+      <!-- Text & CTA Section -->
+      <div
+        class="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left space-y-8 pl-0 md:pl-12">
+        <div class="space-y-4">
+          <div
+            class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container/30 text-secondary font-label text-xs font-bold tracking-wide uppercase">
+            Introducing Adrian 2.0</div>
+          <h1 class="font-headline font-extrabold text-4xl md:text-6xl text-primary leading-[1.1]">
+            Communication, <span class="text-[#1A237E] italic">elevated.</span>
+          </h1>
+          <p class="text-on-surface-variant text-lg max-w-md leading-relaxed">
+            Experience a messaging platform designed for those who value privacy, precision, and a distraction-free
+            digital life.
+          </p>
+        </div>
+        <div class="flex flex-col w-full sm:w-auto gap-4">
+          <button
+            class="text-white px-10 py-5 rounded-xl font-headline font-bold text-lg shadow-xl shadow-primary/10 hover:shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-3 bg-[#1A237E] shadow-[#1A237E]/20">Get
+            Started <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></button>
+          <div class="flex items-center justify-center md:justify-start gap-2 py-4">
+            <div class="w-2 h-2 rounded-full bg-primary"></div>
+            <div class="w-2 h-2 rounded-full bg-surface-dim"></div>
+            <div class="w-2 h-2 rounded-full bg-surface-dim"></div>
+            <div class="w-2 h-2 rounded-full bg-surface-dim"></div>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-outline-variant/20 w-full max-w-sm">
+          <div class="flex items-center gap-4 text-on-surface-variant">
+            <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="verified_user"
+              style="font-variation-settings: 'FILL' 1;">verified_user</span>
+            <p class="text-sm font-medium">End-to-end encrypted by default. Your data never leaves your devices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Decorative Background Elements -->
+  <div class="fixed -bottom-32 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+  <div class="fixed top-20 right-0 w-64 h-64 bg-tertiary-fixed-dim/10 rounded-full blur-[80px] -z-10"></div>
+</body>
+
+</html>

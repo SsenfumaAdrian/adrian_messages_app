@@ -1,3 +1,4 @@
+// FILE: lib/ui/components/glass_text_field.dart
 import 'package:flutter/material.dart';
 
 class GlassTextField extends StatelessWidget {
@@ -8,6 +9,8 @@ class GlassTextField extends StatelessWidget {
     required this.icon,
     this.isPassword = false,
     this.trailingText,
+    this.controller,
+    this.onChanged,
   });
 
   final String label;
@@ -15,6 +18,8 @@ class GlassTextField extends StatelessWidget {
   final IconData icon;
   final bool isPassword;
   final String? trailingText;
+  final TextEditingController? controller;
+  final ValueChanged<String>? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +42,7 @@ class GlassTextField extends StatelessWidget {
               Text(
                 trailingText!,
                 style: const TextStyle(
-                  color: Color(0xFF00DAF3), // accentCyan
+                  color: Color(0xFF00DAF3),
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -46,7 +51,9 @@ class GlassTextField extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         TextField(
+          controller: controller,
           obscureText: isPassword,
+          onChanged: onChanged,
           style: const TextStyle(color: Colors.white, fontSize: 14),
           decoration: InputDecoration(
             hintText: hint,
@@ -64,7 +71,9 @@ class GlassTextField extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(13),
               borderSide: const BorderSide(
-                  color: Color.fromARGB(120, 0, 218, 243), width: 1.5),
+                color: Color.fromARGB(120, 0, 218, 243),
+                width: 1.5,
+              ),
             ),
           ),
         ),

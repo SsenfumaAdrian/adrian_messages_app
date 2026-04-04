@@ -7,7 +7,7 @@ class LiquidSyncIndicator extends StatefulWidget {
   const LiquidSyncIndicator({super.key, required this.progress});
 
   @override
-  _LiquidSyncIndicatorState createState() => _LiquidSyncIndicatorState();
+  State<LiquidSyncIndicator> createState() => _LiquidSyncIndicatorState();
 }
 
 class _LiquidSyncIndicatorState extends State<LiquidSyncIndicator>
@@ -18,7 +18,7 @@ class _LiquidSyncIndicatorState extends State<LiquidSyncIndicator>
   void initState() {
     super.initState();
     _rotationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2))
+        AnimationController(vsync: this, duration: Duration(seconds: 2))
           ..repeat();
   }
 
@@ -32,7 +32,7 @@ class _LiquidSyncIndicatorState extends State<LiquidSyncIndicator>
           child: CircularProgressIndicator(
             value: widget.progress,
             strokeWidth: 2,
-            color: Colors.blueAccent.withOpacity(0.5),
+            color: Colors.blueAccent.withValues(alpha: 0.5),
           ),
         ),
         Text(

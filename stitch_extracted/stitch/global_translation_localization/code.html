@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages - Global Translation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#c2dcff",
+              "on-primary-container": "#8b99ac",
+              "on-background": "#191c1d",
+              "surface-container-highest": "#e1e3e4",
+              "primary": "#0e1c2b",
+              "on-secondary-fixed": "#001d36",
+              "tertiary-fixed-dim": "#00daf3",
+              "background": "#f8f9fa",
+              "surface-variant": "#e1e3e4",
+              "on-tertiary-fixed": "#001f24",
+              "tertiary": "#001f24",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#9cf0ff",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed": "#0f1c2c",
+              "on-error": "#ffffff",
+              "primary-fixed": "#d6e4f9",
+              "on-secondary-container": "#48617e",
+              "tertiary-container": "#00363d",
+              "error-container": "#ffdad6",
+              "primary-fixed-dim": "#bac8dc",
+              "surface": "#f8f9fa",
+              "surface-container-high": "#e7e8e9",
+              "outline": "#767683",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              "secondary-fixed": "#d1e4ff",
+              "secondary-fixed-dim": "#afc9ea",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#bac8dc",
+              "surface-container": "#edeeef",
+              "primary-container": "#233141",
+              "surface-tint": "#525f71",
+              "surface-dim": "#d9dadb",
+              "on-secondary-fixed-variant": "#2f4865",
+              "secondary": "#47607e",
+              "on-surface-variant": "#454652",
+              "on-primary-fixed-variant": "#3a4859",
+              "on-tertiary-container": "#00a7bb",
+              "inverse-surface": "#2e3132",
+              "outline-variant": "#c6c5d4",
+              "on-tertiary-fixed-variant": "#004f58",
+              "surface-container-low": "#f3f4f5",
+              "on-surface": "#191c1d",
+              "on-error-container": "#93000a",
+              "error": "#ba1a1a",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        background: rgba(248, 249, 250, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .gradient-primary {
+        background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface flex overflow-hidden h-screen">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-slate-100 dark:bg-[#edeeef] flex flex-col p-6 gap-8 font-['Manrope'] text-sm font-medium tonal-shift no-border">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">fluid</span>
+</div>
+<div>
+<h1 class="font-extrabold text-[#0e1c2b] text-lg leading-tight">Adrian</h1>
+<p class="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant opacity-70">Concierge</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<div class="group flex items-center gap-3 px-4 py-3 text-[#454652] hover:bg-slate-200 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span>Chats</span>
+</div>
+<div class="group flex items-center gap-3 px-4 py-3 text-[#454652] hover:bg-slate-200 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span>Vault</span>
+</div>
+<div class="group flex items-center gap-3 px-4 py-3 text-[#454652] hover:bg-slate-200 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span>Security</span>
+</div>
+<!-- Insights Active (Closest to Translation/Localization context) -->
+<div class="group flex items-center gap-3 px-4 py-3 bg-[#0e1c2b] text-white rounded-xl shadow-lg transition-all scale-105-hover cursor-pointer">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-bold">Insights</span>
+</div>
+<div class="group flex items-center gap-3 px-4 py-3 text-[#454652] hover:bg-slate-200 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Archive</span>
+</div>
+</nav>
+<div class="mt-auto flex flex-col gap-2 pt-6 border-t border-outline-variant/20">
+<button class="w-full py-4 px-4 gradient-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-xl hover:opacity-90 transition-opacity active:scale-95 duration-150 mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                New Message
+            </button>
+<div class="group flex items-center gap-3 px-4 py-2 text-[#454652] hover:bg-slate-200 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+<span>Help</span>
+</div>
+<div class="group flex items-center gap-3 px-4 py-2 text-[#454652] hover:bg-slate-200 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 h-screen overflow-y-auto bg-surface">
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="sticky top-0 w-full z-40 bg-slate-50/80 dark:bg-[#0e1c2b]/80 backdrop-blur-xl flex justify-between items-center px-10 py-4 w-full no-border shadow-[0_12px_32px_rgba(25,28,29,0.04)] font-['Manrope'] font-semibold tracking-tight text-[#0e1c2b] dark:text-[#f8f9fa]">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tighter text-[#0e1c2b] dark:text-[#f8f9fa]">Global Translation</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed-dim/20 text-on-tertiary-container text-[10px] rounded uppercase tracking-widest font-bold">Active Engine</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-1 focus:ring-primary/20 w-64 transition-all outline-none" placeholder="Search languages..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-[#233141] transition-colors duration-200 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-[#233141] transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/10">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional man in a minimal studio setting with soft side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDegroSuGBU66y4nYtfN6HLDbNe4r2DGRLKNOYIScSUaYjsneAaFanmYfl_YpfZ21pZM8OKdaZfv40hVruv4gz3ZvNayDZ9ejLhVbs0xR53996Fn9azqg0joIEpey9UxRnG2D05cBJSoWupfWCdw0-FUXR45e7aw8Y0Zd2oQmL4TF7ISP7mI3JAMuD9HBFSkZY3ryVLEE6PDm9FW_rE9GI4bpX1G10mZr-54zBFiD4yjm_txhvL3QRNyumLyxpvSWAQab86nuwqFGoZ"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-10 max-w-7xl mx-auto space-y-10">
+<!-- Hero Header Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+<div class="lg:col-span-2 space-y-6">
+<h2 class="text-4xl font-headline font-extrabold tracking-tight text-primary">Localization Ecosystem</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                        Manage your global presence with AI-driven translation engines that adapt not just to words, but to the cultural soul of your conversations.
+                    </p>
+<div class="flex gap-4">
+<button class="px-6 py-3 gradient-primary text-white rounded-xl font-bold flex items-center gap-2 shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="translate">translate</span>
+                            Add Language Pair
+                        </button>
+<button class="px-6 py-3 bg-surface-container-high text-primary rounded-xl font-bold flex items-center gap-2 hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+                            Optimize Nuance
+                        </button>
+</div>
+</div>
+<div class="bg-primary-container p-8 rounded-[2rem] text-white relative overflow-hidden shadow-2xl">
+<div class="relative z-10 space-y-4">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-tertiary-fixed-dim/20 rounded-lg">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="text-sm font-bold tracking-widest uppercase">Live Metrics</span>
+</div>
+<div class="text-4xl font-headline font-black">99.4%</div>
+<p class="text-sm text-on-primary-container leading-snug">Average Cultural IQ Score across all active message threads.</p>
+<div class="pt-4 flex items-center gap-2 text-xs font-bold text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                            +2.4% THIS MONTH
+                        </div>
+</div>
+<!-- Abstract Decorative Element -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-tertiary-fixed-dim/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- Main Workspace Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Active Language Pairs (Left/Main Pane) -->
+<div class="lg:col-span-7 space-y-6">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-xl font-headline font-bold text-primary">Active Language Pairs</h3>
+<span class="text-sm font-medium text-on-surface-variant">3 Active Engines</span>
+</div>
+<!-- Language Card 1 -->
+<div class="group bg-surface-container-lowest p-6 rounded-[1.5rem] flex flex-col gap-6 shadow-sm border border-outline-variant/5 hover:shadow-md transition-all cursor-pointer border-l-4 border-l-tertiary-fixed-dim">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Close up of a stylized British flag texture with soft textile weave" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbj52YGmaizZcqfQzTCSIr_HdKEldClgUpQjgQEywOq2zueFECfdhG0oSTYGgC2pECk1X8d4PThz_CRDuvzMos4urO0i829mf_mHqvZVp-BWA3b3jmk_St9adlyCPTl-55O3rIOX8LBer-T2mWF5noT4LZ3abQY1Z4yGgnwzTo2QtWvvtAPjyD-CB_rIwKkIPPmDys4seeiRH7BymD4BAnZ8ttT0M6LDF7wYNM8kfrmm-EBZY919359vjtSjibhoNtKg-kqh4wcrPJ"/>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Close up of a vibrant Chinese flag texture with silk shine and golden stars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpsUoy-AIYzQrVlnV_tzgxdhrCLfbzp9iBlCkN8fU3PXp7Wh0YP9Iud2M9PIhc1Vgq6zbFh-1x5Ov9WIEE-zNjk8HGTbASfFzQENkdM2IYoHh94m-KHApzHJcZ2gABaL8r6kM4VWzQLPU6ekKSC62Waw7ygCfgdatnPvs1zrb7J86cnAbsKt_rgmS54F6kZ7xrzZ9shs7tUuclzFzv8t9QjmODojdyr8AHdAl6-oiI4H43XwGg0lHoj_VxslI2jplrbcxj4Z-mguQe"/>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg text-primary">English <span class="text-on-surface-variant mx-2">→</span> Mandarin</h4>
+<p class="text-xs text-on-surface-variant font-medium">Engine: Neural-Adaptive V4</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2 text-tertiary-fixed-dim font-bold text-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                                    REAL-TIME SYNC
+                                </div>
+<span class="text-[10px] text-on-surface-variant">Latency: 42ms</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 pt-4 border-t border-surface-container">
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Nuance Accuracy</p>
+<div class="text-sm font-bold text-primary">98.2%</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Tone Match</p>
+<div class="text-sm font-bold text-primary">Formal (High)</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Last Sync</p>
+<div class="text-sm font-bold text-primary">Just now</div>
+</div>
+</div>
+</div>
+<!-- Language Card 2 -->
+<div class="group bg-surface-container-lowest p-6 rounded-[1.5rem] flex flex-col gap-6 shadow-sm border border-outline-variant/5 hover:shadow-md transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Soft focus Spanish flag colors waving slightly in warm mediterranean sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjCNr6SHplwCByiLWMbCsXIAnlPpyXy-aTQlEPukvD8Hf7pOwRCyQk1EsmU6kehCxRSwLn4e8Wzjk_oAlwL8x8NVFLhI22MXXaKzCFC7hzbkag0K0oDypLS51-zHpO_PfdWrb1sqzld4OPDLYmZI_q9wRvnbT3xwQXRo9kiadhTZeaD4j3ZUQ8KmpGpZcjUp0elu50IqTHHWn-xyLSH8VYwDCuwU8YUDqpqPnxY6m5G6YA0QIPOXBtijMI8D2W7r7zAcPkQ-d1y4Hl"/>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Elegant French flag tricolor with a subtle fabric texture and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtLpRatLAitpULuJ45kGNA1KtIoEWpH_ITcTvLFVY1qx0i3vYcz9DhcU1OmT3MmbVlcNSUsrCW6n893-7XiL6t5rhPCdD9L4RfvHy0wGP7_uBKLGvJJL_BggMHZgTWgH96qlPVNkFhmIIqu4PQqWZs--LOLqfQx9JfHl7SKUynVR9xDSi3jLUVerrgZuBt32sLsUCWGJACGoT0M5z7xr3_WpFeVlU17q1lZd-Xf6k-thRdLF5Dstn9oFbE7Z2ljQGmhOvQc8roKix7"/>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg text-primary">Spanish <span class="text-on-surface-variant mx-2">→</span> French</h4>
+<p class="text-xs text-on-surface-variant font-medium">Engine: GPT-Linguist Pro</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2 text-on-surface-variant font-bold text-xs">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+                                    STANDBY
+                                </div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 pt-4 border-t border-surface-container">
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Nuance Accuracy</p>
+<div class="text-sm font-bold text-primary">94.5%</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Tone Match</p>
+<div class="text-sm font-bold text-primary">Casual</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Last Sync</p>
+<div class="text-sm font-bold text-primary">2h ago</div>
+</div>
+</div>
+</div>
+<!-- Language Card 3 -->
+<div class="group bg-surface-container-lowest p-6 rounded-[1.5rem] flex flex-col gap-6 shadow-sm border border-outline-variant/5 hover:shadow-md transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Vibrant Chinese flag texture with silk shine and golden stars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAspDTXlOJ9n75LD6i2FVBqwnDGkym_R3cVVzwKhIzQZ7HS_USFmhqg9NlBI4L9w7uF3oKeTcQQwMTeP92PEeJSqaWtq_d5egXrMg7qyhSvmdMo95w2vM8JQm3fJNlIdloavebUxkweJDEbmUoXRqbtN3wIkrZRDgLbzKs6csmioI8-Yl_23bzi1ZL3ATSQqlcTIg-xlwpuaMjv_SfaVem6r8OMqKmQloMRFTq3O8D9QpjlWos3v4pcO5pqWjyAFQXl_ntAkjOlVDjz"/>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Japanese sun disk flag with clean white background and bold red center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD17jkSfDPrjzdd7yGNeP-bt9LvC-zzxCbPuC4AvTbsaurXvLNvpxwnkuQELJhLBlMLmN571C_njSrF4Se-YOPIrbk2UfQeJxTT6JGOot6-juaj15aIVBHnqhLOAiRXjRc3bLh9dQ1kPccmSgXcB0IexFndyouzF6hto_MI1XX6iYctMV96A5TldZmjR9NEniZQ9gBolI3vnTav96-zHMPWD4zn5c6EIHhmxZtCG8u1nhnbO121x-inb2GjiFlFt8KRT1NaQD-ZPzki"/>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg text-primary">Mandarin <span class="text-on-surface-variant mx-2">→</span> Japanese</h4>
+<p class="text-xs text-on-surface-variant font-medium">Engine: Pan-Asian Dialect v2</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2 text-tertiary-fixed-dim font-bold text-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                                    REAL-TIME SYNC
+                                </div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 pt-4 border-t border-surface-container">
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Nuance Accuracy</p>
+<div class="text-sm font-bold text-primary">99.1%</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Tone Match</p>
+<div class="text-sm font-bold text-primary">Honorific</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Last Sync</p>
+<div class="text-sm font-bold text-primary">5m ago</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cultural IQ & Specific Settings (Right Pane) -->
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-low rounded-[2.5rem] p-8 space-y-8 sticky top-24">
+<div class="space-y-2">
+<h3 class="text-2xl font-headline font-bold text-primary">Cultural IQ</h3>
+<p class="text-sm text-on-surface-variant">Configure AI behavior for cultural context and social nuances.</p>
+</div>
+<!-- Toggle Controls -->
+<div class="space-y-6">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+</div>
+<div>
+<p class="font-bold text-sm">Formal vs. Informal</p>
+<p class="text-[11px] text-on-surface-variant">Auto-detect social hierarchy</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 cursor-pointer">
+<div class="w-4 h-4 bg-white rounded-full absolute right-1"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<div>
+<p class="font-bold text-sm">Local Idioms</p>
+<p class="text-[11px] text-on-surface-variant">Translate intent, not words</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 cursor-pointer">
+<div class="w-4 h-4 bg-white rounded-full absolute right-1"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="font-bold text-sm">Sensitive Phrases</p>
+<p class="text-[11px] text-on-surface-variant">Alert on potential faux-pas</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 cursor-pointer">
+<div class="w-4 h-4 bg-white rounded-full absolute right-1"></div>
+</div>
+</div>
+</div>
+<!-- Fine Tuning Section -->
+<div class="space-y-4">
+<h4 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Dialect Sensitivity</h4>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-primary mb-1">
+<span>Global Standard</span>
+<span>Hyper-Local</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full w-[70%] bg-primary"></div>
+<div class="absolute top-1/2 left-[70%] -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-white border-2 border-primary rounded-full shadow-md cursor-pointer"></div>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<div class="p-6 bg-primary-container/10 rounded-3xl border border-primary/10">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="lightbulb">lightbulb</span>
+<span class="font-bold text-primary">Pro Tip</span>
+</div>
+<p class="text-xs text-on-secondary-container leading-relaxed">
+                                    The Mandarin engine performs best with <strong>Formal Tone</strong> enabled for business threads. Adrian has detected 3 threads that may benefit from this change.
+                                </p>
+<button class="mt-4 text-xs font-bold text-primary hover:underline">Apply to all →</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Contextual Insights / Bento Section -->
+<section class="space-y-6">
+<h3 class="text-xl font-headline font-bold text-primary">Sync Intelligence</h3>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-white p-8 rounded-[2rem] shadow-sm border border-outline-variant/10 flex items-center justify-between group hover:shadow-xl transition-all">
+<div class="space-y-2">
+<p class="text-xs font-bold text-on-surface-variant uppercase">Engine Latency</p>
+<h4 class="text-4xl font-black text-primary">12ms</h4>
+<p class="text-xs text-tertiary-fixed-dim font-bold">Optimization: Elite</p>
+</div>
+<div class="w-32 h-20 flex items-end gap-1">
+<div class="w-full bg-primary/10 h-[40%] rounded-t-sm group-hover:h-[60%] transition-all duration-500"></div>
+<div class="w-full bg-primary/10 h-[60%] rounded-t-sm group-hover:h-[40%] transition-all duration-500"></div>
+<div class="w-full bg-primary/20 h-[50%] rounded-t-sm group-hover:h-[80%] transition-all duration-500"></div>
+<div class="w-full bg-primary/40 h-[90%] rounded-t-sm group-hover:h-[60%] transition-all duration-500"></div>
+<div class="w-full bg-primary/10 h-[30%] rounded-t-sm group-hover:h-[50%] transition-all duration-500"></div>
+<div class="w-full bg-tertiary-fixed-dim h-[100%] rounded-t-sm"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-[2rem] flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="language">language</span>
+<div>
+<p class="text-2xl font-black text-primary">142</p>
+<p class="text-xs font-bold text-on-surface-variant uppercase">Global Nodes</p>
+</div>
+</div>
+<div class="bg-tertiary-fixed-dim/10 p-8 rounded-[2rem] border border-tertiary-fixed-dim/20 flex flex-col justify-between">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<div>
+<p class="text-2xl font-black text-on-tertiary-container">E2EE</p>
+<p class="text-xs font-bold text-on-tertiary-container/60 uppercase">Encrypted Sync</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Contextual FAB (Suppressed on settings/details, but this is a main destination) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 gradient-primary text-white rounded-full shadow-[0_20px_40px_rgba(14,28,43,0.3)] flex items-center justify-center active:scale-95 transition-transform z-50 group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-300" data-icon="add">add</span>
+</button>
+</body></html>

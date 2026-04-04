@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages | Scheduled &amp; AI Drafting</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f3f4f5",
+              "secondary": "#47607e",
+              "on-secondary-fixed": "#001d36",
+              "on-tertiary-fixed": "#001f24",
+              "on-secondary-fixed-variant": "#2f4865",
+              "on-error": "#ffffff",
+              "secondary-container": "#c2dcff",
+              "inverse-on-surface": "#f0f1f2",
+              "on-surface-variant": "#454652",
+              "on-surface": "#191c1d",
+              "on-primary-fixed": "#0f1c2c",
+              "surface-tint": "#525f71",
+              "on-tertiary-fixed-variant": "#004f58",
+              "inverse-surface": "#2e3132",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#d6e4f9",
+              "secondary-fixed": "#d1e4ff",
+              "outline": "#767683",
+              "secondary-fixed-dim": "#afc9ea",
+              "outline-variant": "#c6c5d4",
+              "surface-dim": "#d9dadb",
+              "on-primary-container": "#8b99ac",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#3a4859",
+              "tertiary": "#001f24",
+              "surface-container-highest": "#e1e3e4",
+              "tertiary-fixed": "#9cf0ff",
+              "primary-container": "#233141",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#00363d",
+              "primary": "#0e1c2b",
+              "error": "#ba1a1a",
+              "surface-container": "#edeeef",
+              "surface": "#f8f9fa",
+              "on-secondary": "#ffffff",
+              "on-background": "#191c1d",
+              "inverse-primary": "#bac8dc",
+              "tertiary-fixed-dim": "#00daf3",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#48617e",
+              "on-tertiary-container": "#00a7bb",
+              "on-error-container": "#93000a",
+              "surface-bright": "#f8f9fa",
+              "surface-container-high": "#e7e8e9",
+              "primary-fixed-dim": "#bac8dc",
+              "surface-variant": "#e1e3e4",
+              "background": "#f8f9fa"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e1e3e4;
+            border-radius: 10px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-primary overflow-hidden h-screen flex">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 h-screen w-64 border-r-0 font-manrope z-50">
+<div class="px-8 mb-12">
+<div class="flex flex-col">
+<span class="text-xl font-black text-[#1A237E]">Adrian</span>
+<span class="text-[10px] font-manrope text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-500">Intelligent Correspondent</span>
+</div>
+</div>
+<nav class="flex flex-col flex-1">
+<a class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] transition-all hover:bg-[#eae7ef] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Chats</span>
+</a>
+<a class="flex items-center gap-4 py-4 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined ml-4">lock</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Vault</span>
+</a>
+<a class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] transition-all hover:bg-[#eae7ef] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Security</span>
+</a>
+<a class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] transition-all hover:bg-[#eae7ef] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-8">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPWQbAcJNyDmjm9vPIFWG8_Cjvh9DOS8SjvIjv1b7fJQoBYqMhz1LOhh00NQfz1MzFVPmHrOl4d0OUy4vNVWmVO7QAjslm1Ufzn2HSJQKiChcS7ke-WC-mDECTXpwc51p3BjnLU6HcJMi2JS5hjemBOuOFnWis9zcWtL5cvfQExUI7gGcXAioJFxdxomss2Ur9OzMgGV3l_UNtcvYWNXF-3PCUUw3pi9ZanpGWU5ijUlUAVqcIjEsWHSzog60hmnmltKVSG5PTb4KL"/>
+</div>
+</aside>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,35,126,0.06)] font-manrope tracking-tight font-medium transition-all">
+<div class="flex items-center gap-4">
+<h1 class="text-2xl font-bold tracking-tighter text-[#1A237E] dark:text-indigo-400">Adrian Messages</h1>
+<div class="h-4 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
+<span class="text-slate-500 dark:text-slate-400 text-sm">Scheduled &amp; AI Drafting</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-1.5 min-w-[300px]">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs w-full ml-2 text-slate-700 dark:text-slate-200" placeholder="Search archives..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#1A237E] dark:text-indigo-400 cursor-pointer hover:opacity-70 transition-colors">grid_view</span>
+<span class="material-symbols-outlined text-[#1A237E] dark:text-indigo-400 cursor-pointer hover:opacity-70 transition-colors">auto_awesome</span>
+<span class="material-symbols-outlined text-[#1A237E] dark:text-indigo-400 cursor-pointer hover:opacity-70 transition-colors">account_circle</span>
+<span class="material-symbols-outlined text-[#1A237E] dark:text-indigo-400 cursor-pointer hover:opacity-70 transition-colors">more_vert</span>
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="ml-64 mt-16 flex-1 h-[calc(100vh-64px)] overflow-hidden flex flex-col md:flex-row p-6 gap-6">
+<!-- Left Column: Timeline & Context -->
+<div class="w-full md:w-1/3 flex flex-col gap-6 overflow-hidden">
+<!-- Timeline Section -->
+<section class="flex-1 flex flex-col min-h-0 bg-surface-container-low rounded-xl p-6 shadow-sm border border-outline-variant/10">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline font-bold text-lg text-primary">Scheduled Timeline</h2>
+<span class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant/60">October 2023</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-2 flex flex-col gap-4">
+<!-- Timeline Item -->
+<div class="relative pl-6 border-l-2 border-primary/10 pb-4 group">
+<div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-primary border-4 border-surface-container-low shadow-sm"></div>
+<div class="text-[11px] font-bold text-primary mb-1">Today, 4:30 PM</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm group-hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-center gap-2 mb-2">
+<img alt="Alex Rivera" class="w-5 h-5 rounded-full" data-alt="headshot of a young male architect in a bright studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7xMZ5LR_6cPxRU8Yj9CvWMgOp16h5KXqxbg7fEmOEOvdahQCmR4rOgV5SmsvHNUsmT3bkGSYexbsWivc3G77gjbwaaatvN7R7hB4DaWNCYHvdCPJTSCb12rev9GUrmvPAH0ttHQSnO-7w5HBjL_Ynt9EzF093Q5AbHZsibXA2O1prEveNYJb-_N4KJSaigRed6MuieqJXfTNKxvrEU2qNuV0ElQlyETFhLcQxD_PcFnTS5se1DE5wCCFolZE-MZJmh2QIANGV31Ij"/>
+<span class="text-xs font-semibold text-primary">Alex Rivera</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2">"Following up on the architectural brief we discussed yesterday. The blueprints..."</p>
+</div>
+</div>
+<!-- Timeline Item (Pending) -->
+<div class="relative pl-6 border-l-2 border-primary/10 pb-4 group">
+<div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-outline-variant border-4 border-surface-container-low"></div>
+<div class="text-[11px] font-bold text-on-surface-variant/60 mb-1">Tomorrow, 9:00 AM</div>
+<div class="bg-surface-container-lowest/50 p-4 rounded-xl border border-dashed border-outline-variant cursor-pointer hover:border-primary/30 transition-colors">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-5 h-5 rounded-full bg-secondary-container flex items-center justify-center text-[10px] font-bold text-on-secondary-container">MW</div>
+<span class="text-xs font-semibold text-on-surface-variant">Marketing Weekly</span>
+</div>
+<p class="text-xs text-on-surface-variant/60">Campaign launch report summary for the executive board.</p>
+</div>
+</div>
+<!-- Timeline Item -->
+<div class="relative pl-6 border-l-2 border-primary/10 pb-4 group">
+<div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-primary border-4 border-surface-container-low shadow-sm"></div>
+<div class="text-[11px] font-bold text-primary mb-1">Oct 26, 11:15 AM</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-center gap-2 mb-2">
+<img alt="Sarah Chen" class="w-5 h-5 rounded-full" data-alt="portrait of a woman smiling with a soft natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3QO3gSXhMu-koj4jztOmwS2xKRspWqWJ3cP6ifIspBLUv1Gf-0qFsZFOcESNpifBeJ7h4hadvTye21PX6afRGh5gEZYRa7C-IirZcMYarOuIMfrtJY5l7r8u1fbLEYxYsGLBJMe_8LDlbqx9e0j2w28-e_MQ8O5jhLD3aQ-zlgaIhrA5Ya8fZ2D1rsBbAHYPwRNymxjWUCRp9WD0vHFjBjb7woVrZS6Y82xczGMNlEFetKCpdljZi_Z_fpLXhemhXK1KKcFZwUQjJ"/>
+<span class="text-xs font-semibold text-primary">Sarah Chen</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2">"Confirming the board meeting logistics and final agenda items for next quarter."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Suggested Drafts -->
+<section class="h-64 bg-primary text-on-primary rounded-xl p-6 relative overflow-hidden flex flex-col">
+<!-- Background texture/gradient -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-primary/90 opacity-100"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h2 class="font-headline font-bold text-base">Intelligent Drafts</h2>
+</div>
+<div class="space-y-3">
+<div class="bg-white/10 hover:bg-white/15 p-3 rounded-lg cursor-pointer transition-colors border border-white/5">
+<div class="text-[10px] uppercase tracking-tighter font-bold text-tertiary-fixed-dim mb-1">Reply to Jordan</div>
+<p class="text-xs leading-relaxed opacity-90">"The feedback on the proposal looks solid. Let's sync on Monday..."</p>
+</div>
+<div class="bg-white/10 hover:bg-white/15 p-3 rounded-lg cursor-pointer transition-colors border border-white/5">
+<div class="text-[10px] uppercase tracking-tighter font-bold text-tertiary-fixed-dim mb-1">Event Follow-up</div>
+<p class="text-xs leading-relaxed opacity-90">"Great meeting you at the summit. I'd love to explore our partnership..."</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Edit Workspace -->
+<div class="flex-1 flex flex-col bg-surface-container-lowest rounded-xl shadow-md border border-outline-variant/10 overflow-hidden">
+<!-- Workspace Header -->
+<div class="px-8 py-6 border-b border-surface-container flex items-center justify-between glass-panel">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
+</div>
+<div>
+<h2 class="font-headline font-bold text-xl text-primary leading-tight">Adrian Workspace</h2>
+<p class="text-xs text-on-surface-variant">Drafting response to <strong>Sarah Chen</strong></p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-full text-xs font-bold text-primary hover:bg-surface-container transition-colors">Save Draft</button>
+<button class="px-6 py-2 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full text-xs font-bold shadow-lg shadow-primary/10 hover:scale-[1.02] active:scale-95 transition-transform">Schedule Message</button>
+</div>
+</div>
+<!-- Editor Body -->
+<div class="flex-1 p-8 overflow-y-auto custom-scrollbar flex flex-col">
+<!-- Recipient Selection -->
+<div class="flex items-center gap-4 mb-8">
+<span class="text-xs font-bold text-on-surface-variant/50 w-8">To:</span>
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-full border border-outline-variant/20">
+<img alt="Sarah Chen" class="w-5 h-5 rounded-full" data-alt="portrait of a woman smiling with a soft natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVa8OYVACVEcjMsLpet5tF_SbXor80NHwCRA86PKBK5CVcFM8abdYgMg_xsQgPLQqOJox9KJqRQ-us1-bncGBIAHi0guvenFS2AUVBFd_JDQwLa3Hn3_rnW2Lwpnmhy7pOvMAor7akyN7WJTetsdmECOkY6XO9hfW-4Hytjwy8X7A-s6t9slz-gl8Jy_W1l6Mi3fzNqB3Ni-_FMA2ZdcbUxOCaQCSl172bGLuHWwfDQg3WVt8ZNhAEO-gRAGolLNbveo-SRZ6qzHAV"/>
+<span class="text-xs font-semibold text-primary">Sarah Chen</span>
+<span class="material-symbols-outlined text-xs cursor-pointer text-outline hover:text-error transition-colors" data-icon="close">close</span>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center border border-dashed border-outline-variant text-outline hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+<!-- Scheduling Options -->
+<div class="flex items-center gap-4 mb-10 pb-10 border-b border-surface-container">
+<span class="text-xs font-bold text-on-surface-variant/50 w-8">At:</span>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-xl text-xs font-semibold text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+                        Oct 26, 2023 at 11:15 AM
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 text-on-tertiary-container/80 text-xs font-semibold hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+                        AI Optimal Time
+                    </button>
+</div>
+<!-- Content Area -->
+<div class="flex-1">
+<textarea class="w-full h-full min-h-[300px] border-none focus:ring-0 text-on-surface text-lg leading-relaxed placeholder:text-outline-variant/60 font-body resize-none" placeholder="Begin typing your message or select an AI draft to populate..."></textarea>
+</div>
+<!-- Formatting Toolbar (Floating Dock Style) -->
+<div class="mt-auto py-6 flex justify-center">
+<div class="flex items-center gap-2 px-4 py-3 bg-surface shadow-2xl rounded-full border border-outline-variant/10">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="format_bold">format_bold</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="format_italic">format_italic</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant/30 mx-1"></div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="attach_file">attach_file</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="image">image</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant/30 mx-1"></div>
+<button class="px-4 h-10 flex items-center gap-2 rounded-full bg-tertiary-fixed-dim/20 text-on-tertiary-container text-xs font-bold hover:bg-tertiary-fixed-dim/30 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="auto_fix_high">auto_fix_high</span>
+                            Improve Tone
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Context Floating Panel (Optional/Contextual Detail) -->
+<div class="fixed right-10 bottom-10 w-80 bg-surface-container-high rounded-2xl shadow-2xl p-6 border border-white/50 backdrop-blur-xl translate-y-[calc(100%+40px)] md:translate-y-0 hidden xl:block">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-base" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<h3 class="font-headline font-bold text-sm text-primary">Contextual Intel</h3>
+</div>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="mt-1 w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<p class="text-xs leading-relaxed text-on-surface-variant">Sarah usually responds within 2 hours of her Tuesday morning coffee.</p>
+</div>
+<div class="flex gap-3">
+<div class="mt-1 w-2 h-2 rounded-full bg-secondary"></div>
+<p class="text-xs leading-relaxed text-on-surface-variant">Mentioning the 'Blueprint V2' file from last week may increase reply speed.</p>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20">
+<img class="w-full h-24 rounded-lg object-cover mb-3" data-alt="vibrant abstract analytics dashboard visualization showing growth curves and connection points" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZQaRZCa5PQKlkQ9RYkl4i1isO4iAURmbJmVriJDppADQm9uP9rEL9Qlo4pdYJwRU_OyZwQ51ZrlW8M9rqS61rfqRJabhPmy5YhgrH0UOEURLyieMhGVPVYOh6KtKlw0I05ZBrwV6MFVwFpSU7VPiXalbFDPnDCqywgsjzZgi8jIoJxDgZk7BcO2T5eOp1QejQzw0yucQuNVVsXJgFDmDOgzMOFfdWnra0GST67I0WGAxCmDTHNw85fv6Bs2K_TbIetvwYr21OoG9q"/>
+<p class="text-[10px] text-center font-bold text-outline uppercase tracking-widest">Engagement Forecast: High</p>
+</div>
+</div>
+</body></html>

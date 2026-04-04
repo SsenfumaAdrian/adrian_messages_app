@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian - Global Discovery</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#233141",
+              "outline": "#767683",
+              "primary-fixed-dim": "#bac8dc",
+              "secondary-container": "#c2dcff",
+              "on-tertiary-container": "#00a7bb",
+              "on-secondary-fixed": "#001d36",
+              "tertiary": "#001f24",
+              "on-primary-container": "#8b99ac",
+              "tertiary-container": "#00363d",
+              "surface-container-low": "#f3f4f5",
+              "background": "#f8f9fa",
+              "secondary-fixed-dim": "#afc9ea",
+              "surface-variant": "#e1e3e4",
+              "error": "#ba1a1a",
+              "surface-container-high": "#e7e8e9",
+              "on-background": "#191c1d",
+              "inverse-on-surface": "#f0f1f2",
+              "primary": "#0e1c2b",
+              "on-error": "#ffffff",
+              "secondary": "#47607e",
+              "outline-variant": "#c6c5d4",
+              "inverse-primary": "#bac8dc",
+              "on-tertiary-fixed-variant": "#004f58",
+              "on-surface-variant": "#454652",
+              "error-container": "#ffdad6",
+              "surface-container": "#edeeef",
+              "surface-bright": "#f8f9fa",
+              "primary-fixed": "#d6e4f9",
+              "on-secondary-container": "#48617e",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#3a4859",
+              "surface": "#f8f9fa",
+              "surface-tint": "#525f71",
+              "surface-container-highest": "#e1e3e4",
+              "surface-dim": "#d9dadb",
+              "on-surface": "#191c1d",
+              "inverse-surface": "#2e3132",
+              "on-secondary-fixed-variant": "#2f4865",
+              "on-primary-fixed": "#0f1c2c",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#00daf3",
+              "secondary-fixed": "#d1e4ff",
+              "tertiary-fixed": "#9cf0ff",
+              "on-tertiary-fixed": "#001f24"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, .brand-font { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-[#fbf8ff] dark:bg-slate-950 flex flex-col py-8 border-r-0 z-50 font-manrope">
+<div class="px-8 mb-12">
+<h1 class="text-xl font-black text-[#1A237E]">Adrian</h1>
+<p class="text-[10px] font-semibold uppercase tracking-widest text-slate-500">Intelligent Correspondent</p>
+</div>
+<nav class="flex flex-col flex-1">
+<button class="flex items-center gap-4 px-8 py-4 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm font-semibold uppercase text-xs tracking-widest transition-all duration-300">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Chats</span>
+</button>
+<button class="flex items-center gap-4 px-8 py-4 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] hover:bg-[#eae7ef] dark:hover:bg-slate-800 font-semibold uppercase text-xs tracking-widest transition-all duration-300">
+<span class="material-symbols-outlined">lock</span>
+<span>Vault</span>
+</button>
+<button class="flex items-center gap-4 px-8 py-4 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] hover:bg-[#eae7ef] dark:hover:bg-slate-800 font-semibold uppercase text-xs tracking-widest transition-all duration-300">
+<span class="material-symbols-outlined">verified_user</span>
+<span>Security</span>
+</button>
+<button class="flex items-center gap-4 px-8 py-4 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] hover:bg-[#eae7ef] dark:hover:bg-slate-800 font-semibold uppercase text-xs tracking-widest transition-all duration-300">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</button>
+</nav>
+<div class="mt-auto px-8 flex items-center gap-3">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full border-2 border-[#1A237E]/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyicztBK3T_BcwjglpR58O77EEXHnVKNqravaBc_f3fxT6bLVjMJNYdwN8aVBxqD-PsJCzzr1C8HCiKdOFZ6NiRkhuO-aKQ-j_3aAwin7rV1A6Y_i53cVjWqxF9tccQ5n2li2rGa3l-prpY8msTNED1giilvprrABunMd3VuVI7hH05mOL6UjBlVEmZv6bTJyQySbiSIi5TuMdI1xdMG65BHIssYC_CqouVI5cYQbxdx5AqOMnEKzdMUcLGBVfkMWesJ8aqi0hgzd1"/>
+<div class="flex flex-col">
+<p class="text-xs font-bold text-[#1A237E]">Alex Rivers</p>
+<p class="text-[10px] text-slate-400">Premium Member</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="min-h-screen ml-64">
+<!-- Top Navigation / Search Header -->
+<header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md px-10 py-8 shadow-[0_12px_32px_rgba(26,35,126,0.06)]">
+<div class="max-w-6xl mx-auto">
+<div class="flex items-center justify-between mb-10">
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight text-[#1A237E]">Adrian AI</h1>
+<p class="text-on-surface-variant text-sm mt-1">Search across your digital estate</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/30">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-[#1A237E]">Adrian AI</p>
+<p class="text-[10px] text-tertiary-fixed-dim font-semibold uppercase tracking-wider">Active</p>
+</div>
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_8px_rgba(0,218,243,0.6)]"></div>
+</div>
+</div>
+</div>
+<!-- Central Search Experience -->
+<div class="relative group max-w-3xl">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-low border-none rounded-full py-5 pl-16 pr-6 text-on-surface placeholder:text-outline focus:ring-0 focus:bg-surface-container-lowest transition-all duration-300 shadow-sm" placeholder="Ask Adrian or find files, people, and messages..." type="text"/>
+<div class="absolute inset-y-0 right-4 flex items-center gap-2">
+<kbd class="hidden md:inline-flex items-center px-2 py-1 text-xs font-semibold text-outline-variant bg-white rounded-lg border border-outline-variant/20">⌘ K</kbd>
+<button class="text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-all active:scale-95 bg-[#1A237E]">
+                            Search
+                        </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Discovery Canvas -->
+<div class="max-w-6xl mx-auto px-10 pb-20">
+<!-- AI Insight Section (Bento Style Hero) -->
+<section class="mt-8 mb-12">
+<div class="rounded-[2rem] p-8 text-white relative overflow-hidden flex flex-col md:flex-row gap-8 items-center bg-[#1A237E]">
+<div class="flex-1 z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-white/10 px-3 py-1 rounded-full">Concierge Intelligence</span>
+</div>
+<h2 class="text-2xl md:text-3xl font-bold mb-4 leading-tight">It looks like you're preparing for the Q4 Strategy Sync.</h2>
+<p class="text-on-primary-container text-sm max-w-md leading-relaxed mb-6">I've gathered the latest 12 messages from Sarah, 3 budget spreadsheets, and the action items from last Tuesday's call for your Adrian brief.</p>
+<div class="flex gap-3">
+<button class="bg-white px-6 py-3 rounded-full text-sm font-bold shadow-xl hover:bg-surface-variant transition-colors text-[#1A237E]">Open Briefing</button>
+<button class="bg-white/10 text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-white/20 transition-colors">Dismiss</button>
+</div>
+</div>
+<div class="relative w-full md:w-1/3 aspect-square rounded-2xl overflow-hidden shadow-2xl rotate-3">
+<img alt="AI Visualization" class="w-full h-full object-cover" data-alt="Abstract fluid 3D shapes in deep navy and electric cyan, soft cinematic lighting, premium digital art style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB18oO8mpwp7I1By2QsochAFW3oCCC1UZn0JE3g00T5dfyxsw9-pqJO_ytL_w1v1_AQ6TlQEaZiFlvqzolEmRwNIU1dOT_zWWKcbBARLiLrnBK8veSXrOU4lcQXLye2cLZXO2SPxELlBWb5WOOXKfJPRhfkData3pLVyu3YguB6it2vRaBayw8RPvqgorSwjev4RjK7cttOvZPUIbyRN_RiYNJS5JgWyp4fBLQWpLVH-idfbi4mVU_-_pQpL5ypeloFS1Fm64vXSwtZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Categorized Results Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Column 1: People & Contacts -->
+<div class="space-y-6">
+<div class="flex items-center justify-between px-2">
+<h3 class="text-lg font-bold text-[#1A237E]">People</h3>
+<button class="text-xs font-semibold text-secondary hover:underline">View All</button>
+</div>
+<div class="bg-surface-container-low rounded-[1.5rem] p-2 space-y-1">
+<div class="flex items-center gap-4 p-4 hover:bg-white rounded-[1.25rem] transition-all cursor-pointer group">
+<img alt="Sarah" class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a professional woman with a warm smile, outdoor natural lighting, soft background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxmz2lfuPLoz3qdtc9In0JWMLNDTbh21kitGltHLYNpSs-2xC_fa9XpFvSfrRg7ejVUdBkCfx1qak58mkZBazjRUw4At0BHj7LPPu5-9SpQ4EIV-Bgw6JeUrZWtietK9zDdduJPIAc3yJ8clZAY_EKII6a2dGxMCWrbBRfNeS_I302fGiVIZIP8eMoSXjE1-g9nD_VXJ8-TcQqwgiyKDwCVZdzrsCHlZRe58019CuP3S-DIaMJMroAaShwCmWpFhNwu2uwKKXPD56q"/>
+<div>
+<p class="text-sm font-bold group-hover:text-primary transition-colors text-[#1A237E]">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant">Head of Design</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline-variant group-hover:text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 hover:bg-white rounded-[1.25rem] transition-all cursor-pointer group">
+<img alt="Marcus" class="w-12 h-12 rounded-full object-cover" data-alt="Close-up of a man with spectacles in a modern office environment, professional and focused" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Kd1p5TU5VXirLzpLoX0ULqAapMvTr0WQEACjoJdf1bxdl7huWTKrTOwQw8_98YrkV4TodjJD5S2NYjRVhk9tgRB8lzBsRzraEBS7z95zNJAokMdQaY0BV29P6r94rNAAlP-mz8gz5Db2W1ijUcTuHz3jhHAmY-SM-8AV7_KblX6TyAChXkE4bW6w5vmRC0gVu25GecoyfnmfbaGdbUMdRwVGr2fNvB6i08QRVUhAH0iBMoPfMOdGlEVZfijaHo91vRmJi5rZ-805"/>
+<div>
+<p class="text-sm font-bold group-hover:text-primary transition-colors text-[#1A237E]">Marcus Chen</p>
+<p class="text-xs text-on-surface-variant">CTO</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline-variant group-hover:text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 hover:bg-white rounded-[1.25rem] transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-sm">
+                                AR
+                            </div>
+<div>
+<p class="text-sm font-bold group-hover:text-primary transition-colors text-[#1A237E]">Alex Rivera</p>
+<p class="text-xs text-on-surface-variant">Product Manager</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline-variant group-hover:text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Column 2: Recent Files -->
+<div class="space-y-6">
+<div class="flex items-center justify-between px-2">
+<h3 class="text-lg font-bold text-[#1A237E]">Files</h3>
+<button class="text-xs font-semibold text-secondary hover:underline">Recent</button>
+</div>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest p-5 rounded-[1.5rem] shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="bg-error-container/20 p-3 rounded-xl">
+<span class="material-symbols-outlined text-error" data-icon="description">description</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold mb-1 text-[#1A237E]">Q4_Roadmap_Final.pdf</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-semibold">Updated 2h ago • 4.2 MB</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-[1.5rem] shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="bg-secondary-container/20 p-3 rounded-xl">
+<span class="material-symbols-outlined text-secondary" data-icon="table_chart">table_chart</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold mb-1 text-[#1A237E]">Marketing_Spend_2024.xlsx</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-semibold">Shared by Marcus • 1.1 MB</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-[1.5rem] shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="bg-tertiary-fixed-dim/20 p-3 rounded-xl">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="image">image</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold mb-1 text-[#1A237E]">Brand_Assets_V2.zip</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-semibold">Created yesterday • 85 MB</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 3: Insights & Conversations -->
+<div class="space-y-6">
+<div class="flex items-center justify-between px-2">
+<h3 class="text-lg font-bold text-[#1A237E]">Latest Conversations</h3>
+<button class="text-xs font-semibold text-secondary hover:underline">Inbox</button>
+</div>
+<div class="space-y-4">
+<div class="relative bg-white p-6 rounded-[1.5rem] border border-outline-variant/10 group cursor-pointer">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-2 h-2 rounded-full bg-[#1A237E]"></span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Strategy Channel</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed italic mb-4">
+                                "The move to the new server architecture is complete. We should see significant speed gains today."
+                            </p>
+<div class="flex items-center gap-2">
+<img alt="Dave" class="w-6 h-6 rounded-full" data-alt="Headshot of a smiling man with beard, neutral indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOmIbdl1RB2g6MPp_bPSXo5lM5XzY4XO0s4sdIC4BMErJ1DWKjrR4eLWsfH15N9cxJNnEk2OoLsZnFanW5reZgDhO5HOzxVBfM0sX-UfRA0YgapzXHkoa-3WYoLp1OQQPxnqnW5Eg0redkmIT4JymK5N5hrWRPQZglRcnvcd8VGznNrUYdHn64_oW2BdkiOcof6e1YR3_IvvGZqansgkKdCKJZ7j6t8dc8cADKBDG5yfC2mFATF21yKpnfmoDz28vOAoHOHgvwNMbV"/>
+<span class="text-xs font-semibold text-[#1A237E]">Dave Wright</span>
+<span class="text-[10px] text-on-surface-variant ml-auto">14:20 PM</span>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-[1.5rem] border border-transparent hover:border-outline-variant/30 transition-all cursor-pointer">
+<div class="flex items-center gap-3 mb-3">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Direct Message</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed mb-4">
+                                "Can you review the latest mocks by EOD?"
+                            </p>
+<div class="flex items-center gap-2">
+<img alt="Elena" class="w-6 h-6 rounded-full" data-alt="Portrait of a young woman with creative styling, artistic studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoMbHheCQltPYwvD7Zid-yiLf5alUshAJ_Xi6sGiSSV1F8PAAIW-7Crn0_daCrT-KpHsUfoH_5eYp4OGg6OP_pjv-Zn9vqszR-xkNNrr350JW9swY2fzC04CrMs7KaXAlERX0xPxEsvPXVLbu0PXSERfWMdWazPhxFD8_fVkGWjYKM1ykAnyfYa-3W-UbWxOYFCuEt7Z0Zkza2rnZ6MfncEaam8P53ac3GAmTJilYJX0mGaH1Ez3qx80cLAhZdxy98SJa9a4AlYMUf"/>
+<span class="text-xs font-semibold text-[#1A237E]">Elena Rossi</span>
+<span class="text-[10px] text-on-surface-variant ml-auto">Yesterday</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Suggestion Chips -->
+<section class="mt-16">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em] mb-4 px-2">Common Discovery Tasks</p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-surface-container-high hover:bg-surface-variant px-5 py-2.5 rounded-full text-xs font-semibold transition-all text-[#1A237E]">Find last month's invoices</button>
+<button class="bg-surface-container-high hover:bg-surface-variant px-5 py-2.5 rounded-full text-xs font-semibold transition-all text-[#1A237E]">Who is working on Project Helios?</button>
+<button class="bg-surface-container-high hover:bg-surface-variant px-5 py-2.5 rounded-full text-xs font-semibold transition-all text-[#1A237E]">Schedule a meeting with Sarah</button>
+<button class="bg-surface-container-high hover:bg-surface-variant px-5 py-2.5 rounded-full text-xs font-semibold transition-all text-[#1A237E]">Summarize recent AI developments</button>
+<button class="bg-surface-container-high hover:bg-surface-variant px-5 py-2.5 rounded-full text-xs font-semibold transition-all text-[#1A237E]">Search images from New York trip</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Concierge Action -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-gradient-to-br from-primary to-primary-container text-white rounded-full shadow-2xl flex items-center justify-center group hover:scale-105 transition-transform z-50">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+</body></html>

@@ -12,7 +12,7 @@ class LiquidVaultCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
+      padding: EdgeInsets.only(bottom: 12),
       child: LiquidGlassContainer(
         // Darker glass for higher security feel
         borderRadius: 20,

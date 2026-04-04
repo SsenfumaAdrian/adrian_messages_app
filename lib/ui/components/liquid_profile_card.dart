@@ -19,16 +19,16 @@ class LiquidProfileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return LiquidGlassContainer(
       borderRadius: 35,
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.all(24),
       child: Column(
         children: [
           // The Avatar with a refractive 'Glow' ring
           Container(
-            padding: const EdgeInsets.all(4),
+            padding: EdgeInsets.all(4),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                  color: Colors.blueAccent.withOpacity(0.5), width: 2),
+                  color: Colors.blueAccent.withValues(alpha: 0.5), width: 2),
             ),
             child: CircleAvatar(
               radius: 50,

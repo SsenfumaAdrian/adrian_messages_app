@@ -18,11 +18,11 @@ class LiquidNotificationToast extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
         alignment: Alignment.topCenter,
         child: LiquidGlassContainer(
           borderRadius: 25,
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16),
           child: Row(
             children: [
               const Icon(Icons.auto_awesome, color: Colors.blueAccent),

@@ -16,7 +16,7 @@ class SmileHaptics {
   /// The 'Stitch Complete' sequence: a double-pulse confirming data merge.
   static void stitchSuccess() async {
     await HapticFeedback.mediumImpact();
-    await Future.delayed(const Duration(milliseconds: 80));
+    await Future.delayed(Duration(milliseconds: 80));
     await HapticFeedback.lightImpact();
   }
 }

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create New Circle | Adrian Messages</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#233141",
+              "outline": "#767683",
+              "primary-fixed-dim": "#bac8dc",
+              "secondary-container": "#c2dcff",
+              "on-tertiary-container": "#00a7bb",
+              "on-secondary-fixed": "#001d36",
+              "tertiary": "#001f24",
+              "on-primary-container": "#8b99ac",
+              "tertiary-container": "#00363d",
+              "surface-container-low": "#f3f4f5",
+              "background": "#f8f9fa",
+              "secondary-fixed-dim": "#afc9ea",
+              "surface-variant": "#e1e3e4",
+              "error": "#ba1a1a",
+              "surface-container-high": "#e7e8e9",
+              "on-background": "#191c1d",
+              "inverse-on-surface": "#f0f1f2",
+              "primary": "#0e1c2b",
+              "on-error": "#ffffff",
+              "secondary": "#47607e",
+              "outline-variant": "#c6c5d4",
+              "inverse-primary": "#bac8dc",
+              "on-tertiary-fixed-variant": "#004f58",
+              "on-surface-variant": "#454652",
+              "error-container": "#ffdad6",
+              "surface-container": "#edeeef",
+              "surface-bright": "#f8f9fa",
+              "primary-fixed": "#d6e4f9",
+              "on-secondary-container": "#48617e",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#3a4859",
+              "surface": "#f8f9fa",
+              "surface-tint": "#525f71",
+              "surface-container-highest": "#e1e3e4",
+              "surface-dim": "#d9dadb",
+              "on-surface": "#191c1d",
+              "inverse-surface": "#2e3132",
+              "on-secondary-fixed-variant": "#2f4865",
+              "on-primary-fixed": "#0f1c2c",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#00daf3",
+              "secondary-fixed": "#d1e4ff",
+              "tertiary-fixed": "#9cf0ff",
+              "on-tertiary-fixed": "#001f24",
+              "cta-obsidian": "#1A237E"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px", "ROUND_EIGHT": "0.5rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background antialiased overflow-hidden">
+<!-- SideNavBar (Predicted Component) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 h-screen w-64 border-r-0 z-50 font-manrope">
+<div class="px-8 mb-12">
+<h1 class="text-xl font-black text-[#1A237E]">Adrian</h1>
+<p class="font-manrope text-[10px] font-semibold uppercase tracking-widest text-slate-500 mt-1">Intelligent Correspondent</p>
+</div>
+<nav class="flex flex-col flex-1">
+<button class="flex items-center gap-4 px-8 py-4 text-slate-500 dark:text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all active:translate-x-1 duration-300">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-manrope text-sm font-semibold uppercase tracking-widest">Chats</span>
+</button>
+<button class="flex items-center gap-4 px-8 py-4 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm active:translate-x-1 duration-300">
+<span class="material-symbols-outlined">group</span>
+<span class="font-manrope text-sm font-semibold uppercase tracking-widest">Contacts</span>
+</button>
+<button class="flex items-center gap-4 px-8 py-4 text-slate-500 dark:text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all active:translate-x-1 duration-300">
+<span class="material-symbols-outlined">call</span>
+<span class="font-manrope text-sm font-semibold uppercase tracking-widest">Calls</span>
+</button>
+<button class="flex items-center gap-4 px-8 py-4 text-slate-500 dark:text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all active:translate-x-1 duration-300">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-manrope text-sm font-semibold uppercase tracking-widest">Settings</span>
+</button>
+</nav>
+<div class="px-8 mt-auto">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfhaKPFmzi8QYszbz0dEpf3l6NbG_yOagjFsMGS1TMq0VWbiuMxACInknej2ivTXy5H5pigu5JbXHkNUeMVYGenWMKVAT4qG7CCth2IuIEzv2mEYrWd1tzqbr4B6nN40m-9e214mn-e_ZXanqXpBLmm5zDHJYJa4TEZG28bVPULQ72TCSyosOa11SGaxjra7y-gopsBKkBFyy9MZ8qPlcUDnnQoATgV369avhJo0mpc2HGX_x4YXH98l_-hplDhK88XyJwvjqhR92Z"/>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 h-screen overflow-y-auto bg-background-light dark:bg-background-dark relative">
+<!-- Header Section -->
+<header class="glass-header sticky top-0 z-40 px-10 py-8 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors active:opacity-50">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-headline text-2xl font-extrabold tracking-tight text-primary font-display font-bold text-[#1A237E] dark:text-indigo-400">Create New Circle</h1>
+</div>
+<button class="bg-primary text-white px-8 py-3 rounded-lg font-display font-bold text-sm shadow-[0_12px_32px_rgba(26,35,126,0.1)] hover:opacity-90 active:scale-95 transition-all">
+                Create Circle
+            </button>
+</header>
+<div class="max-w-5xl mx-auto px-10 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Identity -->
+<section class="lg:col-span-5 space-y-10">
+<div class="space-y-6">
+<label class="block">
+<span class="text-xs font-bold uppercase tracking-widest text-outline mb-2 block">Circle Identity</span>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-none rounded-ROUND_EIGHT px-6 py-4 text-lg font-headline font-semibold focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all placeholder:text-outline-variant" placeholder="e.g. The Strategic Boardroom" type="text"/>
+</div>
+</label>
+<div class="flex flex-col items-center justify-center p-10 bg-surface-container rounded-ROUND_EIGHT border-2 border-dashed border-outline-variant group hover:border-primary/30 transition-colors cursor-pointer">
+<div class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center mb-4 overflow-hidden relative shadow-inner">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:scale-110 transition-transform" data-icon="add_a_photo">add_a_photo</span>
+<img class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity" data-alt="abstract artistic architectural photography with minimalist lines and soft shadows in monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2qwFORMzC1vR3LpwbFw1df1EOeBrFQthYUn0vp1OXTKWa4ox8rQgJMdhvCmysa5u7LWwdc7PIrdc9_h_Ao2JZa4SWhhqiSP6Biitrxg8g1aj0xHrQjzuf5h_PLZfrErvRMWbLcFJLo3sqZ_ZLDAzLG_wDFEyaYNFQpcD7e2YR2VoSjPOF5C17wb1lfxNRSLz6C4paE4UusbJbifAnTy8VvpChmtxS4B_GCJt6tA8FtQbnu0GKyfnnE4od_LNlpWhw9Vbb38dxscV2"/>
+</div>
+<p class="text-sm font-semibold text-primary">Upload Circle Avatar</p>
+<p class="text-xs text-outline mt-1">Recommended: 400x400px</p>
+</div>
+</div>
+<div class="p-6 bg-primary-container text-on-primary-container rounded-ROUND_EIGHT space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="verified_user">verified_user</span>
+<div>
+<h3 class="font-bold text-sm text-white">Encrypted Excellence</h3>
+<p class="text-xs leading-relaxed opacity-80">Every Circle in Adrian is end-to-end encrypted. Your high-level discussions remain strictly private within this elite digital environment.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Membership -->
+<section class="lg:col-span-7 space-y-8">
+<div>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xs font-bold uppercase tracking-widest text-outline">Select Contacts</h2>
+<span class="text-xs font-medium text-primary bg-secondary-fixed px-3 py-1 rounded-full">0 Selected</span>
+</div>
+<!-- Search Field -->
+<div class="relative mb-8">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-12 pr-6 py-3 text-sm focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Search elite contacts..." type="text"/>
+</div>
+<!-- Contact List -->
+<div class="space-y-2 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+<!-- Contact Item 1 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-ROUND_EIGHT hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="headshot of a sophisticated man in a dark suit with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC17a5AfS45jenm6-547n6l3-GySC5Ye65zd5qzLn9x2rQnwT4pLNAXowfCgctp45tgl_Caw90zmGyL6ktGy7siC0EEt8e6vn_AXzo4Y4TUo4HRXYhFVRAYGFB5Y9pA7jVV47HLG7bID9at-NrGBCNZClqDIwdz_67odChk9Y2NEMLXO9zZ3JNYJyuuTQ_aiOT-GYRqyEiSLIINQ3vc9fpmaBc8sGZc5kusGJUthRq3QmCDUBV9ISykm26FMEDpQ-ZY9M6Pdhd9hYZh"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-tertiary-fixed-dim border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-primary">Alexander Sterling</h4>
+<p class="text-xs text-outline">Chief Design Officer</p>
+</div>
+</div>
+<div class="w-6 h-6 border-2 border-outline-variant rounded-full flex items-center justify-center group-hover:border-primary transition-all">
+<span class="material-symbols-outlined text-transparent text-sm" data-icon="check">check</span>
+</div>
+</div>
+<!-- Contact Item 2 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-ROUND_EIGHT hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a woman with a confident expression in a bright professional setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK591_vaIQQm06wTudkffgHI8xpEr4at4lgsFsKhp_V_9Q8Wow5I2xQqOCgD4pF9ai3-wZyKz72x5j6lcJ6dYyg3DJqWmHAXaF-DyJpUxYuL5tD-xIWYYwPRbjzPPgZ7avCFiOT8wnPTTzquX0nhvQLwP2AoDGeeVxgecH8OgI84F2CC0FysHRTZejD2AA5sqS8JVEwbqdVtIR3O6WZ3uCoJ0A3IckBfxJrAemZvm46mFvceAlanClmPhsCznuwy54Cr5uoxSe_dwP"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-tertiary-fixed-dim border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-primary">Elena Rodriguez</h4>
+<p class="text-xs text-outline">Executive Strategist</p>
+</div>
+</div>
+<div class="w-6 h-6 border-2 border-outline-variant rounded-full flex items-center justify-center group-hover:border-primary transition-all">
+<span class="material-symbols-outlined text-transparent text-sm" data-icon="check">check</span>
+</div>
+</div>
+<!-- Contact Item 3 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-ROUND_EIGHT hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="casual professional headshot of a person with glasses in a minimalist office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBywhEmrqjCFXXCNWht1SPpVHF_2pMYSZIat2jatKiqBmp0xemYofMmbF5Cur3hiujhzNuLHp7k4GzS5Np6aUot0fTkI1ZwdzVNNoH4MJAARLyLzrZAlgSVUo_pGYPx77l4w_wlrWx3qHJcHLlE-3BeZiqplbM-1WmCy4_XMb9qg2iVxt74kt0lzemviSBiYx8inhgiFE8OHoG8SzGUn2j38vR1b68hWpkA4t6pn57SNL4irSXsnVgqALbH4I4X6si4VVtCn3BQT4zC"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-outline-variant border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-primary">Julian Chen</h4>
+<p class="text-xs text-outline">Venture Partner</p>
+</div>
+</div>
+<div class="w-6 h-6 border-2 border-outline-variant rounded-full flex items-center justify-center group-hover:border-primary transition-all">
+<span class="material-symbols-outlined text-transparent text-sm" data-icon="check">check</span>
+</div>
+</div>
+<!-- Contact Item 4 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-ROUND_EIGHT hover:bg-surface-container-high transition-colors cursor-pointer group border-2 border-primary/10">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="professional portrait of a woman with dark hair in an elegant navy blazer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeeCjadQpxDgy5hd_5rF9ayrSoGH_RQIs2lUxRugLA3paJCn7E6JRtW24SYxkWkv6le9TuRqRS2FkmQi97c2342B-vpTU5OX0jTaK4UbTy6_dC2GWOoF4aPftrR2kf0nzInwbjohgl5Mwjr74PRMe8ckpeyMrLFWTBkeE0CizlRvfAMSwP6_p7Pw-nv8tYPottwQUkk-5Zhm6WX7vhGtj5RvR8aIA7tlXY0195T_sTEjw54e3_z-Oa35864v-EHZ_EeIAVHDzgLWPd"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-tertiary-fixed-dim border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-primary">Sofia Moretti</h4>
+<p class="text-xs text-outline">Creative Director</p>
+</div>
+</div>
+<div class="w-6 h-6 bg-[#1A237E] rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" data-icon="check">check</span>
+</div>
+</div>
+<!-- Contact Item 5 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-ROUND_EIGHT hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a man in formal attire looking towards the side with a soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANMporH2YQgllJKcBH0dNzOTfo0-bMCOXNoCjXrOkwflOB9xw3ZuOKP_shjwACRHc4ByN6GxjMl_7Z4PHBNrLzUsKeu1wkJFDtGHhC-7TXRo4OMhb0EkywjSGogwHB1LmU9RLI78WJrHsToSCUh7LlCxy1yDx2bhXk7FvYNMaGGxZoiD2RL7SUeARPpjLS5R-sbSHpiVw0b0ZT0VjveN8KQN0SPyvqZdMxvhmK6H9N0WNhJCtG8MD_FW4DYxoaj1pozCsrJS6ru1H0"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-outline-variant border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-primary">Marcus Thorne</h4>
+<p class="text-xs text-outline">Legal Counsel</p>
+</div>
+</div>
+<div class="w-6 h-6 border-2 border-outline-variant rounded-full flex items-center justify-center group-hover:border-primary transition-all">
+<span class="material-symbols-outlined text-transparent text-sm" data-icon="check">check</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Floating Confirmation (Only visible when criteria met) -->
+<div class="fixed bottom-12 left-1/2 -translate-x-1/2 glass-header px-10 py-5 rounded-full shadow-2xl flex items-center gap-8 border border-white/20 z-50">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-white" data-alt="small thumbnail of a professional woman profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdlAqjAPIYDLtR0nFTGDfvJG2IRWT8ARdy_ROh8JSphVlT_X2uLUBG0syaoCnSej7HAl86rzvoRWrYhpgt4u96i86wnwzvnGJCsEuAxZG2l9rKrgwY_Eeqvv_eDmewDBCUQRhjryPfj-WSRBdpJr2Pw9LQTc3W27XjDK4rj84jnjIszjG6TGZGXobkJAOa9a0JlGCDrzdf72VB7a2UaFKP7DcARqHbG8S2acpnP6RMBMyXgob2fRdgmjyHSUDx_ixhtfXETyyO_2uk"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-primary">+1</div>
+</div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<p class="text-sm font-semibold text-primary">"The Strategic Boardroom" <span class="text-outline font-normal">ready for Adrian launch.</span></p>
+<button class="bg-primary text-white px-6 py-2 rounded-full text-xs font-display font-bold uppercase tracking-wider hover:shadow-lg transition-all active:scale-95">
+                Finalize
+            </button>
+</div>
+</main>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e1e3e4;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #767683;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages | Digital Will &amp; Data Legacy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2f4865",
+              "on-secondary-container": "#48617e",
+              "inverse-on-surface": "#f0f1f2",
+              "primary": "#0e1c2b",
+              "on-error-container": "#93000a",
+              "on-background": "#191c1d",
+              "on-secondary-fixed": "#001d36",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#bac8dc",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "surface-tint": "#525f71",
+              "tertiary-fixed": "#9cf0ff",
+              "surface-bright": "#f8f9fa",
+              "surface-variant": "#e1e3e4",
+              "on-surface-variant": "#454652",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#c2dcff",
+              "primary-container": "#233141",
+              "surface-container-high": "#e7e8e9",
+              "surface": "#f8f9fa",
+              "on-tertiary-container": "#00a7bb",
+              "on-primary-container": "#8b99ac",
+              "error": "#ba1a1a",
+              "inverse-primary": "#bac8dc",
+              "outline": "#767683",
+              "on-primary-fixed-variant": "#3a4859",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#d1e4ff",
+              "primary-fixed": "#d6e4f9",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#afc9ea",
+              "outline-variant": "#c6c5d4",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#006775",
+              "surface-container-highest": "#e1e3e4",
+              "surface-container": "#edeeef",
+              "background": "#f8f9fa",
+              "on-tertiary-fixed": "#001f24",
+              "secondary": "#47607e",
+              "tertiary-container": "#00363d",
+              "on-primary-fixed": "#0f1c2c",
+              "tertiary": "#001f24",
+              "on-surface": "#191c1d",
+              "on-tertiary-fixed-variant": "#004f58"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(248, 249, 250, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%);
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f9fa;
+      }
+      h1, h2, h3 {
+        font-family: 'Manrope', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+<!-- TopNavBar Execution -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-sm shadow-slate-200/50">
+<div class="flex justify-between items-center px-6 py-3 w-full">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-slate-900 tracking-tight font-headline">Adrian Messages</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-900 font-bold border-b-2 border-slate-900 py-1 font-manrope" href="#">Inbox</a>
+<a class="text-slate-500 font-medium hover:bg-slate-100 transition-colors px-3 py-1 rounded-lg font-manrope" href="#">Calendar</a>
+<a class="text-slate-500 font-medium hover:bg-slate-100 transition-colors px-3 py-1 rounded-lg font-manrope" href="#">Tasks</a>
+<a class="text-slate-500 font-medium hover:bg-slate-100 transition-colors px-3 py-1 rounded-lg font-manrope" href="#">Files</a>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-1 focus:ring-primary/20" placeholder="Search secure vault..." type="text"/>
+</div>
+<button class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-900">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile avatar" data-alt="professional portrait of a middle-aged man with a calm expression, soft studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1vwI6n-XB3RclSfMDKQPgffynq6fg5jnYwvqGudcxdCieIQGRjx86S-Woutf6syw8YWcN7NwSQyEsILHQ-nQHNnEf0siWxBXWy7wCKAvLFAUDh_evzP0d_1c9vTenoagDR_E19ZXkY4ASxTUT-csFuSYVBEO9sBUU0OeITAkvtFIkHa0mS7nrTZiF_Whbsv94A6ljkKynPcbJnvg-FhdRlMgbJ0b46X5i9QUOnaVIOLInt9AQrSbHA93YsptOvPgcUujoSGCPuNqQ"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Hidden on small, visible on large) -->
+<aside class="fixed left-0 top-0 hidden lg:flex flex-col h-screen w-64 bg-slate-50 dark:bg-slate-950 p-4 space-y-2 z-40 pt-20">
+<div class="mb-8 px-2">
+<h2 class="text-lg font-black tracking-tighter text-slate-900 font-headline uppercase">Adrian</h2>
+<p class="text-xs text-on-surface-variant font-medium">Productivity Suite</p>
+</div>
+<button class="primary-gradient text-white w-full py-3 rounded-xl font-bold flex items-center justify-center gap-2 mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>New Message</span>
+</button>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 p-3 bg-white text-slate-900 shadow-sm rounded-lg font-bold transition-all duration-200" href="#">
+<span class="material-symbols-outlined">chat_bubble</span> Inbox
+            </a>
+<a class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">calendar_today</span> Calendar
+            </a>
+<a class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">check_circle</span> Tasks
+            </a>
+<a class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">folder_open</span> Files
+            </a>
+<a class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">contacts</span> Contacts
+            </a>
+</nav>
+<div class="mt-auto pt-4 space-y-1">
+<a class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">help_outline</span> Help
+            </a>
+<a class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">archive</span> Archive
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-24 px-6 pb-12">
+<div class="max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-10">
+<h1 class="text-4xl font-extrabold text-primary tracking-tight mb-2">Digital Legacy Vault</h1>
+<p class="text-on-surface-variant max-w-2xl font-body">Manage your digital inheritance with absolute privacy. Secure your documents, schedule messages for the future, and define your legacy contacts.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Status & Release Trigger (Large Card) -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/10 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 p-8">
+<span class="flex items-center gap-2 px-3 py-1 bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim rounded-full text-xs font-bold uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+                            Active Monitoring
+                        </span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-primary mb-4">Inactivity Release Trigger</h3>
+<div class="space-y-6">
+<div class="flex items-end gap-2">
+<span class="text-6xl font-black text-primary leading-none">180</span>
+<span class="text-xl font-medium text-on-surface-variant pb-1">Days</span>
+</div>
+<p class="text-sm text-on-surface-variant max-w-sm">After 180 days of no login activity, your selected legacy contacts will be granted access to your encrypted vault.</p>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-surface-container">
+<button class="text-primary font-bold flex items-center gap-2 hover:translate-x-1 transition-transform">
+                            Configure Safety Protocol <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Legacy Contacts Card -->
+<div class="bg-surface-container rounded-xl p-6 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-white p-3 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary">group</span>
+</div>
+<button class="p-2 hover:bg-white rounded-lg transition-colors">
+<span class="material-symbols-outlined text-outline">add</span>
+</button>
+</div>
+<h3 class="font-bold text-primary mb-4">Legacy Contacts</h3>
+<div class="space-y-4 flex-grow">
+<div class="flex items-center gap-3">
+<img alt="Contact" class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a woman with glasses, professional lighting, soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwZa9BYWw1Wy2t8B0RPyrNQP4gGUuy9jbDP2GKvEJ50XABQJoImI52K2IRowl8XewSfQIFCYBYKLZgBqCxzvUwU9xfRS7tzJVkmkjVxft-T1KVYrxKdGDKC_VQdV3MCiIV0qEnX6iEl6h5gRYztml9wB9M8t3ZeXpwaCom_HU_LESXr3xor3JO2dz83ycPnRH0_rsNfJF2raf8nVDe6UgeSvpNSbSDkjbKxBTW3Y5x-pz0HK-jRm5sYcVi9pPCRQC3Tj6B6d3cdEpf"/>
+<div>
+<p class="text-sm font-bold text-primary leading-none">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant">Primary Executrix</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<img alt="Contact" class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a man with a beard, natural daylight, looking directly at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ6nXTzCzLUztbw2vRLXuhwbADHJii4otFN_puMSDrvyKeN0-QeHit3_BYZ555iW0D3O6dqLscdrK37I7OHWLJgMyQr_qIlxCCmC08CjnPrQeL_7v_kb-NKjRUCBs1vAWOtpPGLHq6yOpDMitqKmW08nhc5eBc5ayhKlNQGFH9rCI-7dpHz0LbCjEV7riZ-ntHUSYgPVYiNEyfkarP00PrgftjqRSmgJ_FG9qAT28T21E5-ZU-L8yNDuG_WrL8q4Bskw5lABAtvdxG"/>
+<div>
+<p class="text-sm font-bold text-primary leading-none">Marcus Thorne</p>
+<p class="text-xs text-on-surface-variant">Alternate Trustee</p>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest mb-2">Verification Status</p>
+<div class="w-full bg-white h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed-dim w-[85%] h-full"></div>
+</div>
+</div>
+</div>
+<!-- Encryption Key Card -->
+<div class="bg-primary-container text-on-primary-container rounded-xl p-6 flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">encrypted</span>
+<div>
+<h3 class="font-bold text-white text-lg leading-tight mb-2">Vault Encryption</h3>
+<p class="text-xs text-on-primary-container/80 leading-relaxed">Your data is secured using AES-256-GCM. Only your unique hardware key can decrypt the master container.</p>
+</div>
+<div class="mt-6 py-2 px-3 bg-white/10 rounded-lg text-[10px] font-mono break-all opacity-60">
+                        8f2k-991L-qp02-mN81-Xv22
+                    </div>
+</div>
+<!-- Document Vault Section (Full Width Row) -->
+<div class="md:col-span-3 lg:col-span-4 mt-4">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-primary">Encrypted Document Vault</h2>
+<button class="bg-surface-container-high px-4 py-2 rounded-lg text-sm font-bold hover:bg-surface-variant transition-colors">View All Files</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- File Card 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="material-symbols-outlined text-outline text-lg">more_vert</span>
+</div>
+<p class="font-bold text-primary text-sm mb-1">Final_Will_2024.pdf</p>
+<p class="text-xs text-on-surface-variant">Last updated Oct 12, 2023</p>
+</div>
+<!-- File Card 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">key</span>
+<span class="material-symbols-outlined text-outline text-lg">more_vert</span>
+</div>
+<p class="font-bold text-primary text-sm mb-1">Crypto_Wallet_Seeds.enc</p>
+<p class="text-xs text-on-surface-variant">2.4 MB • Encrypted</p>
+</div>
+<!-- File Card 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">folder_shared</span>
+<span class="material-symbols-outlined text-outline text-lg">more_vert</span>
+</div>
+<p class="font-bold text-primary text-sm mb-1">Property_Deeds.zip</p>
+<p class="text-xs text-on-surface-variant">4 documents • 12.8 MB</p>
+</div>
+<!-- Add New File Card -->
+<div class="border-2 border-dashed border-outline-variant/30 rounded-xl flex flex-col items-center justify-center p-5 hover:border-primary/40 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors mb-2">upload_file</span>
+<span class="text-xs font-bold text-outline group-hover:text-primary transition-colors">Add to Vault</span>
+</div>
+</div>
+</div>
+<!-- Letters to the Future (Asymmetric Hero-style Card) -->
+<div class="md:col-span-3 lg:col-span-4 mt-8 bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row min-h-[400px]">
+<div class="md:w-1/2 p-10 flex flex-col justify-center">
+<span class="text-tertiary-fixed-dim font-bold uppercase tracking-[0.2em] text-xs mb-4">Delayed Transmission</span>
+<h2 class="text-4xl font-extrabold text-primary mb-6 leading-tight">Letters to the Future</h2>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">Schedule messages to be delivered to your loved ones on specific future dates—birthdays, anniversaries, or milestones you might miss.</p>
+<div class="flex gap-4">
+<button class="primary-gradient text-white px-8 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity">Schedule New Message</button>
+<button class="bg-surface-container px-8 py-3 rounded-xl font-bold text-primary hover:bg-surface-container-high transition-colors">Manage Queue (4)</button>
+</div>
+</div>
+<div class="md:w-1/2 relative">
+<img alt="Writing letters" class="w-full h-full object-cover" data-alt="atmospheric shot of a classic fountain pen resting on handmade paper, warm low-key lighting, soft shadows, intellectual and timeless mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnx_4OP3ye9wlE7uChR5dvOK9MQvtSUGUmdXdJFE2MkzMWJBjqBGfBoYdvK4lr_Tn4UJL6xisPcZDKQdHBYUpg5VcjGXacPVOe02d4q4_hLtO5qacnhWLp7BcFrw68urgYuHR_-1j0aeSOZDImf4FrEIFnxiBqWPcVSVcok0JZCl-9CDahZeKahAPCI1PnMy2k7RqDk268PSM51Mbg4l9qjHo5wxHeeow9AN-D-lMTg-7qv9Gw0Mi2-WQ_xOk9oNPtiaQa5gj3U74X"/>
+<div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent"></div>
+<!-- Floating scheduled item preview -->
+<div class="absolute bottom-10 left-10 right-10 glass-nav p-4 rounded-xl shadow-2xl border border-white/40">
+<div class="flex items-center gap-4">
+<div class="bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">event</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary-container uppercase tracking-wider">Scheduled for June 12, 2035</p>
+<p class="text-sm font-bold text-primary italic">"To my daughter, on her graduation day..."</p>
+</div>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 glass-nav rounded-full px-6 py-3 flex items-center gap-8 shadow-2xl z-50 border border-white/20">
+<button class="text-slate-900 flex flex-col items-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="text-[10px] font-bold">Inbox</span>
+</button>
+<button class="text-slate-500 flex flex-col items-center">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="text-[10px] font-medium">Vault</span>
+</button>
+<button class="bg-primary text-white p-3 rounded-full -mt-12 shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="text-slate-500 flex flex-col items-center">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="text-[10px] font-medium">Letters</span>
+</button>
+<button class="text-slate-500 flex flex-col items-center">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</nav>
+</body></html>

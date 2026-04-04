@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages - Community &amp; Public Channels</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2f4865",
+              "on-secondary-container": "#48617e",
+              "inverse-on-surface": "#f0f1f2",
+              "primary": "#0e1c2b",
+              "on-error-container": "#93000a",
+              "on-background": "#191c1d",
+              "on-secondary-fixed": "#001d36",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#bac8dc",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "surface-tint": "#525f71",
+              "tertiary-fixed": "#9cf0ff",
+              "surface-bright": "#f8f9fa",
+              "surface-variant": "#e1e3e4",
+              "on-surface-variant": "#454652",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#c2dcff",
+              "primary-container": "#233141",
+              "surface-container-high": "#e7e8e9",
+              "surface": "#f8f9fa",
+              "on-tertiary-container": "#00a7bb",
+              "on-primary-container": "#8b99ac",
+              "error": "#ba1a1a",
+              "inverse-primary": "#bac8dc",
+              "outline": "#767683",
+              "on-primary-fixed-variant": "#3a4859",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#d1e4ff",
+              "primary-fixed": "#d6e4f9",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#afc9ea",
+              "outline-variant": "#c6c5d4",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#00daf3",
+              "surface-container-highest": "#e1e3e4",
+              "surface-container": "#edeeef",
+              "background": "#f8f9fa",
+              "on-tertiary-fixed": "#001f24",
+              "secondary": "#47607e",
+              "tertiary-container": "#00363d",
+              "on-primary-fixed": "#0f1c2c",
+              "tertiary": "#001f24",
+              "on-surface": "#191c1d",
+              "on-tertiary-fixed-variant": "#004f58"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface flex min-h-screen">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r-0 bg-slate-50 dark:bg-slate-950 sticky top-0 z-40 p-4 space-y-2">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+</div>
+<div>
+<h1 class="text-lg font-black tracking-tighter text-slate-900 leading-tight">Adrian</h1>
+<p class="text-xs font-medium text-slate-500">Productivity Suite</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-manrope font-semibold py-3 px-4 rounded-xl mb-6 flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+            New Message
+        </button>
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: Explore/Community Logic -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span>Inbox</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="public" style="font-variation-settings: 'FILL' 1;">public</span>
+<span>Explore</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+<span>Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span>Files</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="contacts">contacts</span>
+<span>Contacts</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-slate-200/50 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Help</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span>Archive</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col relative min-w-0">
+<!-- TopNavBar (Authority: JSON) -->
+<header class="fixed top-0 w-full z-50 md:relative md:z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-6 py-3 flex justify-between items-center shadow-sm shadow-slate-200/50 no-border">
+<div class="flex items-center gap-4">
+<div class="md:hidden w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white font-headline tracking-tight">Community Hub</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-slate-100/50 dark:bg-slate-800/50 px-4 py-1.5 rounded-full border border-transparent focus-within:bg-white focus-within:border-slate-200 transition-all">
+<span class="material-symbols-outlined text-slate-400 text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 font-medium" placeholder="Discover networks..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full border border-slate-200" data-alt="Close up portrait of a professional woman in her 30s with a friendly expression and minimalist jewelry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTyUke6mo6sDWhEeYzLsHVvacx9sSKQTZFeMVum9oDh9r4YafHiNHUTd_CUoXyPPZRTutXjnYuaD_Qs0AJhzZ9b_6Qy2AwuHn2Lwvlbso51xd6QBCjVnkrrkH0QifCDk9vrddsaROnEYEsFmrjqplf1mSASNpqjd83O_rGSQ2vcXCbbb8E9_-ZlTge9PbpTK_rn7AlXy-xbRBjsns7fY1fuxXMIfLGBNTX22qeLpcjvA4JuEP7FTBYxrRqa_8zin7yXPEJur8VZTQO"/>
+</div>
+</header>
+<!-- Page Content: Bento Grid & Discovery -->
+<div class="pt-20 md:pt-6 px-6 pb-24 max-w-7xl mx-auto w-full space-y-10">
+<!-- Hero Discovery Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+<div class="lg:col-span-8 space-y-4">
+<span class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-bold rounded-full uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+                        Trending Now
+                    </span>
+<h3 class="text-4xl md:text-5xl font-extrabold font-headline leading-tight tracking-tight text-primary">
+                        Find your professional <br/><span class="text-secondary">inner circle.</span>
+</h3>
+<p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        Secure, moderated networks for verified industry specialists. Connect, collaborate, and bridge to private channels.
+                    </p>
+</div>
+<div class="lg:col-span-4 flex justify-end">
+<div class="relative group cursor-pointer overflow-hidden rounded-3xl bg-primary-container p-1 shadow-2xl">
+<img alt="Collaborative workspace" class="w-full h-48 object-cover rounded-[1.25rem] opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A team of diverse creative professionals collaborating around a large wooden desk in a bright airy studio space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc62tYit7HZKn_qQDIKi2i2jl2pTeB_7BBnsBP4o3tyi0aW6o3gPbplaRTEWHLXD_bxKSgkfEUpWheuQozP-AeHnDZgiiEeZKSyGg781-nvG72e_umVfHSBAtNh-Z-18v0Hjk82Ri1xGDid3vyw_sSFeyk5xb-PJQmx24xAKlHwPmGPcM-61eXU2RH7GksHSSObPDBMw5tsNs7Nr0kXXqLYTWWz7sSINC8ikMKRltEwL3eg2s8y0rTq73JXBZHAW6KkyCfA1TDDfh6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
+<div class="text-white">
+<p class="text-xs font-bold opacity-75 uppercase">Featured Circle</p>
+<p class="text-lg font-bold">Fintech Strategy Hub</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Channels & Discovery Bento Grid -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h4 class="text-xl font-bold font-headline">Recommended Channels</h4>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-sm font-semibold rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors">All</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">Engineering</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">Design</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Channel Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 border border-transparent hover:border-slate-100">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+</div>
+<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded-lg text-on-surface-variant">4.2k Members</span>
+</div>
+<h5 class="text-lg font-bold mb-1">Modern Architecture Guild</h5>
+<p class="text-sm text-on-surface-variant line-clamp-2 leading-relaxed">Discussing sustainable urban design and modular living structures with verified experts.</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div class="flex -space-x-2">
+<img alt="Member" class="w-7 h-7 rounded-full border-2 border-white" data-alt="Headshot of a smiling man with a beard and glasses in professional attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6wmilVvcDviZECD9zn-Ago_hC6OmcsErLtZ9vkPFdXhCeX_UG5gxK_1Vi6koYP8AYVxARAy66jGuYN3lKsieaPCN_PPrXza3gq3_845_OiAH_wWVA0WSWU1dSgRL4Lpst2lXEWzomsXecBJcEYPGwCptqzoiB_D3uo6BqeVYsp5jfRbj38vlfBG08Un9kg889RwMBZTpQeQAKPzYJKGDuWVJNENL8pw4lfyRGLGgrUnThfoFRAl1iQq1xMDTx21vKPZNA4px28zGl"/>
+<img alt="Member" class="w-7 h-7 rounded-full border-2 border-white" data-alt="Portrait of a young woman with curly hair looking directly at camera with neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEPk14eObtVV1-Scj4sfG5jhCDB8R7jBGEOqJ4ELrPTY1wruSus08W6CnVNM8lV88wIkDL4X_oBZxkznRDnUtrVr958alfZ6uY6tEf1-VV5oha1SL9-ZiyXNVCaiUjMxEOpT7mhUt_miCu65D0B2tKtkc_RmvTKvDbrLjtm53tyboaN_RS_DDxj_hVLo98au4dLHO9RuKojMkMoaVF_ooiRu3UQyknszF_8_YluBbfI_y_9QKcQsHZe4tLrtHV3mOKIjKH2xEPZhdt"/>
+<div class="w-7 h-7 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[8px] font-bold">+12</div>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Explore <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Channel Card 2 (Verified Focus) -->
+<div class="bg-primary text-white p-6 rounded-3xl flex flex-col justify-between shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-tertiary-fixed opacity-40 text-6xl" data-icon="verified_user">verified_user</span>
+</div>
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold uppercase mb-4">
+<span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                Specialists Only
+                            </div>
+<h5 class="text-lg font-bold mb-1">Executive Leadership 2024</h5>
+<p class="text-sm opacity-70 leading-relaxed">Closed network for C-Suite strategy and organizational psychology moderated threads.</p>
+</div>
+<div class="relative z-10 mt-6">
+<button class="w-full bg-white text-primary font-bold py-3 rounded-2xl hover:bg-secondary-container transition-colors text-sm">
+                                Apply for Access
+                            </button>
+</div>
+</div>
+<!-- Channel Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 border border-transparent hover:border-slate-100">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+</div>
+<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded-lg text-on-surface-variant">890 Members</span>
+</div>
+<h5 class="text-lg font-bold mb-1">BioTech Innovators</h5>
+<p class="text-sm text-on-surface-variant line-clamp-2 leading-relaxed">Peer-reviewed findings and collaboration on health-tech startups.</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div class="flex -space-x-2">
+<img alt="Member" class="w-7 h-7 rounded-full border-2 border-white" data-alt="Professional man in glasses and button down shirt in front of a neutral office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZV6ccZWWZ6KPbGsXAJdFsk1D2ZX07Ko0A0sPiTfJgRNJ-FPS4fa9ZyEZd0kZhVk29W-JqX1OFy47gUOlMVeL5DLAPud-Ubdy4pywvEt9cfkVdQ8cdgH7p-eJoBD7TGCwPu7fpCXsOHdew2DIShlJJC83JaIS-Jfha7fq00D-NrPih00wPBWuY3aMS6eGS3BgG1wkA3JcjFSTMJzrYghUKPgSBXbYSNGJT3xMhNY04XPzlTzAPhTl3o1GlFDvtbQBS6g-Fz0e0NST4"/>
+<img alt="Member" class="w-7 h-7 rounded-full border-2 border-white" data-alt="Confident professional woman with arms crossed in a bright studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBANkTUfpmhwYdRF2fKjc2LoLNruAzVbxQbs9BcPSOwBmXMM0csuwRAMXnGWXrIHItYnpxc2wMj-ZEWk9rHg8XcBKYQ1jA2_TfP14dJiIgcNfdBOUyMBXWVmODsqJiBZBl7rUvKseEEycog_odDFnhv0lVROzF8GditsSpVu33LnNf-cUFE6M-iC-KMXDgTh2rBCFlkddLv7SvOV2NRwgocELrXd9GFJNyD5mHK1wSHGl38Nmhj8y4l5_dnHarugXkwiOhg_GrZbjlo"/>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Explore <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Moderated Threads View & Bridge Concept -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Thread Feed (Asymmetric Wide) -->
+<div class="lg:col-span-7 space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h4 class="text-xl font-bold font-headline">Live Community Dialogue</h4>
+<div class="flex items-center gap-2 text-xs font-bold text-on-surface-variant uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+                            Real-time
+                        </div>
+</div>
+<!-- Thread Item 1 -->
+<div class="bg-surface-container-low rounded-[2rem] p-5 space-y-4 hover:bg-surface-container-lowest transition-all">
+<div class="flex gap-4">
+<img alt="Expert" class="w-12 h-12 rounded-2xl object-cover" data-alt="Modern professional woman with a stylish short haircut looking thoughtfully at her screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDst_lPx-2z3zLh4PXJkBRTazJguHsuiMgkgNJNtQeF-ej73ttgIRPsPjvxOnl9vyVWBD2Cyey7bZWwOXtBXag5_OximGkBQZRGShTYbUtzFEbJ6aKtSM8J06vriNtHq46E65buzqIUjltFwUHlC84ufV_pqXfjGe4s8L_LkA_UtZDqv9ixXCXce05Dkj06eQuTh7RaWc9xZCo8qknB8sA_4IAh_hV3FoOTPar3ez2APXFDw9_i8jnmbh35WyGnSo8PbJTuOEQNPDTO"/>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-sm">Elena Vance</span>
+<span class="px-2 py-0.5 bg-primary-container text-on-primary-container text-[10px] rounded font-bold uppercase tracking-tighter">Verified Specialist</span>
+<span class="text-xs text-on-surface-variant ml-auto">2m ago</span>
+</div>
+<p class="text-sm leading-relaxed text-on-surface">
+                                    The pivot toward decentralized cloud architecture is inevitable for privacy-first SaaS. Has anyone implemented the new hybrid layer yet?
+                                </p>
+</div>
+</div>
+<div class="flex items-center justify-between pl-16">
+<div class="flex gap-4">
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-base" data-icon="chat_bubble_outline">chat_bubble_outline</span> 24
+                                </button>
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-base" data-icon="favorite_border">favorite_border</span> 152
+                                </button>
+</div>
+<!-- Bridge Action -->
+<button class="flex items-center gap-2 px-4 py-1.5 bg-white text-primary text-xs font-bold rounded-full shadow-sm hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-base" data-icon="groups">groups</span>
+                                Request to Circle
+                            </button>
+</div>
+</div>
+<!-- Thread Item 2 -->
+<div class="bg-surface-container-low rounded-[2rem] p-5 space-y-4 hover:bg-surface-container-lowest transition-all">
+<div class="flex gap-4">
+<img alt="Expert" class="w-12 h-12 rounded-2xl object-cover" data-alt="Friendly man in his late 40s with professional demeanor, wearing a navy blue polo shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6_94lTPyY0GM7tpWQrNjDfnl41jW9gmautGTacSLA_mOFo4xLnGbiIX6K_QCwUu8I7jKD29pSq81-qLEaSgPSHQNKpMndlVlxnmrmu73ItRGmy1To6hBRPxPwDsXQdpB7icT4ZBH-F7rc7dBw6H4L9Wo3qvz5Pp6bh62ZeDKrYrA4-VRLt0vZgmaMlaZbW9B4qXAdpgH30LqoOZwFLOWj0PfLnlvG5N-u-vp9yGvPwXHa8uBZDOZ5LMzUBy3ZHOjbObuvASBEswQ9"/>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-sm">Marcus Chen</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-[10px] rounded font-bold uppercase tracking-tighter">Community Moderator</span>
+<span class="text-xs text-on-surface-variant ml-auto">15m ago</span>
+</div>
+<p class="text-sm leading-relaxed text-on-surface">
+                                    Important: We are moving the "Systemic Design" thread into a private Circle at 5 PM EST today. Please apply below to continue the deep-dive.
+                                </p>
+</div>
+</div>
+<div class="flex items-center justify-between pl-16">
+<div class="flex gap-4">
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-base" data-icon="chat_bubble_outline">chat_bubble_outline</span> 8
+                                </button>
+</div>
+<button class="flex items-center gap-2 px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-full shadow-lg hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-base" data-icon="lock_open">lock_open</span>
+                                Request Access
+                            </button>
+</div>
+</div>
+</div>
+<!-- Profile & Settings Side Panel -->
+<div class="lg:col-span-5 space-y-6">
+<h4 class="text-xl font-bold font-headline">Public Identity</h4>
+<div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm">
+<div class="flex flex-col items-center text-center space-y-3 mb-6">
+<div class="relative">
+<img alt="Profile" class="w-24 h-24 rounded-full border-4 border-surface shadow-xl" data-alt="Portrait of a professional woman with confident smile in an office setting with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgHw4qNbY2qYwqrpAuJbgES-NdcHuotYOWUGzY7OvwQvO94kt4ZwUfALm9fONGcobxH6g24bWyw1Ns_-RdAFnEoxlFmuwqhim2azQcRh7s6aQC6l5ASDKdRY93tJnnwkQKLviNLov0IcpvtkxdDNTnZD_bropY42AV8V7q2_FHfZT2QKYW7p__T0srBn7kNyagxqmp2Q1K82JJDad85YjHiVd5Kxog8mKJTaCmSwRzJwDFPeptegKrDEdcD4sMY_sLI3W8POBrDO8e"/>
+<span class="absolute bottom-1 right-1 w-6 h-6 bg-tertiary-fixed-dim border-2 border-white rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div>
+<h5 class="text-xl font-extrabold font-headline">Adrian Sterling</h5>
+<p class="text-sm text-on-surface-variant font-medium">Global Network Lead @ Adrian</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-low rounded-2xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="visibility">visibility</span>
+<span class="text-sm font-bold">Public Visibility</span>
+</div>
+<div class="w-10 h-6 bg-primary rounded-full p-1 flex justify-end">
+<div class="w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low rounded-2xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="badge">badge</span>
+<span class="text-sm font-bold">Show Specialist Badges</span>
+</div>
+<div class="w-10 h-6 bg-primary rounded-full p-1 flex justify-end">
+<div class="w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-3 rounded-2xl border-2 border-primary-container text-primary font-bold text-sm hover:bg-primary-container hover:text-on-primary-container transition-all">
+                                Edit Public Profile
+                            </button>
+</div>
+</div>
+<!-- Verified Specialist Badge Promo -->
+<div class="bg-gradient-to-br from-secondary-container to-white rounded-3xl p-6 border border-white">
+<h6 class="text-lg font-bold mb-2">Get Verified</h6>
+<p class="text-sm text-on-secondary-container leading-relaxed mb-4">
+                            Increase your network credibility and unlock restricted community threads by verifying your professional status.
+                        </p>
+<a class="inline-flex items-center gap-2 text-primary font-extrabold text-sm group" href="#">
+                            Learn more about Verification
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- Floating Dock NavBar (Mobile) -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+<nav class="glass-effect bg-white/90 shadow-2xl rounded-full px-6 py-3 flex items-center gap-8 border border-white/50">
+<a class="text-slate-500" href="#"><span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span></a>
+<a class="text-primary font-bold scale-110" href="#"><span class="material-symbols-outlined" data-icon="public" style="font-variation-settings: 'FILL' 1;">public</span></a>
+<a class="text-slate-500" href="#"><span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span></a>
+<a class="text-slate-500" href="#"><span class="material-symbols-outlined" data-icon="check_circle">check_circle</span></a>
+<a class="text-slate-500" href="#"><span class="material-symbols-outlined" data-icon="contacts">contacts</span></a>
+</nav>
+</div>
+</main>
+</body></html>

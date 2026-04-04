@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Persona Studio | Adrian</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "outline": "#767683",
+                "surface-tint": "#525f71",
+                "on-secondary-container": "#48617e",
+                "inverse-primary": "#bac8dc",
+                "secondary-fixed-dim": "#afc9ea",
+                "inverse-surface": "#2e3132",
+                "background": "#f8f9fa",
+                "primary": "#0e1c2b",
+                "error": "#ba1a1a",
+                "on-secondary-fixed-variant": "#2f4865",
+                "surface-container": "#edeeef",
+                "tertiary-fixed": "#9cf0ff",
+                "on-primary-fixed-variant": "#3a4859",
+                "tertiary": "#001f24",
+                "surface-bright": "#f8f9fa",
+                "on-primary-fixed": "#0f1c2c",
+                "error-container": "#ffdad6",
+                "on-error-container": "#93000a",
+                "tertiary-fixed-dim": "#00daf3",
+                "on-tertiary-fixed": "#001f24",
+                "surface": "#f8f9fa",
+                "surface-dim": "#d9dadb",
+                "surface-variant": "#e1e3e4",
+                "surface-container-low": "#f3f4f5",
+                "on-secondary-fixed": "#001d36",
+                "primary-fixed-dim": "#bac8dc",
+                "primary-fixed": "#d6e4f9",
+                "on-background": "#191c1d",
+                "secondary-container": "#c2dcff",
+                "on-tertiary-fixed-variant": "#004f58",
+                "on-surface-variant": "#454652",
+                "primary-container": "#233141",
+                "on-error": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "secondary": "#47607e",
+                "surface-container-lowest": "#ffffff",
+                "on-surface": "#191c1d",
+                "tertiary-container": "#00363d",
+                "on-tertiary-container": "#00a7bb",
+                "on-primary-container": "#8b99ac",
+                "on-primary": "#ffffff",
+                "surface-container-high": "#e7e8e9",
+                "secondary-fixed": "#d1e4ff",
+                "outline-variant": "#c6c5d4",
+                "inverse-on-surface": "#f0f1f2",
+                "surface-container-highest": "#e1e3e4"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%);
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: #edeeef;
+            height: 6px;
+            border-radius: 9999px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 18px;
+            width: 18px;
+            background: #0e1c2b;
+            border-radius: 50%;
+            margin-top: -6px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<header class="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm shadow-slate-900/5 px-6 py-3 flex justify-between items-center w-full max-w-full">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50 font-headline">Adrian</span>
+<div class="h-6 w-px bg-outline-variant/30 hidden md:block"></div>
+<h1 class="text-slate-900 dark:text-white font-semibold border-b-2 border-slate-900 dark:border-white font-headline px-2">AI Persona Studio</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-4">
+<button class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-surface-variant">
+<img alt="User profile avatar" data-alt="close-up portrait of a professional man in a clean studio setting with soft natural light and a neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1PXFD0j07QwJVaaM9r-57hrndLpbwoFDJRlTaw-d0AYXTXG_JIeQsJpTNEvZrIPVcM9v51TmThdU91-mrin0wQB4LdawqbuCqfDAZxJLZX6NwFP868-Hc0LuDgDyl7qqb7YTwUECO1trL8xvGaW74bnhcziuEqYj4nHORnWGVlWwSc6DpIoncsI-Iz-oWMeTl7ZZ47rB3mapTfCIb3khjQogMrP0B6hwtk8y3_kiZVzADR_TGUcEoevSCShqt1NSqUHBp0066j-Jm"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 hidden lg:flex flex-col border-r-0 bg-slate-100 dark:bg-slate-900 flex flex-col gap-2 p-4">
+<div class="mb-8 px-2">
+<p class="font-bold text-slate-900 dark:text-white font-headline">Adrian Enterprise</p>
+<p class="text-xs text-on-surface-variant opacity-70">Secure Workspace</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center gap-3 px-3 py-2 rounded-lg hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-label text-sm">Messages</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center gap-3 px-3 py-2 rounded-lg hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined" data-icon="gpp_maybe">gpp_maybe</span>
+<span class="font-label text-sm">Audit</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center gap-3 px-3 py-2 rounded-lg hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_download">cloud_download</span>
+<span class="font-label text-sm">Data Vault</span>
+</a>
+<a class="bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm rounded-lg flex items-center gap-3 px-3 py-2 hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="font-label text-sm font-semibold">AI Builder</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center gap-3 px-3 py-2 rounded-lg hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label text-sm">Analytics</span>
+</a>
+</nav>
+<button class="mt-auto mb-4 primary-gradient text-white py-3 px-4 rounded-xl flex items-center justify-center gap-2 font-semibold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span class="text-sm">New Secure Chat</span>
+</button>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-4 py-8 md:px-10 md:py-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-10">
+<h2 class="text-3xl font-extrabold font-headline tracking-tight mb-2">Persona Configuration</h2>
+<p class="text-on-surface-variant max-w-2xl">Refine your digital concierge's linguistic fingerprint. These adjustments determine how Adrian represents your enterprise across all secure channels.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Configuration Section -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Personality Sliders Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/5">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+<h3 class="font-headline font-bold text-lg">Identity Core</h3>
+</div>
+<div class="space-y-10">
+<!-- Tone Slider -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<label class="text-sm font-semibold text-on-surface uppercase tracking-wider">Tone Spectrum</label>
+<span class="text-xs font-bold px-2 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-md">Balanced</span>
+</div>
+<input class="w-full h-2 rounded-lg appearance-none cursor-pointer" max="100" min="0" type="range" value="50"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">
+<span>Highly Professional</span>
+<span>Casual &amp; Friendly</span>
+</div>
+</div>
+<!-- Response Length Slider -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<label class="text-sm font-semibold text-on-surface uppercase tracking-wider">Response Length</label>
+<span class="text-xs font-bold px-2 py-1 bg-surface-container-high text-on-surface rounded-md">Concise</span>
+</div>
+<input class="w-full h-2 rounded-lg appearance-none cursor-pointer" max="100" min="0" type="range" value="30"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">
+<span>Brief / Bulleted</span>
+<span>Expansive / Narrative</span>
+</div>
+</div>
+<!-- Detail Level Slider -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<label class="text-sm font-semibold text-on-surface uppercase tracking-wider">Detail Granularity</label>
+<span class="text-xs font-bold px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-md">High Precision</span>
+</div>
+<input class="w-full h-2 rounded-lg appearance-none cursor-pointer" max="100" min="0" type="range" value="85"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">
+<span>Big Picture</span>
+<span>Technical Deep-Dive</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Specialized Knowledge Grid -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/5">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="psychology">psychology</span>
+<h3 class="font-headline font-bold text-lg">Specialized Knowledge</h3>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-primary ring-2 ring-primary/10 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="balance">balance</span>
+<p class="text-sm font-bold block">Legal &amp; Compliance</p>
+<span class="text-[10px] text-primary/60 font-bold uppercase">Active</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent hover:border-outline-variant/30 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-2" data-icon="code">code</span>
+<p class="text-sm font-bold block">Technical Systems</p>
+<span class="text-[10px] text-on-surface-variant/40 font-bold uppercase">Inactive</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent hover:border-outline-variant/30 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-2" data-icon="palette">palette</span>
+<p class="text-sm font-bold block">Creative Strategy</p>
+<span class="text-[10px] text-on-surface-variant/40 font-bold uppercase">Inactive</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-primary ring-2 ring-primary/10 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="insights">insights</span>
+<p class="text-sm font-bold block">Market Data</p>
+<span class="text-[10px] text-primary/60 font-bold uppercase">Active</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent hover:border-outline-variant/30 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-2" data-icon="shield_health">shield</span>
+<p class="text-sm font-bold block">Cybersecurity</p>
+<span class="text-[10px] text-on-surface-variant/40 font-bold uppercase">Inactive</span>
+</div>
+<button class="p-4 rounded-xl border-2 border-dashed border-outline-variant/40 flex flex-col items-center justify-center gap-1 hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant/60 group-hover:scale-110 duration-200" data-icon="add_circle">add_circle</span>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant/60">Import Domain</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Preview Column -->
+<div class="lg:col-span-5 sticky top-24">
+<div class="bg-primary-container rounded-2xl p-1 shadow-2xl overflow-hidden">
+<div class="bg-surface-container-lowest rounded-[1.25rem] h-full flex flex-col">
+<!-- Header -->
+<div class="glass-panel px-6 py-4 flex items-center justify-between border-b border-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full primary-gradient flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<p class="text-sm font-bold font-headline">Adrian Preview</p>
+<p class="text-[10px] text-tertiary-fixed-dim font-bold tracking-widest uppercase">Live Modeling</p>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_8px_rgba(0,218,243,0.8)]"></span>
+</div>
+<!-- Chat Feed -->
+<div class="p-6 space-y-6 flex-1 min-h-[400px]">
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-surface-container-highest text-on-surface p-4 rounded-md rounded-bl-sm text-sm leading-relaxed">
+                                            "How should we handle the disclosure of the Q3 audit findings to the stakeholders?"
+                                        </div>
+<span class="text-[10px] mt-2 font-bold text-on-surface-variant/60">You • Just now</span>
+</div>
+<div class="flex flex-col items-end w-full">
+<div class="max-w-[85%] bg-primary text-white p-4 rounded-md rounded-br-sm text-sm leading-relaxed shadow-lg">
+                                            "Under current <span class="text-tertiary-fixed font-semibold">compliance frameworks</span> (Section 4.2), we are obligated to disclose these findings within 48 hours. I recommend a prioritized report focusing on the data vault encryption status. Should I draft a concise summary with technical appendices?"
+                                        </div>
+<div class="flex items-center gap-2 mt-2">
+<span class="text-[10px] font-bold text-on-surface-variant/60">Adrian • Analyzing tone...</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant/40" data-icon="done_all">done_all</span>
+</div>
+</div>
+<!-- Context Card -->
+<div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant/10">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2">Persona Breakdown</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<p class="text-xs font-semibold">Vocabulary</p>
+<div class="h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[90%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-xs font-semibold">Empathy Level</p>
+<div class="h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[40%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="p-6 border-t border-surface-container">
+<button class="w-full primary-gradient text-white py-4 rounded-xl font-bold font-headline shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                                        Deploy Persona Changes
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Mini Info Box -->
+<div class="mt-6 flex gap-4 p-4 rounded-xl bg-tertiary-container/30 border border-on-tertiary-container/10">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="info">info</span>
+<p class="text-xs text-on-tertiary-container/80 leading-relaxed font-medium">
+                                Changes are applied globally across all integrated Slack, Teams, and Webhook endpoints instantly.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center pb-8 pt-4 lg:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl z-40">
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full px-6 py-3 bg-white/80 dark:bg-slate-900/80 shadow-2xl shadow-slate-900/10 flex justify-around items-center">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-1">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-1">Audit</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-slate-900 dark:bg-slate-50 text-white dark:text-slate-900 rounded-full w-12 h-12 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-1">Insights</span>
+</a>
+</div>
+</nav>
+</body></html>

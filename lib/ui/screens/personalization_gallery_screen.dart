@@ -20,11 +20,11 @@ class _State extends State<PersonalizationGalleryScreen> {
       activeRoute: LiquidRouter.personalization,
       title: 'Personalization',
       child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // Live preview
-            _SHead('Preview'),
+            _sectionHead('Preview'),
             const SizedBox(height: 12),
             Container(
                 height: 200,
@@ -37,7 +37,7 @@ class _State extends State<PersonalizationGalleryScreen> {
                     child: Stack(children: [
                       if (_wallpaper == 1)
                         Container(
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [
                           Color(0xFF060D1F),
                           Color(0xFF0E1733),
@@ -45,7 +45,7 @@ class _State extends State<PersonalizationGalleryScreen> {
                         ]))),
                       if (_wallpaper == 2)
                         Container(
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                                 gradient: RadialGradient(colors: [
                           Color(0xFF1A0038),
                           Color(0xFF2D006E)
@@ -70,7 +70,7 @@ class _State extends State<PersonalizationGalleryScreen> {
             const SizedBox(height: 24),
 
             // Theme picker
-            _SHead('Theme'),
+            _sectionHead('Theme'),
             const SizedBox(height: 12),
             Row(
                 children: ['Light', 'Dark', 'Amoled']
@@ -79,9 +79,9 @@ class _State extends State<PersonalizationGalleryScreen> {
                     .map((e) => GestureDetector(
                         onTap: () => setState(() => _theme = e.key),
                         child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 200),
-                            margin: const EdgeInsets.only(right: 10),
-                            padding: const EdgeInsets.symmetric(
+                            duration: Duration(milliseconds: 200),
+                            margin: EdgeInsets.only(right: 10),
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 18, vertical: 10),
                             decoration: BoxDecoration(
                                 color: _theme == e.key
@@ -99,7 +99,7 @@ class _State extends State<PersonalizationGalleryScreen> {
             const SizedBox(height: 24),
 
             // Bubble style
-            _SHead('Bubble Style'),
+            _sectionHead('Bubble Style'),
             const SizedBox(height: 12),
             Row(
                 children: ['Rounded', 'Square', 'Minimal']
@@ -108,9 +108,9 @@ class _State extends State<PersonalizationGalleryScreen> {
                     .map((e) => GestureDetector(
                         onTap: () => setState(() => _bubble = e.key),
                         child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 200),
-                            margin: const EdgeInsets.only(right: 10),
-                            padding: const EdgeInsets.symmetric(
+                            duration: Duration(milliseconds: 200),
+                            margin: EdgeInsets.only(right: 10),
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 18, vertical: 10),
                             decoration: BoxDecoration(
                                 color: _bubble == e.key
@@ -128,7 +128,7 @@ class _State extends State<PersonalizationGalleryScreen> {
             const SizedBox(height: 24),
 
             // Wallpaper
-            _SHead('Wallpaper'),
+            _sectionHead('Wallpaper'),
             const SizedBox(height: 12),
             SizedBox(
                 height: 80,
@@ -139,7 +139,7 @@ class _State extends State<PersonalizationGalleryScreen> {
                     itemBuilder: (_, i) => GestureDetector(
                         onTap: () => setState(() => _wallpaper = i),
                         child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 200),
+                            duration: Duration(milliseconds: 200),
                             width: 80,
                             height: 80,
                             decoration: BoxDecoration(
@@ -160,7 +160,7 @@ class _State extends State<PersonalizationGalleryScreen> {
             const SizedBox(height: 24),
 
             // Font size
-            _SHead('Font Size'),
+            _sectionHead('Font Size'),
             const SizedBox(height: 8),
             Row(children: [
               const Text('A',
@@ -190,7 +190,7 @@ class _State extends State<PersonalizationGalleryScreen> {
             // Compact mode
             Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                    EdgeInsets.symmetric(horizontal: 14, vertical: 12),
                 decoration: BoxDecoration(
                     color: Palette.surfaceContainerLowest,
                     borderRadius: BorderRadius.circular(16)),
@@ -223,16 +223,16 @@ class _State extends State<PersonalizationGalleryScreen> {
                 onTap: () {},
                 child: Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    padding: EdgeInsets.symmetric(vertical: 16),
                     decoration: BoxDecoration(
-                        gradient: const LinearGradient(
+                        gradient: LinearGradient(
                             colors: [Palette.primary, Color(0xFF2C3E9E)]),
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                              color: Palette.primary.withOpacity(0.28),
+                              color: Palette.primary.withValues(alpha: 0.28),
                               blurRadius: 18,
-                              offset: const Offset(0, 6))
+                              offset: Offset(0, 6))
                         ]),
                     child: const Center(
                         child: Text('Save Preferences',
@@ -278,9 +278,9 @@ class _BubblePreview extends StatelessWidget {
             : 12.0;
     return Container(
         constraints: const BoxConstraints(maxWidth: 160),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
-            color: me ? Palette.primary : Colors.white.withOpacity(0.9),
+            color: me ? Palette.primary : Colors.white.withValues(alpha: 0.9),
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(r),
                 topRight: Radius.circular(r),
@@ -293,7 +293,7 @@ class _BubblePreview extends StatelessWidget {
   }
 }
 
-Widget _SHead(String t) => Text(t,
+Widget _sectionHead(String t) => Text(t,
     style: TextStyle(
         fontFamily: Palette.fontDisplay,
         fontSize: 16,

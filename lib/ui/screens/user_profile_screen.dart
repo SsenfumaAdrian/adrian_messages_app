@@ -22,7 +22,7 @@ class _State extends State<UserProfileScreen> {
       activeRoute: LiquidRouter.profile,
       title: 'Profile & Settings',
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
+        padding: EdgeInsets.all(24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           // Avatar hero
           Center(
@@ -32,14 +32,14 @@ class _State extends State<UserProfileScreen> {
                   width: 100,
                   height: 100,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                         colors: [Palette.primary, Color(0xFF3949AB)]),
                     borderRadius: BorderRadius.circular(32),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.28),
+                          color: Palette.primary.withValues(alpha: 0.28),
                           blurRadius: 24,
-                          offset: const Offset(0, 8))
+                          offset: Offset(0, 8))
                     ],
                   ),
                   child: const Center(
@@ -77,7 +77,7 @@ class _State extends State<UserProfileScreen> {
               const SizedBox(height: 8),
               Container(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
+                      EdgeInsets.symmetric(horizontal: 14, vertical: 5),
                   decoration: BoxDecoration(
                       color: Palette.primary,
                       borderRadius: BorderRadius.circular(99)),
@@ -145,7 +145,7 @@ class _State extends State<UserProfileScreen> {
             onTap: () => LiquidRouter.clearAndGo(context, LiquidRouter.auth),
             child: Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                   color: const Color(0xFFFFF0F0),
                   borderRadius: BorderRadius.circular(18)),
@@ -175,7 +175,7 @@ class _Section extends StatelessWidget {
   Widget build(BuildContext context) =>
       Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Padding(
-            padding: const EdgeInsets.only(left: 4, bottom: 10),
+            padding: EdgeInsets.only(left: 4, bottom: 10),
             child: Text(title,
                 style: const TextStyle(
                     fontFamily: Palette.fontDisplay,
@@ -189,9 +189,9 @@ class _Section extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                      color: Palette.primary.withOpacity(0.04),
+                      color: Palette.primary.withValues(alpha: 0.04),
                       blurRadius: 12,
-                      offset: const Offset(0, 2))
+                      offset: Offset(0, 2))
                 ]),
             child: Column(
                 children: children
@@ -205,7 +205,7 @@ class _Section extends StatelessWidget {
                                 endIndent: 16,
                                 height: 1,
                                 color:
-                                    Palette.outlineVariant.withOpacity(0.15)),
+                                    Palette.outlineVariant.withValues(alpha: 0.15)),
                         ]))
                     .toList())),
       ]);
@@ -217,7 +217,7 @@ class _EditTile extends StatelessWidget {
   final String value;
   @override
   Widget build(BuildContext context) => ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
         title: Text(label,
             style:
                 const TextStyle(fontSize: 12, color: Palette.onSurfaceVariant)),
@@ -242,7 +242,7 @@ class _ToggleTile extends StatelessWidget {
   final ValueChanged<bool> onChanged;
   @override
   Widget build(BuildContext context) => ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 2),
         title: Text(label,
             style: const TextStyle(
                 fontSize: 14,
@@ -262,7 +262,7 @@ class _ArrowTile extends StatelessWidget {
   final IconData icon;
   @override
   Widget build(BuildContext context) => ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 2),
         leading: Icon(icon, size: 20, color: Palette.primary),
         title: Text(label,
             style: const TextStyle(

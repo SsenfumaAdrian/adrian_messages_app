@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian | Conflict Resolution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#00daf3",
+              "surface-container-high": "#e7e8e9",
+              "on-tertiary-container": "#00a7bb",
+              "secondary-fixed-dim": "#afc9ea",
+              "error-container": "#ffdad6",
+              "secondary-container": "#c2dcff",
+              "on-secondary-fixed": "#001d36",
+              "background": "#f8f9fa",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-tint": "#525f71",
+              "on-primary-fixed": "#0f1c2c",
+              "secondary-fixed": "#d1e4ff",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#00363d",
+              "outline-variant": "#c6c5d4",
+              "error": "#ba1a1a",
+              "primary-container": "#233141",
+              "on-tertiary-fixed": "#001f24",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#bac8dc",
+              "on-tertiary-fixed-variant": "#004f58",
+              "on-secondary-fixed-variant": "#2f4865",
+              "inverse-primary": "#bac8dc",
+              "surface": "#f8f9fa",
+              "on-primary": "#ffffff",
+              "tertiary": "#001f24",
+              "on-surface-variant": "#454652",
+              "tertiary-fixed": "#9cf0ff",
+              "primary": "#0e1c2b",
+              "surface-variant": "#e1e3e4",
+              "on-surface": "#191c1d",
+              "secondary": "#47607e",
+              "outline": "#767683",
+              "on-secondary-container": "#48617e",
+              "surface-container": "#edeeef",
+              "surface-bright": "#f8f9fa",
+              "on-background": "#191c1d",
+              "primary-fixed": "#d6e4f9",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "inverse-surface": "#2e3132",
+              "on-primary-fixed-variant": "#3a4859",
+              "on-primary-container": "#8b99ac",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e1e3e4",
+              "surface-dim": "#d9dadb"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .tonal-shift-no-border {
+            border: none !important;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface flex min-h-screen">
+<!-- Sidebar Navigation (SideNavBar) -->
+<aside class="hidden md:flex flex-col h-screen w-64 bg-slate-100 dark:bg-slate-900 p-4 gap-2 border-r dark:border-slate-800">
+<div class="mb-8 px-4">
+<h1 class="font-black text-2xl tracking-tighter text-slate-900 dark:text-white">Adrian</h1>
+<p class="text-xs font-manrope font-medium text-slate-500 uppercase tracking-widest mt-1">Enterprise Secure</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-manrope text-sm font-medium">Messages</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined">enhanced_encryption</span>
+<span class="font-manrope text-sm font-medium">Vaults</span>
+</a>
+<!-- Active State: Resolution -->
+<a class="bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg px-4 py-2 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">timeline</span>
+<span class="font-manrope text-sm font-medium">Resolution</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-manrope text-sm font-medium">Audit</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-manrope text-sm font-medium">Console</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 space-y-1">
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-manrope text-sm font-medium">Settings</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-manrope text-sm font-medium">Support</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- Top Navigation (TopNavBar) -->
+<header class="bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl sticky top-0 z-40 w-full px-6 py-3 flex justify-between items-center shadow-sm dark:shadow-none tonal-shift-no-border">
+<div class="flex items-center gap-4">
+<h2 class="font-manrope font-bold tracking-tight text-slate-900 dark:text-slate-50 text-xl">Conflict Resolution</h2>
+<span class="bg-primary text-on-primary text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">AI Live</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex bg-slate-200/50 dark:bg-slate-800/50 rounded-full px-4 py-1.5 items-center gap-2">
+<span class="material-symbols-outlined text-sm text-slate-500">search</span>
+<input class="bg-transparent border-none text-sm focus:ring-0 text-slate-900 dark:text-slate-50 placeholder-slate-400" placeholder="Search conflicts..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50 text-slate-900 dark:text-slate-50 transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">security</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50 text-slate-900 dark:text-slate-50 transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ml-2">
+<img alt="User profile with security clearance badge" data-alt="close-up portrait of a professional male in a high-tech corporate environment with soft cool lighting and subtle digital overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvxSGbp_R-t0TQEy9CviEhiGRgT2BMD-PRN2Ud_-N1IZx0coRr8637G1yxbEqhsRzGIgLcpRTcY-RDz4yLsraRq_1ZY4vFmmSh6zFFszPHM-GsqdNLU92VJjdGbVPKHgPhuBZgAr4Ym3ieZ8I76zDVPgLwVRFXX1rJYDL9SB66G_UCLT58PhsO8vLm21pQvnDuJ3o1PAuXKu5P7OnY8kje5ku8GN0_p-TXFCfQ3jq0-M6NS1-QkwG-dPeyCJySm2Tl3onB5s1p51io"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Workspace Content -->
+<div class="flex-1 overflow-y-auto p-6 lg:p-10 space-y-10">
+<!-- Section 1: Conflict Timeline -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline text-2xl font-extrabold text-primary tracking-tight">Conflict Timeline</h3>
+<p class="text-on-surface-variant text-sm mt-1">Identified overlapping events in the secure workspace.</p>
+</div>
+<span class="text-xs font-bold text-tertiary-fixed-dim bg-tertiary-container px-3 py-1 rounded-full">2 CRITICAL OVERLAPS</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-1 items-start relative">
+<!-- Timeline Marker -->
+<div class="hidden md:block absolute left-[50%] top-0 bottom-0 w-px bg-outline-variant/20 z-0"></div>
+<!-- Event Card 1 (Left Side) -->
+<div class="md:col-span-5 relative z-10 group">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-l-4 border-primary transition-all group-hover:shadow-md">
+<div class="flex justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">09:00 AM — 10:30 AM</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">event</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2">Alpha Sync: Q4 Roadmap</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Strategic planning session for international expansion modules with the core executive team.</p>
+<div class="mt-4 flex -space-x-2">
+<img alt="Attendee" class="w-6 h-6 rounded-full border-2 border-surface-container-lowest" data-alt="professional headshot avatar of a woman with a minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDfYKi0CuOTN9_nzLsPVI5GyWuQdK7uRgvD72gM06pwVmhIaMBBC6fc0M-nakRxCu2o8wgIQoC548wR3v8B0NkqCkt52uZA1NC-0l5m5MDroeLyFsnKMi3Mh9PO64lYUBYBEyxUgdmonETusKl7oh_Z-w3ST08ZqAwG-bxAm0aVDk9yOjxZMMV5-DF7518KctSZH4rpvLcyjvOFQZb7-NrYdqmzwCFOAbUi3Yffmxp9H3M-RVO7qO8On_ucFc3wZhG5eCi-4Yv3Zpi"/>
+<img alt="Attendee" class="w-6 h-6 rounded-full border-2 border-surface-container-lowest" data-alt="professional headshot avatar of a man with a minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIFelQ3wDGdfdVg2B19RiXyALufhk3Ke_1SLbnZP0WJ5OpFinuu8tmMoZrekOTUk8YqrHYJVcNStj6HnRaY0WV6xTJRRgRbb0d5YAmREodj8uupzeXSsJzY4zkJRwdyb-9a0lDQEBUG45gm6gA6RtZSVeriPRsDKolFHJ2Ne9yf1jTBSos0cL5sKNwJ3Scg91PKETHuMhxZjz0lldCu8XzeQiAg262R8b0fjPyE0kEaXGhTuLq4hTRUx5wF49R3qHoyDHte-2xXFHE"/>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-surface-container flex items-center justify-center text-[8px] font-bold">+3</div>
+</div>
+</div>
+</div>
+<!-- Visual Conflict Indicator -->
+<div class="md:col-span-2 flex justify-center items-center py-4 md:py-0">
+<div class="bg-error-container text-error p-3 rounded-full shadow-lg animate-pulse">
+<span class="material-symbols-outlined text-2xl">priority_high</span>
+</div>
+</div>
+<!-- Event Card 2 (Right Side) -->
+<div class="md:col-span-5 relative z-10 group">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-r-4 border-error transition-all group-hover:shadow-md">
+<div class="flex justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-tighter text-error">09:45 AM — 11:00 AM</span>
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2">Vault Security Audit</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Mandatory real-time verification of encryption keys for the new Adrian Obsidian protocols.</p>
+<div class="mt-4 flex items-center gap-2">
+<span class="text-[10px] bg-surface-container px-2 py-1 rounded font-bold">SEC-402</span>
+<span class="text-[10px] bg-surface-container px-2 py-1 rounded font-bold">REQUIRED</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Data Discrepancy & Resolution Lab (Bento Style) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Data Discrepancy Panel -->
+<div class="lg:col-span-2 space-y-6">
+<h3 class="font-headline text-2xl font-extrabold text-primary tracking-tight">Data Discrepancy</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Discrepancy Card A -->
+<div class="bg-surface-container-low p-6 rounded-2xl space-y-4">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-slate-200 rounded-lg">
+<span class="material-symbols-outlined text-slate-600">database</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Source: Cloud Vault 01</p>
+<h5 class="font-headline font-bold">Protocol Version 8.4</h5>
+</div>
+</div>
+<div class="h-32 bg-surface-container-lowest rounded-xl p-4 overflow-hidden">
+<code class="text-[10px] text-slate-500 block leading-tight">
+                                    {<br/>
+                                      "auth": "mfa_biometric",<br/>
+                                      "sync": "auto_distributed",<br/>
+                                      "heartbeat": 300ms<br/>
+                                    }
+                                </code>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">Last update: 2m ago</span>
+<button class="text-primary font-bold hover:underline">Verify</button>
+</div>
+</div>
+<!-- Discrepancy Card B -->
+<div class="bg-surface-container-low p-6 rounded-2xl space-y-4 border border-error/10">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-error-container rounded-lg">
+<span class="material-symbols-outlined text-error">cloud_sync</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-error uppercase tracking-widest">Source: Edge Console</p>
+<h5 class="font-headline font-bold">Protocol Version 8.2</h5>
+</div>
+</div>
+<div class="h-32 bg-surface-container-lowest rounded-xl p-4 overflow-hidden relative">
+<code class="text-[10px] text-error/70 block leading-tight">
+                                    {<br/>
+                                      "auth": "token_legacy",<br/>
+                                      "sync": "manual",<br/>
+                                      "heartbeat": 500ms<br/>
+                                    }
+                                </code>
+<div class="absolute inset-0 bg-error/5 flex items-center justify-center backdrop-blur-[1px]">
+<span class="bg-error text-white text-[9px] px-2 py-1 rounded-full font-bold">VERSION CONFLICT</span>
+</div>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-error font-medium">Outdated Node detected</span>
+<button class="text-primary font-bold hover:underline">Force Sync</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Resolution Lab (AI Suggestion) -->
+<div class="bg-primary text-on-primary p-8 rounded-[2rem] flex flex-col relative overflow-hidden shadow-2xl">
+<!-- Subtle Gradient Texture -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-tertiary-fixed-dim/10 blur-[100px] rounded-full -mr-32 -mt-32"></div>
+<div class="relative z-10 flex-1 flex flex-col">
+<div class="flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">temp_preferences_custom</span>
+<span class="text-sm font-bold tracking-widest uppercase text-on-primary-container">Resolution Lab</span>
+</div>
+<h4 class="font-headline text-3xl font-extrabold leading-tight mb-6">AI Optimization Suggestion</h4>
+<div class="bg-primary-container/50 backdrop-blur-md rounded-2xl p-5 mb-8 border border-white/5">
+<p class="text-on-primary-container text-sm leading-relaxed italic mb-4">"Based on priority weighting, the Security Audit must proceed. I suggest moving Alpha Sync to 2:00 PM when all participants are next available."</p>
+<div class="flex items-center gap-4 py-3 border-t border-white/10">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">schedule</span>
+<div>
+<p class="text-xs text-white/60">New Proposal</p>
+<p class="text-sm font-bold">Today, 2:00 PM — 3:30 PM</p>
+</div>
+</div>
+</div>
+<div class="mt-auto space-y-3">
+<button class="w-full bg-gradient-to-br from-tertiary-fixed-dim to-on-tertiary-container text-primary font-black py-4 rounded-xl shadow-lg hover:scale-[1.02] transition-transform active:scale-95">
+                                Reschedule Alpha Sync
+                            </button>
+<button class="w-full bg-transparent border border-white/20 text-white/80 py-4 rounded-xl font-bold hover:bg-white/5 transition-colors">
+                                View Alternatives
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Section: Quick Resolve -->
+<section class="bg-surface-container rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">auto_fix</span>
+</div>
+<div>
+<h5 class="font-headline font-bold">One-Click Resolution</h5>
+<p class="text-sm text-on-surface-variant">Adrian can automatically resolve all minor non-conflicting discrepancies.</p>
+</div>
+</div>
+<button class="bg-white text-primary px-8 py-3 rounded-full font-bold shadow-sm hover:shadow-md transition-shadow active:scale-95">
+                    Execute Auto-Heal
+                </button>
+</section>
+</div>
+<!-- Floating Mobile Nav (BottomNavBar) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-2xl rounded-full px-6 py-3 flex justify-around items-center z-50 shadow-2xl no-border glassmorphism">
+<a class="text-slate-500 dark:text-slate-400 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="text-[10px] uppercase tracking-widest mt-1">Chat</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="text-[10px] uppercase tracking-widest mt-1">Vaults</span>
+</a>
+<a class="bg-slate-900 dark:bg-slate-50 text-white dark:text-slate-950 rounded-full px-4 py-2 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] uppercase tracking-widest mt-1">Audit</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="text-[10px] uppercase tracking-widest mt-1">Console</span>
+</a>
+</nav>
+</main>
+</body></html>

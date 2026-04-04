@@ -17,7 +17,7 @@ class AdminDashboardScreen extends StatelessWidget {
       title: 'Admin Dashboard',
       actions: [_LiveChip()],
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
+        padding: EdgeInsets.all(24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           // KPI grid
           GridView.count(
@@ -62,7 +62,7 @@ class AdminDashboardScreen extends StatelessWidget {
           Container(
             height: 180,
             width: double.infinity,
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             decoration: _cardBox,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -153,16 +153,16 @@ Widget _Head(String t) => Text(t,
 class _LiveChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
-        margin: const EdgeInsets.only(right: 8),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        margin: EdgeInsets.only(right: 8),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
-            color: Palette.accentCyan.withOpacity(0.12),
+            color: Palette.accentCyan.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(99)),
         child: Row(mainAxisSize: MainAxisSize.min, children: [
           Container(
               width: 6,
               height: 6,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                   color: Palette.accentCyan, shape: BoxShape.circle)),
           const SizedBox(width: 5),
           const Text('Live',
@@ -186,14 +186,14 @@ class _KpiCard extends StatelessWidget {
   final IconData icon;
   @override
   Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         decoration: _cardBox,
         child: Row(children: [
           Container(
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                  color: Palette.primary.withOpacity(0.08),
+                  color: Palette.primary.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(14)),
               child: Icon(icon, color: Palette.primary, size: 22)),
           const SizedBox(width: 12),
@@ -250,8 +250,8 @@ class _ActivityBar extends StatelessWidget {
                     colors: highlight
                         ? [Palette.accentCyan, Palette.primary]
                         : [
-                            Palette.primary.withOpacity(0.5),
-                            Palette.primary.withOpacity(0.2)
+                            Palette.primary.withValues(alpha: 0.5),
+                            Palette.primary.withValues(alpha: 0.2)
                           ]),
                 borderRadius: BorderRadius.circular(8))),
         const SizedBox(height: 6),
@@ -267,13 +267,13 @@ class _TableHeader extends StatelessWidget {
   const _TableHeader();
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-        child: Row(children: const [
-          SizedBox(width: 46),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+        child: Row(children: [
+          const SizedBox(width: 46),
           Expanded(flex: 3, child: _TH('USER')),
           Expanded(flex: 2, child: _TH('PLAN')),
           Expanded(flex: 1, child: _TH('STATUS')),
-          SizedBox(width: 40),
+          const SizedBox(width: 40),
         ]),
       );
 }
@@ -295,13 +295,13 @@ class _UserRow extends StatelessWidget {
   final _UserData user;
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 11),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 11),
         child: Row(children: [
           Container(
               width: 36,
               height: 36,
               decoration: BoxDecoration(
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                       colors: [Palette.primary, Color(0xFF3949AB)]),
                   borderRadius: BorderRadius.circular(12)),
               child: Center(
@@ -310,7 +310,7 @@ class _UserRow extends StatelessWidget {
                           color: Colors.white,
                           fontWeight: FontWeight.w800,
                           fontSize: 14)))),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           Expanded(
               flex: 3,
               child: Column(
@@ -350,10 +350,10 @@ class _PlanChip extends StatelessWidget {
   final String plan;
   @override
   Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
             color: plan == 'Enterprise'
-                ? Palette.primary.withOpacity(0.10)
+                ? Palette.primary.withValues(alpha: 0.1)
                 : Palette.surfaceContainerHigh,
             borderRadius: BorderRadius.circular(99)),
         child: Text(plan,
@@ -375,7 +375,7 @@ class _ActionCard extends StatelessWidget {
   Widget build(BuildContext context) => GestureDetector(
         onTap: () {},
         child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 18),
+            padding: EdgeInsets.symmetric(vertical: 18),
             decoration: _cardBox,
             child: Column(children: [
               Icon(icon, color: Palette.primary, size: 24),

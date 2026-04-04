@@ -43,7 +43,7 @@ class BrandingColumn extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Inter-Bold',
               fontSize: headlineFontSize,
-              color: Palette.textPrimary,
+              color: Palette.onSurface,
               letterSpacing: -1,
               height: 1.05,
             ),
@@ -66,7 +66,7 @@ class BrandingColumn extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Inter-Regular',
             fontSize: subFontSize,
-            color: Palette.textMuted,
+            color: Palette.onSurfaceVariant,
             height: 1.4,
           ),
         ),

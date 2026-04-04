@@ -18,7 +18,7 @@ class LiquidRecallController extends ChangeNotifier {
     notifyListeners();
 
     // The 'Melt' duration - 1.5 seconds of refractive fading
-    await Future.delayed(const Duration(milliseconds: 1500));
+    await Future.delayed(Duration(milliseconds: 1500));
 
     _messageStates[id] = MessageState.crystallized;
     notifyListeners();

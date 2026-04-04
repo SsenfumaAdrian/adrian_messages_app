@@ -39,12 +39,12 @@ class LogoCard extends StatelessWidget {
           height: size,
           decoration: BoxDecoration(
             // ── Brand gradient — same across splash & auth ──
-            gradient: const LinearGradient(
+            gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
                 Color(0xCC163A72), // Palette.accentIndigo tinted
-                Color(0xAA0F6FFF), // Palette.accentBlue
+                Color(0xAA0F6FFF), // const Color(0xFF0F6FFF)
                 Color(0x882DE2E6), // Palette.accentCyan subtle
               ],
               stops: [0.0, 0.60, 1.0],
@@ -57,7 +57,7 @@ class LogoCard extends StatelessWidget {
             boxShadow: [
               // Inner glow from the gradient
               BoxShadow(
-                color: Palette.accentBlue.withOpacity(0.25),
+                color: const Color(0xFF0F6FFF).withValues(alpha: 0.25),
                 blurRadius: size * 0.35,
                 spreadRadius: -size * 0.05,
               ),
@@ -68,7 +68,7 @@ class LogoCard extends StatelessWidget {
             children: [
               // ── Sparkle icon with subtle glow ────────────
               ShaderMask(
-                shaderCallback: (bounds) => const LinearGradient(
+                shaderCallback: (bounds) => LinearGradient(
                   colors: [Colors.white, Palette.accentCyan],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,

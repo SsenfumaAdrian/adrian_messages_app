@@ -39,7 +39,7 @@ class _State extends State<ArchivedVaultScreen>
               labelColor: Palette.primary,
               unselectedLabelColor: Palette.outline,
               indicator: BoxDecoration(
-                  color: Palette.primary.withOpacity(0.10),
+                  color: Palette.primary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(99)),
               indicatorSize: TabBarIndicatorSize.tab,
               dividerColor: Colors.transparent,
@@ -93,21 +93,21 @@ class _ArchivedTab extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) => ListView.separated(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         itemCount: _items.length,
         separatorBuilder: (_, __) => const SizedBox(height: 10),
         itemBuilder: (_, i) {
           final item = _items[i];
           return Container(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
                 color: Palette.surfaceContainerLowest,
                 borderRadius: BorderRadius.circular(18),
                 boxShadow: [
                   BoxShadow(
-                      color: Palette.primary.withOpacity(0.04),
+                      color: Palette.primary.withValues(alpha: 0.04),
                       blurRadius: 10,
-                      offset: const Offset(0, 2))
+                      offset: Offset(0, 2))
                 ]),
             child: Row(children: [
               Container(
@@ -162,21 +162,21 @@ class _VaultTabState extends State<_VaultTab> {
 
   @override
   Widget build(BuildContext context) {
-    if (!_unlocked)
+    if (!_unlocked) {
       return Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Container(
             width: 88,
             height: 88,
             decoration: BoxDecoration(
-                gradient: const LinearGradient(
+                gradient: LinearGradient(
                     colors: [Palette.primary, Color(0xFF3949AB)]),
                 borderRadius: BorderRadius.circular(28),
                 boxShadow: [
                   BoxShadow(
-                      color: Palette.primary.withOpacity(0.3),
+                      color: Palette.primary.withValues(alpha: 0.3),
                       blurRadius: 24,
-                      offset: const Offset(0, 8))
+                      offset: Offset(0, 8))
                 ]),
             child: const Icon(Icons.enhanced_encryption_outlined,
                 color: Colors.white, size: 38)),
@@ -195,21 +195,21 @@ class _VaultTabState extends State<_VaultTab> {
             onTap: () => setState(() => _unlocked = true),
             child: Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
+                    EdgeInsets.symmetric(horizontal: 28, vertical: 14),
                 decoration: BoxDecoration(
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                         colors: [Palette.primary, Color(0xFF2C3E9E)]),
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.28),
+                          color: Palette.primary.withValues(alpha: 0.28),
                           blurRadius: 20,
-                          offset: const Offset(0, 6))
+                          offset: Offset(0, 6))
                     ]),
-                child: const Row(mainAxisSize: MainAxisSize.min, children: [
-                  Icon(Icons.fingerprint_rounded,
+                child: Row(mainAxisSize: MainAxisSize.min, children: [
+                  const Icon(Icons.fingerprint_rounded,
                       color: Colors.white, size: 20),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Text('Unlock with Biometrics',
                       style: TextStyle(
                           color: Colors.white,
@@ -217,28 +217,29 @@ class _VaultTabState extends State<_VaultTab> {
                           fontSize: 14)),
                 ]))),
       ]));
+    }
 
     return ListView.separated(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       itemCount: _vaultItems.length,
       separatorBuilder: (_, __) => const SizedBox(height: 10),
       itemBuilder: (_, i) {
         final item = _vaultItems[i];
         return Container(
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16),
           decoration: BoxDecoration(
               color: Palette.surfaceContainerLowest,
               borderRadius: BorderRadius.circular(18),
               boxShadow: [
                 BoxShadow(
-                    color: Palette.primary.withOpacity(0.04), blurRadius: 10)
+                    color: Palette.primary.withValues(alpha: 0.04), blurRadius: 10)
               ]),
           child: Row(children: [
             Container(
                 width: 44,
                 height: 44,
                 decoration: BoxDecoration(
-                    color: Palette.primary.withOpacity(0.08),
+                    color: Palette.primary.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(14)),
                 child: Icon(item.$3, color: Palette.primary, size: 22)),
             const SizedBox(width: 12),

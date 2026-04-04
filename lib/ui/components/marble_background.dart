@@ -30,7 +30,7 @@ class _MarblePainter extends CustomPainter {
     final baseShader = RadialGradient(
       center: Alignment(math.cos(t * 0.4) * 0.25, math.sin(t * 0.4) * 0.25),
       radius: 1.1,
-      colors: const [
+      colors: [
         Color(0xFF060D1F),
         Color(0xFF0E1733),
         Color(0xFF12315F),
@@ -47,9 +47,9 @@ class _MarblePainter extends CustomPainter {
       begin: Alignment(-1.0 + 0.3 * math.sin(t * 0.6), -1),
       end: const Alignment(1, 1),
       colors: [
-        Colors.white.withOpacity(0.05),
+        Colors.white.withValues(alpha: 0.05),
         Colors.transparent,
-        Colors.white.withOpacity(0.03),
+        Colors.white.withValues(alpha: 0.03),
       ],
       stops: const [0, 0.55, 1],
       transform: GradientRotation(t * 0.18),
@@ -64,7 +64,7 @@ class _MarblePainter extends CustomPainter {
 
     // Noise speckles for texture
     final noisePaint = Paint()
-      ..color = Colors.white.withOpacity(0.015)
+      ..color = Colors.white.withValues(alpha: 0.015)
       ..style = PaintingStyle.fill;
     final rand = math.Random(42);
     const speckles = 240;

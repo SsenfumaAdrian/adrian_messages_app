@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#233141",
+              "outline": "#767683",
+              "primary-fixed-dim": "#bac8dc",
+              "secondary-container": "#c2dcff",
+              "on-tertiary-container": "#00a7bb",
+              "on-secondary-fixed": "#001d36",
+              "tertiary": "#001f24",
+              "on-primary-container": "#8b99ac",
+              "tertiary-container": "#00363d",
+              "surface-container-low": "#f3f4f5",
+              "background": "#f8f9fa",
+              "secondary-fixed-dim": "#afc9ea",
+              "surface-variant": "#e1e3e4",
+              "error": "#ba1a1a",
+              "surface-container-high": "#e7e8e9",
+              "on-background": "#191c1d",
+              "inverse-on-surface": "#f0f1f2",
+              "primary": "#0e1c2b",
+              "on-error": "#ffffff",
+              "secondary": "#47607e",
+              "outline-variant": "#c6c5d4",
+              "inverse-primary": "#bac8dc",
+              "on-tertiary-fixed-variant": "#004f58",
+              "on-surface-variant": "#454652",
+              "error-container": "#ffdad6",
+              "surface-container": "#edeeef",
+              "surface-bright": "#f8f9fa",
+              "primary-fixed": "#d6e4f9",
+              "on-secondary-container": "#48617e",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#3a4859",
+              "surface": "#f8f9fa",
+              "surface-tint": "#525f71",
+              "surface-container-highest": "#e1e3e4",
+              "surface-dim": "#d9dadb",
+              "on-surface": "#191c1d",
+              "inverse-surface": "#2e3132",
+              "on-secondary-fixed-variant": "#2f4865",
+              "on-primary-fixed": "#0f1c2c",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#00daf3",
+              "secondary-fixed": "#d1e4ff",
+              "tertiary-fixed": "#9cf0ff",
+              "on-tertiary-fixed": "#001f24"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-obsidian-glass {
+            background: linear-gradient(135deg, rgba(14, 28, 43, 0.95) 0%, rgba(35, 49, 65, 0.98) 100%);
+        }
+        .video-overlay-gradient {
+            background: linear-gradient(to bottom, rgba(14, 28, 43, 0.4) 0%, transparent 20%, transparent 80%, rgba(14, 28, 43, 0.6) 100%);
+        }
+    </style>
+</head>
+<body class="bg-primary font-body text-white antialiased overflow-hidden h-screen w-screen">
+<div class="fixed inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 blur-2xl scale-110" data-alt="Softly blurred cinematic portrait of a professional woman in a high-end office with warm bokeh lighting and deep navy shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALEGiVfb4XXFFUqfB8kWkT_kc9hOBkY6afwgoZ7PeTcqHc8x6p2o8NrM2CJlHwWyNaggo_BzPlQVuS0WR-91OixVI1j8ljMWbDZ5fioqbWBcTClU2pXQn5kHUcewR8RkVLCePsPdugEp38VjWlRgtuwuTZg6ZKBynwWtcJipEiVOWR30xz1bsOCHmKLFq-AEMmIaET5VSDcayAjMoCNQnpDvP_nKgqaQelL6QwRLGHCg7IFsdAe87FTNGXPO1yoMqo9v3Dm3rmkBUH"/>
+<div class="absolute inset-0 bg-obsidian-glass"></div>
+</div>
+<nav class="fixed top-0 right-0 left-0 h-16 flex justify-between items-center px-8 z-40 bg-white/5 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="text-lg font-headline font-extrabold tracking-tight text-white">Adrian Messages</span>
+<div class="h-4 w-[1px] bg-white/20"></div>
+<div class="flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-[10px] font-label font-semibold tracking-wider uppercase text-tertiary-fixed-dim">Secure Estate Link</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col items-end">
+<span class="text-sm font-headline font-bold text-white">Julianne Moore</span>
+<span class="text-[10px] font-label text-white/60">04:12 • HD Video</span>
+</div>
+<div class="w-10 h-10 rounded-xl overflow-hidden border border-white/20">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of an elegant woman with professional styling and calm expression, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6NSQphUChtqXSWb9wKauPR8ol76U2qF1b6KQgpreDkZTLDD3mcJps2dw5jP4sjgKsSn9I2bfI8_7X59nwJED-Bc9cIF-lhfe3zZfQvqOCkynKl8f_eEqIc2120ClNb_zUCOqrHKZMfaTvPtk8o-TydQrsJb-zqKJqXjoB5e7EhfzAXN_ltgivhbOvdBbMhbhir2XGxeq6ABle6osBz5HfAzaRaDToVr5VnxSKejXoWJ0RDKR0dubXu4q3695pNdELmUvuyuhLNXDs"/>
+</div>
+</div>
+</nav>
+<main class="relative z-10 h-full w-full flex flex-col items-center justify-center">
+<div class="relative group w-full max-w-5xl aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/5">
+<img class="w-full h-full object-cover scale-105" data-alt="High definition video feed of a sophisticated workspace with a blurred executive in the background, warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmCFp1kH92rCR_JOoLHAHuZCPvJmyujal1bRkzxpEGElz9SE3UwFDmJl4m96ljMM6tRToGX-YSTTm2NidyijN3cJ-V6EUemmQ1amq_9ZPQkevEvpGUSSLEyeApKsKfUHlLpyOz4rYLqWE1eUSoqHKd23PKSkg3Cey5FjXTvhh5XzVFvbQL8O_sSSP7Iq_sE7C8MI_4rH7noHYwzuRCUD-HiM2SsLuGzujmlkj9sAe089Eodt_oZFpysVYcruY2PygYPrFMXAxcRfyW"/>
+<div class="absolute inset-0 video-overlay-gradient"></div>
+<div class="absolute top-6 left-6 flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+<div class="w-2 h-2 rounded-full bg-error animate-pulse"></div>
+<span class="text-xs font-label font-medium text-white/90">Julianne is speaking</span>
+</div>
+<div class="absolute bottom-6 right-6 w-48 h-32 rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Self-view perspective of a person in a minimalist home office with natural window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvLDMvU9km1j9yo7xAguqT8b-FhVRfCLuNtDyAkrVSDwwrN6RLSZUbgLK8FoXxE-LoKP-H4YgukPx4VArgU5GrzmxyWs1aIvCDB1p_sw-ViTQUjeIxfrbbMMkCJ4-t80Tewuc5-D4gticBemZ1ZGWVGGYdG3ATk3QcUC_RVZnJ7qJggX1iHhnLYsu51JLPfpOTkkWhx_TUYZ-3L5lrilYuNEwoQYjweJk7QP-30_ZyWsdyOAgwtEes_IuHfl2YCbFtGciNmkSQo9f-"/>
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="absolute bottom-2 left-2 text-[10px] font-label font-bold text-white/80">You</div>
+</div>
+</div>
+<div class="mt-12 flex flex-col items-center gap-8">
+<div class="flex items-center gap-6 px-8 py-4 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 shadow-xl">
+<button class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all active:scale-90 group">
+<span class="material-symbols-outlined text-white group-hover:text-tertiary-fixed-dim" data-icon="mic">mic</span>
+</button>
+<button class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all active:scale-90 group">
+<span class="material-symbols-outlined text-white group-hover:text-tertiary-fixed-dim" data-icon="videocam">videocam</span>
+</button>
+<button class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all active:scale-90 group">
+<span class="material-symbols-outlined text-white group-hover:text-tertiary-fixed-dim" data-icon="screen_share">screen_share</span>
+</button>
+<div class="w-[1px] h-8 bg-white/10 mx-2"></div>
+<button class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all active:scale-90 group">
+<span class="material-symbols-outlined text-white group-hover:text-tertiary-fixed-dim" data-icon="more_horiz">more_horiz</span>
+</button>
+<button class="w-14 h-14 rounded-full flex items-center justify-center bg-error hover:bg-error/80 transition-all active:scale-95 shadow-lg shadow-error/20">
+<span class="material-symbols-outlined text-white" data-icon="call_end" style="font-variation-settings: 'FILL' 1;">call_end</span>
+</button>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5">
+<span class="material-symbols-outlined text-white/40 text-sm" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="text-[11px] font-label text-white/60 tracking-tight">Excellent Connection</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5">
+<span class="material-symbols-outlined text-white/40 text-sm" data-icon="closed_caption">closed_caption</span>
+<span class="text-[11px] font-label text-white/60 tracking-tight">Captions Off</span>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed right-8 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-30">
+<button class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 transition-all group">
+<span class="material-symbols-outlined text-white/40 group-hover:text-white" data-icon="chat">chat</span>
+</button>
+<button class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 transition-all group">
+<span class="material-symbols-outlined text-white/40 group-hover:text-white" data-icon="group">group</span>
+</button>
+<button class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 transition-all group">
+<span class="material-symbols-outlined text-white/40 group-hover:text-white" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="fixed bottom-8 left-8 z-30 flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<p class="text-[10px] font-label text-white/40 tracking-[0.2em] uppercase">Private Encryption Active</p>
+</div>
+</body></html>

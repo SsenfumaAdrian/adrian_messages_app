@@ -5,6 +5,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
+import '../components/liquid_glass.dart';
 
 class CallScreen extends StatefulWidget {
   const CallScreen(
@@ -25,7 +26,7 @@ class _CallScreenState extends State<CallScreen>
   void initState() {
     super.initState();
     _pulseCtrl = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 1600))
+        vsync: this, duration: Duration(milliseconds: 1600))
       ..repeat(reverse: true);
     _pulse = Tween<double>(begin: 0.85, end: 1.0)
         .animate(CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut));
@@ -44,7 +45,7 @@ class _CallScreenState extends State<CallScreen>
       body: Stack(fit: StackFit.expand, children: [
         // Gradient bg
         Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -65,7 +66,7 @@ class _CallScreenState extends State<CallScreen>
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: RadialGradient(colors: [
-                            Palette.accentCyan.withOpacity(0.08 * _pulse.value),
+                            Palette.accentCyan.withValues(alpha: 0.08 * _pulse.value),
                             Colors.transparent
                           ])),
                     ))),
@@ -74,8 +75,16 @@ class _CallScreenState extends State<CallScreen>
             child: Column(children: [
           // Top bar
           Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               child: Row(children: [
+                LiquidGlassButton(
+                  icon: Icons.arrow_back_ios_new_rounded,
+                  size: 40,
+                  iconSize: 16,
+                  iconColor: Colors.white.withValues(alpha: 0.90),
+                  onTap: () => Navigator.maybePop(context),
+                ),
+                const SizedBox(width: 10),
                 const _GlassBadge(
                     label: 'End-to-End Encrypted',
                     icon: Icons.lock_rounded,
@@ -99,12 +108,12 @@ class _CallScreenState extends State<CallScreen>
                       height: 110,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          gradient: const LinearGradient(
+                          gradient: LinearGradient(
                               colors: [Palette.primary, Color(0xFF3949AB)]),
                           boxShadow: [
                             BoxShadow(
                                 color: Palette.accentCyan
-                                    .withOpacity(0.22 * _pulse.value),
+                                    .withValues(alpha: 0.22 * _pulse.value),
                                 blurRadius: 40 * _pulse.value,
                                 spreadRadius: 4)
                           ]),
@@ -130,19 +139,19 @@ class _CallScreenState extends State<CallScreen>
 
           // Control dock — glassmorphism pill
           Padding(
-              padding: const EdgeInsets.only(bottom: 48, left: 24, right: 24),
+              padding: EdgeInsets.only(bottom: 48, left: 24, right: 24),
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(99),
                   child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                             horizontal: 28, vertical: 16),
                         decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.05),
+                            color: Colors.white.withValues(alpha: 0.05),
                             borderRadius: BorderRadius.circular(99),
                             border: Border.all(
-                                color: Colors.white.withOpacity(0.10))),
+                                color: Colors.white.withValues(alpha: 0.1))),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -181,9 +190,9 @@ class _CallScreenState extends State<CallScreen>
                                           boxShadow: [
                                             BoxShadow(
                                                 color: Palette.error
-                                                    .withOpacity(0.4),
+                                                    .withValues(alpha: 0.4),
                                                 blurRadius: 16,
-                                                offset: const Offset(0, 4))
+                                                offset: Offset(0, 4))
                                           ]),
                                       child: const Icon(Icons.call_end_rounded,
                                           color: Colors.white, size: 24))),
@@ -209,11 +218,11 @@ class _GlassBadge extends StatelessWidget {
       child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.08),
+                  color: Colors.white.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(99),
-                  border: Border.all(color: Colors.white.withOpacity(0.10))),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.1))),
               child: Row(mainAxisSize: MainAxisSize.min, children: [
                 Icon(icon, size: 14, color: color),
                 const SizedBox(width: 6),
@@ -239,8 +248,8 @@ class _CallBtn extends StatelessWidget {
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: active
-                  ? Colors.white.withOpacity(0.12)
-                  : Colors.white.withOpacity(0.06)),
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : Colors.white.withValues(alpha: 0.06)),
           child: Icon(icon,
               color: active ? Colors.white : Colors.white38, size: 22)));
 }

@@ -8,7 +8,7 @@ class LiquidSearchBar extends StatefulWidget {
   const LiquidSearchBar({super.key, required this.onSearch});
 
   @override
-  _LiquidSearchBarState createState() => _LiquidSearchBarState();
+  State<LiquidSearchBar> createState() => _LiquidSearchBarState();
 }
 
 class _LiquidSearchBarState extends State<LiquidSearchBar> {
@@ -17,14 +17,14 @@ class _LiquidSearchBarState extends State<LiquidSearchBar> {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
+      duration: Duration(milliseconds: 300),
       // Subtle glow when focused to create the 'Liquid' feel
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           if (_isFocused)
             BoxShadow(
-              color: Colors.blueAccent.withOpacity(0.2),
+              color: Colors.blueAccent.withValues(alpha: 0.2),
               blurRadius: 20,
               spreadRadius: 2,
             )
@@ -32,7 +32,7 @@ class _LiquidSearchBarState extends State<LiquidSearchBar> {
       ),
       child: LiquidGlassContainer(
         borderRadius: 20,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: Focus(
           onFocusChange: (hasFocus) => setState(() => _isFocused = hasFocus),
           child: TextField(

@@ -20,7 +20,7 @@ class LiquidVaultController extends ChangeNotifier {
   // Security handshake for vault access
   Future<bool> authenticateVault() async {
     // This would eventually connect to Biometrics/PIN
-    await Future.delayed(const Duration(milliseconds: 500));
+    await Future.delayed(Duration(milliseconds: 500));
     return true;
   }
 }

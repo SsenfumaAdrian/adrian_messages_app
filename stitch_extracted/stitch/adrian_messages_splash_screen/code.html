@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1A237E",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+              "surface-variant": "#e1e3e4",
+              "surface": "#f8f9fa",
+              "on-surface": "#191c1d",
+              "tertiary-fixed-dim": "#9cf0ff"
+            },
+            fontFamily: {
+              "display": ["Manrope"],
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+<!-- Splash Screen Shell -->
+<main class="relative min-h-screen flex flex-col items-center justify-center p-10 overflow-hidden">
+<!-- Background Abstract Aesthetic Layer -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-[#050b12]"></div>
+<!-- Texture Overlay -->
+<div class="absolute inset-0 opacity-20" data-alt="Abstract smooth fluid waves of deep obsidian blue and charcoal with subtle silk-like texture and soft cinematic lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcz60yC7Lwqq6ae3MQkt5Iw6MLk-4xK80-xNd8LboMwqJK9q468oHR1K4u987xd2EndELE12iKnG_ND_fDvjYq2ehS-ZOU3NIZlSCs_LN_Bkmvr7mHVeBJy41I1urhYJUpPTNsc4LE1gFhq62Gr-cMqoe-LdRMy_IYQXuQUC42H4NzuAcvJPMIWlve2ilnBTjCU-78o9JmypKgUU3hHMreUXlraiEkP26YKQzWAowZa33iHUD5kKU1yQECYANyJPfWTHuOIvdqpH-P'); background-size: cover; background-position: center; filter: contrast(1.2) brightness(0.8);">
+</div>
+<!-- Subtle Radial Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(0,218,243,0.08)_0%,_transparent_70%)]"></div>
+</div>
+<!-- Content Canvas -->
+<div class="relative z-10 flex flex-col items-center text-center max-w-lg w-full">
+<!-- Logo Mark -->
+<div class="mb-8 p-6 rounded-full bg-white/5 backdrop-blur-2xl shadow-[0_0_40px_rgba(0,0,0,0.2)] flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-6xl text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1; font-size: 64px;">chat_bubble</span>
+</div>
+<!-- Brand Typography -->
+<div class="space-y-2 mb-16">
+<h1 class="font-headline text-5xl font-extrabold tracking-tight uppercase tracking-[0.2em] ml-2 text-[#1A237E]">ADRIAN</h1>
+<p class="font-body text-on-primary-container text-sm tracking-[0.4em] uppercase font-light">Intelligent Correspondent</p>
+</div>
+<!-- Loading Indicator -->
+<div class="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-transparent via-tertiary-fixed-dim to-transparent" style="animation: shimmer 2s infinite linear;"></div>
+</div>
+</div>
+<!-- Footer Branding -->
+<div class="absolute bottom-12 z-10 flex flex-col items-center gap-6">
+<div class="flex items-center gap-4 text-white/40">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="text-[10px] font-label tracking-[0.2em] uppercase">End-to-End Encrypted</span>
+<span class="w-1 h-1 rounded-full bg-white/20"></span>
+<span class="text-[10px] font-label tracking-[0.2em] uppercase">Private Network</span>
+</div>
+<div class="flex gap-8">
+<div class="h-8 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+</div>
+</div>
+</main>
+<style>
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(300%); }
+        }
+        
+        /* Custom typography refinements per Design System "Editorial Authority" */
+        h1 {
+            letter-spacing: 0.15em;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Material symbols refinement */
+        .material-symbols-outlined {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+    </style>
+</body></html>

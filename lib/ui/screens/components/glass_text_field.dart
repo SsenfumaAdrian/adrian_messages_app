@@ -1,3 +1,4 @@
+// FILE: lib/ui/screens/components/glass_text_field.dart
 import 'package:flutter/material.dart';
 import '../../../core/constants/palette.dart';
 
@@ -11,6 +12,8 @@ class GlassTextField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.onSuffixTap,
+    this.controller,
+    this.onChanged,
   });
 
   final String label;
@@ -20,6 +23,8 @@ class GlassTextField extends StatelessWidget {
   final IconData? prefixIcon;
   final IconData? suffixIcon;
   final VoidCallback? onSuffixTap;
+  final TextEditingController? controller;
+  final ValueChanged<String>? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +36,7 @@ class GlassTextField extends StatelessWidget {
           style: const TextStyle(
             fontFamily: 'Inter-Medium',
             fontSize: 12,
-            color: Palette.textMuted,
+            color: Palette.onSurfaceVariant,
             letterSpacing: 0.2,
           ),
         ),
@@ -44,13 +49,15 @@ class GlassTextField extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: Colors.white.withOpacity(0.14)),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.14)),
           ),
           child: TextField(
+            controller: controller,
             obscureText: obscure,
             keyboardType: keyboardType,
+            onChanged: onChanged,
             style: const TextStyle(
-              color: Palette.textPrimary,
+              color: Palette.onSurface,
               fontFamily: 'Inter-Medium',
             ),
             decoration: InputDecoration(
@@ -58,14 +65,14 @@ class GlassTextField extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
               hintText: hint,
               hintStyle: const TextStyle(
-                color: Palette.textMuted,
+                color: Palette.onSurfaceVariant,
                 fontFamily: 'Inter-Regular',
               ),
               prefixIcon: prefixIcon != null
                   ? Padding(
                       padding: const EdgeInsets.only(left: 12, right: 4),
                       child: Icon(prefixIcon,
-                          size: 18, color: Palette.textMuted),
+                          size: 18, color: Palette.onSurfaceVariant),
                     )
                   : null,
               prefixIconConstraints:
@@ -74,7 +81,7 @@ class GlassTextField extends StatelessWidget {
                   ? IconButton(
                       onPressed: onSuffixTap,
                       icon: Icon(suffixIcon,
-                          size: 18, color: Palette.textMuted),
+                          size: 18, color: Palette.onSurfaceVariant),
                     )
                   : null,
               border: InputBorder.none,

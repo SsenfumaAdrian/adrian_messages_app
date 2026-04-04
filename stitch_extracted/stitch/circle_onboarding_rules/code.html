@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Circle Onboarding - Adrian</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#c2dcff",
+              "on-primary-fixed-variant": "#3a4859",
+              "error": "#ba1a1a",
+              "surface-variant": "#e1e3e4",
+              "surface-dim": "#d9dadb",
+              "secondary-fixed-dim": "#afc9ea",
+              "on-tertiary-fixed": "#001f24",
+              "background": "#f8f9fa",
+              "surface-container-low": "#f3f4f5",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#9cf0ff",
+              "inverse-on-surface": "#f0f1f2",
+              "on-secondary-fixed-variant": "#2f4865",
+              "surface-container": "#edeeef",
+              "on-surface-variant": "#454652",
+              "on-tertiary-container": "#00a7bb",
+              "on-primary-fixed": "#0f1c2c",
+              "tertiary-container": "#00363d",
+              "inverse-primary": "#bac8dc",
+              "tertiary-fixed-dim": "#00daf3",
+              "tertiary": "#001f24",
+              "surface-tint": "#525f71",
+              "outline": "#767683",
+              "primary-fixed": "#d6e4f9",
+              "primary-container": "#233141",
+              "on-tertiary-fixed-variant": "#004f58",
+              "on-surface": "#191c1d",
+              "surface-container-highest": "#e1e3e4",
+              "surface": "#f8f9fa",
+              "error-container": "#ffdad6",
+              "on-background": "#191c1d",
+              "inverse-surface": "#2e3132",
+              "on-secondary-container": "#48617e",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#d1e4ff",
+              "secondary": "#47607e",
+              "primary": "#0e1c2b",
+              "on-primary-container": "#8b99ac",
+              "outline-variant": "#c6c5d4",
+              "surface-bright": "#f8f9fa",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#bac8dc",
+              "on-secondary-fixed": "#001d36",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e7e8e9",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .bg-obsidian-gradient {
+            background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- Top Navigation (Shell suppressed for transactional flow, using custom header) -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="shield">shield</span>
+<span class="text-xl font-bold tracking-tighter text-slate-900 font-headline">Adrian</span>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-3xl mx-auto">
+<!-- Hero Section: Welcome -->
+<section class="mb-12">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold tracking-wider uppercase mb-6">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                Secure Invitation
+            </div>
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-primary mb-6">
+                Welcome to the <br/><span class="text-on-primary-container">Strategic Intelligence Circle</span>
+</h1>
+<p class="text-lg text-on-surface-variant leading-relaxed font-light">
+                You have been cleared to join a high-integrity environment. Adrian's Circles are designed for absolute privacy and focused collaboration. Before you proceed, please review our operational standards.
+            </p>
+</section>
+<!-- Mission Card -->
+<div class="mb-10 rounded-xl overflow-hidden bg-obsidian-gradient text-on-primary p-8 shadow-2xl relative">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="group_work">group_work</span>
+</div>
+<h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="track_changes">track_changes</span>
+                The Mission
+            </h2>
+<p class="text-primary-fixed leading-relaxed max-w-xl">
+                To provide a zero-knowledge ecosystem for high-stakes decision making, ensuring every participant operates under a framework of radical transparency within the circle and total anonymity outside of it.
+            </p>
+</div>
+<!-- Rules & Protocols -->
+<section class="space-y-12">
+<div>
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6 border-l-4 border-tertiary-fixed-dim pl-4">
+                    Mandatory Security Protocols
+                </h3>
+<div class="space-y-4">
+<!-- Rule Item 1 -->
+<label class="group flex items-start gap-4 p-5 rounded-xl bg-surface-container-lowest hover:bg-white transition-all cursor-pointer border border-transparent hover:border-outline-variant/20 shadow-sm">
+<div class="pt-1">
+<input class="w-6 h-6 rounded-md border-outline text-primary focus:ring-primary focus:ring-offset-0 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="font-bold text-primary">Ephemeral Data Policy</span>
+<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="timer">timer</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                                All messages in this circle are set to auto-destruct after 24 hours. No manual backups or screenshots are permitted.
+                            </p>
+</div>
+</label>
+<!-- Rule Item 2 -->
+<label class="group flex items-start gap-4 p-5 rounded-xl bg-surface-container-lowest hover:bg-white transition-all cursor-pointer border border-transparent hover:border-outline-variant/20 shadow-sm">
+<div class="pt-1">
+<input class="w-6 h-6 rounded-md border-outline text-primary focus:ring-primary focus:ring-offset-0 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="font-bold text-primary">Hardware Key Requirement</span>
+<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="key">key</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                                Accessing this circle requires an active FIDO2 hardware key for every session. Authentication is non-transferable.
+                            </p>
+</div>
+</label>
+<!-- Rule Item 3 -->
+<label class="group flex items-start gap-4 p-5 rounded-xl bg-surface-container-lowest hover:bg-white transition-all cursor-pointer border border-transparent hover:border-outline-variant/20 shadow-sm">
+<div class="pt-1">
+<input class="w-6 h-6 rounded-md border-outline text-primary focus:ring-primary focus:ring-offset-0 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="font-bold text-primary">Identity Masking</span>
+<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="mask">masks</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                                Your real-world identity remains hidden. Use your Circle Alias for all communications. Do not share PII (Personally Identifiable Information).
+                            </p>
+</div>
+</label>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6 border-l-4 border-secondary text-secondary pl-4">
+                    Community Values
+                </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-6 rounded-xl bg-surface-container-low flex flex-col gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="handshake" style="font-variation-settings: 'FILL' 1;">handshake</span>
+<h4 class="font-bold text-primary">Radical Integrity</h4>
+<p class="text-sm text-on-surface-variant">Engage with honesty. Information shared here must be vetted and verified by members.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low flex flex-col gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="lock_open" style="font-variation-settings: 'FILL' 1;">lock_open</span>
+<h4 class="font-bold text-primary">Open Discourse</h4>
+<p class="text-sm text-on-surface-variant">Respectful disagreement is encouraged. Echo chambers are actively avoided.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Acknowledgement -->
+<div class="mt-16 p-8 rounded-2xl bg-white shadow-xl shadow-slate-200 border border-slate-100 text-center">
+<h4 class="text-xl font-bold text-primary mb-2">Ready to enter the Circle?</h4>
+<p class="text-on-surface-variant text-sm mb-8 max-w-md mx-auto">
+                By clicking the button below, you legally and ethically commit to the rules outlined above within the Adrian network.
+            </p>
+<button class="w-full md:w-auto px-12 py-4 rounded-full bg-obsidian-gradient text-white font-bold text-lg shadow-lg hover:shadow-primary/20 transition-all active:scale-95 duration-200">
+                Accept &amp; Enter Secure Cloud
+            </button>
+<div class="mt-6 flex items-center justify-center gap-4 text-xs text-on-surface-variant font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="verified">verified</span> E2E Encrypted</span>
+<span class="w-1 h-1 rounded-full bg-slate-300"></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="fingerprint">fingerprint</span> Biometric Locked</span>
+</div>
+</div>
+</main>
+<!-- Contextual Information (Bottom) -->
+<div class="fixed bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
+<!-- Images for Contextual visual interest -->
+<div class="fixed top-20 right-[-100px] opacity-20 pointer-events-none select-none blur-3xl w-80 h-80 rounded-full bg-primary-container"></div>
+<div class="fixed bottom-20 left-[-100px] opacity-10 pointer-events-none select-none blur-3xl w-96 h-96 rounded-full bg-tertiary-fixed-dim"></div>
+</body></html>

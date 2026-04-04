@@ -44,7 +44,7 @@ class ComplianceAuditScreen extends StatelessWidget {
                 foregroundColor: Palette.onSurfaceVariant)),
       ],
       child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // Summary cards
@@ -64,17 +64,17 @@ class ComplianceAuditScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Compliance checks
-            _SHead('Regulatory Framework'),
+            _sectionHead('Regulatory Framework'),
             const SizedBox(height: 12),
             ..._checks.map((c) => Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                padding: const EdgeInsets.all(14),
+                margin: EdgeInsets.only(bottom: 10),
+                padding: EdgeInsets.all(14),
                 decoration: BoxDecoration(
                     color: Palette.surfaceContainerLowest,
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.04),
+                          color: Palette.primary.withValues(alpha: 0.04),
                           blurRadius: 8)
                     ]),
                 child: Row(children: [
@@ -83,7 +83,7 @@ class ComplianceAuditScreen extends StatelessWidget {
                       height: 44,
                       decoration: BoxDecoration(
                           color: (c.ok ? Palette.success : Colors.orange)
-                              .withOpacity(0.10),
+                              .withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(13)),
                       child: Icon(
                           c.ok
@@ -106,11 +106,11 @@ class ComplianceAuditScreen extends StatelessWidget {
                                 fontSize: 11, color: Palette.onSurfaceVariant)),
                       ])),
                   Container(
-                      padding: const EdgeInsets.symmetric(
+                      padding: EdgeInsets.symmetric(
                           horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
                           color: (c.ok ? Palette.success : Colors.orange)
-                              .withOpacity(0.10),
+                              .withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(99)),
                       child: Text(c.status,
                           style: TextStyle(
@@ -121,7 +121,7 @@ class ComplianceAuditScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Timeline
-            _SHead('Audit Timeline'),
+            _sectionHead('Audit Timeline'),
             const SizedBox(height: 16),
             ..._timeline.asMap().entries.map((e) =>
                 Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -129,18 +129,18 @@ class ComplianceAuditScreen extends StatelessWidget {
                     Container(
                         width: 12,
                         height: 12,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                             color: Palette.primary, shape: BoxShape.circle)),
                     if (e.key < _timeline.length - 1)
                       Container(
                           width: 2,
                           height: 56,
-                          color: Palette.outlineVariant.withOpacity(0.4)),
+                          color: Palette.outlineVariant.withValues(alpha: 0.4)),
                   ]),
                   const SizedBox(width: 14),
                   Expanded(
                       child: Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
+                          padding: EdgeInsets.only(bottom: 20),
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -181,9 +181,9 @@ class _SummaryCard extends StatelessWidget {
   final Color color;
   @override
   Widget build(BuildContext ctx) => Container(
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(14),
       decoration: BoxDecoration(
-          color: color.withOpacity(0.07),
+          color: color.withValues(alpha: 0.07),
           borderRadius: BorderRadius.circular(16)),
       child: Column(children: [
         Text('$count',
@@ -198,7 +198,7 @@ class _SummaryCard extends StatelessWidget {
       ]));
 }
 
-Widget _SHead(String t) => Text(t,
+Widget _sectionHead(String t) => Text(t,
     style: TextStyle(
         fontFamily: Palette.fontDisplay,
         fontSize: 16,

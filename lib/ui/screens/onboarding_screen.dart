@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/constants/palette.dart';
 import '../../core/navigation/liquid_router.dart';
+import '../components/liquid_glass.dart';
 import '../components/logo_card.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -59,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
       _pages.length,
       (_) => AnimationController(
         vsync: this,
-        duration: const Duration(milliseconds: 500),
+        duration: Duration(milliseconds: 500),
       ),
     );
     _fadeAnims = _fadeCtls
@@ -83,10 +84,10 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     _fadeCtls[_currentPage].reverse();
     _pageCtrl.animateToPage(
       page,
-      duration: const Duration(milliseconds: 420),
+      duration: Duration(milliseconds: 420),
       curve: Curves.easeInOutCubic,
     );
-    Future.delayed(const Duration(milliseconds: 200), () {
+    Future.delayed(Duration(milliseconds: 200), () {
       if (mounted) _fadeCtls[page].forward();
     });
     setState(() => _currentPage = page);
@@ -96,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     if (_currentPage < _pages.length - 1) {
       _goTo(_currentPage + 1);
     } else {
-      LiquidRouter.clearAndGo(context, LiquidRouter.conversations);
+      LiquidRouter.clearAndGo(context, LiquidRouter.shell);
     }
   }
 
@@ -112,7 +113,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           children: [
             // ── Top nav ──────────────────────────────────────
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               child: Row(
                 children: [
                   // Logo mark
@@ -128,17 +129,11 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     ),
                   ),
                   const Spacer(),
-                  TextButton(
-                    onPressed: () => LiquidRouter.clearAndGo(
-                        context, LiquidRouter.conversations),
-                    child: const Text(
-                      'Skip',
-                      style: TextStyle(
-                        fontFamily: Palette.fontBody,
-                        fontWeight: FontWeight.w500,
-                        color: Palette.onSurfaceVariant,
-                      ),
-                    ),
+                  LiquidGlassChip(
+                    label: 'Skip',
+                    icon: Icons.arrow_forward_rounded,
+                    tint: Palette.onSurfaceVariant,
+                    onTap: () => LiquidRouter.clearAndGo(context, LiquidRouter.shell),
                   ),
                 ],
               ),
@@ -151,7 +146,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                 itemCount: _pages.length,
                 onPageChanged: (i) {
                   _fadeCtls[_currentPage].reverse();
-                  Future.delayed(const Duration(milliseconds: 180), () {
+                  Future.delayed(Duration(milliseconds: 180), () {
                     if (mounted) _fadeCtls[i].forward();
                   });
                   setState(() => _currentPage = i);
@@ -165,7 +160,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
             // ── Dots + CTA ────────────────────────────────────
             Padding(
-              padding: const EdgeInsets.fromLTRB(24, 0, 24, 32),
+              padding: EdgeInsets.fromLTRB(24, 0, 24, 32),
               child: Column(
                 children: [
                   // Page dots
@@ -174,9 +169,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     children: List.generate(_pages.length, (i) {
                       final active = i == _currentPage;
                       return AnimatedContainer(
-                        duration: const Duration(milliseconds: 300),
+                        duration: Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
-                        margin: const EdgeInsets.symmetric(horizontal: 4),
+                        margin: EdgeInsets.symmetric(horizontal: 4),
                         width: active ? 28 : 8,
                         height: 8,
                         decoration: BoxDecoration(
@@ -196,7 +191,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     height: 58,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                        gradient: const LinearGradient(
+                        gradient: LinearGradient(
                           colors: [Palette.primary, Color(0xFF2C3E9E)],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
@@ -204,9 +199,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                         borderRadius: BorderRadius.circular(24),
                         boxShadow: [
                           BoxShadow(
-                            color: Palette.primary.withOpacity(0.28),
+                            color: Palette.primary.withValues(alpha: 0.28),
                             blurRadius: 24,
-                            offset: const Offset(0, 8),
+                            offset: Offset(0, 8),
                           ),
                         ],
                       ),
@@ -257,7 +252,7 @@ class _PageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 28),
+      padding: EdgeInsets.symmetric(horizontal: 28),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -272,9 +267,9 @@ class _PageContent extends StatelessWidget {
                 borderRadius: BorderRadius.circular(36),
                 boxShadow: [
                   BoxShadow(
-                    color: Palette.primary.withOpacity(0.06),
+                    color: Palette.primary.withValues(alpha: 0.06),
                     blurRadius: 32,
-                    offset: const Offset(0, 12),
+                    offset: Offset(0, 12),
                   ),
                 ],
               ),
@@ -286,7 +281,7 @@ class _PageContent extends StatelessWidget {
                     width: 88,
                     height: 88,
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
+                      gradient: LinearGradient(
                         colors: [Palette.primary, Color(0xFF3949AB)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -294,9 +289,9 @@ class _PageContent extends StatelessWidget {
                       borderRadius: BorderRadius.circular(28),
                       boxShadow: [
                         BoxShadow(
-                          color: Palette.primary.withOpacity(0.30),
+                          color: Palette.primary.withValues(alpha: 0.3),
                           blurRadius: 20,
-                          offset: const Offset(0, 8),
+                          offset: Offset(0, 8),
                         ),
                       ],
                     ),
@@ -306,9 +301,9 @@ class _PageContent extends StatelessWidget {
                   // Accent chip
                   Container(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                        EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                     decoration: BoxDecoration(
-                      color: Palette.accentCyan.withOpacity(0.12),
+                      color: Palette.accentCyan.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(99),
                     ),
                     child: Row(
@@ -317,7 +312,7 @@ class _PageContent extends StatelessWidget {
                         Container(
                           width: 6,
                           height: 6,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Palette.accentCyan,
                             shape: BoxShape.circle,
                           ),

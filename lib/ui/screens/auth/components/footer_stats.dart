@@ -27,7 +27,7 @@ class FooterStats extends StatelessWidget {
                 Text(
                   s.title,
                   style: const TextStyle(
-                    color: Palette.textPrimary,
+                    color: Palette.onSurface,
                     fontFamily: 'Inter-Bold',
                     fontSize: 13,
                   ),
@@ -36,7 +36,7 @@ class FooterStats extends StatelessWidget {
                 Text(
                   s.subtitle,
                   style: const TextStyle(
-                    color: Palette.textMuted,
+                    color: Palette.onSurfaceVariant,
                     fontFamily: 'Inter-Medium',
                     fontSize: 11.5,
                     letterSpacing: 0.1,

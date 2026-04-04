@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#1A237E",
+          "background-light": "#f6f6f8",
+          "background-dark": "#121320",
+          "surface": "#ffffff",
+          "on-surface": "#1c1b1f",
+          "on-surface-variant": "#49454f",
+          "surface-container-low": "#f7f2fa",
+          "surface-container": "#f3edf7",
+          "surface-container-high": "#ece6f0",
+          "surface-container-highest": "#e6e1e5",
+          "outline": "#79747e",
+          "outline-variant": "#cac4d0"
+        },
+        fontFamily: {
+          "display": ["Manrope"],
+          "headline": ["Manrope"],
+          "body": ["Manrope"],
+          "label": ["Manrope"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            background-color: rgba(248, 249, 250, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background min-h-screen">
+<!-- SideNavBar Anchor -->
+<nav class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 h-screen w-64 border-r-0 font-manrope z-50">
+<div class="px-8 mb-10">
+<h1 class="text-xl font-black text-[#1A237E]">Adrian</h1>
+<p class="text-[10px] font-manrope text-sm font-semibold uppercase tracking-widest text-slate-500">Intelligent Correspondent</p>
+</div>
+<div class="flex flex-col flex-1">
+<button class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all group bg-[#1A237E]">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-manrope text-sm font-semibold uppercase tracking-widest">Chats</span>
+</button>
+<button class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all group bg-[#1A237E]">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span class="font-manrope text-sm font-semibold uppercase tracking-widest">Vault</span>
+</button>
+<button class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all group bg-[#1A237E]">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-manrope text-sm font-semibold uppercase tracking-widest">Security</span>
+</button>
+<button class="flex items-center gap-4 py-4 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm px-8 active:translate-x-1 duration-300">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-manrope text-sm font-semibold uppercase tracking-widest">Insights</span>
+</button>
+</div>
+<div class="px-8 mt-auto">
+<button class="flex items-center gap-4 py-4 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-manrope text-sm font-semibold uppercase tracking-widest">Settings</span>
+</button>
+</div>
+</nav>
+<!-- TopNavBar Anchor -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,35,126,0.06)]">
+<div class="flex items-center gap-4">
+<h1 class="text-2xl font-bold tracking-tighter text-[#1A237E] dark:text-indigo-400 font-manrope">Adrian Messages</h1>
+<div class="h-4 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
+<span class="font-manrope text-sm font-medium tracking-tight text-[#1A237E] dark:text-indigo-400">Voice Studio</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full" data-icon="grid_view">grid_view</span>
+<span class="material-symbols-outlined cursor-pointer text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full" data-icon="auto_awesome">auto_awesome</span>
+<span class="material-symbols-outlined cursor-pointer text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full" data-icon="more_vert">more_vert</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200">
+<img alt="Account" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF0c4lzmnbBr3xDuq8ZRjcgRKFLdZV1HeVE4JmXN0J85Ko5odrG2KY_jc5RJe17JrhgQMF1pxYXFltNeuLCAXN4dyBZiAd1hwNSo0tdN9xksHbFWTIAfJSrCOW7X6Q2Q6FWOYGQRfyUcD2ck2LaniiFMK4x8w37ejpjQAndguuTYNbs_MfxYo5jmVU0Y7_0itxrVgntCbByO3o2LVmS3KEWvB95SpqqbLycCJgkCg0SPn5SmmKPxVuuO21T3mTC5PfByWr6taDIyUZ"/>
+</div>
+</div>
+</header>
+<main class="ml-64 pt-16 min-h-screen flex flex-col lg:flex-row bg-background-light dark:bg-background-dark">
+<!-- Sidebar: Recent Notes -->
+<aside class="w-full lg:w-80 bg-surface-container p-6 overflow-y-auto no-scrollbar border-r-0">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-xl font-bold text-primary">Library</h2>
+<button class="p-2 rounded-full bg-surface-container-lowest text-primary hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Active Item -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm border-0 cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold text-tertiary-fixed-dim uppercase tracking-wider">Now Playing</span>
+<span class="text-xs text-on-surface-variant">2:45 PM</span>
+</div>
+<h3 class="font-headline font-bold text-primary mb-1">Q3 Strategy Overview</h3>
+<p class="text-sm text-on-surface-variant line-clamp-1 italic">"...realigning the product roadmap for..."</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold">BUSINESS</span>
+<span class="text-[10px] text-on-surface-variant">12:45</span>
+</div>
+</div>
+<!-- Regular Items -->
+<div class="p-4 rounded-xl hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs text-on-surface-variant">Yesterday</span>
+</div>
+<h3 class="font-headline font-semibold text-primary mb-1 group-hover:text-primary">Weekend Project Brainstorm</h3>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-bold uppercase">Personal</span>
+<span class="text-[10px] text-on-surface-variant">04:12</span>
+</div>
+</div>
+<div class="p-4 rounded-xl hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs text-on-surface-variant">Aug 24</span>
+</div>
+<h3 class="font-headline font-semibold text-primary mb-1 group-hover:text-primary">Contract Negotiation Notes</h3>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-bold uppercase">Legal</span>
+<span class="text-[10px] text-on-surface-variant">18:22</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content: Transcription & Controls -->
+<section class="flex-1 flex flex-col p-10 max-w-5xl mx-auto w-full">
+<!-- Waveform & Hero -->
+<div class="mb-12">
+<div class="flex flex-col items-center justify-center py-12 px-6 rounded-3xl bg-gradient-to-br from-primary to-primary-container text-on-primary mb-8 relative overflow-hidden from-[#1A237E]">
+<!-- Abstract Waveform Visualization -->
+<div class="absolute inset-0 opacity-20 flex items-center justify-around px-10">
+<div class="w-1 bg-tertiary-fixed-dim h-12 rounded-full"></div>
+<div class="w-1 bg-tertiary-fixed-dim h-24 rounded-full"></div>
+<div class="w-1 bg-tertiary-fixed-dim h-16 rounded-full"></div>
+<div class="w-1 bg-tertiary-fixed-dim h-32 rounded-full"></div>
+<div class="w-1 bg-tertiary-fixed-dim h-20 rounded-full"></div>
+<div class="w-1 bg-tertiary-fixed-dim h-40 rounded-full"></div>
+<div class="w-1 bg-tertiary-fixed-dim h-24 rounded-full"></div>
+<div class="w-1 bg-tertiary-fixed-dim h-16 rounded-full"></div>
+</div>
+<span class="z-10 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 opacity-70">Q3 Strategy Overview</span>
+<h2 class="z-10 font-headline text-4xl font-extrabold mb-8">03:45 / 12:45</h2>
+<div class="z-10 flex items-center gap-8">
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="replay_10">replay_10</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-tertiary-fixed-dim text-primary flex items-center justify-center shadow-lg hover:scale-105 transition-transform bg-indigo-400">
+<span class="material-symbols-outlined !text-4xl" data-icon="pause" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="forward_10">forward_10</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Transcription Area -->
+<div class="space-y-6">
+<h3 class="font-headline text-lg font-bold text-primary border-l-4 border-tertiary-fixed-dim pl-4">Transcription</h3>
+<div class="space-y-4 max-h-[400px] overflow-y-auto no-scrollbar pr-4">
+<div class="flex gap-4">
+<span class="text-[10px] font-bold text-on-surface-variant w-10 pt-1">00:00</span>
+<p class="text-on-surface leading-relaxed text-sm">
+                                    Good morning everyone. Let's dive into the Q3 strategy overview. We've seen significant growth in our enterprise segment, but the mid-market penetration is lagging behind our initial projections.
+                                </p>
+</div>
+<div class="flex gap-4">
+<span class="text-[10px] font-bold text-tertiary-fixed-dim w-10 pt-1">01:15</span>
+<p class="text-on-surface leading-relaxed text-sm bg-surface-container-low p-4 rounded-2xl">I want to focus on three core pillars: automation, personalization, and cross-platform synergy. Specifically, the Adrian AI needs to feel more human in its transcription accuracy.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-[10px] font-bold text-on-surface-variant w-10 pt-1">02:30</span>
+<p class="text-on-surface leading-relaxed text-sm">
+                                    The feedback from the focus groups suggests that users prefer hands-free communication during their morning commutes. This is a vital touchpoint for our retention strategy.
+                                </p>
+</div>
+<div class="flex gap-4">
+<span class="text-[10px] font-bold text-on-surface-variant w-10 pt-1">03:12</span>
+<p class="text-on-surface leading-relaxed text-sm opacity-50">
+                                    Next week, we'll be rolling out the new voice studio interface to the beta group. I expect full documentation by Friday afternoon.
+                                </p>
+</div>
+</div>
+</div>
+<!-- AI Insights Bento -->
+<div class="space-y-6">
+<h3 class="font-headline text-lg font-bold text-primary border-l-4 border-primary pl-4">AI Intelligence</h3>
+<div class="grid grid-cols-1 gap-4">
+<!-- Summary Card -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Executive Summary</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-loose italic">
+                                    The speaker outlines a strategic pivot toward enterprise growth while addressing mid-market gaps. Emphasis is placed on human-centric AI design and commuter-focused utility for the upcoming Q3 rollout.
+                                </p>
+</div>
+<!-- Action Items -->
+<div class="bg-surface-container p-6 rounded-3xl">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="playlist_add_check">playlist_add_check</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Action Items</span>
+</div>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<div class="mt-1 w-4 h-4 rounded border-2 border-outline flex items-center justify-center"></div>
+<span class="text-xs text-on-surface">Update Q3 Roadmap with focus on commuter touchpoints.</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-1 w-4 h-4 rounded border-2 border-primary flex items-center justify-center bg-primary">
+<span class="material-symbols-outlined text-[10px] text-white" data-icon="check">check</span>
+</div>
+<span class="text-xs text-on-surface-variant line-through">Draft beta release announcement for Voice Studio.</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-1 w-4 h-4 rounded border-2 border-outline flex items-center justify-center"></div>
+<span class="text-xs text-on-surface">Deliver technical documentation by Friday 5 PM.</span>
+</li>
+</ul>
+</div>
+<!-- Keywords -->
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-full bg-white text-[10px] font-bold text-primary shadow-sm border border-outline-variant/20">#STRATEGY</span>
+<span class="px-3 py-1.5 rounded-full bg-white text-[10px] font-bold text-primary shadow-sm border border-outline-variant/20">#VOICE_AI</span>
+<span class="px-3 py-1.5 rounded-full bg-white text-[10px] font-bold text-primary shadow-sm border border-outline-variant/20">#RETENTION</span>
+<span class="px-3 py-1.5 rounded-full bg-white text-[10px] font-bold text-primary shadow-sm border border-outline-variant/20">#ROADMAP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Record FAB -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="group flex items-center gap-4 text-on-primary pl-6 pr-4 py-4 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all bg-[#1A237E]">
+<span class="font-headline font-bold text-sm">Start Recording</span>
+<div class="w-10 h-10 rounded-full bg-error flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full bg-error animate-ping opacity-20"></div>
+<span class="material-symbols-outlined" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+</button>
+</div>
+<!-- Floating Dock Navigation (Bottom Shell Rule) -->
+<div class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] glass-effect rounded-full shadow-lg flex justify-around items-center p-4 z-50">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chat">chat</span>
+<span class="material-symbols-outlined text-primary font-bold" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="inventory_2">inventory_2</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="settings">settings</span>
+</div>
+</body></html>

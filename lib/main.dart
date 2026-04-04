@@ -1,9 +1,7 @@
 // FILE: lib/main.dart
-
-import 'package:adrian_messages/core/constants/palette.dart';
-import 'package:adrian_messages/core/navigation/liquid_router.dart';
 import 'package:flutter/material.dart';
-import 'ui/screens/liquid_splash_screen.dart';
+import 'core/constants/palette.dart';
+import 'core/navigation/liquid_router.dart';
 
 void main() {
   runApp(const AdrianMessagesApp());
@@ -17,13 +15,13 @@ class AdrianMessagesApp extends StatelessWidget {
     return MaterialApp(
       title: 'Adrian Messages',
       debugShowCheckedModeBanner: false,
-      theme: LiquidTheme.darkTheme,
-      // Starts with Splash animation, then flows to Onboarding
-      home: const LiquidSplashScreen(),
+      theme: Palette.lightTheme,
+      darkTheme: Palette.darkTheme,
+      // Use initialRoute + routes only — do NOT also set home:
+      // Having both home: and routes['/'] causes an assertion error at runtime
       initialRoute: LiquidRouter.splash,
       routes: LiquidRouter.routes,
       onGenerateRoute: LiquidRouter.onGenerateRoute,
-      theme: Palette.lightTheme, // ← was using wrong dark theme
     );
   }
 }

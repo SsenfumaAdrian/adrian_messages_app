@@ -9,7 +9,7 @@ class LiquidVideoPlayer extends StatefulWidget {
   const LiquidVideoPlayer({super.key, required this.videoUrl});
 
   @override
-  _LiquidVideoPlayerState createState() => _LiquidVideoPlayerState();
+  State<LiquidVideoPlayer> createState() => _LiquidVideoPlayerState();
 }
 
 class _LiquidVideoPlayerState extends State<LiquidVideoPlayer> {
@@ -33,7 +33,7 @@ class _LiquidVideoPlayerState extends State<LiquidVideoPlayer> {
                 VideoPlayer(_controller),
                 // Liquid Controls
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: LiquidGlassContainer(
                     borderRadius: 20,
                     child: Row(

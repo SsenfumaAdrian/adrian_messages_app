@@ -73,10 +73,18 @@ class Palette {
   static const Color darkSurfaceLow = Color(0xFF121320);
 
   /// Glass card fill used in auth screen
-  static const Color glassCard = Color(0x370818500); // 8,24,80 @ 55%
+  static const Color glassCard = Color(0x37081850); // 8,24,80 @ 55%
   /// Glass border
   static const Color glassBorder = Color(0x37FFFFFF);
 
+
+  // ── BACKWARD-COMPAT ALIASES ───────────────────────────────
+  // Used by auth/splash screens that were built against old tokens
+  static const Color background   = darkBackground;
+  static const Color accentBlue   = Color(0xFF0F6FFF);
+  static const Color accentIndigo = Color(0xFF163A72);
+  static const Color textPrimary  = onSurface;
+  static const Color textMuted    = onSurfaceVariant;
   // ── TYPOGRAPHY helpers ────────────────────────────────────
   static const String fontDisplay = 'Manrope'; // headlines
   static const String fontBody = 'Inter'; // body / labels

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 // FILE: lib/production/stitch_deployment_manifest.dart
 
 class StitchDeploymentManifest {
@@ -7,7 +8,7 @@ class StitchDeploymentManifest {
 
   static const List<String> coreFiles = [
     "lib/main.dart",
-    "lib/core/theme/liquid_theme.dart",
+    
     "lib/core/state/liquid_provider.dart",
     "lib/core/optimization/render_optimizer.dart",
     "lib/core/utils/smile_haptics_controller.dart",
@@ -31,9 +32,9 @@ class StitchDeploymentManifest {
   ];
 
   static void printReadyCheck() {
-    print("--- $appName Deployment Ready ---");
-    print(
+    debugPrint("--- $appName Deployment Ready ---");
+    debugPrint(
         "Total Files: ${coreFiles.length + uiComponents.length + features.length}");
-    print("Status: 120Hz Liquid Render Verified.");
+    debugPrint("Status: 120Hz Liquid Render Verified.");
   }
 }

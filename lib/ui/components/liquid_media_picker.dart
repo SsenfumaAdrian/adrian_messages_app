@@ -13,7 +13,7 @@ class LiquidMediaPicker extends StatelessWidget {
   Widget build(BuildContext context) {
     return LiquidGlassContainer(
       borderRadius: 40,
-      padding: const EdgeInsets.only(top: 10),
+      padding: EdgeInsets.only(top: 10),
       child: Column(
         children: [
           Container(
@@ -30,7 +30,7 @@ class LiquidMediaPicker extends StatelessWidget {
           SizedBox(
             height: 300,
             child: GridView.builder(
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(16),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 crossAxisSpacing: 10,

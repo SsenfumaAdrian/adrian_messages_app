@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compliance Audit Timeline | Adrian</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#00daf3",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-container": "#00a7bb",
+                        "secondary-fixed-dim": "#afc9ea",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#c2dcff",
+                        "on-secondary-fixed": "#001d36",
+                        "background": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-tint": "#525f71",
+                        "on-primary-fixed": "#001d31",
+                        "secondary-fixed": "#d1e4ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#00363d",
+                        "outline-variant": "#c6c5d4",
+                        "error": "#ba1a1a",
+                        "primary-container": "#233141",
+                        "on-tertiary-fixed": "#001f24",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#bac8dc",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "on-secondary-fixed-variant": "#2f4865",
+                        "inverse-primary": "#bac8dc",
+                        "surface": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#001f24",
+                        "on-surface-variant": "#454652",
+                        "tertiary-fixed": "#9cf0ff",
+                        "primary": "#0e1c2b",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "secondary": "#47607e",
+                        "outline": "#767683",
+                        "on-secondary-container": "#48617e",
+                        "surface-container": "#edeeef",
+                        "surface-bright": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "primary-fixed": "#d6e4f9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-fixed-variant": "#3a4859",
+                        "on-primary-container": "#8b99ac",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-dim": "#d9dadb"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .tonal-shift-no-border {
+            background-color: #edeeef;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="flex flex-col md:flex-row h-screen overflow-hidden">
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col h-full w-64 bg-slate-100 dark:bg-slate-900 border-r dark:border-slate-800 p-4 gap-2 shrink-0">
+<div class="flex items-center gap-3 mb-6 px-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-black text-xl tracking-tighter">
+                A
+            </div>
+<div>
+<h1 class="font-manrope font-black text-2xl tracking-tighter text-slate-900 dark:text-white leading-none">Adrian</h1>
+<p class="font-manrope text-[10px] font-medium text-slate-500 uppercase tracking-widest">Enterprise Secure</p>
+</div>
+</div>
+<button class="bg-primary text-on-primary w-full py-3 rounded-xl font-manrope font-bold text-sm mb-4 hover:opacity-90 transition-opacity">
+            New Secure Thread
+        </button>
+<nav class="flex flex-col gap-1">
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined">chat_bubble</span> Messages
+            </a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined">enhanced_encryption</span> Vaults
+            </a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined">timeline</span> Resolution
+            </a>
+<a class="bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg px-4 py-2 flex items-center gap-3 font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined">gavel</span> Audit
+            </a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined">terminal</span> Console
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-1">
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined">help_outline</span> Support
+            </a>
+</div>
+</aside>
+<!-- Main Canvas Area -->
+<main class="flex-1 flex flex-col h-full bg-surface relative overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl sticky top-0 z-40 flex justify-between items-center w-full px-6 py-3 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<span class="md:hidden material-symbols-outlined text-slate-900">menu</span>
+<h2 class="font-manrope font-bold tracking-tight text-slate-900 dark:text-slate-50 text-xl">Compliance Audit</h2>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search Bar -->
+<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full w-96 border-none">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs font-body w-full placeholder:text-slate-400" placeholder="Deep Audit: Encrypted transaction hash..." type="text"/>
+<span class="material-symbols-outlined text-slate-400 text-sm cursor-pointer">filter_list</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50 cursor-pointer p-2 hover:bg-slate-100/50 rounded-full">security</span>
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50 cursor-pointer p-2 hover:bg-slate-100/50 rounded-full">terminal</span>
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden border border-slate-300">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="professional portrait of a security officer in a modern corporate setting with soft architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtnj10ML-My1t5NAY5-5ntqIAahZ-f9hN5Y1E0rDOVRQ8gvQ8zfQDJjUYml_zvTWvLj70lhfO7JiZQPIvjAn_z86bmMN4jHR-Idat-SUxFMDl-uU6w_Ibh9cpr0ou4kM4Bbj1EV5tmvcnlfd9rm5gDDHandGsnTmAX0Q4T_y0ke4Xpz3QNi5lEdr-N5E44GnGWVqBDj00KV_xWmkECksNn2NaclGuao8H3iB4xU6ve7F9a_2P_L16Jd7wE8uDeSVG6sH05N2Bo7s-S"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content Layout -->
+<div class="flex-1 overflow-hidden flex flex-col lg:flex-row">
+<!-- Audit Timeline List (Scrollable) -->
+<section class="flex-1 overflow-y-auto p-6 lg:p-10 custom-scrollbar">
+<div class="max-w-4xl mx-auto space-y-6">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="font-manrope font-extrabold text-2xl text-primary tracking-tighter">System Activity Log</h3>
+<p class="text-on-surface-variant text-sm mt-1">Real-time immutable ledger of all cryptographic operations.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container text-primary text-[10px] font-bold uppercase tracking-wider rounded-md">Live Stream</span>
+<span class="px-3 py-1 bg-tertiary-fixed-dim/20 text-on-tertiary-container text-[10px] font-bold uppercase tracking-wider rounded-md">Validated</span>
+</div>
+</div>
+<!-- Timeline Items -->
+<div class="space-y-4">
+<!-- Action 1 -->
+<div class="group bg-surface-container-lowest p-5 rounded-xl transition-all hover:shadow-md border border-transparent hover:border-outline-variant/10">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">key_visualizer</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-manrope font-bold text-slate-900">Zero-Knowledge Handoff Initialized</h4>
+<span class="font-body text-[11px] text-on-surface-variant">09:42:12 UTC</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 font-body">Cross-region shard migration for Vault <span class="font-mono text-xs bg-surface-container px-1">#VX-8920</span>. Handshake verified by 3/3 validators.</p>
+<div class="mt-3 flex flex-wrap gap-2">
+<span class="flex items-center gap-1 px-2 py-0.5 bg-green-50 text-green-700 text-[10px] font-bold rounded border border-green-100">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> AES-256 Verified
+                                        </span>
+<span class="flex items-center gap-1 px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold rounded border border-slate-200">
+                                            SHA-512 Hash: c7a1...8f2
+                                        </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action 2 -->
+<div class="group bg-surface-container-lowest p-5 rounded-xl transition-all hover:shadow-md border border-transparent hover:border-outline-variant/10">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 shrink-0">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-manrope font-bold text-slate-900">Audit Privilege Escalation</h4>
+<span class="font-body text-[11px] text-on-surface-variant">08:15:44 UTC</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 font-body">Super-admin 'Adrian_Internal_04' requested read-access to transient message logs. Request signed with HSM-7.</p>
+<div class="mt-3 flex flex-wrap gap-2">
+<span class="flex items-center gap-1 px-2 py-0.5 bg-tertiary-fixed-dim/10 text-on-tertiary-container text-[10px] font-bold rounded border border-tertiary-fixed-dim/20">
+<span class="material-symbols-outlined text-[12px]">verified_user</span> Multi-Sig Approved
+                                        </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action 3 -->
+<div class="group bg-surface-container-lowest p-5 rounded-xl transition-all hover:shadow-md border border-transparent hover:border-outline-variant/10">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container shrink-0">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-manrope font-bold text-slate-900">Anomalous Connection Terminated</h4>
+<span class="font-body text-[11px] text-on-surface-variant">07:30:02 UTC</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 font-body">Foreign IP endpoint (84.192.11.x) failed 5 consecutive entropy-validation checks. Hardware-level firewall block engaged.</p>
+<div class="mt-3 flex flex-wrap gap-2">
+<span class="flex items-center gap-1 px-2 py-0.5 bg-red-50 text-red-700 text-[10px] font-bold rounded border border-red-100">
+                                            Automatic Quarantine
+                                        </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action 4 -->
+<div class="group bg-surface-container-lowest p-5 rounded-xl transition-all hover:shadow-md border border-transparent hover:border-outline-variant/10">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">database</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-manrope font-bold text-slate-900">Cold Storage Synchronization</h4>
+<span class="font-body text-[11px] text-on-surface-variant">04:00:00 UTC</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 font-body">End-of-day backup routine completed. Data partitioned into 12 geometric volumes and transmitted to subterranean facility.</p>
+<div class="mt-3 flex flex-wrap gap-2">
+<span class="flex items-center gap-1 px-2 py-0.5 bg-green-50 text-green-700 text-[10px] font-bold rounded border border-green-100">
+                                            Quantum-Safe Encrypted
+                                        </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More indicator -->
+<div class="flex justify-center py-8">
+<button class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors text-xs font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined">history</span> Load Earlier Ledger Entries
+                        </button>
+</div>
+</div>
+</section>
+<!-- Security Health Sidebar -->
+<aside class="w-full lg:w-80 bg-surface-container-low border-l border-outline-variant/10 p-6 flex flex-col gap-6 overflow-y-auto">
+<div>
+<h4 class="font-manrope font-bold text-slate-900 text-sm mb-4">Security Health Summary</h4>
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Trust Score</span>
+<span class="text-2xl font-manrope font-black text-primary">99.8%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim w-[99.8%] rounded-full shadow-[0_0_8px_rgba(0,218,243,0.5)]"></div>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">All system parameters are within high-security thresholds. No critical breaches detected in last 30 cycles.</p>
+</div>
+</div>
+<div class="space-y-3">
+<h4 class="font-manrope font-bold text-slate-900 text-sm">Active Sentinel Guards</h4>
+<div class="flex items-center justify-between bg-surface-container-high/50 p-3 rounded-lg">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_5px_#00daf3]"></span>
+<span class="text-xs font-medium text-slate-700">Entropy Engine</span>
+</div>
+<span class="text-[10px] text-slate-500 font-mono">STABLE</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-high/50 p-3 rounded-lg">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_5px_#00daf3]"></span>
+<span class="text-xs font-medium text-slate-700">HSM Latency</span>
+</div>
+<span class="text-[10px] text-slate-500 font-mono">1.2ms</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-high/50 p-3 rounded-lg">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_5px_#00daf3]"></span>
+<span class="text-xs font-medium text-slate-700">Audit Redundancy</span>
+</div>
+<span class="text-[10px] text-slate-500 font-mono">3X</span>
+</div>
+</div>
+<div class="mt-auto pt-6 border-t border-slate-200">
+<div class="rounded-xl overflow-hidden relative group">
+<img alt="Server room hardware" class="w-full h-32 object-cover" data-alt="futuristic server room with cold blue ambient lighting and rows of sleek encrypted data units" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCPhLIcSRO1XnFpY9YjXAk8xu1wkOD0-QONYti6qpAiqRzGpW3a818LN1YvK6D6_g9SN9MOrDjBKDShuGvNyFS3osfb_aio0qHAyl6js_5kkBH5pUpJHZUvhWgkjP30hmJv_OYn7qiGmRfCf2cPtKrO5yqa0WLYoWyW7zrv0neXvk81ISi8WklbDArItx-Cz3MVhduwehnyl77nXRcoMTqzgMCCs8PIsz4edPbXk-YMJKlygSRcHjzRdi5r793v2mw-4N9fGURko1L"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+<div class="text-white">
+<p class="text-[10px] font-bold uppercase tracking-widest opacity-80">Infrastructure</p>
+<p class="text-xs font-medium">Node: Adrian-Core-Omega</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 bg-slate-900 text-white text-[11px] font-bold py-2 rounded-lg hover:bg-slate-800 transition-colors uppercase tracking-widest">
+                        Export Regulatory Report
+                    </button>
+</div>
+</aside>
+</div>
+<!-- Floating BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full px-6 py-3 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-2xl shadow-2xl z-50 flex justify-around items-center">
+<div class="text-slate-500 flex flex-col items-center">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+<span class="font-inter text-[8px] uppercase tracking-widest mt-1">Chat</span>
+</div>
+<div class="text-slate-500 flex flex-col items-center">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="font-inter text-[8px] uppercase tracking-widest mt-1">Vaults</span>
+</div>
+<div class="bg-slate-900 text-white rounded-full px-4 py-2 flex flex-col items-center scale-110">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-inter text-[8px] uppercase tracking-widest mt-0.5">Audit</span>
+</div>
+<div class="text-slate-500 flex flex-col items-center">
+<span class="material-symbols-outlined text-[20px]">code</span>
+<span class="font-inter text-[8px] uppercase tracking-widest mt-1">Console</span>
+</div>
+</nav>
+</main>
+</body></html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e1e3e4",
+              "surface": "#f8f9fa",
+              "surface-dim": "#d9dadb",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#001f24",
+              "tertiary-fixed-dim": "#00daf3",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f8f9fa",
+              "tertiary": "#001f24",
+              "on-primary-fixed": "#0f1c2c",
+              "on-primary-fixed-variant": "#3a4859",
+              "tertiary-fixed": "#9cf0ff",
+              "on-secondary-fixed-variant": "#2f4865",
+              "surface-container": "#edeeef",
+              "primary": "#0e1c2b",
+              "error": "#ba1a1a",
+              "background": "#f8f9fa",
+              "inverse-surface": "#2e3132",
+              "inverse-primary": "#bac8dc",
+              "secondary-fixed-dim": "#afc9ea",
+              "on-secondary-container": "#48617e",
+              "surface-tint": "#525f71",
+              "outline": "#767683",
+              "surface-container-highest": "#e1e3e4",
+              "inverse-on-surface": "#f0f1f2",
+              "outline-variant": "#c6c5d4",
+              "surface-container-high": "#e7e8e9",
+              "secondary-fixed": "#d1e4ff",
+              "on-primary-container": "#8b99ac",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#00363d",
+              "on-tertiary-container": "#00a7bb",
+              "on-surface": "#191c1d",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "secondary": "#47607e",
+              "on-surface-variant": "#454652",
+              "on-tertiary-fixed-variant": "#004f58",
+              "primary-container": "#233141",
+              "on-error": "#ffffff",
+              "secondary-container": "#c2dcff",
+              "on-background": "#191c1d",
+              "primary-fixed-dim": "#bac8dc",
+              "primary-fixed": "#d6e4f9",
+              "surface-container-low": "#f3f4f5",
+              "on-secondary-fixed": "#001d36"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- SideNavBar (Rail) -->
+<nav class="fixed left-0 top-0 h-screen w-64 flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 font-manrope text-sm font-semibold uppercase tracking-widest z-50">
+<div class="px-8 mb-12">
+<h1 class="text-xl font-black text-[#1A237E]">Adrian</h1>
+<p class="text-[10px] text-slate-500 font-normal normal-case tracking-normal">Intelligent Correspondent</p>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Chats</span>
+</a>
+<a class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span>Vault</span>
+</a>
+<a class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span>Security</span>
+</a>
+<a class="flex items-center gap-4 py-4 text-[#1A237E] dark:text-indigo-300 bg-white dark:bg-slate-800 rounded-l-full ml-4 shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined ml-4">settings</span>
+<span class="ml-4">Settings</span>
+</a>
+</div>
+<div class="mt-auto px-8 flex items-center gap-3">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full border-2 border-[#1A237E]/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzCBNt_I_UkMvF3V5m0429w2jkUd90m-GU074Yapf-Oleh6-VTwEFZaJ-O1di_Bm70Ik7PN0KDKNcd1BGtDf564scdzfsbhsMh0oLV3ny0hfZsbhm96ioHLzeFLjasUx6ckUyai-2j-jj_9P9gf4ysknikvKd-LZJyNOdQT5IWsWP-ZfhyoLg8nLLisBgX8eIgWLshpHJ8J3umxaqFjvbY7lwdXbrXTWou3MeDwkmoAM9ohsRSDY1RmBVPwcVUcbcuB0ble21LffQz"/>
+<div>
+<p class="text-xs font-bold text-[#1A237E] lowercase normal-case">Julian T.</p>
+</div>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,35,126,0.06)] font-manrope tracking-tight font-medium">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold tracking-tighter text-[#1A237E] dark:text-indigo-400">Adrian Messages</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center">
+<input class="bg-slate-100 dark:bg-slate-800 border-none rounded-full px-4 py-1.5 text-xs w-48 focus:ring-1 focus:ring-[#1A237E] transition-all" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#1A237E] dark:text-indigo-400 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-full transition-colors">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-10 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Profile Card -->
+<div class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-lowest rounded-xl p-8 text-center relative overflow-hidden group transition-all">
+<!-- Subtle background decoration -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="relative inline-block mb-6">
+<div class="w-32 h-32 rounded-full border-4 border-surface p-1 shadow-sm mx-auto overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover rounded-full" data-alt="Close-up professional portrait of a stylish man in a dark blazer against a clean studio background with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Dv8DT4HSBOfMZI-KDfNF2iZyXsnLs6yUCAENLtdA-60F0JGkCOMLt77QwLzvArr4iC4m2fNcQ37cJ3ZHCGc0RYUr9NvXlzGy1pQoCphO7YaaneEe2E2B9fieuNJ0wHA6wQHmRaA7JyybiDlELjxHkbojh_o1sYXsfIWyZFRmePQp_sUWFVCcJTB6yCPcGd6qqdiJPaD62c2hIXOvGGL31c-5fQX9IRe1b2gikwtOpbb1Hl0PpLe_bvgexx-Ls04y4GQNu-awcy4c"/>
+</div>
+<button class="absolute bottom-1 right-1 text-white p-2 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-transform text-[#1A237E] bg-[#1A237E]">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<h2 class="text-2xl font-extrabold mb-1 text-[#1A237E]">Julian Thorne</h2>
+<p class="text-on-surface-variant text-sm mb-4">Digital Architect &amp; Curator</p>
+<div class="flex items-center justify-center gap-2 mb-8">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_8px_rgba(0,218,243,0.6)]"></span>
+<span class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant">Online</span>
+</div>
+<div class="space-y-4 text-left border-t border-surface-container pt-8">
+<div>
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1 block">Email Address</label>
+<p class="text-sm font-medium text-[#1A237E]">j.thorne@adrian.io</p>
+</div>
+<div>
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1 block">Phone</label>
+<p class="text-sm font-medium text-[#1A237E]">j.thorne@adrian.io</p>
+</div>
+<div>
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1 block">Location</label>
+<p class="text-sm font-medium text-[#1A237E]">j.thorne@adrian.io</p>
+</div>
+</div>
+</div>
+<!-- Account Actions -->
+<div class="bg-surface-container rounded-xl p-6 space-y-3">
+<button class="w-full bg-gradient-to-br to-primary-container text-white py-4 px-6 rounded-xl font-semibold flex items-center justify-between group hover:opacity-90 transition-opacity from-[#1A237E]">
+<span>Update Profile</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-container-lowest py-4 px-6 rounded-xl font-semibold flex items-center justify-between border border-outline-variant/10 hover:bg-surface-container-high transition-colors text-[#1A237E]">
+<span>Change Password</span>
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</button>
+<button class="w-full bg-error-container/20 text-error py-4 px-6 rounded-xl font-semibold flex items-center justify-between hover:bg-error-container/40 transition-colors">
+<span>Log out</span>
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Settings Sections -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Bento Grid Style Settings -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Privacy Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(25,28,29,0.02)] border border-outline-variant/5">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-[#1A237E]">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<h3 class="font-bold text-lg text-[#1A237E]">Privacy</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-semibold text-[#1A237E]">Read Receipts</p>
+<p class="text-xs text-on-surface-variant">Let others know when you've seen messages</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-semibold text-[#1A237E]">Last Seen</p>
+<p class="text-xs text-on-surface-variant">Show your active status to contacts</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Notifications Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(25,28,29,0.02)] border border-outline-variant/5">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-[#1A237E]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<h3 class="font-bold text-lg text-[#1A237E]">Notifications</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-semibold text-[#1A237E]">Push Alerts</p>
+<p class="text-xs text-on-surface-variant">Instant alerts for new activity</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-semibold text-[#1A237E]">Sound Effects</p>
+<p class="text-xs text-on-surface-variant">Play sounds for incoming messages</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Appearance (Wide span) -->
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(25,28,29,0.02)] border border-outline-variant/5">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-[#1A237E]">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+</div>
+<h3 class="font-bold text-lg text-[#1A237E]">Appearance</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<button class="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-primary bg-white flex flex-col items-center justify-center group">
+<span class="absolute top-2 right-2 text-white p-1 rounded-full text-[#1A237E] bg-[#1A237E]">
+<span class="material-symbols-outlined text-xs" data-icon="check">check</span>
+</span>
+<div class="w-16 h-2 bg-surface-container mb-2 rounded-full"></div>
+<div class="w-10 h-2 bg-surface-container mb-4 rounded-full"></div>
+<p class="text-xs font-bold uppercase tracking-widest text-[#1A237E]">Light Silk</p>
+</button>
+<button class="relative aspect-[4/3] rounded-xl overflow-hidden border border-outline-variant/20 bg-primary-container flex flex-col items-center justify-center hover:bg-primary-container/90 transition-colors">
+<div class="w-16 h-2 bg-white/10 mb-2 rounded-full"></div>
+<div class="w-10 h-2 bg-white/10 mb-4 rounded-full"></div>
+<p class="text-xs font-bold text-white/40 uppercase tracking-widest">Obsidian Blue</p>
+</button>
+<button class="relative aspect-[4/3] rounded-xl overflow-hidden border border-outline-variant/20 bg-slate-900 flex flex-col items-center justify-center hover:bg-slate-800 transition-colors">
+<div class="w-16 h-2 bg-white/5 mb-2 rounded-full"></div>
+<div class="w-10 h-2 bg-white/5 mb-4 rounded-full"></div>
+<p class="text-xs font-bold text-white/30 uppercase tracking-widest">Midnight</p>
+</button>
+</div>
+<div class="mt-8 flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="text_fields">text_fields</span>
+<span class="text-sm font-medium text-[#1A237E]">Text Interface Scale</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-bold text-on-surface-variant">Default (14px)</span>
+<span class="material-symbols-outlined cursor-pointer text-[#1A237E]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Linked Devices -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(25,28,29,0.02)] border border-outline-variant/5">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-[#1A237E]">
+<span class="material-symbols-outlined" data-icon="devices">devices</span>
+</div>
+<h3 class="font-bold text-lg text-[#1A237E]">Devices</h3>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-[#1A237E]" data-icon="laptop_mac">laptop_mac</span>
+<div class="flex-1">
+<p class="text-xs font-bold text-[#1A237E]">MacBook Pro 16"</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Active Now • London, UK</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="smartphone">smartphone</span>
+<div class="flex-1">
+<p class="text-xs font-bold text-[#1A237E]">iPhone 15 Pro</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Last used 2h ago</p>
+</div>
+<span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Help & Support -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(25,28,29,0.02)] border border-outline-variant/5">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-[#1A237E]">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</div>
+<h3 class="font-bold text-lg text-[#1A237E]">Support</h3>
+</div>
+<div class="space-y-2">
+<a class="block p-3 rounded-lg hover:bg-surface-container-low text-sm font-medium flex items-center justify-between group text-[#1A237E]" href="#">
+<span>Help Center</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-primary" data-icon="open_in_new">open_in_new</span>
+</a>
+<a class="block p-3 rounded-lg hover:bg-surface-container-low text-sm font-medium flex items-center justify-between group text-[#1A237E]" href="#">
+<span>Report a Bug</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-primary" data-icon="bug_report">bug_report</span>
+</a>
+<a class="block p-3 rounded-lg hover:bg-surface-container-low text-sm font-medium flex items-center justify-between group text-[#1A237E]" href="#">
+<span>Terms &amp; Privacy</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-primary" data-icon="description">description</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Subtle Info Footer -->
+<div class="pt-8 text-center">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em]">ADRIAN MESSAGES • VERSION 4.12.0</p>
+<p class="text-[9px] text-on-surface-variant/60 mt-2">© 2024 Adrian Digital Architecture. All rights reserved.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Glassy Overlay for Profile Details (Contextual FAB Suppression) -->
+<!-- Suppressed navigation shell on settings page as per mandate for task focus -->
+</body></html>

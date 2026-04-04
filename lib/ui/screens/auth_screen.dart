@@ -20,7 +20,7 @@ class _AuthScreenState extends State<AuthScreen>
     super.initState();
     _swirlCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 20),
+      duration: Duration(seconds: 20),
     )..repeat();
   }
 

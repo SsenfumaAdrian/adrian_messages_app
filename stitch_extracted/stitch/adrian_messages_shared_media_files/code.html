@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1A237E",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              "manrope": ["Manrope"],
+              "display": ["Manrope"],
+              "body": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass { background: rgba(248, 249, 250, 0.8); backdrop-filter: blur(20px); }
+        .primary-gradient { background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar Shell -->
+<nav class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 h-screen w-64 border-r-0 z-50">
+<div class="px-8 mb-12">
+<div class="flex flex-col">
+<span class="text-xl font-black text-[#1A237E] font-manrope uppercase tracking-widest">Adrian</span>
+<span class="text-[10px] text-slate-500 font-semibold uppercase tracking-widest mt-1">Intelligent Correspondent</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-1">
+<button class="flex items-center gap-4 py-3 px-8 text-slate-500 hover:text-[#1A237E] hover:bg-[#eae7ef] transition-all font-manrope text-sm font-semibold uppercase tracking-widest">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Chats</span>
+</button>
+<button class="flex items-center gap-4 py-3 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm transition-all font-manrope text-sm font-semibold uppercase tracking-widest">
+<span class="material-symbols-outlined">lock</span>
+<span>Vault</span>
+</button>
+<button class="flex items-center gap-4 py-3 px-8 text-slate-500 hover:text-[#1A237E] hover:bg-[#eae7ef] transition-all font-manrope text-sm font-semibold uppercase tracking-widest">
+<span class="material-symbols-outlined">verified_user</span>
+<span>Security</span>
+</button>
+<button class="flex items-center gap-4 py-3 px-8 text-slate-500 hover:text-[#1A237E] hover:bg-[#eae7ef] transition-all font-manrope text-sm font-semibold uppercase tracking-widest">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</button>
+</div>
+<div class="mt-auto px-8">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoDDVUMFseTBgYpWJ6qlNqCuWfpi2wwbtUel1QzOGVRr0owwhmY2wtMprjrKahiU-xjSdJVdOCbbIE4L-_h8R8n7Y4uAPIgrpEzU8Bw-WoT7qKUH5pHJOSh74gLp2DL1kmS_GNrEDc4x95jylLLaUYYPvfIsphOWrsCxhYiFYAwzSaavk178d2zrGOU5rvYN_aL0I7rJuC5jlk0-GOFOVwsH414Z97Ou0HcN29x04MjLGzkIa1qJXGxaNESh3E0uE8jYz8DBZRQITb"/>
+</div>
+</div>
+</nav>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl z-40 shadow-[0_12px_32px_rgba(26,35,126,0.06)] pl-72">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-100 transition-colors rounded-full">
+<span class="material-symbols-outlined text-[#1A237E]">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="text-2xl font-bold tracking-tighter text-[#1A237E] dark:text-indigo-400 font-manrope">Adrian Messages</h1>
+<span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold font-manrope">Shared Media • Executive Suite</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="bg-slate-100 dark:bg-slate-800 border-none rounded-full pl-10 pr-4 py-2 text-sm w-64 focus:ring-2 focus:ring-[#1A237E]/20 transition-all" placeholder="Search in vault..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-slate-500">
+<button class="p-2 hover:bg-slate-100 transition-colors rounded-lg">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 mt-20 p-8 min-h-screen bg-white">
+<div class="max-w-6xl mx-auto">
+<!-- Segmented Control (Tabs) -->
+<div class="flex gap-8 mb-10 border-b border-outline-variant/20">
+<button class="pb-4 text-sm font-bold border-b-2 border-primary text-primary transition-all">Media</button>
+<button class="pb-4 text-sm font-semibold text-on-surface-variant hover:text-primary transition-all">Files &amp; Docs</button>
+<button class="pb-4 text-sm font-semibold text-on-surface-variant hover:text-primary transition-all">Links</button>
+<button class="pb-4 text-sm font-semibold text-on-surface-variant hover:text-primary transition-all">Voice Notes</button>
+</div>
+<!-- Bento Grid Gallery -->
+<section class="space-y-10">
+<!-- This Week Section -->
+<div>
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline text-xl font-bold">This Week</h2>
+<button class="text-xs font-bold text-secondary flex items-center gap-1 hover:underline">
+                            Select All <span class="material-symbols-outlined text-sm">checklist</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+<!-- Hero Large Media -->
+<div class="col-span-2 row-span-2 relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="minimalist modern office interior with large windows and clean architectural lines during midday light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMuWtD0bRONK3EStgvJaYiSYgJYpNFX4JRKvYThhZ4GMghhEOD5YhPdzfSONNhfxkZx9isKmksuuvOdmNNVpebngzMvtKaSN_M2KdMIm6bTK_VyIWzXct5HoOpa6lhibEpgCScLlTpIBkK-VWdEYZ1ZavgnzYbNycTAgBgfDEioIktv3WfWkdhcwxQp84-4vHcSVlJ1zsqO33KslcuKPCHMir2Cs5W5IL2gavUoZUXdQuDR2hmuRad0rrMJihwMsOJE5r1KnZ-5H20"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-white text-xs font-medium">shared_hq_01.jpg</span>
+</div>
+</div>
+<!-- Standard Grid Items -->
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="close-up of financial data charts on a computer screen with soft blue and white glowing tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOj23G24xwd-9RrcimTmXDGrOHWv3aX_-uuzFqFionms3HLfmKu8bgKel1Q4811uafA1d4pEipwSL5Zsu1JXFlVmdBBu-uRYac3SIXJ9NEqhKE3JQPUjaOYCYsQLmvHpT0jEH79x3VqSglqGKHBJBYGB2dRjkpfLZTLrJYhmxGGQK056BaUFmbFZghVUKDsOGKgvDPhRuu8n2C338pQIfq1bLoXgbwcnogNe2DDLVijSJPvgD0UmM5NWwzSrtMZiuE2MEZ1AiKPndj"/>
+<div class="absolute top-2 right-2 p-1 bg-black/20 backdrop-blur rounded-lg">
+<span class="material-symbols-outlined text-white text-sm">play_circle</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="overhead view of a team collaboration session with colorful notebooks and coffee on a white wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrl2OVNb2CmXzKhSQCGRDY63GHWFqPIM5z3CySsZglorrUJlqCYf7nXk491Nd-782Yyjza6k4IP12CSzDB2dnvONn8jCeVwt8_48rsg1w4R3bb2PNGhy886bcEBMRW8GbWMgcCgxSnoIX8R1hgBYJkEIZ9S7nPETFZBfWCoUFJDM_PkFzzBgRTM2Iys5Ss5w9dnN5NBiiJdfUWlwG4hKXrQujCoDXEhvWEUvsZ7pYO2Y4KwI9o0RF78W5lkD3JIffhAdNLxm-qZXHD"/>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="professional workspace setup with dual monitors and warm ambient lighting in a cozy home office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdcpkGPbgjt8noSklN-IenuamUCJfXu_lBEDndJQ4QLWha_Tm30-AKL9ivBPnIqziybi40Z8tHvun6hJCK7pPIyaMnuXcpYFei_zPFpdO4QPHrs_vapky7vrdjSrTgGBn_7HQpzmbZP0VG6z3snRUF24XfFlZHUxl0iM74Hk8CxnJXnB-YId29dXcooI2L6nenv87m5qkTLvTBRkhYLtt7hOYTgyiAlFxQ0zHckOB-x2bojxo3ndICo8d548Yp50bIo9zfvX28_PzN"/>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="group of business professionals in a sleek boardroom having an engaged discussion with natural window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnDEAGyOBzxyrvUmkj9tpeHU6DWLD1WsfDOhkQgH-6vZWh2Uywp-vHXgV2gs8G32N2Jl4JPAJoFj0wdxiytVyTOEHp7XkkjEV8gxlmYQ1htpc2fGGHYeyAB6fWS09kPs82GKu5cQAIY2VZfj8pTrfjjup3o5FsOqAo5uVqjUZguK9veH8vaqaq5xtzqzroQzAFzZJ_dCzAGBxWMVx-Vwil3gASI5b_Pg9wKGd_nFw1vwH_FUyi8Wa9vo48QN3_WBfgRkA-fKCV4G8X"/>
+</div>
+<!-- More Media -->
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="abstract architectural close-up of glass and steel with dramatic shadows and sharp geometry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH3EUCJythoh3QLdUT7Eq6Ec3j2Dq4pVMtwWPPGc4wOULDcrI66_JuZo4Zy7LGDQbh5FLUb5Ua3_YuL7THHW4mAv0jw5SRd7VC6WBc09vvdfz1jDKSEAl6rTBkIRgpVXbxE8pbuGQzdXh2pCdoBQVx9RGpBE5tVGAWHaXoQqSafNiOjjpPCDfTwYpR_GdYFMLLINpxAZYbBh_EKKINiyEd2uI22al2aT4Hdmj--87vZw1NF6FOWopyUm75YV3aIsukOJK0BY1PLmHw"/>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="person using a silver laptop on a clean wooden desk with a minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8BNbJm9k8DokIHtfi0IfBfXo7EcTI1BC4v5OFGPUNpzMGNULMd3VVstUD_SiYcIikh-weQUn0tcIdUsavFE3xOOomYtwogEWMXcCl4HW8dBisZOgdTrYztI3B9KyHsePgeIJ3RelSPbqXh-cHOA5W7KDS4lMzuB9A2CdOJeI9kF8SZpzpzLuW0badVvJrc-wfzku5X1UEigJtrcgJwpz0CWuZK8mQNmgI1lgfG0q5Jd8kn1BM7KYhYTx3Yx_MxCMMDWRUwp6kajsj"/>
+</div>
+</div>
+</div>
+<!-- Last Month Section -->
+<div>
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline text-xl font-bold">Last Month</h2>
+<button class="text-xs font-bold text-secondary hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-4 lg:grid-cols-6 gap-3">
+<div class="aspect-square rounded-xl bg-surface-container-high flex flex-col items-center justify-center p-4 text-center group cursor-pointer hover:bg-surface-container-highest transition-colors">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<span class="text-[10px] font-bold block truncate w-full">Proposal_V2.pdf</span>
+<span class="text-[8px] text-on-surface-variant">2.4 MB</span>
+</div>
+<div class="aspect-square rounded-xl bg-surface-container-high flex flex-col items-center justify-center p-4 text-center group cursor-pointer hover:bg-surface-container-highest transition-colors">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary">table_chart</span>
+</div>
+<span class="text-[10px] font-bold block truncate w-full">Q4_Projection.xlsx</span>
+<span class="text-[8px] text-on-surface-variant">840 KB</span>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="software developers working together on multiple screens with vibrant code editors and warm interior light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRpKhm-DybrKUE8JnKyI_kIduRkCY4RcFTfemeYptohNSc7PQ9u-JHgy-ifKBCH-dhZTpsWyPc0_cMWES_kfpdsT12N5HZZrXhqcLilGAizkG01gvQyXD2xVFL3po1W38uURQVAWXgLYad1kSqCuI6tBou8o0PpG9iN2oj2jM0me8Vqs7Jl-skxTOda9GU_--Hd6zneJoFo1QUgaY-xaUvt4mlPohAz1asqpB5MQ7StF09sD1-BHv0x1oXfYrXUADCicPa9tepbejo"/>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="creative studio space with mood boards and samples in a bright airy room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaZHhW2egBsX_12-WPfTeEmFPpcllSANz0P72tzuN19H3oWDC8fN4eHOkF7DzZCMkrt4hRh4UUGw1KRDs4zsua4GYJKk-deDK9Lcc0MUtIUkcqHq_qodz_lJUC69zLOzYlfV3mfoc9NaYaG0DYJ5IJA6M1w_-lfO1HnPxHWJomrvvoS4ZyuZ7f6tpp_BF7GDnxjQTsfOJB7v_4o6_FEwAj2tZbnRXlHpK-DQmbxpzRA1E_oI_uhKy_R0KV6lc85ZBbEDf1azvUnA7y"/>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="modern luxury hotel lobby with designer furniture and cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCzo2jtJECXexENm7_u9L78hsenTl3h3ugETIwIwjgLEJo7kfBKxImaulpb2R98_v4I_A7gGQlh3ISj7Wiv1tFo7-jTDiV3mTB5LJ78IhIDHNWFkluEg7O0n5r1EHJ6hynLOK90NMhmjAl6FC-Z4SpUcxmpYsBcGTHd-xij5sItKLdi2YufMBcRWzybqIIX-qjFI-esUwfBSVnHtEPr71k4RJ46o2J5mzARC7uCsOJY_k1byA1dO4oiwSwfuPawJIwV1DlWk--7gDT"/>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="team celebrating success in a modern workspace with bright morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtbIUyy4VfhmpclplUjbu4gwKXs1SqnRT7dhukaDRBFaJI6yAToFAJFpY0LCcnytGGi2BN-YQqS3IEMAHJQrtBAARgZTCFrryDqTLxIuqp7TE4LmkAyOmnz1wa-j2Tl3zARrKdC83GgmZIvh92s9X60YFSZu6hIfVvlXmyT_RH51CDYQ2QnNMcy5pU27TJQl2PAyMH7_gbPbiQp-T6fPi4y5ZXdRIlNhwFuhcytznw1A0OjJRKduFzMYfmREtRWDZwK_rtIqQBpwnq"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating Action Component (Upload Context) -->
+<div class="fixed bottom-10 right-10">
+<button class="primary-gradient text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center scale-100 hover:scale-110 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+<!-- Contextual Quick Stats (Floating Sidebar Design) -->
+<aside class="fixed right-8 top-32 w-64 hidden xl:block">
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-outline-variant/10">
+<h3 class="font-headline font-bold text-sm mb-6">Storage Overview</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-xs font-semibold mb-2">
+<span>Photos &amp; Video</span>
+<span class="text-on-surface-variant">4.2 GB</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 65%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-semibold mb-2">
+<span>Documents</span>
+<span class="text-on-surface-variant">1.1 GB</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 20%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-semibold mb-2">
+<span>Other</span>
+<span class="text-on-surface-variant">0.5 GB</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant" style="width: 10%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-3 p-3 bg-tertiary-fixed/10 rounded-xl">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<div>
+<p class="text-[10px] font-bold text-tertiary-container">Adrian AI tagged 42 new items today.</p>
+<p class="text-[9px] text-tertiary-container/70">Adrian AI tagged 42 new items today.</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] glass h-16 rounded-full flex justify-around items-center px-6 z-50 shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="material-symbols-outlined text-outline">inventory_2</span>
+<span class="material-symbols-outlined text-outline">security</span>
+<span class="material-symbols-outlined text-outline">settings</span>
+</nav>
+</body></html>

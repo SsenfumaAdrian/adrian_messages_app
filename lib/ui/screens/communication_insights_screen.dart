@@ -11,7 +11,7 @@ class CommunicationInsightsScreen extends StatelessWidget {
       activeRoute: LiquidRouter.insights,
       title: 'Communication Intelligence',
       child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // KPI row
@@ -48,12 +48,12 @@ class CommunicationInsightsScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.04),
+                          color: Palette.primary.withValues(alpha: 0.04),
                           blurRadius: 12,
-                          offset: const Offset(0, 3))
+                          offset: Offset(0, 3))
                     ]),
                 child: Padding(
-                    padding: const EdgeInsets.all(16),
+                    padding: EdgeInsets.all(16),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -99,8 +99,7 @@ class CommunicationInsightsScreen extends StatelessWidget {
                                                             colors: [
                                                               Palette.primary,
                                                               Palette.primary
-                                                                  .withOpacity(
-                                                                      0.4)
+                                                                  .withValues(alpha: 0.4)
                                                             ]),
                                                         borderRadius:
                                                             BorderRadius
@@ -137,24 +136,18 @@ class CommunicationInsightsScreen extends StatelessWidget {
               'Marcus Reid',
               'Sarah Miller'
             ].asMap().entries.map((e) => Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                padding: const EdgeInsets.all(14),
+                margin: EdgeInsets.only(bottom: 10),
+                padding: EdgeInsets.all(14),
                 decoration: BoxDecoration(
                     color: Palette.surfaceContainerLowest,
                     borderRadius: BorderRadius.circular(16)),
                 child: Row(children: [
-                  Text('${e.key + 1}',
-                      style: const TextStyle(
-                          fontFamily: Palette.fontDisplay,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w800,
-                          color: Palette.primary,
-                          width: 28)),
+                  SizedBox(width: 28, child: Text('\${e.key + 1}', style: const TextStyle(fontFamily: Palette.fontDisplay, fontSize: 16, fontWeight: FontWeight.w800, color: Palette.primary))),
                   Container(
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
-                          gradient: const LinearGradient(
+                          gradient: LinearGradient(
                               colors: [Palette.primary, Color(0xFF3949AB)]),
                           borderRadius: BorderRadius.circular(12)),
                       child: Center(
@@ -196,15 +189,15 @@ class _KpiCard extends StatelessWidget {
   final bool up;
   @override
   Widget build(BuildContext ctx) => Container(
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(14),
       decoration: BoxDecoration(
           color: Palette.surfaceContainerLowest,
           borderRadius: BorderRadius.circular(18),
           boxShadow: [
             BoxShadow(
-                color: Palette.primary.withOpacity(0.04),
+                color: Palette.primary.withValues(alpha: 0.04),
                 blurRadius: 10,
-                offset: const Offset(0, 2))
+                offset: Offset(0, 2))
           ]),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(label,

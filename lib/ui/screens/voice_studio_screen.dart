@@ -21,7 +21,7 @@ class _State extends State<VoiceStudioScreen>
   void initState() {
     super.initState();
     _waveCtrl = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 800))
+        vsync: this, duration: Duration(milliseconds: 800))
       ..repeat(reverse: true);
     _wave = CurvedAnimation(parent: _waveCtrl, curve: Curves.easeInOut);
   }
@@ -59,12 +59,12 @@ class _State extends State<VoiceStudioScreen>
                   child: ListView.builder(
                       itemCount: 6,
                       itemBuilder: (_, i) => Container(
-                          margin: const EdgeInsets.symmetric(
+                          margin: EdgeInsets.symmetric(
                               horizontal: 12, vertical: 4),
-                          padding: const EdgeInsets.all(12),
+                          padding: EdgeInsets.all(12),
                           decoration: BoxDecoration(
                               color: i == 0
-                                  ? Palette.primary.withOpacity(0.10)
+                                  ? Palette.primary.withValues(alpha: 0.1)
                                   : Colors.transparent,
                               borderRadius: BorderRadius.circular(12)),
                           child: Row(children: [
@@ -90,7 +90,7 @@ class _State extends State<VoiceStudioScreen>
         // Main player
         Expanded(
             child: Padding(
-                padding: const EdgeInsets.all(28),
+                padding: EdgeInsets.all(28),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -99,7 +99,7 @@ class _State extends State<VoiceStudioScreen>
                           height: 160,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                              gradient: const LinearGradient(
+                              gradient: LinearGradient(
                                   colors: [Palette.primary, Color(0xFF3949AB)]),
                               borderRadius: BorderRadius.circular(24)),
                           child: AnimatedBuilder(
@@ -154,7 +154,7 @@ class _State extends State<VoiceStudioScreen>
                                     width: 68,
                                     height: 68,
                                     decoration: BoxDecoration(
-                                        gradient: const LinearGradient(colors: [
+                                        gradient: LinearGradient(colors: [
                                           Palette.primary,
                                           Color(0xFF3949AB)
                                         ]),
@@ -162,9 +162,9 @@ class _State extends State<VoiceStudioScreen>
                                         boxShadow: [
                                           BoxShadow(
                                               color: Palette.primary
-                                                  .withOpacity(0.35),
+                                                  .withValues(alpha: 0.35),
                                               blurRadius: 20,
-                                              offset: const Offset(0, 6))
+                                              offset: Offset(0, 6))
                                         ]),
                                     child: Icon(
                                         _isPlaying
@@ -219,7 +219,7 @@ class _WavePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.white.withOpacity(0.3)
+      ..color = Colors.white.withValues(alpha: 0.3)
       ..strokeWidth = 2
       ..style = PaintingStyle.stroke;
     final path = Path();
@@ -253,7 +253,7 @@ class _CtrlBtn extends StatelessWidget {
       child: Container(
           width: size,
           height: size,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
               color: Palette.surfaceContainerHigh, shape: BoxShape.circle),
           child: Icon(icon, color: Palette.primary, size: size * 0.5)));
 }
@@ -264,15 +264,15 @@ class _AiChip extends StatelessWidget {
   final IconData icon;
   @override
   Widget build(BuildContext ctx) => Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       decoration: BoxDecoration(
           color: Palette.surfaceContainerLowest,
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-                color: Palette.primary.withOpacity(0.04),
+                color: Palette.primary.withValues(alpha: 0.04),
                 blurRadius: 8,
-                offset: const Offset(0, 2))
+                offset: Offset(0, 2))
           ]),
       child: Row(mainAxisSize: MainAxisSize.min, children: [
         Icon(icon, size: 16, color: Palette.primary),

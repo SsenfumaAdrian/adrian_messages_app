@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages - Encrypted Notes &amp; Whiteboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2f4865",
+              "on-secondary-container": "#48617e",
+              "inverse-on-surface": "#f0f1f2",
+              "primary": "#0e1c2b",
+              "on-error-container": "#93000a",
+              "on-background": "#191c1d",
+              "on-secondary-fixed": "#001d36",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#bac8dc",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "surface-tint": "#525f71",
+              "tertiary-fixed": "#9cf0ff",
+              "surface-bright": "#f8f9fa",
+              "surface-variant": "#e1e3e4",
+              "on-surface-variant": "#454652",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#c2dcff",
+              "primary-container": "#233141",
+              "surface-container-high": "#e7e8e9",
+              "surface": "#f8f9fa",
+              "on-tertiary-container": "#00a7bb",
+              "on-primary-container": "#8b99ac",
+              "error": "#ba1a1a",
+              "inverse-primary": "#bac8dc",
+              "outline": "#767683",
+              "on-primary-fixed-variant": "#3a4859",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#d1e4ff",
+              "primary-fixed": "#d6e4f9",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#afc9ea",
+              "outline-variant": "#c6c5d4",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#00daf3",
+              "surface-container-highest": "#e1e3e4",
+              "surface-container": "#edeeef",
+              "background": "#f8f9fa",
+              "on-tertiary-fixed": "#001f24",
+              "secondary": "#47607e",
+              "tertiary-container": "#00363d",
+              "on-primary-fixed": "#0f1c2c",
+              "tertiary": "#001f24",
+              "on-surface": "#191c1d",
+              "on-tertiary-fixed-variant": "#004f58"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .canvas-grid {
+            background-image: radial-gradient(circle, #c6c5d4 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-hidden">
+<div class="flex h-screen w-full">
+<!-- SideNavBar (Shared Component) -->
+<aside class="hidden md:flex flex-col h-full p-4 space-y-2 bg-slate-50 dark:bg-slate-950 w-64 border-r-0 h-screen tonal-shift bg-slate-100/50 dark:bg-slate-900/50 z-40">
+<div class="flex items-center gap-3 px-2 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="category">category</span>
+</div>
+<div>
+<h1 class="text-lg font-black tracking-tighter text-slate-900 font-headline">Adrian</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Productivity Suite</p>
+</div>
+</div>
+<button class="bg-primary bg-gradient-to-br from-primary to-primary-container text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 mb-4 hover:shadow-lg transition-all">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+                New Message
+            </button>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 p-3 transition-all duration-200 ease-out text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-manrope text-sm font-medium">Inbox</span>
+</a>
+<a class="flex items-center gap-3 p-3 transition-all duration-200 ease-out text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-manrope text-sm font-medium">Calendar</span>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 p-3 transition-all duration-200 ease-out bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-manrope text-sm font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-3 p-3 transition-all duration-200 ease-out text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-manrope text-sm font-medium">Files</span>
+</a>
+<a class="flex items-center gap-3 p-3 transition-all duration-200 ease-out text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="contacts">contacts</span>
+<span class="font-manrope text-sm font-medium">Contacts</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1">
+<a class="flex items-center gap-3 p-3 transition-all duration-200 ease-out text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-manrope text-sm font-medium">Help</span>
+</a>
+<a class="flex items-center gap-3 p-3 transition-all duration-200 ease-out text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span class="font-manrope text-sm font-medium">Archive</span>
+</a>
+</div>
+</aside>
+<!-- Main Workspace Canvas -->
+<main class="flex-1 relative flex flex-col bg-surface overflow-hidden">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-3 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md no-border bg-slate-50/50 shadow-sm shadow-slate-200/50">
+<div class="flex items-center gap-6">
+<h2 class="font-manrope font-extrabold tracking-tight text-xl text-slate-900 dark:text-white">Adrian Messages</h2>
+<div class="hidden lg:flex items-center gap-4">
+<span class="text-xs font-bold text-on-surface-variant/60 uppercase tracking-widest">Workspace: Project Nova</span>
+<div class="flex -space-x-2">
+<img alt="User 1" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="portrait of a young woman with a friendly smile, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfE2Oqm8OxKdGyeMMytjyRcs6c3APaSN4Ral7_K4PF59lTodPXrnxsWipWLCUSNBTh5HZ7TAU8JrULs-SgP4Bnh-eXq_RKvZfWDzcLstnrXYmXBRDxf-MsVUztAmVvleMoCcGT1-u4LTBLAyEl-2lKzydtorAMBM6Z4rRdVXfJmLF6cFl3Aa7qmqgXIcgM9rGBfS-fTQab0Ghaismo51yBJw15MxVEeMs_7tnojow_TmsErRv2EtPpUB7aKpowgKlHnBzzaEOO3Omk"/>
+<img alt="User 2" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="portrait of a middle-aged man with short beard, professional look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmT-TP5Cb1Kme5vuvlwnk-8tk4E44HshZZUQXx-mki95SA1EpmOaHYr8iEcoAZDDkwZSmWgp3jsG7Gh6baxdVxuWB54WSS-uNX6wMMhXirTTi3soYC1dX7wvMKXoVDgx6g7SE89UG-URddcewmlP7-xGdw7rVSKTO4YlorQIyTAx1WIZNKlyTbNMD9neCDvwo6kVdd8NJcZO1459ktGFP_EX-a5u0-XMWc_aHpPn1hv_O1Hez-1yLJR8ENRd-G5ybr5wFHqp47qi07"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-tertiary-fixed-dim text-[10px] flex items-center justify-center font-bold text-tertiary-container">+3</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-low border-0 rounded-full py-1.5 px-4 pr-10 text-sm w-64 focus:ring-1 focus:ring-primary/20 transition-all" placeholder="Search notes..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="search">search</span>
+</div>
+<button class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ml-2 border border-slate-300">
+<img alt="User profile avatar" data-alt="close-up headshot of a person with clean studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkGLvLIBDrOqyWuATVKlmk2Yl2V9_ToPpoLUpXGthfM_z9tLI3u_umZi7JYWM6Cd0_5QpQa7-ns5-cdEe2opycfL9l6XcYqDqDgBkkdbpGmjcvrQRGAVUUknJ0cLTZNb_njP2UnZdvbhu5xvPxuIRynoHKtpr9oNmam6KOgB-KHgyRHLfWI9E2UJTPFN8_Y8HyAbt4zHOatuaYm-doYPGbWBfk8JY5zqsD2IOMGcJ6Mat9WdwMzCKJrLbQRxyTweOxTeyI0OlqWZ9a"/>
+</div>
+</div>
+</header>
+<!-- Infinite Canvas Area -->
+<div class="flex-1 mt-[60px] relative canvas-grid overflow-auto bg-surface-bright">
+<!-- Whiteboard Elements (Asymmetric Layout) -->
+<div class="p-20 min-h-[2000px] min-w-[3000px] relative">
+<!-- Floating Note 1 -->
+<div class="absolute top-20 left-40 w-80 p-6 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 rotate-1 group hover:scale-[1.02] transition-transform">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold uppercase text-tertiary-fixed-variant bg-tertiary-fixed/30 px-2 py-0.5 rounded">Brainstorm</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm cursor-grab" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<h3 class="font-headline font-bold text-lg mb-2">Phase 1: Discovery</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Focusing on the core user journey for first-time onboarding. Needs to feel seamless and intuitive.
+                        </p>
+<div class="mt-6 flex items-center justify-between border-t border-surface-container pt-4">
+<div class="flex gap-2">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg" data-icon="add_reaction">add_reaction</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg" data-icon="push_pin">push_pin</span></button>
+</div>
+<button class="flex items-center gap-1 text-[10px] font-bold text-primary bg-primary/5 px-3 py-1.5 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-xs" data-icon="send">send</span>
+                                Snap to Chat
+                            </button>
+</div>
+</div>
+<!-- Floating Whiteboard Card 2 (Rich Text/Markdown) -->
+<div class="absolute top-48 left-[500px] w-[500px] bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/10 overflow-hidden">
+<div class="p-4 bg-surface-container border-b border-surface-container-highest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="description">description</span>
+<span class="text-sm font-bold font-headline">Technical Specs.md</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_8px_#00daf3]"></span>
+<span class="text-[10px] font-medium text-on-surface-variant">Live Editing</span>
+</div>
+</div>
+<div class="p-8 space-y-4 font-body text-sm leading-relaxed text-on-surface">
+<h1 class="text-2xl font-bold font-headline">Architecture Overview</h1>
+<p>All notes are <strong>end-to-end encrypted</strong> using AES-256 before hitting the server. Our protocol ensures that only members of the <em>Circle</em> can decrypt content.</p>
+<ul class="list-disc pl-5 space-y-2 text-on-surface-variant">
+<li>Real-time conflict resolution using CRDTs</li>
+<li>Version history preserved for 30 days</li>
+<li>Markdown support for all text elements</li>
+</ul>
+<div class="bg-surface-container-low p-4 rounded-xl border-l-4 border-primary mt-4 italic text-on-secondary-container">
+                                "The security of the user is our primary directive."
+                            </div>
+</div>
+<div class="px-6 py-4 bg-surface-container-low flex items-center justify-between">
+<div class="flex -space-x-1.5">
+<div class="w-6 h-6 rounded-full border border-surface bg-primary text-[8px] flex items-center justify-center text-white font-bold">JD</div>
+<div class="w-6 h-6 rounded-full border border-surface bg-secondary text-[8px] flex items-center justify-center text-white font-bold">AM</div>
+</div>
+<button class="text-xs font-bold text-primary flex items-center gap-1 hover:underline">
+                                View Version History <span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+</button>
+</div>
+</div>
+<!-- Floating Visual Asset 3 -->
+<div class="absolute top-10 left-[1100px] w-96 rounded-2xl overflow-hidden shadow-xl group border-4 border-white">
+<img class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" data-alt="abstract artistic visualization of data security and encryption using glowing blue nodes and network lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbMmjSeXy4Iir5T4y2IFdoLY7TfzTtP4p1xWt_mwNm50EXVIpIjoU412Bvc2xKdlcsbl-Lmi86u9ZeB5DFR-BNoJfRe5oLtpRuB-aXDFZDjUl6XBmen2kLXS2Z_dRJ8Ue3REJTdkbSRXxVtBElk5-hfB0pm5qb87ux2RQk1qIl1mZcntbms8gavnqZWhCPmKwoScaQGFYbB0MCA11m_g8T67-zI7Cmd6FJiqLQpMKNNVAp4cSIE45XG8cN3MW40exRNn5ZZMBhrV34"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+<p class="text-white font-bold text-lg mb-1">Visual Concept: Security</p>
+<p class="text-white/70 text-xs">Uploaded by Alex • 2 mins ago</p>
+</div>
+</div>
+<!-- Connectors / Decorations (CSS drawn) -->
+<svg class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+<path d="M400,100 C450,100 450,250 500,250" fill="none" stroke="#0e1c2b" stroke-dasharray="8,8" stroke-width="2"></path>
+<path d="M1000,300 C1050,300 1050,150 1100,150" fill="none" stroke="#0e1c2b" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Floating Whiteboard Toolbar -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 glass-panel p-2 rounded-2xl shadow-2xl flex items-center gap-1 border border-white/20 z-50">
+<button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="near_me">near_me</span>
+</button>
+<div class="w-[1px] h-8 bg-surface-container-highest mx-1"></div>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="text_fields">text_fields</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="ink_pen">ink_pen</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary text-white shadow-lg">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'wght' 700;">add</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="image">image</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="sticky_note_2">sticky_note_2</span>
+</button>
+<div class="w-[1px] h-8 bg-surface-container-highest mx-1"></div>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</button>
+</div>
+<!-- Right Sidebar: Quick Chat Presence -->
+<div class="fixed right-6 top-24 w-72 glass-panel rounded-2xl shadow-xl border border-white/30 hidden xl:flex flex-col max-h-[calc(100vh-120px)] overflow-hidden z-40">
+<div class="p-5 border-b border-surface-container-highest flex items-center justify-between">
+<h3 class="font-bold font-headline text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                        Live Circle
+                    </h3>
+<span class="text-[10px] font-bold text-on-surface-variant">4 ONLINE</span>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+<!-- Chat Snippet 1 -->
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full" data-alt="face of a woman with blond hair, smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCridmdYZAGgjs7CF1-qpyVK8M1zzbJnw1YIW85QhJyPKPONPkqGHMUnWI6T0W9UDpYltpufWf7kOlwZ2jULRkiJLCOZ4KrXTrEvEviTM3Zll0tK1yZApd3G1kdxy2OFYpkecsaTr78JSRAMRQc3xFN5k22voTS3BzeGxrE7Z4ktvcWlMN9b8w_zMbOYXS406ievOegbPxd08eZnbUPZIy3ItItPdmkRLYxkr6Q_OAhmi8m0FiGDSHyayEc8N9kecBv9B5uqD1Gqxj4"/>
+<span class="text-xs font-bold">Sarah Chen</span>
+</div>
+<div class="bg-surface-container-highest p-3 rounded-xl rounded-tl-none text-xs text-on-surface leading-relaxed">
+                            Check out that discovery note I just added to the canvas.
+                        </div>
+</div>
+<!-- Chat Snippet 2 -->
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full" data-alt="portrait of a man with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlGIokPUtbNHq0SFSD6BFKX_zmhrruVWiGo5E-dspGZZX1wgAMZIE8k-9F_I97iqpX4CiXHNFQjCAxFAiDSxSraLI8o4-IrvPE8kRRoKUtHqpxoqftgwO4Ocl_8tzwbOxC1ZlW-47JTWsUuEl-fPqoOAA0NL8kcbPE4XSC2mFot_o5kEKoU93nGAsJKDY9Gl5eaSOxX3NaOl_ADaB2lX_r9NMoAf45D3M6sY4p2f6RxNRHKHAfAR9v2Nr9gFMGZuvxVBbdxP7Du-5n"/>
+<span class="text-xs font-bold">Marcus Wright</span>
+</div>
+<div class="bg-primary text-white p-3 rounded-xl rounded-tl-none text-xs leading-relaxed">
+                            The tech specs look solid. I'm reviewing the CRDT logic now.
+                        </div>
+</div>
+<!-- Collaborative Indicator -->
+<div class="flex items-center justify-center py-4">
+<div class="flex items-center gap-2 bg-tertiary-fixed/20 px-3 py-1.5 rounded-full">
+<div class="flex gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-pulse delay-75"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-pulse delay-150"></span>
+</div>
+<span class="text-[10px] font-bold text-on-tertiary-fixed-variant">Sarah is typing...</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low">
+<div class="relative">
+<input class="w-full bg-white border-0 rounded-xl py-2.5 px-4 text-xs shadow-sm pr-10 focus:ring-1 focus:ring-primary/10" placeholder="Type a message..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Canvas Navigation Controls -->
+<div class="fixed bottom-8 right-8 flex flex-col gap-2 z-50">
+<button class="w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="zoom_out">zoom_out</span>
+</button>
+<button class="w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="fullscreen">fullscreen</span>
+</button>
+</div>
+</main>
+</div>
+</body></html>

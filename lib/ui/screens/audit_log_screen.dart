@@ -89,17 +89,17 @@ class _State extends State<AuditLogScreen> {
       child: Column(children: [
         // Security score banner
         Container(
-          margin: const EdgeInsets.all(20),
-          padding: const EdgeInsets.all(20),
+          margin: EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
+            gradient: LinearGradient(
                 colors: [Palette.primary, Color(0xFF163A72)]),
             borderRadius: BorderRadius.circular(22),
             boxShadow: [
               BoxShadow(
-                  color: Palette.primary.withOpacity(0.28),
+                  color: Palette.primary.withValues(alpha: 0.28),
                   blurRadius: 20,
-                  offset: const Offset(0, 8))
+                  offset: Offset(0, 8))
             ],
           ),
           child: Row(children: [
@@ -141,15 +141,15 @@ class _State extends State<AuditLogScreen> {
           height: 44,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             itemCount: _filters.length,
             separatorBuilder: (_, __) => const SizedBox(width: 8),
             itemBuilder: (_, i) => GestureDetector(
               onTap: () => setState(() => _filter = i),
               child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
+                duration: Duration(milliseconds: 200),
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
                     color: _filter == i
                         ? Palette.primary
@@ -169,7 +169,7 @@ class _State extends State<AuditLogScreen> {
         // Event timeline
         Expanded(
             child: ListView.separated(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           itemCount: visible.length,
           separatorBuilder: (_, __) => const SizedBox(height: 10),
           itemBuilder: (_, i) => _EventTile(event: visible[i]),
@@ -213,18 +213,18 @@ class _EventTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.all(14),
+        padding: EdgeInsets.all(14),
         decoration: BoxDecoration(
           color: Palette.surfaceContainerLowest,
           borderRadius: BorderRadius.circular(18),
           border: event.ok
               ? null
-              : Border.all(color: Palette.error.withOpacity(0.3)),
+              : Border.all(color: Palette.error.withValues(alpha: 0.3)),
           boxShadow: [
             BoxShadow(
-                color: Palette.primary.withOpacity(0.04),
+                color: Palette.primary.withValues(alpha: 0.04),
                 blurRadius: 10,
-                offset: const Offset(0, 2))
+                offset: Offset(0, 2))
           ],
         ),
         child: Row(children: [
@@ -232,7 +232,7 @@ class _EventTile extends StatelessWidget {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                  color: _color(event.type).withOpacity(0.10),
+                  color: _color(event.type).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(14)),
               child:
                   Icon(_icon(event.type), color: _color(event.type), size: 22)),

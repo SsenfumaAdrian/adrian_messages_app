@@ -24,28 +24,28 @@ class _State extends State<EnterpriseSupportScreen> {
       activeRoute: LiquidRouter.enterprise,
       title: 'Enterprise Support',
       child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // Account manager card
             Container(
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                         colors: [Palette.primary, Color(0xFF3949AB)]),
                     borderRadius: BorderRadius.circular(22),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.28),
+                          color: Palette.primary.withValues(alpha: 0.28),
                           blurRadius: 20,
-                          offset: const Offset(0, 8))
+                          offset: Offset(0, 8))
                     ]),
                 child: Row(children: [
                   Container(
                       width: 52,
                       height: 52,
                       decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.15),
+                          color: Colors.white.withValues(alpha: 0.15),
                           shape: BoxShape.circle),
                       child: const Center(
                           child: Text('JA',
@@ -82,21 +82,21 @@ class _State extends State<EnterpriseSupportScreen> {
             const SizedBox(height: 24),
 
             // Open tickets
-            _SHead('Open Tickets'),
+            _sectionHead('Open Tickets'),
             const SizedBox(height: 12),
             ...[
               ('API Rate Limit Increase', 'In Progress', 'HIGH', Colors.orange),
               ('SSO SAML Configuration', 'Pending', 'MED', Palette.primary),
               ('Custom Retention Policy', 'Open', 'LOW', Palette.outline),
             ].map((t) => Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                padding: const EdgeInsets.all(14),
+                margin: EdgeInsets.only(bottom: 10),
+                padding: EdgeInsets.all(14),
                 decoration: BoxDecoration(
                     color: Palette.surfaceContainerLowest,
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.04),
+                          color: Palette.primary.withValues(alpha: 0.04),
                           blurRadius: 8)
                     ]),
                 child: Row(children: [
@@ -135,16 +135,16 @@ class _State extends State<EnterpriseSupportScreen> {
             const SizedBox(height: 24),
 
             // New ticket
-            _SHead('Submit New Ticket'),
+            _sectionHead('Submit New Ticket'),
             const SizedBox(height: 12),
             Container(
-                padding: const EdgeInsets.all(16),
+                padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                     color: Palette.surfaceContainerLowest,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.04),
+                          color: Palette.primary.withValues(alpha: 0.04),
                           blurRadius: 10)
                     ]),
                 child: Column(
@@ -165,9 +165,9 @@ class _State extends State<EnterpriseSupportScreen> {
                                       setState(() => _priority = e.key),
                                   child: AnimatedContainer(
                                       duration:
-                                          const Duration(milliseconds: 200),
-                                      margin: const EdgeInsets.only(right: 8),
-                                      padding: const EdgeInsets.symmetric(
+                                          Duration(milliseconds: 200),
+                                      margin: EdgeInsets.only(right: 8),
+                                      padding: EdgeInsets.symmetric(
                                           horizontal: 14, vertical: 8),
                                       decoration: BoxDecoration(
                                           color: _priority == e.key
@@ -213,9 +213,9 @@ class _State extends State<EnterpriseSupportScreen> {
                           onTap: () {},
                           child: Container(
                               width: double.infinity,
-                              padding: const EdgeInsets.symmetric(vertical: 14),
+                              padding: EdgeInsets.symmetric(vertical: 14),
                               decoration: BoxDecoration(
-                                  gradient: const LinearGradient(colors: [
+                                  gradient: LinearGradient(colors: [
                                     Palette.primary,
                                     Color(0xFF2C3E9E)
                                   ]),
@@ -223,9 +223,9 @@ class _State extends State<EnterpriseSupportScreen> {
                                   boxShadow: [
                                     BoxShadow(
                                         color:
-                                            Palette.primary.withOpacity(0.26),
+                                            Palette.primary.withValues(alpha: 0.26),
                                         blurRadius: 14,
-                                        offset: const Offset(0, 5))
+                                        offset: Offset(0, 5))
                                   ]),
                               child: const Center(
                                   child: Text('Submit Ticket',
@@ -244,9 +244,9 @@ class _ContactBtn extends StatelessWidget {
   final String label;
   @override
   Widget build(BuildContext ctx) => Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.12),
+          color: Colors.white.withValues(alpha: 0.12),
           borderRadius: BorderRadius.circular(10)),
       child: Row(mainAxisSize: MainAxisSize.min, children: [
         Icon(icon, color: Colors.white, size: 14),
@@ -259,7 +259,7 @@ class _ContactBtn extends StatelessWidget {
       ]));
 }
 
-Widget _SHead(String t) => Text(t,
+Widget _sectionHead(String t) => Text(t,
     style: TextStyle(
         fontFamily: Palette.fontDisplay,
         fontSize: 16,

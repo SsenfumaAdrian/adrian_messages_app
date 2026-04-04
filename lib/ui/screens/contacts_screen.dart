@@ -99,15 +99,15 @@ class _ContactsScreenState extends State<ContactsScreen>
       // FAB — new contact
       floatingActionButton: Container(
         decoration: BoxDecoration(
-          gradient: const LinearGradient(
+          gradient: LinearGradient(
             colors: [Palette.primary, Color(0xFF2C3E9E)],
           ),
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Palette.primary.withOpacity(0.30),
+              color: Palette.primary.withValues(alpha: 0.3),
               blurRadius: 20,
-              offset: const Offset(0, 8),
+              offset: Offset(0, 8),
             ),
           ],
         ),
@@ -161,7 +161,7 @@ class _Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Palette.surface,
-      padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
+      padding: EdgeInsets.fromLTRB(24, 8, 24, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -234,7 +234,7 @@ class _Header extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
             indicator: BoxDecoration(
-              color: Palette.primary.withOpacity(0.10),
+              color: Palette.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(99),
             ),
             indicatorSize: TabBarIndicatorSize.tab,
@@ -269,7 +269,7 @@ class _PeopleTab extends StatelessWidget {
             .toList();
 
     return ListView.separated(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(16),
       itemCount: filtered.length,
       separatorBuilder: (_, __) => const SizedBox(height: 10),
       itemBuilder: (_, i) => _ContactTile(contact: filtered[i]),
@@ -284,15 +284,15 @@ class _ContactTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: Palette.surfaceContainerLowest,
         borderRadius: BorderRadius.circular(18),
         boxShadow: [
           BoxShadow(
-            color: Palette.primary.withOpacity(0.04),
+            color: Palette.primary.withValues(alpha: 0.04),
             blurRadius: 10,
-            offset: const Offset(0, 2),
+            offset: Offset(0, 2),
           ),
         ],
       ),
@@ -306,7 +306,7 @@ class _ContactTile extends StatelessWidget {
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     colors: [Palette.primary, Color(0xFF3949AB)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -396,7 +396,7 @@ class _CirclesTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(16),
       itemCount: circles.length,
       separatorBuilder: (_, __) => const SizedBox(height: 10),
       itemBuilder: (_, i) => _CircleTile(circle: circles[i]),
@@ -411,15 +411,15 @@ class _CircleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: Palette.surfaceContainerLowest,
         borderRadius: BorderRadius.circular(18),
         boxShadow: [
           BoxShadow(
-            color: Palette.primary.withOpacity(0.04),
+            color: Palette.primary.withValues(alpha: 0.04),
             blurRadius: 10,
-            offset: const Offset(0, 2),
+            offset: Offset(0, 2),
           ),
         ],
       ),
@@ -485,7 +485,7 @@ class _ActionBtn extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: EdgeInsets.all(10),
           child: Icon(icon, size: 18, color: Palette.primary),
         ),
       ),

@@ -15,7 +15,7 @@ class AdaptiveTranslator extends ChangeNotifier {
     notifyListeners();
 
     // Mocking 2026-tier near-zero latency
-    await Future.delayed(const Duration(milliseconds: 300));
+    await Future.delayed(Duration(milliseconds: 300));
 
     // In production, this connects to the 'Intent' or 'DeepL' API
     _currentTranslation = "[Translated to $targetLang]: $text";

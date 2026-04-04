@@ -18,21 +18,21 @@ class _State extends State<AiConflictResolutionScreen> {
       activeRoute: LiquidRouter.aiConflict,
       title: 'AI Conflict Resolution',
       child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // Status pill
             Center(
                 child: Container(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
                         color: [
                           Colors.orange,
                           Palette.primary,
                           Palette.success
                         ][_step]
-                            .withOpacity(0.12),
+                            .withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(99)),
                     child: Text(
                         [
@@ -52,13 +52,13 @@ class _State extends State<AiConflictResolutionScreen> {
 
             // Conflict summary
             Container(
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
                     color: Palette.surfaceContainerLowest,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.04),
+                          color: Palette.primary.withValues(alpha: 0.04),
                           blurRadius: 12)
                     ]),
                 child: Column(
@@ -127,14 +127,14 @@ class _State extends State<AiConflictResolutionScreen> {
               ),
             ].map(
               (s) => Container(
-                  margin: const EdgeInsets.only(bottom: 10),
-                  padding: const EdgeInsets.all(14),
+                  margin: EdgeInsets.only(bottom: 10),
+                  padding: EdgeInsets.all(14),
                   decoration: BoxDecoration(
                       color: Palette.surfaceContainerLowest,
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                            color: Palette.primary.withOpacity(0.04),
+                            color: Palette.primary.withValues(alpha: 0.04),
                             blurRadius: 8)
                       ]),
                   child: Row(
@@ -144,7 +144,7 @@ class _State extends State<AiConflictResolutionScreen> {
                             width: 38,
                             height: 38,
                             decoration: BoxDecoration(
-                                color: Palette.primary.withOpacity(0.08),
+                                color: Palette.primary.withValues(alpha: 0.08),
                                 borderRadius: BorderRadius.circular(12)),
                             child:
                                 Icon(s.$1, color: Palette.primary, size: 20)),
@@ -190,7 +190,7 @@ class _Party extends StatelessWidget {
   @override
   Widget build(BuildContext ctx) => Expanded(
       child: Container(
-          padding: const EdgeInsets.all(12),
+          padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
               color: Palette.surfaceContainerLow,
               borderRadius: BorderRadius.circular(14)),
@@ -199,7 +199,7 @@ class _Party extends StatelessWidget {
                 width: 36,
                 height: 36,
                 decoration: BoxDecoration(
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                         colors: [Palette.primary, Color(0xFF3949AB)]),
                     borderRadius: BorderRadius.circular(12)),
                 child: Center(
@@ -232,14 +232,14 @@ class _GradBtn extends StatelessWidget {
       child: Container(
           height: 50,
           decoration: BoxDecoration(
-              gradient: const LinearGradient(
+              gradient: LinearGradient(
                   colors: [Palette.primary, Color(0xFF2C3E9E)]),
               borderRadius: BorderRadius.circular(14),
               boxShadow: [
                 BoxShadow(
-                    color: Palette.primary.withOpacity(0.28),
+                    color: Palette.primary.withValues(alpha: 0.28),
                     blurRadius: 16,
-                    offset: const Offset(0, 5))
+                    offset: Offset(0, 5))
               ]),
           child: Center(
               child: Text(label,

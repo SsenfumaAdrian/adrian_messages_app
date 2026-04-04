@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#1A237E",
+          "background-light": "#f6f6f8",
+          "background-dark": "#121320",
+          "surface": "#fbf8ff",
+          "on-surface": "#191c1d",
+          "surface-container-low": "#f3f4f5",
+          "on-surface-variant": "#454652"
+        },
+        fontFamily: {
+          "display": ["Manrope"],
+          "body": ["Inter"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+<!-- SideNavBar (Rail) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 h-screen w-64 border-r-0 z-50 font-manrope">
+<div class="px-8 mb-10">
+<h1 class="text-xl font-black text-[#1A237E]">Adrian</h1>
+<p class="text-[10px] font-semibold uppercase tracking-widest text-slate-500">Intelligent Correspondent</p>
+</div>
+<nav class="flex flex-col flex-1">
+<a class="flex items-center gap-4 py-3 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm px-4 transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Chats</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] px-8 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Vault</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] px-8 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Security</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] px-8 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-8">
+<div class="flex items-center gap-3">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7wHiGH-FvLH2hLoMJCoVQeMOLsY2bHuM-S-t0wifBpP5qSlCUv2q4dVz9uZCMN8-5JO7kjWLwjjwNh9R93O9dCsuA2h5Uo4OLj5h5Xd9YZXA0DJ8D6geAfoBDhQBU1Fr5f6E2j-UZCw6fXb8cKFHOL5xr6TTndIzucL8u2RAdertVU9dQH_tBkLORY4j7iV9rU-Eig6_g4fVFo64vj0gn9AL4k3XACwAYfRbON9xk13bpmIvD6F-QNUMqJ5QatcpCLHqGjNPWjTHJ"/>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex flex-col h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,35,126,0.06)] font-manrope">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold tracking-tighter text-[#1A237E] dark:text-indigo-400">Adrian Messages</span>
+<div class="h-4 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-xs font-medium text-slate-500">Online</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="bg-slate-100 dark:bg-slate-800 border-none rounded-full py-2 pl-10 pr-4 w-64 text-sm focus:ring-1 focus:ring-primary/20 transition-all" placeholder="Search conversations..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-[#1A237E] dark:text-indigo-400">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="bg-[#1A237E] text-white px-5 py-2 rounded-xl text-xs font-bold flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">edit</span> New Message
+      </button>
+</div>
+</div>
+</header>
+<!-- Chat List Section -->
+<section class="mt-16 flex-1 flex flex-col bg-surface p-10 overflow-y-auto">
+<div class="max-w-4xl mx-auto w-full">
+<div class="flex items-end justify-between mb-8">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight text-[#1A237E]">Messages</h2>
+<p class="text-on-surface-variant text-sm mt-1">You have 3 unread conversations</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-surface-container-high hover:bg-surface-container-highest transition-colors text-[#1A237E]">All</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold text-on-surface-variant hover:bg-surface-container-low transition-colors">Unread</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold text-on-surface-variant hover:bg-surface-container-low transition-colors">Groups</button>
+</div>
+</div>
+<!-- Chat List Container -->
+<div class="space-y-1">
+<!-- Pinned Chat Item -->
+<div class="group relative flex items-center gap-4 p-5 rounded-2xl bg-surface-container-lowest hover:bg-white transition-all cursor-pointer shadow-sm border border-transparent hover:border-outline-variant/10">
+<div class="absolute right-4 top-4">
+<span class="material-symbols-outlined text-sm text-on-primary-container" data-icon="keep" style="font-variation-settings: 'FILL' 1;">keep</span>
+</div>
+<div class="relative">
+<img alt="Elena Vance" class="w-14 h-14 rounded-full object-cover" data-alt="Close-up of a young woman with a warm smile, wearing professional attire, natural daylight, soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHH42bAAF4YlH3GglF34EVwKk5cUNDuZXPbSCgiQOME6gDc3IbszmR98co-JPXAJzFSUFmWHenyzmkNA26c3yhJwQVyLEv548L5RfNY5-ad8D5sqfvawya7hemVdaYU8rLlpWC_yNEX6y0Y8Lhey672EQLFG6D_gUHra8LUL74TXFxr8ceNU4GsHPMZ5dIcPNAIj90hKcxr_Gdfh1FKGaixBtLDoAeexAUEyrb1nypdSgCSMvwuXBIviOQ1q0o7bnUP6oiKsLVOlQx"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary-fixed-dim border-2 border-white rounded-full"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-bold text-primary truncate">Elena Vance</h3>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">12:45 PM</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-sm text-on-surface-variant truncate font-medium">The design presentation is ready for your review. Let's touch base later today.</p>
+<span class="text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full ml-4 shadow-md bg-[#1A237E]">2</span>
+</div>
+</div>
+</div>
+<!-- Chat Item 2 -->
+<div class="flex items-center gap-4 p-5 rounded-2xl hover:bg-surface-container-low transition-all cursor-pointer">
+<div class="relative">
+<img alt="Marcus Thorne" class="w-14 h-14 rounded-full object-cover grayscale-[30%]" data-alt="Professional man with glasses and a thoughtful expression, clean grey studio background, high-end editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVEKL9LCbdyICjw_SGh8_NOhFjbZHRmrWf8fE8cGxMCEyg2bI7EiEtA7eqJj0vUkHw6mbbgyS5rw0LQxEqkWbrEoC6p-J50g9E95ebnirtbXf4ZcZPo99wa6r6VywEffwJO4F9NmFhT6nBe_6fWY-NgCtgjIo-vAeHM81mNicjMSbN4qEXFE6DdgVLbbOpMfYvYkjOVHMlhcRqGo6lwsGErF_qF5txnm8ztSjaSrJ_QiFaYlF9Zz4BqeZgSslkQ9QqLxWTWoR8Eu3w"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-bold text-primary truncate">Marcus Thorne</h3>
+<span class="text-[10px] font-medium text-on-surface-variant uppercase tracking-wider">Yesterday</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim" data-icon="done_all">done_all</span>
+<p class="text-sm text-on-surface-variant truncate">I've attached the final budget spreadsheet. Check the second tab.</p>
+</div>
+</div>
+</div>
+<!-- Chat Item 3 (Group) -->
+<div class="flex items-center gap-4 p-5 rounded-2xl hover:bg-surface-container-low transition-all cursor-pointer">
+<div class="relative flex h-14 w-14">
+<div class="absolute top-0 right-0 w-9 h-9 rounded-full overflow-hidden border-2 border-surface shadow-sm">
+<img alt="Group Member" class="w-full h-full object-cover" data-alt="Candid headshot of a smiling young woman, outdoors with natural lighting, soft focused background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADBhfL2nw4Z9VdaRzIHzd0e8QOdh1X_lbP-SLRr6UOgMU_C4D63DTkCk9xC5nnQw9zHUUMVvFs4c0xRr2bF_VAjzaI7KMvu7my4NZuQ2IiOe3RH-Mh1h-4XyNGJXP9LQdCnXTx0jBD6gjCkiBi1fQpz7_e4yUOmiHFrjvuC2fQc0tC699ZMXpjM7NAhkTPnaLS08ZoCiq0IZ4CwDRvcx5Syt4eDzK6thaJ06IvOf3GawBe1Tz66QeYTiH9DBCMKQkPC9ah9RQSUIOc"/>
+</div>
+<div class="absolute bottom-0 left-0 w-9 h-9 rounded-full overflow-hidden border-2 border-surface shadow-sm">
+<img alt="Group Member" class="w-full h-full object-cover" data-alt="Close up of a man with a beard and confident look, modern office setting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe7KMvJkk4K7MI8IWfFHAcZB3uKZY2RpJNYnjuIEUl-kK_4VX05bjHeIajg2XFeffN4tyjNU9o8bjekS9MKo3ntG7yI0qF7x7qu0QnwyZkL_d1LrI4VDabKue2YkHQYDwgrWIaTvL_XtMTs5euW9NX4URcoxf_hJOWduCXhJy3ZP_UDBoqSmUvFERNigHjZgxBazviM10rQkwKPMRa1wbjjNt2CPcqDpqbjdJj62eXwF_uFBcSyvqRSBnKgDRrnh8JhOJqmG_uLohX"/>
+</div>
+</div>
+<div class="flex-1 min-w-0 ml-1">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-bold text-primary truncate">Product Launch Squad</h3>
+<span class="text-[10px] font-medium text-on-surface-variant uppercase tracking-wider">11:02 AM</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-sm text-primary truncate font-semibold"><span class="text-on-surface-variant font-normal">Sarah:</span> Don't forget the demo at 3!</p>
+<span class="text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full ml-4 shadow-md bg-[#1A237E]">1</span>
+</div>
+</div>
+</div>
+<!-- Chat Item 4 -->
+<div class="flex items-center gap-4 p-5 rounded-2xl hover:bg-surface-container-low transition-all cursor-pointer opacity-70">
+<div class="relative">
+<img alt="Julia Chen" class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of an East Asian woman with minimalist style, soft aesthetic lighting, clean interior background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3wdani16ehBpLmro0HHH4DIXhc84ckeYqkqxOCy1OBL2teJVu1boGsSGNa-J6bVOxruXcry_EbIYZR2rmprx6UOaFmZkiucr5Q0idtYeCvMt2A9futSahmQ6qeSwJvWaKExnWP3tsHsJBmIA4V6zkGHhMXHKZuCTVKj1X5oP-0Rfk0SYE_uKYRdLpsoqy8loPI2zcMbu7H1vdb530nnam6vWQt8Z3LuoNSJEL1X8LjarESMme4niaZhQ-9yFUgzu5DZWHYIgebynu"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-bold text-primary truncate">Julia Chen</h3>
+<span class="text-[10px] font-medium text-on-surface-variant uppercase tracking-wider">Tuesday</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="done">done</span>
+<p class="text-sm text-on-surface-variant truncate">That sounds like a great plan. See you then.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Card / Bento Style element -->
+<div class="mt-12 grid grid-cols-3 gap-6">
+<div class="col-span-2 p-8 rounded-3xl bg-gradient-to-br text-white overflow-hidden relative group from-[#1A237E] to-[#233141]">
+<div class="relative z-10">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-primary-container mb-2 block">Weekly Summary</span>
+<h4 class="text-2xl font-bold mb-4">Your productivity is up by 12% this week</h4>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="Team" class="w-8 h-8 rounded-full border-2 border-primary object-cover" data-alt="Close up of a smiling man with trendy glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj7yN27PJvS7d9nEV50b_vG9J7_JnwMCdvq16tWd4ZVCwX1j0PC9mhtU3KUsHBRJIqusckiLBQQzpIXhhKJ4jbNxIr9dVejjbbiJLloq12AfUnnjf4lO6O0QjpVAPmO45XI3QiNHgYLQi7oFAxDVrmTdpPQo2txQLpXSsVXcBoNPKqH_7DZA50A1fThIeMR21DoqoTyh_dZVbexYTIEJfPqodm0cKVto91Oo0duHsmQLd1t5hAkHYnUinD0UOnBAVUW8N1QjyKzHG1"/>
+<img alt="Team" class="w-8 h-8 rounded-full border-2 border-primary object-cover" data-alt="Smiling woman with curly hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSN8BPstRUd_5qr4h1UlgK4SBX5TJoOAKqC53H7rcJe5RWQQymezxDPKFl3UpEIMxtJLjuUWuO06oe71Bo0q18arDgBVAyvYNaGt0ydK4zVjhlG1rlrodU5x5xinT7QOs7VqpX-IZfAwYCQ8lVi9JxLq6VRF-t2wmoilDTbmN2-Zp45-pUFnBn98vWm9DxJs4KHnOyc2cgLleJ3qLxhwuxKt7tAWQ912snE3USY7g_Ynfaf9QXgbvpkJyk1fN_tinM67wmHfEE-dbS"/>
+<div class="w-8 h-8 rounded-full border-2 border-primary bg-primary-container flex items-center justify-center text-[10px] font-bold">+8</div>
+</div>
+<span class="text-xs text-on-primary-container">Collaborated with 10 team members</span>
+</div>
+</div>
+<!-- Abstract decoration -->
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/5 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700"></div>
+</div>
+<div class="p-8 rounded-3xl bg-surface-container-highest flex flex-col justify-between border border-outline-variant/5">
+<span class="material-symbols-outlined text-3xl text-[#1A237E]" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<h4 class="text-lg font-bold mb-1 text-[#1A237E]">Smart Reply</h4>
+<p class="text-xs text-on-surface-variant">Let Adrian handle routine scheduling for you.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating UI Action (Optional but adds value) -->
+<div class="fixed bottom-8 right-8">
+<button class="w-14 h-14 rounded-full text-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all group overflow-hidden bg-[#1A237E]">
+<div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-2xl relative z-10" data-icon="add_comment" style="font-variation-settings: 'FILL' 1;">add_comment</span>
+</button>
+</div>
+</body></html>

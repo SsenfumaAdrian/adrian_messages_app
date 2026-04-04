@@ -21,24 +21,24 @@ class SystemHealthScreen extends StatelessWidget {
       activeRoute: LiquidRouter.systemHealth,
       title: 'System Health',
       child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // Overall status
             Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: Palette.success.withOpacity(0.08),
+                    color: Palette.success.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(20),
                     border:
-                        Border.all(color: Palette.success.withOpacity(0.2))),
+                        Border.all(color: Palette.success.withValues(alpha: 0.2))),
                 child: Row(children: [
                   Container(
                       width: 48,
                       height: 48,
                       decoration: BoxDecoration(
-                          color: Palette.success.withOpacity(0.12),
+                          color: Palette.success.withValues(alpha: 0.12),
                           shape: BoxShape.circle),
                       child: Icon(Icons.check_circle_outline_rounded,
                           color: Palette.success, size: 28)),
@@ -80,18 +80,18 @@ class SystemHealthScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Services list
-            _SHead('Service Status'),
+            _sectionHead('Service Status'),
             const SizedBox(height: 12),
             ..._services.map(
               (s) => Container(
-                  margin: const EdgeInsets.only(bottom: 10),
-                  padding: const EdgeInsets.all(14),
+                  margin: EdgeInsets.only(bottom: 10),
+                  padding: EdgeInsets.all(14),
                   decoration: BoxDecoration(
                       color: Palette.surfaceContainerLowest,
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                            color: Palette.primary.withOpacity(0.04),
+                            color: Palette.primary.withValues(alpha: 0.04),
                             blurRadius: 8)
                       ]),
                   child: Row(children: [
@@ -137,7 +137,7 @@ class SystemHealthScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Incident timeline
-            _SHead('Recent Incidents'),
+            _sectionHead('Recent Incidents'),
             const SizedBox(height: 12),
             ...[
               (
@@ -155,8 +155,8 @@ class SystemHealthScreen extends StatelessWidget {
               ),
             ].map(
               (inc) => Container(
-                  margin: const EdgeInsets.only(bottom: 10),
-                  padding: const EdgeInsets.all(14),
+                  margin: EdgeInsets.only(bottom: 10),
+                  padding: EdgeInsets.all(14),
                   decoration: BoxDecoration(
                       color: Palette.surfaceContainerLowest,
                       borderRadius: BorderRadius.circular(16)),
@@ -206,12 +206,12 @@ class _UptimeCard extends StatelessWidget {
   final String label, value, period;
   @override
   Widget build(BuildContext ctx) => Container(
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(14),
       decoration: BoxDecoration(
           color: Palette.surfaceContainerLowest,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
-            BoxShadow(color: Palette.primary.withOpacity(0.04), blurRadius: 8)
+            BoxShadow(color: Palette.primary.withValues(alpha: 0.04), blurRadius: 8)
           ]),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(value,
@@ -230,7 +230,7 @@ class _UptimeCard extends StatelessWidget {
       ]));
 }
 
-Widget _SHead(String t) => Text(t,
+Widget _sectionHead(String t) => Text(t,
     style: TextStyle(
         fontFamily: Palette.fontDisplay,
         fontSize: 16,

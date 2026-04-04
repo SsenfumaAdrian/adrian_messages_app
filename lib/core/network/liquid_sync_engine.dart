@@ -19,7 +19,7 @@ class LiquidSyncEngine extends ChangeNotifier {
 
     // Simulating the 'Stitch' data flow across devices
     for (int i = 0; i <= 10; i++) {
-      await Future.delayed(const Duration(milliseconds: 200));
+      await Future.delayed(Duration(milliseconds: 200));
       _syncProgress = i / 10;
       notifyListeners();
     }

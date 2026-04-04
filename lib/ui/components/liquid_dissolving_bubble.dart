@@ -18,12 +18,12 @@ class LiquidDissolvingBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedOpacity(
-      duration: const Duration(milliseconds: 1200),
+      duration: Duration(milliseconds: 1200),
       opacity: isDissolving ? 0.0 : 1.0,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 1200),
+        duration: Duration(milliseconds: 1200),
         curve: Curves.easeInOutExpo,
-        margin: const EdgeInsets.symmetric(vertical: 8),
+        margin: EdgeInsets.symmetric(vertical: 8),
         // When dissolving, the bubble 'shrinks' into the background
         transform: isDissolving
             ? (Matrix4.identity()..scale(0.8))
@@ -35,7 +35,7 @@ class LiquidDissolvingBubble extends StatelessWidget {
             filter: ImageFilter.blur(
                 sigmaX: isDissolving ? 40 : 25, sigmaY: isDissolving ? 40 : 25),
             child: Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: EdgeInsets.all(12.0),
               child: Text(
                 text,
                 style: TextStyle(

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages | Privacy &amp; Security</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f3f4f5",
+                        "secondary": "#47607e",
+                        "on-secondary-fixed": "#001d36",
+                        "on-tertiary-fixed": "#001f24",
+                        "on-secondary-fixed-variant": "#2f4865",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#c2dcff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-surface-variant": "#454652",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed": "#0f1c2c",
+                        "surface-tint": "#525f71",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d6e4f9",
+                        "secondary-fixed": "#d1e4ff",
+                        "outline": "#767683",
+                        "secondary-fixed-dim": "#afc9ea",
+                        "outline-variant": "#c6c5d4",
+                        "surface-dim": "#d9dadb",
+                        "on-primary-container": "#8b99ac",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#3a4859",
+                        "tertiary": "#001f24",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed": "#9cf0ff",
+                        "primary-container": "#233141",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#00363d",
+                        "primary": "#0e1c2b",
+                        "error": "#ba1a1a",
+                        "surface-container": "#edeeef",
+                        "surface": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "inverse-primary": "#bac8dc",
+                        "tertiary-fixed-dim": "#00daf3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#48617e",
+                        "on-tertiary-container": "#00a7bb",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f8f9fa",
+                        "surface-container-high": "#e7e8e9",
+                        "primary-fixed-dim": "#bac8dc",
+                        "surface-variant": "#e1e3e4",
+                        "background": "#f8f9fa"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-gradient {
+            background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar (Rail) -->
+<aside class="fixed left-0 top-0 h-screen w-64 flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 font-manrope text-sm font-semibold uppercase tracking-widest z-50">
+<div class="px-8 mb-12">
+<div class="flex flex-col">
+<span class="text-xl font-black text-[#1A237E] dark:text-indigo-400">ADRIAN</span>
+<span class="text-[10px] text-slate-500 font-medium tracking-tight normal-case">Intelligent Correspondent</span>
+</div>
+</div>
+<nav class="flex flex-col flex-1">
+<div class="group flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all cursor-pointer">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Chats</span>
+</div>
+<div class="group flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all cursor-pointer">
+<span class="material-symbols-outlined">lock</span>
+<span>Vault</span>
+</div>
+<div class="group flex items-center gap-4 py-4 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm pl-4 transition-all cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>Security</span>
+</div>
+<div class="group flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</div>
+</nav>
+<div class="mt-auto px-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="User Profile Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXa0jo5QU9dBs2w5kRZL7QDYgGFr8qQkZkLnBRVKuyD80ru_wBmM4XLlE1AoNlvRRWcnNxohJRr_m_0b0Kv2VqBu0TwhivItLrmNDcTnrWyj0D86HxMCHFbHgYCPpamUsHXj2EbunTUNyYrHjZSjkAeo7SkdNPvUDKDeOaniJ1ch6R8IgT2SzTEnYmAf8eyhwyZmPEl9NdHOwPFUDvrz5qWHWqDMzbxW1G1NVcMarirl2GqhPOC5qDiSuqt4RoHogZoNQtl3vcvgJk"/>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,35,126,0.06)] font-manrope tracking-tight font-medium">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold tracking-tighter text-[#1A237E] dark:text-indigo-400">Adrian</span>
+<div class="h-4 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
+<h1 class="text-slate-500 dark:text-slate-400 font-medium">Security Hub</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-full w-64 group transition-colors">
+<span class="material-symbols-outlined text-slate-400 text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs w-full placeholder:text-slate-400" placeholder="Search settings..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full">grid_view</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full text-indigo-500" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pl-64 pt-16 min-h-screen">
+<div class="max-w-7xl mx-auto p-10">
+<!-- Hero Section / Security Status -->
+<section class="mb-10">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Status Card -->
+<div class="lg:col-span-2 premium-gradient rounded-xl p-8 text-white relative overflow-hidden flex flex-col justify-between min-h-[240px]">
+<div class="absolute top-[-20%] right-[-10%] w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse bg-[#1A237E] text-white"></span>
+<span class="text-xs font-bold tracking-widest uppercase opacity-70">System Integrity</span>
+</div>
+<h2 class="text-3xl font-extrabold font-headline mb-4 tracking-tight">Zero-Knowledge Active</h2>
+<p class="text-on-primary-container max-w-md text-sm leading-relaxed">
+                                Your data is encrypted with AES-256-GCM. We hold no keys. Your privacy is mathematically guaranteed by the Obsidian protocol.
+                            </p>
+</div>
+<div class="relative z-10 flex gap-4 mt-6">
+<button class="bg-tertiary-fixed-dim px-6 py-2.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all active:scale-95 bg-[#1A237E] text-white text-[#1A237E]">View History <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+<button class="bg-white/10 backdrop-blur-md text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-white/20 transition-all border border-white/10">
+                                Download Recovery Kit
+                            </button>
+</div>
+</div>
+<!-- Rapid Audit Bento -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col border border-transparent hover:border-outline-variant/10 transition-all">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-tertiary-container/10 p-3 rounded-xl">
+<span class="material-symbols-outlined text-on-tertiary-container">analytics</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant bg-surface-container px-2 py-1 rounded">24H AUDIT</span>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1">Security Score</h3>
+<p class="text-xs text-on-surface-variant mb-6">Based on latest 14 system checks</p>
+<div class="flex items-end gap-1 mb-6">
+<span class="text-5xl font-extrabold font-headline text-primary">98</span>
+<span class="text-xl font-bold text-outline-variant pb-1">/100</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">Key Strength</span>
+<span class="font-bold text-on-tertiary-container">EXCELLENT</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container w-[95%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Dashboard Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Encryption Keys Management -->
+<section class="md:col-span-8 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl p-8 transition-all">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline font-extrabold text-xl">Encryption Vault</h3>
+<p class="text-sm text-on-surface-variant">Active peer-to-peer session keys</p>
+</div>
+<button class="text-sm font-bold flex items-center gap-1 hover:underline text-[#1A237E]">View History <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<div class="space-y-4">
+<!-- Key Item -->
+<div class="group flex items-center justify-between p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary border border-outline-variant/10">
+<span class="material-symbols-outlined">vpn_key</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">RSA-4096 Master Root</h4>
+<p class="text-[11px] font-mono text-outline uppercase tracking-wider">Last verified: 2m ago</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2 py-1 bg-primary-container text-white text-[10px] font-bold rounded">ACTIVE</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">settings</span>
+</div>
+</div>
+<!-- Key Item -->
+<div class="group flex items-center justify-between p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary border border-outline-variant/10">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">Ed25519 Messaging Key</h4>
+<p class="text-[11px] font-mono text-outline uppercase tracking-wider">Next rotation in 4 days</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded">PENDING ROTATION</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">settings</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Audit Log -->
+<div class="bg-surface-container-lowest rounded-xl p-8">
+<h3 class="font-headline font-extrabold text-xl mb-6">Security Audit</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container mt-1.5"></div>
+<div class="w-0.5 flex-1 bg-outline-variant/20 my-1"></div>
+</div>
+<div>
+<div class="text-[10px] font-bold text-outline uppercase tracking-widest mb-1">Today, 14:22</div>
+<p class="text-sm font-medium">New device authorized: <span class="text-primary font-bold">MacBook Pro M3</span></p>
+<p class="text-xs text-on-surface-variant mt-1">Verified via biometric handoff from iPhone 15 Pro.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-error mt-1.5"></div>
+<div class="w-0.5 flex-1 bg-outline-variant/20 my-1"></div>
+</div>
+<div>
+<div class="text-[10px] font-bold text-outline uppercase tracking-widest mb-1">Yesterday, 09:15</div>
+<p class="text-sm font-medium">Failed login attempt from <span class="text-error font-bold">London, UK</span></p>
+<p class="text-xs text-on-surface-variant mt-1">IP: 192.168.1.45 • Access was automatically throttled.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container mt-1.5"></div>
+</div>
+<div>
+<div class="text-[10px] font-bold text-outline uppercase tracking-widest mb-1">Oct 24, 18:00</div>
+<p class="text-sm font-medium">Database snapshot encrypted and moved to Cold Vault.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Side Panels -->
+<aside class="md:col-span-4 space-y-6">
+<!-- Biometric Lock -->
+<div class="bg-surface-container-lowest rounded-xl p-6">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl premium-gradient flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+</div>
+<h3 class="font-headline font-bold">Biometric Lock</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium">Require FaceID/TouchID</span>
+<div class="w-10 h-5 bg-on-tertiary-container rounded-full relative cursor-pointer">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium">Lock after inactivity</span>
+<span class="text-xs font-bold text-primary bg-surface-container px-2 py-1 rounded">2 MINS</span>
+</div>
+</div>
+</div>
+<!-- Contact Privacy Levels -->
+<div class="bg-surface-container-lowest rounded-xl p-6">
+<h3 class="font-headline font-bold mb-6">Privacy Levels</h3>
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="Sarah J." data-alt="professional headshot of a woman with a confident smile against a soft neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANa5fM5CtYVBgduoNDNLWngKo2rgewdKZxuFzljs8x--xD_sUUXzL9O5FswvvdcyXzFd7_AbC8h9MWaPT2Rpr2WRMvTw2ykexgMbiGP8eNbio-ePCSw-ekVor7ieVnILWJTf2oHIgISXHb5HmuqgpS0xqcOTKDlH5LQO7lh3pkRuKBTYQKVilnsW9pTytqoQ75wIeNhhZPebHdjpaM_B_etpr1QXNHhZugbxmW-Mum1-dpzi2QXfV6gHio6yZvx5PxO6hBQ4mcfEei"/>
+</div>
+<span class="text-sm font-bold">Sarah J.</span>
+</div>
+<span class="text-[10px] font-bold text-on-tertiary-container uppercase tracking-tight">Full Access</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="David K." data-alt="portrait of a creative man with stylish glasses in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Lx20SJJ-IglmfIi2j81AdV-fWIXlV3ZuX7XSsRnZAs6IPowH3N2QRaZMjqkAq1C_tMyLJHH28oz_K0-XfG852JrA31NuyrCFOP-45av_-FNtgONPBunkm5dtGQ2HEtlq3zxJ9x1xUEwvxwcMhEvS6dZcDKIEHEdTqL3WzF4V_Vxf30Zna3UBS-VP5FJY7smFX-dZ-du_WUUnstdQvvJ--fhT99L3rrRWK8j2bFdVxlCNteZ8UAX7EV6rUxDe6l7rFfQoDLDxA2Rt"/>
+</div>
+<span class="text-sm font-bold">David K.</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant bg-surface-container px-2 py-1 rounded uppercase tracking-tight">Restricted</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="Elena R." data-alt="professional portrait of a woman looking thoughtfully at the camera in a light-filled room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFUE9Z9lNQBxWqVvmGRJMGQOI_kuDE14mifK6xmMiW9VMgY2tUn51Ucp88P29nB4mWKzG3Zx6QmjPSGGXB0CH_rp8F_9K0eRx0qnx469kzG-wqajyhHawsWe7r9VGqu9jmo1Sgo8c8ZxlMSy5F2mqknuS0xLyJoWpcf0Zzh5NRPchg2BqoXs61YxmeR8PugwhSlgjIV6_Pa7v0KQkfnJSNf-6aqnLU-szG-JzZBu5al2cD8rorcEJJYhhA8_lSitTgzJbf_ENhXEkx"/>
+</div>
+<span class="text-sm font-bold">Elena R.</span>
+</div>
+<span class="text-[10px] font-bold text-on-tertiary-container uppercase tracking-tight">Full Access</span>
+</div>
+<button class="w-full mt-4 py-3 border border-dashed border-outline-variant text-outline text-xs font-bold rounded-xl hover:bg-surface-container transition-colors">
+                                Manage Permissions
+                            </button>
+</div>
+</div>
+<!-- Threat Level Map -->
+<div class="bg-surface-container-lowest rounded-xl p-6 overflow-hidden relative">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline font-bold">Login Map</h3>
+<span class="text-[10px] font-bold text-tertiary-fixed-dim bg-primary px-2 py-1 rounded">GLOBAL</span>
+</div>
+<div class="h-32 bg-surface-container rounded-xl relative group cursor-pointer overflow-hidden">
+<img alt="World Map" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="abstract stylized dark map of the world with glowing connection points in deep blue and teal tones" data-location="London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqN4R-a3m1Lv9k4sxpewD5gEepIbUItApikcrptXsoGMQxeL3lmzI27m_0yV9k5IXZSpzxsFIjbn85XQoMkeUP1sgEDsv-BTBWeVRelZUmnuUCOrGdwnRc-SOvvyx7gO_afL9RhbDHpG6xaRkUH7XIhjauB1vqoSgCeTuu39UGabvOX2bwoBXvDqEq9bAXWL3dsXclHaMA2Fy2JaTbmG4BLmu14EA8M2AINCnN4nCvV4az39U1U9UCM7J9Xg-oZFAAIvOOQEq6DVjF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent"></div>
+<div class="absolute bottom-2 left-2 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span class="text-[10px] text-white font-bold uppercase">1 Blocked Event</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Floating Dock (Alternative Navigation) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 md:hidden">
+<nav class="bg-white/80 backdrop-blur-xl border border-outline-variant/10 shadow-2xl rounded-full px-6 py-4 flex items-center gap-8">
+<span class="material-symbols-outlined text-outline">chat</span>
+<span class="material-symbols-outlined text-outline">inventory_2</span>
+<div class="w-12 h-12 premium-gradient rounded-full flex items-center justify-center text-white -mt-8 shadow-xl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<span class="material-symbols-outlined text-outline">settings</span>
+<span class="material-symbols-outlined text-outline">account_circle</span>
+</nav>
+</div>
+</body></html>

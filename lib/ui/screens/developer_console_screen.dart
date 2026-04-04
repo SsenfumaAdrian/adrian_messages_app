@@ -37,7 +37,7 @@ class _State extends State<DeveloperConsoleScreen>
                 labelColor: Palette.primary,
                 unselectedLabelColor: Palette.outline,
                 indicator: BoxDecoration(
-                    color: Palette.primary.withOpacity(0.10),
+                    color: Palette.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(99)),
                 indicatorSize: TabBarIndicatorSize.tab,
                 dividerColor: Colors.transparent,
@@ -56,7 +56,7 @@ class _State extends State<DeveloperConsoleScreen>
 class _ApiKeysTab extends StatelessWidget {
   @override
   Widget build(BuildContext ctx) =>
-      ListView(padding: const EdgeInsets.all(20), children: [
+      ListView(padding: EdgeInsets.all(20), children: [
         _CodeBlock(
             code:
                 'curl -H "Authorization: Bearer sk_live_•••••••••••"\n     https://api.adrian.ai/v1/messages'),
@@ -65,14 +65,14 @@ class _ApiKeysTab extends StatelessWidget {
           ('Production Key', 'sk_live_••••••••', true),
           ('Test Key', 'sk_test_••••••••', false)
         ].map((k) => Container(
-            margin: const EdgeInsets.only(bottom: 12),
-            padding: const EdgeInsets.all(16),
+            margin: EdgeInsets.only(bottom: 12),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
                 color: Palette.surfaceContainerLowest,
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                      color: Palette.primary.withOpacity(0.04), blurRadius: 8)
+                      color: Palette.primary.withValues(alpha: 0.04), blurRadius: 8)
                 ]),
             child: Row(children: [
               Container(
@@ -105,15 +105,15 @@ class _ApiKeysTab extends StatelessWidget {
         GestureDetector(
             onTap: () {},
             child: Container(
-                padding: const EdgeInsets.all(14),
+                padding: EdgeInsets.all(14),
                 decoration: BoxDecoration(
                     border: Border.all(color: Palette.outlineVariant),
                     borderRadius: BorderRadius.circular(14)),
-                child: const Row(
+                child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.add_rounded, color: Palette.primary, size: 18),
-                      SizedBox(width: 6),
+                      const Icon(Icons.add_rounded, color: Palette.primary, size: 18),
+                      const SizedBox(width: 6),
                       Text('Generate New Key',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
@@ -126,20 +126,20 @@ class _ApiKeysTab extends StatelessWidget {
 class _WebhooksTab extends StatelessWidget {
   @override
   Widget build(BuildContext ctx) =>
-      ListView(padding: const EdgeInsets.all(20), children: [
+      ListView(padding: EdgeInsets.all(20), children: [
         ...[
           ('Message Received', 'https://api.yourapp.com/webhooks/msg', true),
           ('User Joined Circle', 'https://api.yourapp.com/webhooks/join', true),
           ('Vault Upload', 'https://api.yourapp.com/webhooks/vault', false)
         ].map((w) => Container(
-            margin: const EdgeInsets.only(bottom: 12),
-            padding: const EdgeInsets.all(14),
+            margin: EdgeInsets.only(bottom: 12),
+            padding: EdgeInsets.all(14),
             decoration: BoxDecoration(
                 color: Palette.surfaceContainerLowest,
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                      color: Palette.primary.withOpacity(0.04), blurRadius: 8)
+                      color: Palette.primary.withValues(alpha: 0.04), blurRadius: 8)
                 ]),
             child: Row(children: [
               Container(
@@ -172,7 +172,7 @@ class _LogsTab extends StatelessWidget {
   @override
   Widget build(BuildContext ctx) => Container(
       color: const Color(0xFF0D1117),
-      child: ListView(padding: const EdgeInsets.all(16), children: [
+      child: ListView(padding: EdgeInsets.all(16), children: [
         _LogLine('2026-03-29 14:32:01', '200 GET /v1/messages', true),
         _LogLine('2026-03-29 14:31:58', '201 POST /v1/messages', true),
         _LogLine('2026-03-29 14:30:45', '404 GET /v1/users/unknown', false),
@@ -187,7 +187,7 @@ class _LogLine extends StatelessWidget {
   final bool ok;
   @override
   Widget build(BuildContext ctx) => Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.only(bottom: 10),
       child: Row(children: [
         Text(time,
             style: const TextStyle(
@@ -208,7 +208,7 @@ class _CodeBlock extends StatelessWidget {
   final String code;
   @override
   Widget build(BuildContext ctx) => Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
           color: const Color(0xFF0D1117),
           borderRadius: BorderRadius.circular(14)),

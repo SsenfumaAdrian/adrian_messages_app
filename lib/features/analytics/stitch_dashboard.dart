@@ -21,7 +21,7 @@ class StitchAnalyticsDashboard extends StatelessWidget {
         elevation: 0,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
+        padding: EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -63,7 +63,7 @@ class StitchAnalyticsDashboard extends StatelessWidget {
 
   Widget _buildAnalyticsBar(String label, int count) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
+      padding: EdgeInsets.symmetric(vertical: 12.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -86,17 +86,17 @@ class StitchAnalyticsDashboard extends StatelessWidget {
                       color: Colors.white10,
                       borderRadius: BorderRadius.circular(3))),
               AnimatedContainer(
-                duration: const Duration(milliseconds: 800),
+                duration: Duration(milliseconds: 800),
                 curve: Curves.easeOutCubic,
                 height: 6,
                 width: count * 15.0, // Dynamic scaling for visualization
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                       colors: [Colors.blueAccent, Colors.cyanAccent]),
                   borderRadius: BorderRadius.circular(3),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.blueAccent.withOpacity(0.4),
+                        color: Colors.blueAccent.withValues(alpha: 0.4),
                         blurRadius: 10)
                   ],
                 ),

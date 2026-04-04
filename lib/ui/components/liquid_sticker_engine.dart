@@ -19,7 +19,7 @@ class LiquidSticker extends StatelessWidget {
             child: ClipOval(
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-                child: Container(color: Colors.white.withOpacity(0.02)),
+                child: Container(color: Colors.white.withValues(alpha: 0.02)),
               ),
             ),
           ),
@@ -28,7 +28,7 @@ class LiquidSticker extends StatelessWidget {
             child: Icon(
               _getStickerIcon(stickerId),
               size: 80,
-              color: Colors.white.withOpacity(0.9),
+              color: Colors.white.withValues(alpha: 0.9),
             ),
           ),
           // Specular Highlight Overlay
@@ -40,7 +40,7 @@ class LiquidSticker extends StatelessWidget {
                   center: const Alignment(-0.3, -0.3),
                   radius: 0.8,
                   colors: [
-                    Colors.white.withOpacity(0.2),
+                    Colors.white.withValues(alpha: 0.2),
                     Colors.transparent,
                   ],
                 ),

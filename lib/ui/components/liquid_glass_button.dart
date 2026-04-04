@@ -16,7 +16,7 @@ class LiquidGlassButton extends StatefulWidget {
   });
 
   @override
-  _LiquidGlassButtonState createState() => _LiquidGlassButtonState();
+  State<LiquidGlassButton> createState() => _LiquidGlassButtonState();
 }
 
 class _LiquidGlassButtonState extends State<LiquidGlassButton>
@@ -29,7 +29,7 @@ class _LiquidGlassButtonState extends State<LiquidGlassButton>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 150),
+      duration: Duration(milliseconds: 150),
     );
     _scale = Tween<double>(begin: 1.0, end: 0.96).animate(_controller);
   }
@@ -45,7 +45,7 @@ class _LiquidGlassButtonState extends State<LiquidGlassButton>
         scale: _scale,
         child: LiquidGlassContainer(
           borderRadius: 18,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: DefaultTextStyle(
             style: const TextStyle(
               fontFamily: 'Inter-SemiBold', //

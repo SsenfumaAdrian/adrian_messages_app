@@ -24,7 +24,7 @@ class StitchCreatorOverlay extends StatelessWidget {
       right: 20,
       child: LiquidGlassContainer(
         borderRadius: 30,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Row(
           children: [
             Text(

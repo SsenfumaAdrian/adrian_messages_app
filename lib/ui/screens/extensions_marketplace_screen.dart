@@ -79,10 +79,10 @@ class _State extends State<ExtensionsMarketplaceScreen> {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         // Hero
         Container(
-            margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.all(22),
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(22),
             decoration: BoxDecoration(
-                gradient: const LinearGradient(
+                gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [Palette.primary, Color(0xFF3949AB)]),
@@ -102,9 +102,9 @@ class _State extends State<ExtensionsMarketplaceScreen> {
               const SizedBox(height: 14),
               Container(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                      EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                   decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.12),
+                      color: Colors.white.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(12)),
                   child: Row(children: const [
                     Icon(Icons.search_rounded, color: Colors.white54, size: 18),
@@ -118,14 +118,14 @@ class _State extends State<ExtensionsMarketplaceScreen> {
             height: 44,
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 itemCount: _cats.length,
-                separatorBuilder: (_, __) => const SizedBox(width: 8),
+                separatorBuilder: (_, __) => SizedBox(width: 8),
                 itemBuilder: (_, i) => GestureDetector(
                     onTap: () => setState(() => _cat = i),
                     child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        padding: const EdgeInsets.symmetric(
+                        duration: Duration(milliseconds: 200),
+                        padding: EdgeInsets.symmetric(
                             horizontal: 16, vertical: 8),
                         decoration: BoxDecoration(
                             color: _cat == i
@@ -143,7 +143,7 @@ class _State extends State<ExtensionsMarketplaceScreen> {
         // Grid
         Expanded(
             child: GridView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 12,
@@ -186,15 +186,15 @@ class _ExtCard extends StatelessWidget {
   final VoidCallback onToggle;
   @override
   Widget build(BuildContext ctx) => Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
           color: Palette.surfaceContainerLowest,
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-                color: Palette.primary.withOpacity(0.04),
+                color: Palette.primary.withValues(alpha: 0.04),
                 blurRadius: 10,
-                offset: const Offset(0, 2))
+                offset: Offset(0, 2))
           ]),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(children: [
@@ -202,15 +202,15 @@ class _ExtCard extends StatelessWidget {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                  color: Palette.primary.withOpacity(0.08),
+                  color: Palette.primary.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(14)),
               child: Icon(ext.icon, color: Palette.primary, size: 22)),
           const Spacer(),
           if (ext.featured)
             Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                    color: Palette.accentCyan.withOpacity(0.12),
+                    color: Palette.accentCyan.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(99)),
                 child: const Text('⭐', style: TextStyle(fontSize: 10))),
         ]),
@@ -245,7 +245,7 @@ class _ExtCard extends StatelessWidget {
           onTap: onToggle,
           child: Container(
               width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 8),
+              padding: EdgeInsets.symmetric(vertical: 8),
               decoration: BoxDecoration(
                   color: installed
                       ? Palette.surfaceContainerHigh

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian | Security Audit Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#767683",
+              "surface-tint": "#525f71",
+              "on-secondary-container": "#48617e",
+              "inverse-primary": "#bac8dc",
+              "secondary-fixed-dim": "#afc9ea",
+              "inverse-surface": "#2e3132",
+              "background": "#f8f9fa",
+              "primary": "#0e1c2b",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#2f4865",
+              "surface-container": "#edeeef",
+              "tertiary-fixed": "#9cf0ff",
+              "on-primary-fixed-variant": "#3a4859",
+              "tertiary": "#001f24",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed": "#0f1c2c",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#00daf3",
+              "on-tertiary-fixed": "#001f24",
+              "surface": "#f8f9fa",
+              "surface-dim": "#d9dadb",
+              "surface-variant": "#e1e3e4",
+              "surface-container-low": "#f3f4f5",
+              "on-secondary-fixed": "#001d36",
+              "primary-fixed-dim": "#bac8dc",
+              "primary-fixed": "#d6e4f9",
+              "on-background": "#191c1d",
+              "secondary-container": "#c2dcff",
+              "on-tertiary-fixed-variant": "#004f58",
+              "on-surface-variant": "#454652",
+              "primary-container": "#233141",
+              "on-error": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "secondary": "#47607e",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#191c1d",
+              "tertiary-container": "#00363d",
+              "on-tertiary-container": "#00a7bb",
+              "on-primary-container": "#8b99ac",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e7e8e9",
+              "secondary-fixed": "#d1e4ff",
+              "outline-variant": "#c6c5d4",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-highest": "#e1e3e4"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+      .glass { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+      .sidebar-scroll::-webkit-scrollbar { width: 4px; }
+      .sidebar-scroll::-webkit-scrollbar-thumb { background: #e1e3e4; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="flex min-h-screen overflow-hidden">
+<!-- SideNavBar (Authority: Shared Components JSON) -->
+<aside class="bg-slate-100 dark:bg-slate-900 h-screen w-64 hidden lg:flex flex-col border-r-0 sticky top-0">
+<div class="flex flex-col gap-2 p-4 h-full">
+<div class="mb-8 px-2">
+<h2 class="font-bold text-slate-900 dark:text-white text-xl">Adrian Enterprise</h2>
+<p class="text-xs text-on-surface-variant font-medium">Secure Workspace</p>
+</div>
+<button class="mb-6 w-full py-3 px-4 bg-primary text-white rounded-xl font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+<span>New Secure Chat</span>
+</button>
+<nav class="flex flex-col gap-1 grow sidebar-scroll overflow-y-auto">
+<!-- Messages -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<!-- Audit (Active State Logic: Security Audit Page maps to Audit tab) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm rounded-lg hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="gpp_maybe">gpp_maybe</span>
+<span class="text-sm font-semibold">Audit</span>
+</a>
+<!-- Data Vault -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_download">cloud_download</span>
+<span class="text-sm font-medium">Data Vault</span>
+</a>
+<!-- AI Builder -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="text-sm font-medium">AI Builder</span>
+</a>
+<!-- Analytics -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container rounded-xl flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Security Lead</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Authenticated</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 max-h-screen overflow-y-auto">
+<!-- TopNavBar (Authority: Shared Components JSON) -->
+<header class="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl text-slate-900 dark:text-slate-50 docked full-width top-0 sticky z-50 shadow-sm shadow-slate-900/5 flex justify-between items-center w-full px-6 py-3 max-w-full">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Adrian</h1>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors text-sm font-medium" href="#">Audit Log</a>
+<a class="text-slate-900 dark:text-white font-semibold border-b-2 border-slate-900 dark:border-white transition-colors text-sm" href="#">Threat Analysis</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors text-sm font-medium" href="#">Compliance Reports</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors text-sm font-medium" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-slate-100/50 dark:bg-slate-800/50 border-none rounded-full pl-9 pr-4 py-1.5 text-sm w-64 focus:ring-1 focus:ring-primary/20" placeholder="Search report..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors rounded-full text-slate-500">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</button>
+<button class="p-2 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors rounded-full text-slate-500">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="p-2 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors rounded-full text-slate-500">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden ml-2 bg-slate-300">
+<img alt="User profile avatar" data-alt="Professional headshot of a male security analyst in a sharp corporate environment with soft cool lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-ZRyYFGPLN1aAFHKFtYTBGj3x1a7xRCqhQY_b_wGc1jbTA78J-pyCRTciZ-iTOJPx4lgDoeMb2GDZAyph_8nK1Q6_ISLSLGyBP0dL6_QdApjbCFDFL0onBXSFkbqHeQtcYkjngKb20KgdMzL5_kW_s51OmFNua1DIlMAYv74DQkP7ZGNQBIhkfMSn2obyzTQ85B5k8n1crCHopijuuUGQdUBwOfsgS5fHfOsI5fWgVqcRs1SPVA7cOgbtat36aS2CJ9z9p2kmU58T"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-6 md:p-10 max-w-7xl mx-auto w-full space-y-10">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 bg-tertiary-fixed-dim text-on-tertiary-fixed text-[10px] font-bold uppercase tracking-widest rounded-full">Report Verified</span>
+<span class="text-on-surface-variant text-xs font-medium">ID: AR-2024-Q4-S7</span>
+</div>
+<h2 class="text-4xl font-extrabold tracking-tight text-primary">Security Audit Q4</h2>
+<p class="text-on-surface-variant mt-2 max-w-xl">Comprehensive technical review of Adrian Enterprise infrastructure, threat surface area, and encryption protocols for the final quarter of 2024.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 bg-surface-container-high text-primary font-semibold rounded-xl hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>
+                            Export PDF
+                        </button>
+<button class="px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:opacity-95 transition-opacity flex items-center gap-2 shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+                            Distribute
+                        </button>
+</div>
+</div>
+<!-- Score & High Level Metrics (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Main Score -->
+<div class="md:col-span-2 bg-primary rounded-3xl p-8 text-white flex flex-col justify-between relative overflow-hidden">
+<div class="z-10">
+<p class="text-on-primary-container text-sm font-semibold uppercase tracking-widest mb-1">System Health Score</p>
+<h3 class="text-7xl font-extrabold leading-none tracking-tighter">98<span class="text-3xl text-on-primary-container">/100</span></h3>
+<div class="mt-8 flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_10px_#00daf3]"></span>
+<p class="text-sm font-medium text-primary-fixed">Exceeding standard security benchmarks</p>
+</div>
+</div>
+<div class="absolute -right-12 -bottom-12 w-64 h-64 bg-primary-container rounded-full blur-[80px] opacity-50"></div>
+<div class="absolute right-8 top-8">
+<span class="material-symbols-outlined text-primary-fixed opacity-20 text-8xl" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+</div>
+<!-- Metric 1: Threat Mitigation -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 shadow-sm flex flex-col justify-between border-b-4 border-primary">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Threat Mitigation</h4>
+<p class="text-xs text-on-surface-variant">Active defense system efficiency</p>
+</div>
+<div class="mt-6">
+<div class="flex justify-between items-end mb-2">
+<span class="text-2xl font-bold">100%</span>
+<span class="text-[10px] font-bold text-tertiary-fixed-dim">+2.4% vs Q3</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full"></div>
+</div>
+</div>
+</div>
+<!-- Metric 2: Credential Rotations -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 shadow-sm flex flex-col justify-between border-b-4 border-tertiary-fixed-dim">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="sync_lock">sync_lock</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Credential Rotations</h4>
+<p class="text-xs text-on-surface-variant">Automated key update frequency</p>
+</div>
+<div class="mt-6">
+<div class="flex justify-between items-end mb-2">
+<span class="text-2xl font-bold">94%</span>
+<span class="text-[10px] font-bold text-primary">On Schedule</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim w-[94%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Layout: Details & Findings -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Findings (Table-less Editorial Style) -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+                                Specific Audit Findings
+                            </h3>
+<button class="text-primary text-sm font-semibold hover:underline">View All 24 Items</button>
+</div>
+<!-- Findings Cards -->
+<div class="space-y-4">
+<!-- Critical Finding -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex gap-6 items-start hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-error" data-icon="report" style="font-variation-settings: 'FILL' 1;">report</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">Legacy API Endpoint Exposure</h4>
+<span class="px-2 py-0.5 bg-error text-white text-[10px] font-bold rounded uppercase tracking-wider">Critical</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Internal development endpoint 'v1/legacy-auth' found accessible without MFA validation in North America cluster.</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                                            Detected 2h ago
+                                        </div>
+<div class="flex items-center gap-1 text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" data-icon="category">category</span>
+                                            Auth Protocol
+                                        </div>
+<button class="ml-auto text-xs font-bold text-primary px-3 py-1.5 bg-surface-container rounded-lg hover:bg-surface-variant transition-colors">Remediate</button>
+</div>
+</div>
+</div>
+<!-- Warning Finding -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex gap-6 items-start hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">Suboptimal Encryption Salt Length</h4>
+<span class="px-2 py-0.5 bg-secondary text-white text-[10px] font-bold rounded uppercase tracking-wider">Warning</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Metadata storage bucket salts are 128-bit; recommended upgrade to 256-bit to align with NIST 2025 guidelines.</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                                            Detected 3d ago
+                                        </div>
+<div class="flex items-center gap-1 text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" data-icon="category">category</span>
+                                            Cryptography
+                                        </div>
+<button class="ml-auto text-xs font-bold text-primary px-3 py-1.5 bg-surface-container rounded-lg hover:bg-surface-variant transition-colors">Acknowledge</button>
+</div>
+</div>
+</div>
+<!-- Low Finding -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex gap-6 items-start hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">Unused Developer SSH Keys</h4>
+<span class="px-2 py-0.5 bg-on-surface-variant text-white text-[10px] font-bold rounded uppercase tracking-wider">Low</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Found 4 SSH keys associated with inactive developers. Hygiene recommendation to purge keys older than 90 days.</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                                            Detected 1w ago
+                                        </div>
+<div class="flex items-center gap-1 text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" data-icon="category">category</span>
+                                            Access Control
+                                        </div>
+<button class="ml-auto text-xs font-bold text-primary px-3 py-1.5 bg-surface-container rounded-lg hover:bg-surface-variant transition-colors">Purge Keys</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Encryption Integrity & Charts -->
+<div class="space-y-6">
+<div class="bg-primary-container text-white p-8 rounded-[2rem] shadow-xl overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="enhanced_encryption">enhanced_encryption</span>
+                                    Encryption Integrity
+                                </h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-xs font-semibold mb-2 text-on-primary-container uppercase tracking-wider">
+<span>End-to-End Coverage</span>
+<span class="text-white">100%</span>
+</div>
+<div class="h-1.5 w-full bg-primary rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim w-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-semibold mb-2 text-on-primary-container uppercase tracking-wider">
+<span>At-Rest Latency</span>
+<span class="text-white">1.2ms</span>
+</div>
+<div class="h-1.5 w-full bg-primary rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[80%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-semibold mb-2 text-on-primary-container uppercase tracking-wider">
+<span>Key Entropy</span>
+<span class="text-white">Perfect</span>
+</div>
+<div class="h-1.5 w-full bg-primary rounded-full overflow-hidden">
+<div class="h-full bg-white w-full opacity-90"></div>
+</div>
+</div>
+</div>
+<div class="mt-10 p-4 bg-white/5 rounded-2xl border border-white/10">
+<p class="text-[10px] text-on-primary-container uppercase font-bold tracking-widest mb-1">Last Re-Key Event</p>
+<p class="text-sm font-medium">Oct 24, 2024 at 04:00 UTC</p>
+</div>
+</div>
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-tertiary-fixed-dim/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Data Vault Visual -->
+<div class="bg-surface-container p-6 rounded-[2rem]">
+<h4 class="text-sm font-bold mb-4 uppercase tracking-widest text-on-surface-variant text-center">Data Residency Flow</h4>
+<div class="aspect-square relative flex items-center justify-center">
+<!-- Minimal Aesthetic Map/Diagram -->
+<div class="absolute inset-0 rounded-3xl overflow-hidden opacity-20 mix-blend-multiply grayscale">
+<img class="w-full h-full object-cover" data-alt="Abstract schematic diagram of interconnected digital nodes and lines representing global data flow in a technical blue style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXQP2TKO5nMyCMWaX9C1wiRCDA-kR0EJ7BiioCo8i-amMT-PU2dVNqarEY7KrkPXR7yeEpu8AG85O8Xlh392G7iZ22JYAKTXENBJRal61zUhBoUwfD2dYDCRiTBPZFcLiPLVTtWyEQSKP0TB2V3q1irk7df9lkkpZnsLCIU__wU2FUNbsrsfzJnQ_ZEyWZ7YcXrw9lUwwMICLCr6tZR4Bk9ZACxdjebVxFx_-WwFCQt2_q2crhQF8fqeKOMNqKiwwroE0Nv8pO87s5"/>
+</div>
+<div class="relative flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/20 animate-pulse">
+<span class="material-symbols-outlined text-3xl" data-icon="hub">hub</span>
+</div>
+<p class="mt-4 text-xs font-bold text-primary">Global Core Active</p>
+</div>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-2">
+<div class="h-1 bg-primary rounded-full"></div>
+<div class="h-1 bg-primary rounded-full"></div>
+<div class="h-1 bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for mobile dock -->
+<div class="h-32 lg:hidden"></div>
+</main>
+<!-- BottomNavBar (Authority: Shared Components JSON) -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center pb-8 pt-4 lg:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl z-50">
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full px-6 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl shadow-2xl shadow-slate-900/10 flex justify-between items-center no-line tonal-shift">
+<!-- Chat -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:scale-110 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="text-[10px] uppercase tracking-wider font-medium mt-1">Chat</span>
+</a>
+<!-- Audit (Active) -->
+<a class="flex flex-col items-center justify-center bg-slate-900 dark:bg-slate-50 text-white dark:text-slate-900 rounded-full w-12 h-12 hover:scale-110 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:scale-110 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-[10px] uppercase tracking-wider font-medium mt-1">AI</span>
+</a>
+<!-- Insights -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:scale-110 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="text-[10px] uppercase tracking-wider font-medium mt-1">Insights</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

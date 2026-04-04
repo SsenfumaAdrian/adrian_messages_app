@@ -29,7 +29,7 @@ class _State extends State<AiTrainingWorkspaceScreen> {
       _epoch = 0;
     });
     for (var i = 1; i <= 5; i++) {
-      await Future.delayed(const Duration(milliseconds: 600));
+      await Future.delayed(Duration(milliseconds: 600));
       if (mounted) setState(() => _epoch = i);
     }
     if (mounted) setState(() => _training = false);
@@ -40,21 +40,21 @@ class _State extends State<AiTrainingWorkspaceScreen> {
       activeRoute: LiquidRouter.aiTraining,
       title: 'AI Training Workspace',
       child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // Header
             Container(
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                         colors: [Palette.primary, Color(0xFF3949AB)]),
                     borderRadius: BorderRadius.circular(22),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.28),
+                          color: Palette.primary.withValues(alpha: 0.28),
                           blurRadius: 20,
-                          offset: const Offset(0, 8))
+                          offset: Offset(0, 8))
                     ]),
                 child: Row(children: [
                   const Icon(Icons.psychology_rounded,
@@ -99,7 +99,7 @@ class _State extends State<AiTrainingWorkspaceScreen> {
             const SizedBox(height: 24),
 
             // Example pairs
-            _SHead('Training Examples'),
+            _sectionHead('Training Examples'),
             const SizedBox(height: 12),
             ...[
               (
@@ -115,14 +115,14 @@ class _State extends State<AiTrainingWorkspaceScreen> {
                 'Adrian found 3 open slots and sent a calendar invite automatically'
               ),
             ].map((ex) => Container(
-                margin: const EdgeInsets.only(bottom: 12),
-                padding: const EdgeInsets.all(14),
+                margin: EdgeInsets.only(bottom: 12),
+                padding: EdgeInsets.all(14),
                 decoration: BoxDecoration(
                     color: Palette.surfaceContainerLowest,
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.04),
+                          color: Palette.primary.withValues(alpha: 0.04),
                           blurRadius: 8)
                     ]),
                 child: Column(
@@ -132,7 +132,7 @@ class _State extends State<AiTrainingWorkspaceScreen> {
                         Container(
                             width: 6,
                             height: 6,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                                 color: Palette.primary,
                                 shape: BoxShape.circle)),
                         const SizedBox(width: 8),
@@ -145,7 +145,7 @@ class _State extends State<AiTrainingWorkspaceScreen> {
                       ]),
                       const SizedBox(height: 6),
                       Padding(
-                          padding: const EdgeInsets.only(left: 14),
+                          padding: EdgeInsets.only(left: 14),
                           child: Text(ex.$2,
                               style: const TextStyle(
                                   fontSize: 12,
@@ -155,16 +155,16 @@ class _State extends State<AiTrainingWorkspaceScreen> {
             const SizedBox(height: 20),
 
             // Add example
-            _SHead('Add Training Example'),
+            _sectionHead('Add Training Example'),
             const SizedBox(height: 12),
             Container(
-                padding: const EdgeInsets.all(16),
+                padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                     color: Palette.surfaceContainerLowest,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.04),
+                          color: Palette.primary.withValues(alpha: 0.04),
                           blurRadius: 10)
                     ]),
                 child: Column(
@@ -196,7 +196,7 @@ class _State extends State<AiTrainingWorkspaceScreen> {
                             child: GestureDetector(
                                 onTap: () {},
                                 child: Container(
-                                    padding: const EdgeInsets.symmetric(
+                                    padding: EdgeInsets.symmetric(
                                         vertical: 12),
                                     decoration: BoxDecoration(
                                         color: Palette.surfaceContainerHigh,
@@ -213,8 +213,8 @@ class _State extends State<AiTrainingWorkspaceScreen> {
                             child: GestureDetector(
                                 onTap: _training ? null : _startTraining,
                                 child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 200),
-                                    padding: const EdgeInsets.symmetric(
+                                    duration: Duration(milliseconds: 200),
+                                    padding: EdgeInsets.symmetric(
                                         vertical: 12),
                                     decoration: BoxDecoration(
                                         gradient: LinearGradient(
@@ -232,9 +232,9 @@ class _State extends State<AiTrainingWorkspaceScreen> {
                                           if (!_training)
                                             BoxShadow(
                                                 color: Palette.primary
-                                                    .withOpacity(0.28),
+                                                    .withValues(alpha: 0.28),
                                                 blurRadius: 14,
-                                                offset: const Offset(0, 5))
+                                                offset: Offset(0, 5))
                                         ]),
                                     child: Center(
                                         child: Text(
@@ -274,7 +274,7 @@ class _TrainField extends StatelessWidget {
                   const BorderSide(color: Palette.primary, width: 1.5))));
 }
 
-Widget _SHead(String t) => Text(t,
+Widget _sectionHead(String t) => Text(t,
     style: TextStyle(
         fontFamily: Palette.fontDisplay,
         fontSize: 16,

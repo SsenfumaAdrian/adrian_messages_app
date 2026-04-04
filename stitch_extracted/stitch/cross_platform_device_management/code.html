@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages - Cross-Platform Device Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2f4865",
+              "on-secondary-container": "#48617e",
+              "inverse-on-surface": "#f0f1f2",
+              "primary": "#0e1c2b",
+              "on-error-container": "#93000a",
+              "on-background": "#191c1d",
+              "on-secondary-fixed": "#001d36",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#bac8dc",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "surface-tint": "#525f71",
+              "tertiary-fixed": "#9cf0ff",
+              "surface-bright": "#f8f9fa",
+              "surface-variant": "#e1e3e4",
+              "on-surface-variant": "#454652",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#c2dcff",
+              "primary-container": "#233141",
+              "surface-container-high": "#e7e8e9",
+              "surface": "#f8f9fa",
+              "on-tertiary-container": "#00a7bb",
+              "on-primary-container": "#8b99ac",
+              "error": "#ba1a1a",
+              "inverse-primary": "#bac8dc",
+              "outline": "#767683",
+              "on-primary-fixed-variant": "#3a4859",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#d1e4ff",
+              "primary-fixed": "#d6e4f9",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#afc9ea",
+              "outline-variant": "#c6c5d4",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#00daf3",
+              "surface-container-highest": "#e1e3e4",
+              "surface-container": "#edeeef",
+              "background": "#f8f9fa",
+              "on-tertiary-fixed": "#001f24",
+              "secondary": "#47607e",
+              "tertiary-container": "#00363d",
+              "on-primary-fixed": "#0f1c2c",
+              "tertiary": "#001f24",
+              "on-surface": "#191c1d",
+              "on-tertiary-fixed-variant": "#004f58"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex fixed left-0 top-0 h-screen w-64 bg-slate-50 dark:bg-slate-950 flex-col p-4 space-y-2 z-50 tonal-shift bg-slate-100/50 dark:bg-slate-900/50">
+<div class="mb-8 px-2 flex items-center space-x-3">
+<div class="w-10 h-10 primary-gradient rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h1 class="text-lg font-black tracking-tighter text-slate-900 font-headline">Adrian</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Productivity Suite</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out font-manrope text-sm font-medium group" href="#">
+<span class="material-symbols-outlined mr-3 text-xl group-hover:scale-110 transition-transform">chat_bubble</span>
+                Inbox
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out font-manrope text-sm font-medium group" href="#">
+<span class="material-symbols-outlined mr-3 text-xl group-hover:scale-110 transition-transform">calendar_today</span>
+                Calendar
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out font-manrope text-sm font-medium group" href="#">
+<span class="material-symbols-outlined mr-3 text-xl group-hover:scale-110 transition-transform">check_circle</span>
+                Tasks
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 ease-out font-manrope text-sm font-medium group" href="#">
+<span class="material-symbols-outlined mr-3 text-xl group-hover:scale-110 transition-transform">folder_open</span>
+                Files
+            </a>
+<a class="flex items-center px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm rounded-lg font-bold font-manrope text-sm transition-all duration-200 ease-out group" href="#">
+<span class="material-symbols-outlined mr-3 text-xl group-hover:scale-110 transition-transform">devices</span>
+                Devices
+            </a>
+</nav>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-1">
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 rounded-lg font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">help_outline</span>
+                Help
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200/50 rounded-lg font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">archive</span>
+                Archive
+            </a>
+</div>
+</aside>
+<!-- Top AppBar (Mobile/Desktop Header) -->
+<header class="fixed top-0 right-0 left-0 md:left-64 z-40 glass-nav shadow-sm shadow-slate-200/50 flex justify-between items-center px-6 py-3">
+<div class="flex items-center gap-4">
+<span class="md:hidden material-symbols-outlined text-on-surface">menu</span>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white font-headline tracking-tight">Device Security</h2>
+</div>
+<div class="flex items-center space-x-4">
+<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-1.5 rounded-full border border-transparent focus-within:bg-surface-container-lowest focus-within:border-outline-variant/20 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-lg mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 font-body" placeholder="Search devices..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/20">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a modern executive with a clean minimalist background and soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdQiOWzENhRQt6sluAroa9gQ2y99a2v9-WEeVNvHSyi1upO2w9ksyCpFASupIaZ0IJ9AsBCJgvbdI0ZhvtGhNQhO1Ahencjg07KjH81cjxQoxoGQX91CNL-plHQpGelsA-X1lJVgDZpuOcmtoHDK5zPK2JdUgVRrPOGVBchlY8O2qPetKoy7FQezOtRa-dG7W0q7unqUjLW-KFU2LHWfg8eNunIZAq9xrhGeQxaYrj8OnfHyZnOO1UriuI7r8uGnGIHDYClP7rg5xJ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="pt-20 pb-24 md:pb-8 md:pl-64 min-h-screen px-6 lg:px-10">
+<!-- Hero Section: Security Posture -->
+<section class="mt-8 mb-10">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 primary-gradient rounded-3xl p-8 text-white relative overflow-hidden shadow-xl shadow-primary/10">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<span class="inline-flex items-center px-3 py-1 bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim mr-2 animate-pulse"></span>
+                                System Fully Encrypted
+                            </span>
+<h3 class="text-3xl font-headline font-extrabold mb-2">Network Health: Optimum</h3>
+<p class="text-on-primary-container max-w-md font-body leading-relaxed">Your Adrian workspace is currently synchronized across 3 verified devices. End-to-end encryption is active on all hardware nodes.</p>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="bg-white text-primary px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-surface-container-low transition-colors">
+                                Run Security Audit
+                            </button>
+<button class="bg-primary-container/40 backdrop-blur-md border border-white/10 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-primary-container/60 transition-colors">
+                                Global Lockout
+                            </button>
+</div>
+</div>
+<!-- Abstract Background Pattern -->
+<div class="absolute right-[-10%] top-[-10%] opacity-20 w-64 h-64 border-[32px] border-tertiary-fixed rounded-full"></div>
+<div class="absolute right-10 bottom-[-20%] opacity-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+</div>
+<div class="bg-surface-container-lowest rounded-3xl p-8 flex flex-col justify-between shadow-sm border border-outline-variant/5">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<p class="text-on-surface-variant text-xs font-bold uppercase tracking-wider">Secure Handover</p>
+<h4 class="text-xl font-headline font-bold">Active Thread</h4>
+</div>
+<span class="material-symbols-outlined text-primary bg-secondary-container/30 p-2 rounded-xl">swap_horiz</span>
+</div>
+<div class="my-6 p-4 bg-surface-container-low rounded-2xl flex items-center space-x-4">
+<div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">phone_in_talk</span>
+</div>
+<div>
+<p class="text-sm font-bold">Project Alpha Sync</p>
+<p class="text-xs text-on-surface-variant">Ongoing • 14:22</p>
+</div>
+</div>
+<button class="w-full py-4 bg-surface-container-high hover:bg-surface-container text-primary font-bold rounded-2xl transition-all flex items-center justify-center gap-2">
+                        Transfer to iPad Pro
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Device List - Technical Precision -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-headline font-bold text-slate-900">Hardware Nodes</h3>
+<button class="text-sm font-bold text-secondary hover:text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">add</span>
+                    Register New Hardware
+                </button>
+</div>
+<div class="space-y-4">
+<!-- Desktop Node -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 flex flex-col lg:flex-row lg:items-center gap-6 shadow-sm hover:shadow-md transition-shadow duration-300 border border-transparent hover:border-outline-variant/10">
+<div class="flex items-center flex-1 min-w-0">
+<div class="w-16 h-16 bg-surface-container-low rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-3xl text-primary">desktop_windows</span>
+</div>
+<div class="ml-5 overflow-hidden">
+<h4 class="text-lg font-bold truncate">MacBook Pro 16" (Studio)</h4>
+<div class="flex items-center text-xs text-on-surface-variant font-medium mt-1">
+<span class="bg-tertiary-fixed-dim/30 text-on-tertiary-fixed-variant px-2 py-0.5 rounded mr-2">Primary Node</span>
+<span>ID: AD-7729-XQ</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 flex-[2]">
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Location</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">location_on</span>
+<p class="text-sm font-semibold">San Francisco, CA</p>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">IP Address</p>
+<p class="text-sm font-mono font-medium">192.168.1.104</p>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Biometrics</p>
+<div class="flex items-center gap-1 text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+<p class="text-sm font-semibold">Verified</p>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Status</p>
+<p class="text-sm font-bold text-tertiary-fixed-dim">Online</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface text-xs font-bold rounded-xl transition-colors">Manage</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-xl transition-colors">
+<span class="material-symbols-outlined">block</span>
+</button>
+</div>
+</div>
+<!-- Mobile Node -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 flex flex-col lg:flex-row lg:items-center gap-6 shadow-sm border border-transparent">
+<div class="flex items-center flex-1 min-w-0">
+<div class="w-16 h-16 bg-surface-container-low rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-3xl text-primary">smartphone</span>
+</div>
+<div class="ml-5 overflow-hidden">
+<h4 class="text-lg font-bold truncate">iPhone 15 Pro</h4>
+<div class="flex items-center text-xs text-on-surface-variant font-medium mt-1">
+<span class="bg-secondary-container/40 text-on-secondary-container px-2 py-0.5 rounded mr-2">Mobile</span>
+<span>ID: AD-9112-LZ</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 flex-[2]">
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Location</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">location_on</span>
+<p class="text-sm font-semibold">Palo Alto, CA</p>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">IP Address</p>
+<p class="text-sm font-mono font-medium">172.20.10.4</p>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Biometrics</p>
+<div class="flex items-center gap-1 text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">face</span>
+<p class="text-sm font-semibold">FaceID Active</p>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Status</p>
+<p class="text-sm font-bold text-tertiary-fixed-dim">Roaming</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface text-xs font-bold rounded-xl transition-colors">Manage</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-xl transition-colors">
+<span class="material-symbols-outlined">block</span>
+</button>
+</div>
+</div>
+<!-- Tablet Node (Inactive) -->
+<div class="bg-surface-container-low/50 rounded-2xl p-6 flex flex-col lg:flex-row lg:items-center gap-6 border border-dashed border-outline-variant/30 opacity-80">
+<div class="flex items-center flex-1 min-w-0">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-3xl text-outline">tablet_mac</span>
+</div>
+<div class="ml-5 overflow-hidden">
+<h4 class="text-lg font-bold truncate">iPad Pro 12.9"</h4>
+<div class="flex items-center text-xs text-on-surface-variant font-medium mt-1">
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded mr-2">Inactive</span>
+<span>ID: AD-0482-WM</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 flex-[2]">
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Last Seen</p>
+<p class="text-sm font-semibold">2 days ago</p>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Last IP</p>
+<p class="text-sm font-mono font-medium">192.168.1.112</p>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Biometrics</p>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">lock_open</span>
+<p class="text-sm font-semibold">Standby</p>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Status</p>
+<p class="text-sm font-bold text-outline">Disconnected</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 bg-primary text-white text-xs font-bold rounded-xl transition-colors">Wake Up</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Secondary Security Intel -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Wipe Capabilities -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/10 shadow-sm flex flex-col justify-between">
+<div class="w-12 h-12 rounded-2xl bg-error-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+</div>
+<div>
+<h5 class="text-lg font-bold mb-1">Remote Wipe</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Permanently erase all Adrian data from a lost or stolen device instantly.</p>
+</div>
+<button class="mt-4 text-xs font-bold text-error uppercase tracking-widest hover:underline text-left">Configure Protocols</button>
+</div>
+<!-- Geofencing -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/10 shadow-sm flex flex-col justify-between">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary">explore</span>
+</div>
+<div>
+<h5 class="text-lg font-bold mb-1">Secure Geofencing</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Lock access when devices leave trusted zones (Office, Home, Studio).</p>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-xs font-bold text-on-surface-variant">3 Active Zones</span>
+<span class="w-8 h-4 bg-tertiary-fixed-dim rounded-full relative"><span class="absolute right-1 top-1 w-2 h-2 bg-white rounded-full"></span></span>
+</div>
+</div>
+<!-- Login History Map -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/10 shadow-sm lg:col-span-2 relative overflow-hidden group">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-2">
+<h5 class="text-lg font-bold">Access Map</h5>
+<span class="text-[10px] bg-white/80 backdrop-blur-sm px-2 py-1 rounded-md font-bold uppercase border border-outline-variant/20">Real-time</span>
+</div>
+<p class="text-xs text-on-surface-variant mb-4">Latest secure handshakes by geolocation.</p>
+<div class="flex gap-2">
+<div class="px-3 py-1 bg-surface-container-low rounded-lg text-[10px] font-bold">New York, US • 10:45</div>
+<div class="px-3 py-1 bg-surface-container-low rounded-lg text-[10px] font-bold">London, UK • 16:30</div>
+</div>
+</div>
+<div class="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity">
+<img alt="World map showing device locations" class="w-full h-full object-cover grayscale brightness-50" data-alt="Stylized dark minimalist world map with glowing blue data points and thin connecting lines in a premium technical style" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Al5sqfHPKSwlicqVcG_rxu_fk0XF1hbdMK2AmFfIXMRfHW5nYlrtp4jbIM88YwkA-2qigVV5B8Q0TVFMqPVC-xI19D24dsBzrs9Hi1ja5ZyojKS8ENYrtgRC8VR0QeIwSOTHquQwGORSrwyy9zmsFbaF48PtSuMdmNgr2gndRMl2LQHnaNV0muS0NBNA3F9eV6b5bniYYoGFNK_LrTerr98LLQnPknMFO94nKzomgyiRxRJTBShl02Ot2QCCDE7zAQmjkfQypHUf"/>
+</div>
+<div class="absolute bottom-4 right-4 z-10">
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-xl">map</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] glass-nav rounded-3xl p-2 flex justify-between items-center shadow-2xl z-50 border border-white/20">
+<a class="p-3 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+</a>
+<a class="p-3 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+</a>
+<a class="p-3 bg-primary text-white rounded-2xl shadow-lg transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">devices</span>
+</a>
+<a class="p-3 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+</a>
+<a class="p-3 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</nav>
+<!-- Subtle Grain Overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-[100]"></div>
+</body></html>

@@ -4,6 +4,7 @@
 // Shows an animated logo on the marble background, then navigates to AuthScreen.
 
 
+import 'dart:async' show unawaited;
 import 'package:flutter/material.dart';
 
 import '../../core/constants/palette.dart';
@@ -43,13 +44,13 @@ class _LiquidSplashScreenState extends State<LiquidSplashScreen>
     // ── Marble background ────────────────────────────────
     _marbleCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 20),
+      duration: Duration(seconds: 20),
     )..repeat();
 
     // ── Logo entrance (0 → 600 ms) ───────────────────────
     _entranceCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 700),
+      duration: Duration(milliseconds: 700),
     );
     _fadeAnim = CurvedAnimation(
       parent: _entranceCtrl,
@@ -62,7 +63,7 @@ class _LiquidSplashScreenState extends State<LiquidSplashScreen>
     // ── Tagline fade (starts 400 ms after logo) ──────────
     _taglineCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration: Duration(milliseconds: 600),
     );
     _taglineFade = CurvedAnimation(
       parent: _taglineCtrl,
@@ -72,7 +73,7 @@ class _LiquidSplashScreenState extends State<LiquidSplashScreen>
     // ── Pulse glow (continuous slow breathe) ─────────────
     _pulseCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1800),
+      duration: Duration(milliseconds: 1800),
     )..repeat(reverse: true);
     _pulseAnim = Tween<double>(begin: 0.6, end: 1.0).animate(
       CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut),
@@ -84,26 +85,26 @@ class _LiquidSplashScreenState extends State<LiquidSplashScreen>
 
   Future<void> _runSequence() async {
     // Brief pause so marble renders first
-    await Future.delayed(const Duration(milliseconds: 200));
-    _entranceCtrl.forward();
+    await Future.delayed(Duration(milliseconds: 200));
+    unawaited(_entranceCtrl.forward());
 
-    await Future.delayed(const Duration(milliseconds: 400));
-    _taglineCtrl.forward();
+    await Future.delayed(Duration(milliseconds: 400));
+    unawaited(_taglineCtrl.forward());
 
     // Wait, then navigate
-    await Future.delayed(const Duration(milliseconds: 2400));
+    await Future.delayed(Duration(milliseconds: 2400));
     if (mounted) {
-      Navigator.pushReplacement(
+      unawaited(Navigator.pushReplacement(
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) => const AuthScreen(),
-          transitionDuration: const Duration(milliseconds: 600),
+          transitionDuration: Duration(milliseconds: 600),
           transitionsBuilder: (_, anim, __, child) => FadeTransition(
             opacity: anim,
             child: child,
           ),
         ),
-      );
+      ));
     }
   }
 
@@ -119,7 +120,7 @@ class _LiquidSplashScreenState extends State<LiquidSplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Palette.background,
+      backgroundColor: Palette.darkBackground,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -144,14 +145,14 @@ class _LiquidSplashScreenState extends State<LiquidSplashScreen>
                           borderRadius: BorderRadius.circular(36),
                           boxShadow: [
                             BoxShadow(
-                              color: Palette.accentBlue
-                                  .withOpacity(0.35 * _pulseAnim.value),
+                              color: const Color(0xFF0F6FFF)
+                                  .withValues(alpha: 0.35 * _pulseAnim.value),
                               blurRadius: 48 * _pulseAnim.value,
                               spreadRadius: 4,
                             ),
                             BoxShadow(
                               color: Palette.accentCyan
-                                  .withOpacity(0.18 * _pulseAnim.value),
+                                  .withValues(alpha: 0.18 * _pulseAnim.value),
                               blurRadius: 80 * _pulseAnim.value,
                               spreadRadius: 8,
                             ),
@@ -246,7 +247,7 @@ class _LoadingDotsState extends State<_LoadingDots>
       3,
       (i) => AnimationController(
         vsync: this,
-        duration: const Duration(milliseconds: 600),
+        duration: Duration(milliseconds: 600),
       ),
     );
     _anims = _ctrls
@@ -279,7 +280,7 @@ class _LoadingDotsState extends State<_LoadingDots>
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(3, (i) {
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4),
+          padding: EdgeInsets.symmetric(horizontal: 4),
           child: AnimatedBuilder(
             animation: _anims[i],
             builder: (_, __) => Opacity(
@@ -287,7 +288,7 @@ class _LoadingDotsState extends State<_LoadingDots>
               child: Container(
                 width: 6,
                 height: 6,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Palette.accentCyan,
                   shape: BoxShape.circle,
                 ),

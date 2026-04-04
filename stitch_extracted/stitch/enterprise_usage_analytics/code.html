@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Enterprise | Usage Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#767683",
+              "surface-tint": "#525f71",
+              "on-secondary-container": "#48617e",
+              "inverse-primary": "#bac8dc",
+              "secondary-fixed-dim": "#afc9ea",
+              "inverse-surface": "#2e3132",
+              "background": "#f8f9fa",
+              "primary": "#0e1c2b",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#2f4865",
+              "surface-container": "#edeeef",
+              "tertiary-fixed": "#9cf0ff",
+              "on-primary-fixed-variant": "#3a4859",
+              "tertiary": "#001f24",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed": "#0f1c2c",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#00daf3",
+              "on-tertiary-fixed": "#001f24",
+              "surface": "#f8f9fa",
+              "surface-dim": "#d9dadb",
+              "surface-variant": "#e1e3e4",
+              "surface-container-low": "#f3f4f5",
+              "on-secondary-fixed": "#001d36",
+              "primary-fixed-dim": "#bac8dc",
+              "primary-fixed": "#d6e4f9",
+              "on-background": "#191c1d",
+              "secondary-container": "#c2dcff",
+              "on-tertiary-fixed-variant": "#004f58",
+              "on-surface-variant": "#454652",
+              "primary-container": "#233141",
+              "on-error": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "secondary": "#47607e",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#191c1d",
+              "tertiary-container": "#00363d",
+              "on-tertiary-container": "#00a7bb",
+              "on-primary-container": "#8b99ac",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e7e8e9",
+              "secondary-fixed": "#d1e4ff",
+              "outline-variant": "#c6c5d4",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-highest": "#e1e3e4"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex overflow-hidden">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="h-screen w-64 hidden lg:flex flex-col border-r-0 bg-slate-100 dark:bg-slate-900 flex flex-col gap-2 p-4">
+<div class="mb-8 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl primary-gradient flex items-center justify-center text-white">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<h2 class="font-bold text-slate-900 dark:text-white text-lg leading-tight">Adrian Enterprise</h2>
+<p class="text-xs text-on-surface-variant opacity-70">Secure Workspace</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined text-xl">chat</span>
+<span class="font-label text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined text-xl">gpp_maybe</span>
+<span class="font-label text-sm font-medium">Audit</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined text-xl">cloud_download</span>
+<span class="font-label text-sm font-medium">Data Vault</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+<span class="font-label text-sm font-medium">AI Builder</span>
+</a>
+<!-- Active State: Analytics -->
+<a class="flex items-center gap-3 px-3 py-2.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm rounded-lg hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined text-xl">leaderboard</span>
+<span class="font-label text-sm font-semibold">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto p-2">
+<button class="w-full py-3 px-4 rounded-xl primary-gradient text-on-primary font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">add</span>
+                New Secure Chat
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto relative">
+<!-- TopNavBar (Authority: JSON) -->
+<header class="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl sticky top-0 z-50 flex justify-between items-center w-full px-6 py-3 max-w-full shadow-sm shadow-slate-900/5">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50 font-headline">Usage Analytics</h1>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search Bar on Right -->
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full w-64">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full font-body" placeholder="Search analytics..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-slate-500">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">security</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">analytics</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">settings</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a business executive in a dark suit with a neutral confident expression and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTlQkFLAAf437Ayo6SuLyPTdTlYgoHS-mpTWZ35drrkKU9QHTW75CPSXmxfJvN_qAuduWzmnD3B6QpfYDa1KHM8r9A6CMrH6xckSg26-4xNORwC0qaSxY2JKuSu0RqyFcJoEIpGlly3N18BJgFJD8DHuckKKeFS7qSkusJm7xaEgGyMCeDUfWDHMQ2vStZrVDmU6873rqIimdNqvNhLTgjrpRPBda7dzkmkWTXlb-QoJPzUS5piQhiiZA3QSfr5UUS3VR7AFk4jPlD"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Insights Dashboard -->
+<div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+<!-- Summary Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Active Users Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant/10 transition-all flex flex-col justify-between h-36">
+<div class="flex justify-between items-start">
+<span class="text-sm font-medium text-on-surface-variant font-label">Active Users</span>
+<span class="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full font-semibold">+12.5%</span>
+</div>
+<div>
+<h3 class="text-3xl font-extrabold text-primary font-headline">14,802</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-1">Real-time concurrency</p>
+</div>
+</div>
+<!-- Message Volume Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant/10 transition-all flex flex-col justify-between h-36">
+<div class="flex justify-between items-start">
+<span class="text-sm font-medium text-on-surface-variant font-label">Message Volume</span>
+<span class="text-xs text-primary bg-primary-fixed px-2 py-1 rounded-full font-semibold">Stable</span>
+</div>
+<div>
+<h3 class="text-3xl font-extrabold text-primary font-headline">1.2M</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-1">Weekly total interactions</p>
+</div>
+</div>
+<!-- AI Efficiency Gain Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant/10 transition-all flex flex-col justify-between h-36 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-tertiary-fixed-dim/10 rounded-full -mr-12 -mt-12"></div>
+<div class="flex justify-between items-start relative z-10">
+<span class="text-sm font-medium text-on-surface-variant font-label">AI Efficiency Gain</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim">bolt</span>
+</div>
+<div class="relative z-10">
+<h3 class="text-3xl font-extrabold text-primary font-headline">2,450h</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-1">Monthly time saved</p>
+</div>
+</div>
+<!-- Circle Adoption Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant/10 transition-all flex flex-col justify-between h-36">
+<div class="flex justify-between items-start">
+<span class="text-sm font-medium text-on-surface-variant font-label">Circle Adoption</span>
+<span class="text-xs text-red-500 bg-red-50 px-2 py-1 rounded-full font-semibold">-2.1%</span>
+</div>
+<div>
+<h3 class="text-3xl font-extrabold text-primary font-headline">88.4%</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-1">Cross-dept. integration</p>
+</div>
+</div>
+</div>
+<!-- Main Analytics Bento Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Usage Trends (Heatmap/Line concept) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="text-lg font-bold text-primary font-headline">Peak Usage Patterns</h2>
+<p class="text-sm text-on-surface-variant">Global platform activity across 24-hour cycles</p>
+</div>
+<div class="flex bg-surface-container rounded-lg p-1">
+<button class="px-4 py-1.5 text-xs font-semibold rounded-md bg-white shadow-sm text-primary">Daily</button>
+<button class="px-4 py-1.5 text-xs font-medium text-on-surface-variant">Weekly</button>
+</div>
+</div>
+<!-- Asymmetric Visual: Usage Heatmap Concept -->
+<div class="h-64 flex items-end gap-1.5 overflow-hidden">
+<!-- Simulated bar-chart heatmap -->
+<div class="flex-1 bg-surface-container-high rounded-t-lg transition-all hover:bg-primary-fixed" style="height: 20%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg transition-all hover:bg-primary-fixed" style="height: 15%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg transition-all hover:bg-primary-fixed" style="height: 12%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg transition-all hover:bg-primary-fixed" style="height: 25%"></div>
+<div class="flex-1 bg-primary rounded-t-lg" style="height: 45%"></div>
+<div class="flex-1 bg-primary-container rounded-t-lg" style="height: 75%"></div>
+<div class="flex-1 bg-primary rounded-t-lg" style="height: 95%"></div>
+<div class="flex-1 bg-primary-container rounded-t-lg" style="height: 85%"></div>
+<div class="flex-1 bg-primary-fixed rounded-t-lg" style="height: 60%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg" style="height: 40%"></div>
+<div class="flex-1 bg-primary rounded-t-lg" style="height: 65%"></div>
+<div class="flex-1 bg-primary-container rounded-t-lg" style="height: 80%"></div>
+<div class="flex-1 bg-primary rounded-t-lg" style="height: 100%"></div>
+<div class="flex-1 bg-primary-container rounded-t-lg" style="height: 90%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg" style="height: 50%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg" style="height: 30%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg" style="height: 20%"></div>
+<div class="flex-1 bg-primary-container rounded-t-lg" style="height: 45%"></div>
+<div class="flex-1 bg-primary rounded-t-lg" style="height: 70%"></div>
+<div class="flex-1 bg-primary-container rounded-t-lg" style="height: 85%"></div>
+<div class="flex-1 bg-primary rounded-t-lg" style="height: 60%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg" style="height: 35%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg" style="height: 25%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg" style="height: 15%"></div>
+</div>
+<div class="flex justify-between mt-4 px-2">
+<span class="text-[10px] font-semibold text-on-surface-variant tracking-widest uppercase">00:00</span>
+<span class="text-[10px] font-semibold text-on-surface-variant tracking-widest uppercase">08:00 (Peak)</span>
+<span class="text-[10px] font-semibold text-on-surface-variant tracking-widest uppercase">16:00</span>
+<span class="text-[10px] font-semibold text-on-surface-variant tracking-widest uppercase">23:59</span>
+</div>
+</div>
+<!-- AI Accuracy & Confidence (Circular insight) -->
+<div class="col-span-12 lg:col-span-4 bg-primary text-white rounded-xl p-8 shadow-xl flex flex-col justify-between overflow-hidden relative">
+<div class="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full -mr-24 -mb-24 blur-3xl"></div>
+<div>
+<h2 class="text-lg font-bold font-headline mb-2">AI Trust Index</h2>
+<p class="text-sm text-on-primary-container/80">User validation rate for automated message routing</p>
+</div>
+<div class="flex flex-col items-center justify-center py-6">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-white/10" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-tertiary-fixed-dim" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364" stroke-dashoffset="36" stroke-width="8"></circle>
+</svg>
+<span class="absolute text-3xl font-bold">92%</span>
+</div>
+<div class="mt-6 space-y-2 w-full">
+<div class="flex justify-between text-xs">
+<span class="opacity-70">Intent Matching</span>
+<span class="font-bold">98.4%</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="opacity-70">Context Retention</span>
+<span class="font-bold">89.1%</span>
+</div>
+</div>
+</div>
+<button class="bg-white/10 hover:bg-white/20 transition-colors py-2 rounded-lg text-xs font-semibold">View AI Drift Report</button>
+</div>
+<!-- Activity Feed / Actionable Insights -->
+<div class="col-span-12 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<h2 class="text-lg font-bold text-primary font-headline mb-6">Actionable Insights</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-primary font-headline">Scaling Alert</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Marketing circle activity up by 45%. Consider assigning more AI context tokens.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error flex-shrink-0">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-primary font-headline">Latency Detected</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">US-East gateway showing 120ms delay during peak 09:00 window.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low border-2 border-dashed border-tertiary-fixed-dim/20">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed flex-shrink-0">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-primary font-headline">New Opportunity</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Cross-region chat volume suggests a need for a Global Enterprise Circle.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for Bottom Nav -->
+<div class="h-24 lg:hidden"></div>
+<!-- BottomNavBar (Authority: JSON) -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center pb-8 pt-4 lg:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl px-6 py-3">
+<div class="flex items-center justify-center text-slate-400 dark:text-slate-500 hover:scale-110 transition-transform active:scale-90 flex flex-col items-center">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-1">Chat</span>
+</div>
+<div class="flex items-center justify-center text-slate-400 dark:text-slate-500 hover:scale-110 transition-transform active:scale-90 flex flex-col items-center">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-1">Audit</span>
+</div>
+<div class="flex items-center justify-center text-slate-400 dark:text-slate-500 hover:scale-110 transition-transform active:scale-90 flex flex-col items-center">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-1">AI</span>
+</div>
+<!-- Active State: Insights -->
+<div class="flex flex-col items-center justify-center bg-slate-900 dark:bg-slate-50 text-white dark:text-slate-900 rounded-full w-12 h-12 shadow-xl shadow-slate-900/20 active:scale-90 transition-all">
+<span class="material-symbols-outlined">insights</span>
+</div>
+</nav>
+</main>
+</body></html>

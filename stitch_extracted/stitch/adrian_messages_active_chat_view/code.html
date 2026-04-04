@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e1e3e4",
+              "surface": "#f8f9fa",
+              "surface-dim": "#d9dadb",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#001f24",
+              "tertiary-fixed-dim": "#00daf3",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f8f9fa",
+              "tertiary": "#001f24",
+              "on-primary-fixed": "#0f1c2c",
+              "on-primary-fixed-variant": "#3a4859",
+              "tertiary-fixed": "#9cf0ff",
+              "on-secondary-fixed-variant": "#2f4865",
+              "surface-container": "#edeeef",
+              "primary": "#0e1c2b",
+              "error": "#ba1a1a",
+              "background": "#f8f9fa",
+              "inverse-surface": "#2e3132",
+              "inverse-primary": "#bac8dc",
+              "secondary-fixed-dim": "#afc9ea",
+              "on-secondary-container": "#48617e",
+              "surface-tint": "#525f71",
+              "outline": "#767683",
+              "surface-container-highest": "#e1e3e4",
+              "inverse-on-surface": "#f0f1f2",
+              "outline-variant": "#c6c5d4",
+              "surface-container-high": "#e7e8e9",
+              "secondary-fixed": "#d1e4ff",
+              "on-primary-container": "#8b99ac",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#00363d",
+              "on-tertiary-container": "#00a7bb",
+              "on-surface": "#191c1d",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "secondary": "#47607e",
+              "on-surface-variant": "#454652",
+              "on-tertiary-fixed-variant": "#004f58",
+              "primary-container": "#233141",
+              "on-error": "#ffffff",
+              "secondary-container": "#c2dcff",
+              "on-background": "#191c1d",
+              "primary-fixed-dim": "#bac8dc",
+              "primary-fixed": "#d6e4f9",
+              "surface-container-low": "#f3f4f5",
+              "on-secondary-fixed": "#001d36"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chat-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(14, 28, 43, 0.03) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- SideNavBar (Rail) -->
+<nav class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 h-screen w-64 border-r-0 z-50 font-manrope">
+<div class="px-8 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#1A237E] rounded-xl flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<div>
+<h2 class="text-xl font-black text-[#1A237E] leading-none">Adrian</h2>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Correspondent</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-4 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm py-4 px-8 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Chats</span>
+</a>
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] px-8 py-4 transition-all hover:bg-[#eae7ef] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Vault</span>
+</a>
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] px-8 py-4 transition-all hover:bg-[#eae7ef] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Security</span>
+</a>
+</div>
+<div class="mt-auto px-4">
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] px-8 py-4 transition-all hover:bg-[#eae7ef] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Shell -->
+<main class="flex flex-col h-screen relative chat-bg ml-64">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-20 flex justify-between items-center px-8 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,35,126,0.06)]">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Elena Vance" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALVl6ba2UelFXx3RCejGAxXTi6LLk5OwdokZt_7OyTvg81GlDS1JxgxmcBeHO8uka2CaZ8wWjoKEJuPwZw02X369ydvU-QiXeZ4s2n_3ZCbovU9U9ACldkg9BNM-kc8iWDT6VIj0Q9ShxJJVKg_lvCdaN4OF3fyV2kwPbM_9eyo_2a91Od4RwVF32L-oW4Oe4GPEEdZzPivN0GItX10kpzM_omDCmCFMe1Plnz-l20tFifauXfGA1-rAXIsDqkPlE4epqBr3hvu3P8"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full"></span>
+</div>
+<div>
+<h1 class="font-manrope text-lg font-bold tracking-tight text-[#1A237E]">Elena Vance</h1>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Active Now</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-2 mr-4">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-slate-600 ml-2" placeholder="Search conversation..." type="text"/>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Message Area -->
+<section class="flex-1 overflow-y-auto px-10 pt-24 pb-32 space-y-8">
+<!-- Date Separator -->
+<div class="flex justify-center">
+<span class="bg-surface-container text-on-surface-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Today</span>
+</div>
+<!-- Received Message -->
+<div class="flex flex-col items-start max-w-2xl">
+<div class="flex items-end gap-3 group">
+<div class="bg-surface-container-highest text-on-surface p-4 rounded-xl rounded-bl-sm shadow-sm">
+<p class="font-body text-[15px] leading-relaxed">Good morning! I've reviewed the proposal you sent over. The architectural nuances in the lobby design are exactly what we discussed.</p>
+</div>
+<span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity mb-1 font-medium">09:12 AM</span>
+</div>
+</div>
+<!-- Sent Message -->
+<div class="flex flex-col items-end">
+<div class="flex items-end gap-3 group flex-row-reverse">
+<div class="bg-gradient-to-br from-primary to-primary-container text-on-primary p-4 rounded-xl rounded-br-sm shadow-md max-w-2xl bg-[#1A237E] text-white"><p class="font-body text-[15px] leading-relaxed">The lighting is exquisite. It feels like a piece of art rather than just a utility. Shall we jump on a quick call to finalize the vendor?</p></div>
+<span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity mb-1 font-medium">09:15 AM</span>
+</div>
+</div>
+<!-- Received Message with Image Attachment -->
+<div class="flex flex-col items-start max-w-2xl">
+<div class="flex items-end gap-3 group">
+<div class="bg-surface-container-highest p-2 rounded-xl rounded-bl-sm shadow-sm overflow-hidden">
+<img alt="Interior Design" class="rounded-lg w-full max-w-sm object-cover aspect-video mb-2" data-alt="Minimalist modern luxury hotel lobby with travertine floors, floor-to-ceiling windows, and sculptural designer furniture in neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU50qu3n7Czly38xv5IYsMylbSNJuU1TLhxbqKfVMjeobP5NPcjua7jSp-eIIjKkszqfA_063p-eBjHEApss4SV0HOAwHI6qD1yIldOLbmvXNvii0-5tkuFTQC_-7K6eXYN_d0GC0Cd2aXAomxvhPbMXC5c2_IVn98xazwmAy9u6BICSAAn86ezgB_nq72EVqMZI98ELLg2Fxx7ls93pOTXrUp3z3NPg8_e6fzvpuLj_bigL38EMaV_jAuT3dzJLdFayVAA-KwV9OG"/>
+<div class="px-2 pb-2">
+<p class="font-body text-[15px] leading-relaxed">Check this out. This is the lighting fixture I'm proposing for the central atrium.</p>
+</div>
+</div>
+<span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity mb-1 font-medium">09:18 AM</span>
+</div>
+<div class="mt-2 flex gap-2">
+<button class="bg-surface-container-low hover:bg-surface-container-high transition-colors px-2 py-1 rounded-full flex items-center gap-1">
+<span class="text-sm">✨</span>
+<span class="text-[10px] font-bold">2</span>
+</button>
+</div>
+</div>
+<!-- Sent Message -->
+<div class="flex flex-col items-end">
+<div class="flex items-end gap-3 group flex-row-reverse">
+<div class="bg-gradient-to-br from-primary to-primary-container text-on-primary p-4 rounded-xl rounded-br-sm shadow-md max-w-2xl bg-[#1A237E] text-white"><p class="font-body text-[15px] leading-relaxed">The lighting is exquisite. It feels like a piece of art rather than just a utility. Shall we jump on a quick call to finalize the vendor?</p></div>
+<span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity mb-1 font-medium">09:20 AM</span>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex items-center gap-2 px-2">
+<div class="flex gap-1">
+<span class="w-1.5 h-1.5 bg-on-surface-variant/30 rounded-full"></span>
+<span class="w-1.5 h-1.5 bg-on-surface-variant/30 rounded-full"></span>
+<span class="w-1.5 h-1.5 bg-on-surface-variant/30 rounded-full"></span>
+</div>
+<span class="text-[11px] font-semibold text-on-surface-variant tracking-wide">Elena is typing...</span>
+</div>
+</section>
+<!-- Input Area (Floating Dock) -->
+<div class="fixed bottom-8 right-0 flex justify-center pointer-events-none left-64">
+<div class="w-full max-w-4xl px-8 pointer-events-auto">
+<div class="bg-white/80 backdrop-blur-xl rounded-full p-2 flex items-center gap-2 shadow-[0_12px_32px_rgba(25,28,29,0.06)] ring-1 ring-black/5">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="mood">mood</span>
+</button>
+<div class="flex-1 px-2">
+<input class="w-full bg-transparent border-none focus:ring-0 text-[15px] placeholder:text-on-surface-variant/50 py-2" placeholder="Message Elena..." type="text"/>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</button>
+<button class="w-12 h-10 flex items-center justify-center bg-[#1A237E] text-white rounded-full hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

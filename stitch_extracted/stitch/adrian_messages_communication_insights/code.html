@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian | Communication Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#1A237E",
+          "background-light": "#f6f6f8",
+          "background-dark": "#121320",
+          "surface": "#ffffff",
+          "on-surface": "#1A237E",
+          "on-surface-variant": "#64748b"
+        },
+        fontFamily: {
+          "display": ["Manrope"],
+          "body": ["Manrope"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 h-screen w-64 border-r-0 z-50 font-manrope">
+<div class="px-8 mb-8">
+<h1 class="text-xl font-black text-[#1A237E]">Adrian</h1>
+<p class="text-[10px] font-manrope font-semibold uppercase tracking-widest text-slate-500">Intelligent Correspondent</p>
+</div>
+<nav class="flex flex-col flex-1">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-4 py-3 text-slate-500 hover:text-[#1A237E] px-8 hover:bg-[#eae7ef] transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Chats</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-slate-500 hover:text-[#1A237E] px-8 hover:bg-[#eae7ef] transition-all" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Vault</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-slate-500 hover:text-[#1A237E] px-8 hover:bg-[#eae7ef] transition-all" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Security</span>
+</a>
+<a class="flex items-center gap-4 py-3 bg-[#ffffff] text-[#1A237E] rounded-l-full ml-4 shadow-sm px-8" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Insights</span>
+</a>
+</div>
+<div class="mt-auto">
+<a class="flex items-center gap-4 py-3 text-slate-500 hover:text-[#1A237E] px-8 hover:bg-[#eae7ef] transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Settings</span>
+</a>
+</div>
+</nav>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 left-64 right-0 z-50 flex justify-between items-center px-8 py-4 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
+<div class="flex items-center">
+<span class="text-2xl font-bold tracking-tighter text-[#1A237E] dark:text-indigo-400 font-manrope">Adrian Messages</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-full w-80">
+<span class="material-symbols-outlined text-slate-400" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-400 ml-2" placeholder="Analyze metrics..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-slate-500">
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-100 p-2 rounded-full transition-colors" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pl-64 pt-16 min-h-screen bg-[#f6f6f8]">
+<div class="max-w-[1400px] mx-auto p-10 space-y-10">
+<!-- Dashboard Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<h2 class="text-4xl font-extrabold tracking-tight text-primary text-[#1A237E]">Communication Intelligence</h2>
+<p class="text-on-surface-variant font-body">Performance overview for Oct 21 – Oct 27, 2024</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 rounded-xl font-semibold bg-surface-container-high text-primary hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+                        This Week
+                    </button>
+<button class="px-6 py-3 rounded-xl font-semibold bg-primary text-on-primary shadow-lg hover:opacity-90 transition-all flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container bg-[#1A237E]">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+                        Export Report
+                    </button>
+</div>
+</section>
+<!-- Key Metrics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-1 bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant text-sm font-semibold uppercase tracking-wider">Total Volume</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1 rounded text-xs font-bold font-body">+12.4%</span>
+</div>
+<div>
+<p class="text-3xl font-extrabold text-primary">2,842</p>
+<p class="text-xs text-outline font-body">Messages exchanged</p>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant text-sm font-semibold uppercase tracking-wider">Avg. Response</span>
+<span class="bg-error-container text-on-error-container px-2 py-1 rounded text-xs font-bold font-body">-4.2%</span>
+</div>
+<div>
+<p class="text-3xl font-extrabold text-primary">14m 22s</p>
+<p class="text-xs text-outline font-body">Across all channels</p>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant text-sm font-semibold uppercase tracking-wider">Circle Density</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="hub">hub</span>
+</div>
+<div>
+<p class="text-3xl font-extrabold text-primary">12</p>
+<p class="text-xs text-outline font-body">Active project circles</p>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant text-sm font-semibold uppercase tracking-wider">Sentiment Score</span>
+<div class="flex gap-1 text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star_half">star_half</span>
+</div>
+</div>
+<div>
+<p class="text-3xl font-extrabold text-primary">4.8 / 5</p>
+<p class="text-xs text-outline font-body">Very Positive</p>
+</div>
+</div>
+</section>
+<!-- Main Analytics Canvas -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Messaging Volume Chart Placeholder -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-sm relative overflow-hidden flex flex-col gap-8">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold text-primary">Network Dynamics</h3>
+<div class="flex gap-2 text-xs font-semibold">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary bg-[#1A237E]"></span> Volume</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span> Sentiment</span>
+</div>
+</div>
+<div class="flex-1 flex items-end justify-between gap-4 h-64 px-4">
+<div class="w-full bg-surface-container-low rounded-t-lg relative group transition-all" style="height: 60%;">
+<div class="absolute inset-0 bg-primary/10 rounded-t-lg group-hover:bg-primary/20 transition-all"></div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-on-primary px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity bg-[#1A237E]">420 msg</div>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-lg relative group transition-all" style="height: 45%;">
+<div class="absolute inset-0 bg-primary/10 rounded-t-lg group-hover:bg-primary/20 transition-all"></div>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-lg relative group transition-all" style="height: 85%;">
+<div class="absolute inset-0 bg-primary/10 rounded-t-lg group-hover:bg-primary/20 transition-all"></div>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-lg relative group transition-all" style="height: 70%;">
+<div class="absolute inset-0 bg-primary/10 rounded-t-lg group-hover:bg-primary/20 transition-all"></div>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-lg relative group transition-all" style="height: 30%;">
+<div class="absolute inset-0 bg-primary/10 rounded-t-lg group-hover:bg-primary/20 transition-all"></div>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-lg relative group transition-all" style="height: 95%;">
+<div class="absolute inset-0 bg-primary/10 rounded-t-lg group-hover:bg-primary/20 transition-all"></div>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-lg relative group transition-all" style="height: 55%;">
+<div class="absolute inset-0 bg-primary/10 rounded-t-lg group-hover:bg-primary/20 transition-all"></div>
+</div>
+</div>
+<div class="flex justify-between px-4 text-[10px] font-bold text-outline uppercase tracking-widest">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<!-- AI Weekly Summary -->
+<div class="lg:col-span-1 bg-primary text-on-primary p-8 rounded-xl shadow-xl flex flex-col gap-6 relative overflow-hidden group bg-[#1A237E]">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full blur-3xl transition-all group-hover:scale-150"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="text-lg font-bold">AI Concierge Summary</h3>
+</div>
+<div class="space-y-4 font-body leading-relaxed text-sm opacity-90">
+<p>Communication velocity increased by <span class="text-tertiary-fixed-dim font-bold">12%</span> this week, primarily driven by the "Project Apollo" circle.</p>
+<p>Your response latency was lowest on <span class="font-bold">Tuesday morning</span>, averaging just 2.4 minutes.</p>
+<p>Key topics identified: <span class="italic underline decoration-tertiary-fixed-dim underline-offset-4">Milestone alignment</span>, <span class="italic underline decoration-tertiary-fixed-dim underline-offset-4">Resource scaling</span>, and <span class="italic underline decoration-tertiary-fixed-dim underline-offset-4">Vendor Q4 roadmap</span>.</p>
+<div class="pt-4 border-t border-white/10 text-xs flex items-center justify-between">
+<span>Ready to act?</span>
+<span class="bg-white/10 px-3 py-1 rounded-full cursor-pointer hover:bg-white/20 transition-colors">Draft replies</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Most Frequent Circles & Detailed Sentiment -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="space-y-6">
+<div class="flex justify-between items-center px-2">
+<h3 class="text-xl font-bold text-primary">Frequent Circles</h3>
+<span class="text-xs font-bold text-outline uppercase tracking-widest">By Activity</span>
+</div>
+<div class="space-y-3">
+<div class="group flex items-center gap-4 bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-lowest transition-all cursor-pointer">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold bg-[#1A237E]">PA</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary">Project Apollo</h4>
+<p class="text-xs text-on-surface-variant font-body">12 members • 842 messages</p>
+</div>
+<div class="w-24 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-4/5 bg-[#1A237E]"></div>
+</div>
+</div>
+<div class="group flex items-center gap-4 bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-lowest transition-all cursor-pointer">
+<div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white font-bold">MT</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary">Management Team</h4>
+<p class="text-xs text-on-surface-variant font-body">5 members • 412 messages</p>
+</div>
+<div class="w-24 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/5 bg-[#1A237E]"></div>
+</div>
+</div>
+<div class="group flex items-center gap-4 bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-lowest transition-all cursor-pointer">
+<div class="w-12 h-12 bg-tertiary-container rounded-xl flex items-center justify-center text-white font-bold">DS</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary">Design System Guild</h4>
+<p class="text-xs text-on-surface-variant font-body">24 members • 218 messages</p>
+</div>
+<div class="w-24 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/5 bg-[#1A237E]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-center px-2">
+<h3 class="text-xl font-bold text-primary">Sentiment Analysis</h3>
+<span class="text-xs font-bold text-outline uppercase tracking-widest">Mood Distribution</span>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col justify-center h-full min-h-[200px]">
+<div class="flex items-center justify-around gap-4 text-center">
+<div class="space-y-3">
+<div class="w-16 h-16 rounded-full border-4 border-tertiary-fixed-dim flex items-center justify-center">
+<span class="text-xl font-bold text-primary">78%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary uppercase">Constructive</span>
+<span class="text-[10px] text-outline">Up 4%</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="w-16 h-16 rounded-full border-4 border-primary-container flex items-center justify-center">
+<span class="text-xl font-bold text-primary">15%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary uppercase">Urgent</span>
+<span class="text-[10px] text-outline">Down 2%</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="w-16 h-16 rounded-full border-4 border-outline-variant flex items-center justify-center">
+<span class="text-xl font-bold text-primary">7%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary uppercase">Critical</span>
+<span class="text-[10px] text-outline">Static</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Insight Card -->
+<section class="bg-tertiary-fixed text-tertiary p-10 rounded-2xl flex flex-col md:flex-row items-center gap-8 shadow-sm">
+<div class="w-24 h-24 shrink-0 rounded-full overflow-hidden border-4 border-white/20">
+<img alt="Insight Graphic" class="w-full h-full object-cover" data-alt="vibrant abstract 3d rendering of a rising growth chart with translucent glass textures and glowing blue highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIROnx1Tto61ap5awcxHto8v-9wi8ASKENI1k-fPwPEW-Y-yAChw2kZT2yhfiwCCEGhaa39S1w83FJRcgUpTXCZMFlQ2zNiaXrDdx8IRjHYvJ8765_TLGjC9AEWjbcIE9joI8Zg_eQJiAfqsipyOUwM_rEu1hw-SvtJc-Zr5M_4E-at6EGrxCN23p6Fpgcb2NBk0q_xNkp02E8KYOW-WG2w3hZWUaYcuUI7xXsvsJx8xan9toccc18oq1W6QrdWu3AKdbylc185w_z"/>
+</div>
+<div class="space-y-2 text-center md:text-left">
+<h3 class="text-2xl font-extrabold tracking-tight">Focus Suggestion</h3>
+<p class="font-body text-tertiary-container/80 max-w-2xl">Your "General Support" circle has seen a 40% spike in redundant questions. We recommend setting up a <strong>Circle Knowledge Base</strong> to deflect common inquiries and improve response times by estimated 15%.</p>
+</div>
+<div class="shrink-0">
+<button class="bg-tertiary text-on-tertiary px-8 py-4 rounded-full font-bold hover:opacity-90 transition-all">Configure Automations</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Contextual FAB (Suppressed based on "Relevance Check" as this is a dashboard, but adding placeholder logic for visual completeness of the 'Digital Concierge' theme) -->
+<!-- Suppressed: User is in Dashboard/Analytics, no single primary creation task. -->
+</body></html>

@@ -7,7 +7,7 @@ class LiquidStatusIndicator extends StatefulWidget {
   const LiquidStatusIndicator({super.key, required this.isOnline});
 
   @override
-  _LiquidStatusIndicatorState createState() => _LiquidStatusIndicatorState();
+  State<LiquidStatusIndicator> createState() => _LiquidStatusIndicatorState();
 }
 
 class _LiquidStatusIndicatorState extends State<LiquidStatusIndicator>
@@ -19,7 +19,7 @@ class _LiquidStatusIndicatorState extends State<LiquidStatusIndicator>
     super.initState();
     _pulseController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: Duration(seconds: 2),
     )..repeat(reverse: true);
   }
 
@@ -35,7 +35,7 @@ class _LiquidStatusIndicatorState extends State<LiquidStatusIndicator>
           if (widget.isOnline)
             BoxShadow(
               color:
-                  Colors.greenAccent.withOpacity(0.5 * _pulseController.value),
+                  Colors.greenAccent.withValues(alpha: 0.5 * _pulseController.value),
               blurRadius: 10 * _pulseController.value,
               spreadRadius: 2,
             )

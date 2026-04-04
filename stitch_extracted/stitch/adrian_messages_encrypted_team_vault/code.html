@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#00daf3",
+              "surface-container-high": "#e7e8e9",
+              "on-tertiary-container": "#00a7bb",
+              "secondary-fixed-dim": "#afc9ea",
+              "error-container": "#ffdad6",
+              "secondary-container": "#c2dcff",
+              "on-secondary-fixed": "#001d36",
+              "background": "#f8f9fa",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-tint": "#525f71",
+              "on-primary-fixed": "#0f1c2c",
+              "secondary-fixed": "#d1e4ff",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#00363d",
+              "outline-variant": "#c6c5d4",
+              "error": "#ba1a1a",
+              "primary-container": "#233141",
+              "on-tertiary-fixed": "#001f24",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#bac8dc",
+              "on-tertiary-fixed-variant": "#004f58",
+              "on-secondary-fixed-variant": "#2f4865",
+              "inverse-primary": "#bac8dc",
+              "surface": "#f8f9fa",
+              "on-primary": "#ffffff",
+              "tertiary": "#001f24",
+              "on-surface-variant": "#454652",
+              "tertiary-fixed": "#9cf0ff",
+              "primary": "#0e1c2b",
+              "surface-variant": "#e1e3e4",
+              "on-surface": "#191c1d",
+              "secondary": "#47607e",
+              "outline": "#767683",
+              "on-secondary-container": "#48617e",
+              "surface-container": "#edeeef",
+              "surface-bright": "#f8f9fa",
+              "on-background": "#191c1d",
+              "primary-fixed": "#d6e4f9",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "inverse-surface": "#2e3132",
+              "on-primary-fixed-variant": "#3a4859",
+              "on-primary-container": "#8b99ac",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e1e3e4",
+              "surface-dim": "#d9dadb"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .tonal-shift-no-border {
+            border: none !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex overflow-hidden">
+<!-- Sidebar Navigation (SideNavBar) -->
+<aside class="hidden md:flex flex-col h-screen w-64 bg-slate-100 dark:bg-slate-900 border-r dark:border-slate-800 p-4 gap-2 z-30">
+<div class="flex items-center gap-3 px-2 mb-8">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h1 class="font-headline font-black text-2xl tracking-tighter text-slate-900 dark:text-white leading-none">Adrian</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mt-1">Enterprise Secure</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-headline text-sm font-medium">Messages</span>
+</a>
+<a class="bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg px-4 py-2 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">enhanced_encryption</span>
+<span class="font-headline text-sm font-medium">Vaults</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">timeline</span>
+<span class="font-headline text-sm font-medium">Resolution</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-headline text-sm font-medium">Audit</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-headline text-sm font-medium">Console</span>
+</a>
+</nav>
+<button class="mt-4 bg-gradient-to-br from-primary to-primary-container text-white py-3 px-4 rounded-xl font-headline text-sm font-bold shadow-md hover:opacity-90 transition-opacity">
+            New Secure Thread
+        </button>
+<div class="mt-auto flex flex-col gap-1 border-t border-slate-200 pt-4">
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-headline text-sm font-medium">Settings</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-headline text-sm font-medium">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- Top Navigation Bar (TopNavBar) -->
+<header class="sticky top-0 z-20 w-full px-6 py-3 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center shadow-sm tonal-shift-no-border">
+<div class="flex items-center gap-4">
+<h2 class="font-headline font-bold tracking-tight text-xl text-slate-900 dark:text-slate-50">Project Chimera Vault</h2>
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-tertiary-fixed-dim text-[10px] font-bold tracking-widest uppercase">Level 5 Access</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-1 focus:ring-primary/20 w-64" placeholder="Search assets..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-primary transition-colors">security</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-primary transition-colors">terminal</span>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden border border-white/50 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close-up professional portrait of a man with serious expression and security clearance badge visible in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKKgvQKJCGSriwMhpfRmp9tWLZjSmyYzOEOk9SORwXJTIfe3Rbwc4n2ntAb-Yhg0D3Tdokhblcm0fbXQVgWzLEyEdi7iJ4gOaxv_F2aFJ7RZ4yfF5BTo7P6R1zIspQMx6RmeO6fPkfwJ-7P8VgsKe__j1if42t_0et4WZH-2V5NiFHYJwMBw_GE9Y5XgCpecSz1A4hSHtMmdzOLb6RYArRbjFdBb92bjRMYr5wgCXetlU1yW6sNMhS5eEkjNQdS4xICMLxxQ1Nbpsb"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Layout Wrapper -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Vault Content Gallery -->
+<section class="flex-1 overflow-y-auto p-8 bg-surface">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="font-headline text-2xl font-bold text-primary">Shared Assets</h3>
+<p class="text-on-surface-variant text-sm">Collaborative high-security workspace</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-high text-primary px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+                            Filter
+                        </button>
+<button class="bg-primary text-white px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-lg">upload_file</span>
+                            Upload New Asset
+                        </button>
+</div>
+</div>
+<!-- Asset Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- File Card 1 -->
+<div class="group relative bg-surface-container-lowest rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-2xl flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined text-3xl">picture_as_pdf</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-slate-200 overflow-hidden"><img class="w-full h-full object-cover" data-alt="portrait of corporate executive woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7WW9xm_xAKBXnr9uUBFkGS6EFZaKb-FFY04goDi0JLKn7hnYQtVLoLoIfUUA2bVVhzotGixnlA_39RcFnfjZv5AwxClkVac8P_7DPNmVElOJbEMcjcsxtMPvS7i9MJazX5YXAAIZQ5N7FNh6u_BYm0gxBloRFuea9yM5Pd0SwYD8jZaguU4ify3errg0O3q4bnSiFZpKdwJxDWQR5UUAG0xhQVR118PK0zqxh4SjFAolqrrFl9M4RNRGNdvUJqgCpaaB_FW4tlv0U"/></div>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-slate-200 overflow-hidden"><img class="w-full h-full object-cover" data-alt="portrait of modern businessman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-lEBL-uJXeWaUKLVi2vmokTX4fdxOLYUHEc_HiVZSPwJII6ru61GsR1zlIIxkQ6JzTYtI8PAj4Mqoku_01xeBdhcgk6V9Hzk7ppTTIQR-qcwwiwmjrtfi1Enrb-x-C1S8JbLYSKghr7he20WeYS8Wg_1u1etHI8Do-U6S9roY5Rjiqq9aOg62K08nUokbVD2VsQqHtWB9FI1Z5o5ytmvBA0RnzHUZwGXYc-8KME42HQLmXaEY-zbaCPI9Ll0oX67z0svX0C3OBLW"/></div>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-surface-container text-[8px] flex items-center justify-center font-bold">+2</div>
+</div>
+</div>
+<h4 class="font-headline font-bold text-slate-900 mb-1">Architectural_V4_Encrypted.pdf</h4>
+<p class="text-xs text-on-surface-variant mb-4">Last modified 2h ago • 42.8 MB</p>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Multi-Sig Approval (3/5)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-full w-[60%]"></div>
+</div>
+</div>
+<!-- File Card 2 (Hero/Large) -->
+<div class="lg:col-span-2 group relative bg-primary-container rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 cursor-pointer overflow-hidden text-white">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="highly detailed technical blueprint of a modern skyscraper structure on blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXq-RZjbvyFfpy-iO-ipvitXcciorxlaLsdWLO5PhqucP4ENd9LnAvEsz0jbwk3eX0rdaLPxePPW6_glvi_YPMi8zJdz_KmAnQqkbViHoIsz_Te5I4kHVsy-x9j5oGs-m9NEleNcdZBMfNfHCRSjZen0Mpsh0k9-tIqHqy-1C66Q0EgSl7EAlRsoIZTMQ19IZswfg7rXm8phz3aFXPdJjr0SRF6lX0B4gnuG3hIhNHbQU2j3e99s9lGMChhJ8D1nXHvWLTfX0imVxy"/>
+</div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-12">
+<div class="w-12 h-12 bg-white/10 backdrop-blur rounded-2xl flex items-center justify-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim text-[10px] font-bold uppercase tracking-tighter">Mission Critical</span>
+</div>
+<h4 class="font-headline font-bold text-2xl mb-2">Global_Infrastructure_Master_Plan.dwg</h4>
+<p class="text-sm text-on-primary-container mb-6 max-w-sm">Requires full council quorum for decryption. Locked until next operational window.</p>
+<div class="mt-auto flex items-center gap-4">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 text-xs font-medium">
+<span class="material-symbols-outlined text-sm">lock</span>
+                                    AES-256 Bit
+                                </div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 text-xs font-medium">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                                    12 Views
+                                </div>
+</div>
+</div>
+</div>
+<!-- File Card 3 -->
+<div class="group relative bg-surface-container-lowest rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-3xl">table_chart</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant text-[10px] font-bold">STABLE</span>
+</div>
+<h4 class="font-headline font-bold text-slate-900 mb-1">Financial_Projections_Q4.xlsx</h4>
+<p class="text-xs text-on-surface-variant mb-4">Last modified 1d ago • 1.2 MB</p>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Multi-Sig Approved (5/5)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-green-500 h-full w-full"></div>
+</div>
+</div>
+<!-- File Card 4 -->
+<div class="group relative bg-surface-container-lowest rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<span class="px-2 py-1 rounded bg-error-container text-on-error-container text-[10px] font-bold">PENDING</span>
+</div>
+<h4 class="font-headline font-bold text-slate-900 mb-1">Circle_Protocol_v9.txt</h4>
+<p class="text-xs text-on-surface-variant mb-4">Last modified 4h ago • 12 KB</p>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Multi-Sig Approval (1/5)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-error h-full w-[20%]"></div>
+</div>
+</div>
+<!-- Empty State Slot (Conceptual) -->
+<div class="group relative border-2 border-dashed border-outline-variant/30 rounded-3xl p-6 flex flex-col items-center justify-center text-center hover:bg-surface-container-low transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-3">
+<span class="material-symbols-outlined">add</span>
+</div>
+<p class="text-sm font-bold text-on-surface-variant">Add Reference Link</p>
+<p class="text-[10px] text-outline">Encrypted External Assets</p>
+</div>
+</div>
+</section>
+<!-- Vault Info Sidebar -->
+<aside class="w-80 bg-surface-container-low border-l border-outline-variant/10 overflow-y-auto hidden xl:flex flex-col">
+<!-- Access Section -->
+<div class="p-6">
+<h5 class="font-headline font-bold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">group</span>
+                        Who has access
+                    </h5>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="female security lead portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWiGTs6NdcYWvukRQxMWL5Bwpa8EmfJEveXjk_cgQN9V5w1mmILM_XQsb48xXRZT2s0zB_ZUHLrRTvGoyNaDPM4juDQY-gxclBEPZ4VXAdywzsoMHPeJSp2Nc2gQo_VokWemwxz1PgDxgCaxSXnlnTRenV7kl6ku5K0BgDX022Qjh85fcXEAb_YnAVflGSNgYmMHQb43HO6A27NX4QQ8q17thMzq2xkfixoSmtft52xVrXohB23fJIM69jh_kiD73mmgGmUMz0oHFH"/>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-tertiary-fixed-dim rounded-full border-2 border-surface-container-low"></div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 leading-none">Sarah Vance</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Lead Cryptographer</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="male executive portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI6vR2cAys319C9AbhUV9xOXSRF7jtmnNXsrn0tzBptQ7VV9Hw_AiYv2QEhG_EM93URKhfa4ST3GC5mnriEHqvUV8mit9ZFT1qKE3_m_KRDU8kzkK-JUTrf0yO3cuIYY62hiFYh59Yg5FYdf3mzBdF7cNhjVmBn-LiR093o7iT0nWPRPBc8e81FaxuIZYpDd7sGNJUhLA4Q0wgqk0fnj7uYWJRwKVrjbWLXvUGNd1miZqGkQEQFnmHnTjBqwuHh4MRg4jIvQEwXZ0T"/>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-tertiary-fixed-dim rounded-full border-2 border-surface-container-low"></div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 leading-none">Marcus Thorne</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Protocol Director</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="female project manager portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD72i6YajpFJxX3DV9NCpmeJAaZL6HBwbL3Y8-VP6YV_cZdQ5iGz2Qqb5UwpT_W6E1DWU1I5i8gmhx-8ppBHZzs1qWB6k6oJaaLD6jW1zJd-Szu5v8isPeJGmYozIR5dNw2lwBkkKHX6Ryi_1Tc3jDwrBaZfapQiT_B5FodugV67X-CVfiM9cUPt-8xgK7Q1vHXZjQHR--k3v5MDVer3GrR1uTPOvXrq-kFORBeUe249aSandeaY9-e1OlV-fUD7EnamOSLdw2m7F7a"/>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-slate-300 rounded-full border-2 border-surface-container-low"></div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 leading-none">Elena Rossi</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Asset Auditor</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 rounded-xl bg-surface-container-high text-on-surface-variant text-xs font-bold hover:bg-surface-variant transition-colors">
+                        Manage Permissions
+                    </button>
+</div>
+<!-- Activity Feed -->
+<div class="p-6 flex-1 flex flex-col border-t border-outline-variant/10">
+<h5 class="font-headline font-bold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">history</span>
+                        Vault Activity
+                    </h5>
+<div class="flex-1 space-y-6 overflow-y-auto pr-2">
+<div class="flex gap-4 relative">
+<div class="absolute left-2 top-8 bottom-[-24px] w-px bg-outline-variant/30"></div>
+<div class="w-4 h-4 rounded-full bg-primary-container flex items-center justify-center shrink-0 z-10 mt-1">
+<span class="material-symbols-outlined text-[8px] text-white" style="font-variation-settings: 'FILL' 1;">visibility</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-900">Marcus Thorne</p>
+<p class="text-xs text-on-surface-variant mt-1">Viewed <span class="text-primary font-medium">Financial_Projections_Q4.xlsx</span></p>
+<p class="text-[10px] text-outline mt-1">12 minutes ago</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="absolute left-2 top-8 bottom-[-24px] w-px bg-outline-variant/30"></div>
+<div class="w-4 h-4 rounded-full bg-tertiary-fixed-dim flex items-center justify-center shrink-0 z-10 mt-1">
+<span class="material-symbols-outlined text-[8px] text-primary" style="font-variation-settings: 'FILL' 1;">edit</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-900">Sarah Vance</p>
+<p class="text-xs text-on-surface-variant mt-1">Uploaded version 9 of <span class="text-primary font-medium">Circle_Protocol_v9.txt</span></p>
+<p class="text-[10px] text-outline mt-1">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center shrink-0 z-10 mt-1">
+<span class="material-symbols-outlined text-[8px] text-white" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-900">Multi-Sig Event</p>
+<p class="text-xs text-on-surface-variant mt-1">Asset <span class="text-primary font-medium">Financial_Projections_Q4.xlsx</span> reached full quorum.</p>
+<p class="text-[10px] text-outline mt-1">Yesterday, 4:15 PM</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full px-6 py-3 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-2xl shadow-2xl shadow-slate-900/20 md:hidden flex justify-around items-center z-50 no-border glassmorphism">
+<a class="text-slate-500 dark:text-slate-400 flex flex-col items-center group" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Chat</span>
+</a>
+<a class="bg-slate-900 dark:bg-slate-50 text-white dark:text-slate-950 rounded-full px-4 py-2 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Vaults</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 flex flex-col items-center group" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Audit</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 flex flex-col items-center group" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="font-inter text-[10px] uppercase tracking-widest mt-1">Console</span>
+</a>
+</nav>
+</body></html>

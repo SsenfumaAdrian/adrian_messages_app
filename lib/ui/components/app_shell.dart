@@ -1,3 +1,4 @@
+import 'dart:ui';
 // FILE: lib/ui/components/app_shell.dart
 //
 // Shared scaffold used by every post-auth screen.
@@ -8,6 +9,7 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
 import '../../core/navigation/liquid_router.dart';
+import 'liquid_glass.dart';
 import 'logo_card.dart';
 
 // ── Nav item descriptor ────────────────────────────────────────
@@ -146,8 +148,8 @@ class _Sidebar extends StatelessWidget {
                     onTap: () =>
                         active ? null : LiquidRouter.go(context, item.route),
                     child: Container(
-                      margin: const EdgeInsets.only(left: 16, bottom: 2),
-                      padding: const EdgeInsets.symmetric(
+                      margin: EdgeInsets.only(left: 16, bottom: 2),
+                      padding: EdgeInsets.symmetric(
                           horizontal: 16, vertical: 13),
                       decoration: BoxDecoration(
                         color: active
@@ -159,9 +161,9 @@ class _Sidebar extends StatelessWidget {
                         boxShadow: active
                             ? [
                                 BoxShadow(
-                                  color: Palette.primary.withOpacity(0.06),
+                                  color: Palette.primary.withValues(alpha: 0.06),
                                   blurRadius: 10,
-                                  offset: const Offset(0, 2),
+                                  offset: Offset(0, 2),
                                 )
                               ]
                             : null,
@@ -191,13 +193,13 @@ class _Sidebar extends StatelessWidget {
 
             // User avatar row
             Padding(
-              padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+              padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
               child: Row(children: [
                 Container(
                   width: 36,
                   height: 36,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                         colors: [Palette.primary, Color(0xFF3949AB)]),
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -247,52 +249,88 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Palette.surface.withOpacity(0.88),
-        boxShadow: [
-          BoxShadow(
-            color: Palette.primary.withOpacity(0.05),
-            blurRadius: 24,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        bottom: false,
-        child: Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: mobile ? 16 : 24, vertical: 14),
-          child: Row(children: [
-            if (mobile)
-              IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 18),
-                color: Palette.onSurface,
-                onPressed: () => Navigator.maybePop(context),
-              ),
-            Expanded(
-              child: Text(title,
-                  style: TextStyle(
-                    fontFamily: Palette.fontDisplay,
-                    fontSize: mobile ? 20 : 22,
-                    fontWeight: FontWeight.w800,
-                    color: Palette.onSurface,
-                    letterSpacing: -0.4,
-                  )),
+    final canPop = Navigator.canPop(context);
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.white.withValues(alpha: 0.82),
+                Colors.white.withValues(alpha: 0.60),
+              ],
             ),
-            ...actions,
-            const SizedBox(width: 4),
-            const _IconBtn(icon: Icons.search_rounded),
-            const SizedBox(width: 4),
-            const _IconBtn(icon: Icons.account_circle_outlined),
-          ]),
+            border: Border(
+              bottom: BorderSide(
+                color: Colors.white.withValues(alpha: 0.75),
+                width: 0.8,
+              ),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.04),
+                blurRadius: 16,
+                offset: Offset(0, 3),
+              ),
+            ],
+          ),
+          child: SafeArea(
+            bottom: false,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(
+                mobile ? 12 : 24, 10,
+                mobile ? 12 : 24, 10,
+              ),
+              child: Row(children: [
+                // Liquid glass back button — only when there's somewhere to go back to
+                if (mobile && canPop) ...[
+                  LiquidGlassBackButton(size: 40),
+                  const SizedBox(width: 10),
+                ],
+                Expanded(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      fontFamily: Palette.fontDisplay,
+                      fontSize: mobile ? 19 : 22,
+                      fontWeight: FontWeight.w800,
+                      color: Palette.onSurface,
+                      letterSpacing: -0.4,
+                    ),
+                  ),
+                ),
+                ...actions,
+                const SizedBox(width: 4),
+                LiquidGlassButton(
+                  icon: Icons.search_rounded,
+                  size: 40,
+                  iconSize: 18,
+                  tint: Palette.primary,
+                  tooltip: 'Search',
+                  onTap: () {},
+                ),
+                const SizedBox(width: 6),
+                LiquidGlassButton(
+                  icon: Icons.account_circle_outlined,
+                  size: 40,
+                  iconSize: 20,
+                  tint: Palette.primary,
+                  tooltip: 'Profile',
+                  onTap: () => Navigator.pushNamed(context, LiquidRouter.profile),
+                ),
+              ]),
+            ),
+          ),
         ),
       ),
     );
   }
 }
 
-// ── Bottom Bar (mobile) ────────────────────────────────────────
+// ── Bottom Bar (mobile) — liquid glass ──────────────────────────
 class _BottomBar extends StatelessWidget {
   const _BottomBar({required this.items, required this.activeRoute});
   final List<AppNavItem> items;
@@ -300,48 +338,121 @@ class _BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Palette.surface.withOpacity(0.94),
-      child: SafeArea(
-        top: false,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: items.map((item) {
-              final active = item.route == activeRoute;
-              return GestureDetector(
-                onTap: () =>
-                    active ? null : LiquidRouter.go(context, item.route),
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: active
-                        ? Palette.primary.withOpacity(0.10)
-                        : Colors.transparent,
-                    borderRadius: BorderRadius.circular(14),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(item.icon,
-                          size: 22,
-                          color: active ? Palette.primary : Palette.outline),
-                      const SizedBox(height: 3),
-                      Text(item.label,
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight:
-                                active ? FontWeight.w700 : FontWeight.w400,
-                            color: active ? Palette.primary : Palette.outline,
-                          )),
-                    ],
-                  ),
-                ),
-              );
-            }).toList(),
+    // Only shown on desktop AppShell screens (mobile uses MainShell curved bar)
+    // Acts as a secondary compact glass nav strip
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 22, sigmaY: 22),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.white.withValues(alpha: 0.80),
+                Colors.white.withValues(alpha: 0.62),
+              ],
+            ),
+            border: Border(
+              top: BorderSide(
+                color: Colors.white.withValues(alpha: 0.80),
+                width: 0.8,
+              ),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.04),
+                blurRadius: 12,
+                offset: Offset(0, -2),
+              ),
+            ],
+          ),
+          child: SafeArea(
+            top: false,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: items.map((item) {
+                  final active = item.route == activeRoute;
+                  return GestureDetector(
+                    onTap: () => active
+                        ? null
+                        : LiquidRouter.go(context, item.route),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 8),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          active
+                              ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: BackdropFilter(
+                                    filter: ImageFilter.blur(
+                                        sigmaX: 10, sigmaY: 10),
+                                    child: Container(
+                                      width: 42,
+                                      height: 42,
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                          colors: [
+                                            Palette.primary,
+                                            Color(0xFF3949AB),
+                                          ],
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.white
+                                              .withValues(alpha: 0.35),
+                                          width: 0.8,
+                                        ),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Palette.primary
+                                                .withValues(alpha: 0.35),
+                                            blurRadius: 12,
+                                            offset: Offset(0, 4),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Icon(item.icon,
+                                          size: 20,
+                                          color: Colors.white),
+                                    ),
+                                  ),
+                                )
+                              : SizedBox(
+                                  width: 42,
+                                  height: 42,
+                                  child: Icon(item.icon,
+                                      size: 22,
+                                      color: Palette.outline),
+                                ),
+                          const SizedBox(height: 4),
+                          Text(
+                            item.label,
+                            style: TextStyle(
+                              fontFamily: Palette.fontDisplay,
+                              fontSize: 9.5,
+                              fontWeight: active
+                                  ? FontWeight.w800
+                                  : FontWeight.w500,
+                              color: active
+                                  ? Palette.primary
+                                  : Palette.outline,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
           ),
         ),
       ),
@@ -349,117 +460,4 @@ class _BottomBar extends StatelessWidget {
   }
 }
 
-// ── Icon Button ────────────────────────────────────────────────
-class _IconBtn extends StatelessWidget {
-  const _IconBtn({required this.icon});
-  final IconData icon;
 
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      borderRadius: BorderRadius.circular(99),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(99),
-        onTap: () {},
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Icon(icon, size: 21, color: Palette.onSurfaceVariant),
-        ),
-      ),
-    );
-  }
-}
-
-// ── Reusable stat card ─────────────────────────────────────────
-class StatCard extends StatelessWidget {
-  const StatCard({
-    super.key,
-    required this.label,
-    required this.value,
-    this.sub,
-    this.icon,
-    this.accent = false,
-  });
-  final String label;
-  final String value;
-  final String? sub;
-  final IconData? icon;
-  final bool accent;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        color: accent ? Palette.primary : Palette.surfaceContainerLowest,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Palette.primary.withOpacity(accent ? 0.22 : 0.04),
-            blurRadius: 16,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (icon != null)
-            Icon(icon,
-                size: 22, color: accent ? Colors.white70 : Palette.primary),
-          if (icon != null) const SizedBox(height: 12),
-          Text(value,
-              style: TextStyle(
-                fontFamily: Palette.fontDisplay,
-                fontSize: 26,
-                fontWeight: FontWeight.w800,
-                color: accent ? Colors.white : Palette.onSurface,
-                letterSpacing: -0.5,
-              )),
-          const SizedBox(height: 4),
-          Text(label,
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: accent ? Colors.white70 : Palette.onSurfaceVariant,
-              )),
-          if (sub != null) ...[
-            const SizedBox(height: 2),
-            Text(sub!,
-                style: TextStyle(
-                  fontSize: 10,
-                  color: accent ? Colors.white54 : Palette.outline,
-                )),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-// ── Section header ─────────────────────────────────────────────
-class SectionTitle extends StatelessWidget {
-  const SectionTitle(this.text, {super.key, this.trailing});
-  final String text;
-  final Widget? trailing;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Text(text,
-              style: const TextStyle(
-                fontFamily: Palette.fontDisplay,
-                fontSize: 20,
-                fontWeight: FontWeight.w800,
-                color: Palette.primary,
-                letterSpacing: -0.3,
-              )),
-        ),
-        if (trailing != null) trailing!,
-      ],
-    );
-  }
-}

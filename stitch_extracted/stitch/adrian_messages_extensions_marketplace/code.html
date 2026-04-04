@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages - Extensions Marketplace</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#1A237E",
+          "background-light": "#f6f6f8",
+          "background-dark": "#121320",
+          "surface": "#ffffff",
+          "on-surface": "#191c1d",
+          "on-surface-variant": "#454652",
+          "surface-container-low": "#f3f4f5",
+          "surface-container-lowest": "#ffffff",
+          "secondary-container": "#e1e2ec",
+          "on-secondary-container": "#1A237E",
+          "outline-variant": "#c6c5d4"
+        },
+        fontFamily: {
+          "display": ["Manrope"],
+          "headline": ["Manrope"],
+          "body": ["Inter"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased overflow-x-hidden">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-[#fbf8ff] dark:bg-slate-950 flex flex-col py-8 z-40 hidden md:flex border-r border-slate-100">
+<div class="px-8 mb-12">
+<div class="flex items-center space-x-2">
+<span class="text-2xl font-black text-[#1A237E] font-display tracking-tighter">Adrian</span>
+</div>
+<p class="font-manrope text-[10px] font-semibold uppercase tracking-widest text-slate-400 mt-1">Intelligent Correspondent</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center space-x-3 py-3 px-8 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm font-manrope text-sm font-semibold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Chats</span>
+</a>
+<a class="flex items-center space-x-3 py-3 px-8 text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all font-manrope text-sm font-semibold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span>Vault</span>
+</a>
+<a class="flex items-center space-x-3 py-3 px-8 text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all font-manrope text-sm font-semibold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span>Security</span>
+</a>
+<a class="flex items-center space-x-3 py-3 px-8 text-slate-500 hover:bg-[#eae7ef] dark:hover:bg-slate-800 transition-all font-manrope text-sm font-semibold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-[#1A237E] text-white py-4 rounded-xl font-bold shadow-lg flex items-center justify-center space-x-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined">add</span>
+<span>New Extension</span>
+</button>
+</div>
+</aside>
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl md:left-64 md:w-[calc(100%-16rem)]">
+<div class="flex items-center space-x-8">
+<span class="md:hidden text-2xl font-bold tracking-tighter text-[#1A237E] dark:text-indigo-400">Adrian Messages</span>
+<div class="hidden md:flex items-center space-x-6">
+<span class="font-manrope tracking-tight font-bold text-[#1A237E] border-b-2 border-[#1A237E] pb-1 cursor-pointer">Browse</span>
+<span class="font-manrope tracking-tight font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-3 py-1 rounded-lg cursor-pointer">Installed</span>
+<span class="font-manrope tracking-tight font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-3 py-1 rounded-lg cursor-pointer">Updates</span>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="bg-slate-100 dark:bg-slate-800 border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-[#1A237E]/20 transition-all" placeholder="Search extensions..." type="text"/>
+</div>
+<div class="flex items-center space-x-2">
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full border border-slate-200 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYC-DhI-Nk86Gdx4W-R9lV5LgXi-HT_IdaS0iD2OJ6tCFbMFg8HfzS0pgaBF1JHrxUwSnxvw4d3-iJ-WeEOAZPt9slE9vg8jzgQHF5dWGxS_tRWIZCBVBnVFs6nUzMMLIrb4aTejIdfK8dZ6_-32SMAenNhqOBJ5D17f5QSJoacKK2Dt0TobIH7DfUaSq7CArtHHniGFQcKOjz4eDxu3XvkEWLj98LIwYEry-MnQs22KW--JEeS7dLHdKGeRGgSlokiQIN0jNw28sQ"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="pt-24 pb-32 px-6 md:px-12 md:ml-64 min-h-screen">
+<!-- Hero Section: Editorial Style -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-wider mb-4">New Arrivals</span>
+<h2 class="text-4xl md:text-5xl font-extrabold font-headline tracking-tighter text-primary leading-tight">Supercharge your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-on-tertiary-container">workflow.</span></h2>
+<p class="mt-4 text-on-surface-variant text-lg max-w-lg leading-relaxed">Connect Adrian to the tools you already love. Professional-grade integrations built for security and speed.</p>
+</div>
+<div class="flex space-x-3">
+<button class="px-6 py-3 bg-white border border-outline-variant/20 rounded-xl font-bold text-sm shadow-sm hover:bg-surface-container-low transition-all">Documentation</button>
+<button class="px-6 py-3 bg-primary text-white rounded-xl font-bold text-sm shadow-xl shadow-primary/20 hover:translate-y-[-2px] transition-all">API Access</button>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Featured Extensions -->
+<section class="mb-16">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Figma Live (Large Card) -->
+<div class="md:col-span-2 lg:col-span-3 bg-surface-container-lowest rounded-[2rem] p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Abstract figma interface elements, purple and pink glassmorphic shapes with soft glowing edges on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdhGj-Yut7QGKlTucPr7iOXCbGDRp5AYKAPP-Cjp-VoBPu1LayP4LinciL8YGsnQALhlHmGqiZex9oOGc8aJJCvNUp9gOqCJiPljjLjdS_F1tx9WMoWYR6JphJ17PumTkztnVGjaEbYkUfOCSgkJOD7ViQSWl_PBPP3DBc4_uV_mwkxtvS6Yq-k5iCZ2-Ew_qnAusLRw-cnMUkSUz-F3J_1PNLDYgMSG2qA7vViebO0u8ewDVdv3mJAGDyROjR2q5DkNL9pj8FpE0C"/>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="w-14 h-14 bg-[#f24e1e]/10 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[#f24e1e] text-3xl" data-icon="brush">brush</span>
+</div>
+<div class="flex items-center space-x-2 mb-2">
+<h3 class="text-2xl font-bold font-headline">Figma Live</h3>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_8px_#00daf3]"></span>
+</div>
+<p class="text-on-surface-variant leading-relaxed max-w-xs">Real-time design sync with canvas mirroring and commenting enabled directly in Adrian.</p>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<span class="text-xs font-bold text-on-secondary-container">Installed</span>
+<button class="text-sm font-bold text-primary flex items-center space-x-1 group">
+<span>Manage</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Slack Mirror (Vertical Card) -->
+<div class="md:col-span-2 lg:col-span-1 bg-surface-container-low rounded-[2rem] p-6 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[#4a154b]" data-icon="chat">chat</span>
+</div>
+<h3 class="text-lg font-bold font-headline mb-2">Slack Mirror</h3>
+<p class="text-sm text-on-surface-variant">Sync channels and direct messages seamlessly.</p>
+</div>
+<button class="mt-6 w-full py-3 bg-white text-primary text-sm font-bold rounded-xl border border-outline-variant/20 hover:bg-surface-container-lowest transition-colors">Connect</button>
+</div>
+<!-- GitHub Sync (Small Card) -->
+<div class="md:col-span-2 lg:col-span-2 bg-primary text-white rounded-[2rem] p-8 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -bottom-4 -right-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="code">code</span>
+</div>
+<div class="relative z-10">
+<div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white" data-icon="merge">merge</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-2">GitHub Sync</h3>
+<p class="text-sm text-slate-300">Automate your PR reviews and issue tracking.</p>
+</div>
+<div class="mt-6 flex items-center space-x-3 text-xs font-bold uppercase tracking-widest text-tertiary-fixed-dim relative z-10">
+<span>Inactive</span>
+<div class="h-1 w-8 bg-white/20 rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories & Filter Section -->
+<section class="mb-8">
+<div class="flex items-center space-x-4 overflow-x-auto no-scrollbar pb-2">
+<button class="px-6 py-2 bg-primary text-white rounded-full text-sm font-bold flex-shrink-0">All Extensions</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium flex-shrink-0 hover:bg-surface-variant transition-colors">Productivity</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium flex-shrink-0 hover:bg-surface-variant transition-colors">Design</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium flex-shrink-0 hover:bg-surface-variant transition-colors">Development</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium flex-shrink-0 hover:bg-surface-variant transition-colors">Marketing</button>
+</div>
+</section>
+<!-- Gallery Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Extension Card 1: Productivity -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 hover:shadow-xl hover:shadow-black/5 transition-all group">
+<div class="flex items-start justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-low flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="calendar_today">calendar_today</span>
+</div>
+<span class="px-2 py-1 bg-green-100 text-green-700 rounded-lg text-[10px] font-bold">Stable</span>
+</div>
+<h4 class="text-lg font-bold mb-1">Google Workspace</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Full calendar and drive integration with smart scheduling assistant.</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container-low">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-white" data-alt="Avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe1SSMaf4A0ZlKrpItQ3f3OVF-yB0EB7T8jWNMX8L-3nq8olwS7thA9H3GjprOWDwXk7zDbQ9HVr8IXyJ9QAbNDYb80vds-q9gF97AW5DJDbaOjf37rlEnXcDuHKwWC8JOfY_XKvU0N1lWtH1b2jQ7xhJBA47grAUi8_EuKhDW8KcAYc8hAOi0A-7zteRx2H1I9dJ7YALvsUus8uiW7--FSsJuh4przR2AUQBazv2V3PjJVFNdbXDE5e22muJR3XlMe4jgBlrKfEMM"/>
+<img class="w-6 h-6 rounded-full border-2 border-white" data-alt="Avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDDoCkPb8SGq4WZn4o_QzeiohB3ABex_gbj5jevF_1TSZtrzCwTKLOCbadboX9RhHhwSC2s37FTZ9oWNY_mFjd4QClK7HaMTIPAMrKAhNa1DjHfcrmcOo6dY6l2Nc_w57v2EH473mHTrnDz0OTQ0lAGj3bAh-i7QPxSZ0d7O17ZnfIBgP1vfwesq-rC0po67YIcEzxcnXAg1gs0NKsXR99bEkjaFgP4uFUd3o8KhCqE3szPdwrc4VJspax3fRBTGWl_dfOl-GasikL"/>
+<div class="w-6 h-6 rounded-full bg-surface-container border-2 border-white flex items-center justify-center text-[8px] font-bold">+12k</div>
+</div>
+<button class="text-primary font-bold text-sm">Install</button>
+</div>
+</div>
+<!-- Extension Card 2: Dev -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 hover:shadow-xl hover:shadow-black/5 transition-all group">
+<div class="flex items-start justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-low flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="dns">dns</span>
+</div>
+<span class="px-2 py-1 bg-amber-100 text-amber-700 rounded-lg text-[10px] font-bold">Beta</span>
+</div>
+<h4 class="text-lg font-bold mb-1">Vercel Deploy</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Trigger builds and monitor deployment status directly from chats.</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container-low">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-white" data-alt="Avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDadFzfOZbysPKqHUYCXbwa4meI7UPqTLdU-UAJX2xXJzyzvlU5drXiBmMSfxIbVJSDnGt5mOLkGqpubD_JGXaRCpxURR_9jCzq58GEWqdz8skYTM13GlA-17-w3SkiYvUJ7pp8dOqc4ftvzPrHivRdU_rz6cyF4vc5U-LLvxu0QlaLfV3-sI5qtT-gmaZ5yrWDG0Kh7IVG_JjDeRVEhLYlRkLNLKLBwkrx9ayniOaWJBekvLuQHbra61LfH9KLxSpsP7ZSvgf7tJI1"/>
+<div class="w-6 h-6 rounded-full bg-surface-container border-2 border-white flex items-center justify-center text-[8px] font-bold">+2k</div>
+</div>
+<button class="text-primary font-bold text-sm">Install</button>
+</div>
+</div>
+<!-- Extension Card 3: Productivity -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 hover:shadow-xl hover:shadow-black/5 transition-all group border-2 border-primary/5">
+<div class="flex items-start justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+<div class="flex items-center text-[#00daf3] space-x-1">
+<span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Active</span>
+</div>
+</div>
+<h4 class="text-lg font-bold mb-1">Linear Bridge</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Bi-directional sync for issue tracking and velocity monitoring.</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container-low">
+<div class="text-[10px] font-bold text-on-surface-variant">V 2.1.4</div>
+<button class="text-primary font-bold text-sm">Configure</button>
+</div>
+</div>
+<!-- Extension Card 4: Dev -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 hover:shadow-xl hover:shadow-black/5 transition-all group">
+<div class="flex items-start justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-low flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="data_object">data_object</span>
+</div>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant rounded-lg text-[10px] font-bold">Internal</span>
+</div>
+<h4 class="text-lg font-bold mb-1">Stripe Insights</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Revenue dashboards and subscription event monitoring for teams.</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container-low">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-white" data-alt="Avatar 4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb7CAF9r9AdZVAZWSgdLfB8ftM-E-fTLOqxTrTRMpM8hj5wWZkLAQI36rkHygXqIyWDVN12puKmIbqmL5LhZUUbBdnAzEYBZ06kVYJHuRGCn5FnSkCCokvkup0wDLUt-7gW-kr6S4CFDVRLICI74XmcfegO3s_wv__GsrzrZ0bmobIbF9nBGCOIutr7PlIcZasHO8BPrjr3w9nowLwvoXGzvcD5GCiNSqMc4mUPDG2v7duVRim6ZEAG3OliMHwIxsGX6o2WpMz_YOR"/>
+<div class="w-6 h-6 rounded-full bg-surface-container border-2 border-white flex items-center justify-center text-[8px] font-bold">+5k</div>
+</div>
+<button class="text-primary font-bold text-sm">Install</button>
+</div>
+</div>
+<!-- Extension Card 5: Marketing -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 hover:shadow-xl hover:shadow-black/5 transition-all group">
+<div class="flex items-start justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-low flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="campaign">campaign</span>
+</div>
+<span class="px-2 py-1 bg-green-100 text-green-700 rounded-lg text-[10px] font-bold">Stable</span>
+</div>
+<h4 class="text-lg font-bold mb-1">Notion Mirror</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Embed and edit Notion databases directly within your Adrian workspace.</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container-low">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-white" data-alt="Avatar 5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7wyKh6R4OZ2psbeau2y4IPtNwETTyTk6dnhURzvmKBTty3Alcp5tYpwByqgOxbwiRUurvJ_WVaFTdUJ1BgkpbhVwf0OWB0lojPMHGUTAaw7qR3V9HQGjLDPaIyFI3UZcRGyl4vmvOR7flsFYME0EYU7OsMEVtgCBFk7Wc2Y0TXxkV0354CpfBO4HHH6yTeRptWYlEYxvmc2fGczsXBTT-74GFx49rI1P0gJpU4d7Y4uzr9c22yj7FLSa4sshYhi47eSub3pjUmX-k"/>
+<div class="w-6 h-6 rounded-full bg-surface-container border-2 border-white flex items-center justify-center text-[8px] font-bold">+40k</div>
+</div>
+<button class="text-primary font-bold text-sm">Install</button>
+</div>
+</div>
+<!-- Empty State / Suggest Card -->
+<div class="border-2 border-dashed border-outline-variant/30 rounded-3xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-primary/40 transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center mb-4 group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="lightbulb">lightbulb</span>
+</div>
+<h4 class="font-bold mb-1">Need something else?</h4>
+<p class="text-xs text-on-surface-variant">Request a custom integration or build your own with our SDK.</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Authority Source: JSON) -->
+<!-- Shell Visibility: Only on mobile (md:hidden) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-8 md:hidden">
+<div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl rounded-full mx-auto w-fit shadow-2xl flex items-center p-2">
+<a class="flex flex-col items-center justify-center text-[#1A237E] px-6 py-2" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Chats</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#1A237E] text-white rounded-full px-6 py-2" href="#">
+<span class="material-symbols-outlined">extension</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-6 py-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Setup</span>
+</a>
+</div>
+</nav>
+<!-- FAB Suppression: On Marketplace/Settings/Profile screens, FAB is suppressed as per rules -->
+</body></html>

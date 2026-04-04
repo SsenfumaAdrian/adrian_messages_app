@@ -7,7 +7,7 @@ class LiquidReactionEngine extends StatefulWidget {
   const LiquidReactionEngine({super.key, required this.child});
 
   @override
-  _LiquidReactionEngineState createState() => _LiquidReactionEngineState();
+  State<LiquidReactionEngine> createState() => _LiquidReactionEngineState();
 }
 
 class _LiquidReactionEngineState extends State<LiquidReactionEngine>
@@ -20,7 +20,7 @@ class _LiquidReactionEngineState extends State<LiquidReactionEngine>
     super.initState();
     _rippleController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 800),
+      duration: Duration(milliseconds: 800),
     );
   }
 
@@ -50,7 +50,7 @@ class _LiquidReactionEngineState extends State<LiquidReactionEngine>
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        Colors.blueAccent.withOpacity(0.5),
+                        Colors.blueAccent.withValues(alpha: 0.5),
                         Colors.transparent,
                       ],
                     ),

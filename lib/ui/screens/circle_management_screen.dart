@@ -36,27 +36,27 @@ class _State extends State<CircleManagementScreen> {
       activeRoute: LiquidRouter.circleManage,
       title: 'Circle Management',
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           // Circle card
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-                gradient: const LinearGradient(
+                gradient: LinearGradient(
                     colors: [Palette.primary, Color(0xFF3949AB)]),
                 borderRadius: BorderRadius.circular(22),
                 boxShadow: [
                   BoxShadow(
-                      color: Palette.primary.withOpacity(0.28),
+                      color: Palette.primary.withValues(alpha: 0.28),
                       blurRadius: 20,
-                      offset: const Offset(0, 8))
+                      offset: Offset(0, 8))
                 ]),
             child: Row(children: [
               Container(
                   width: 52,
                   height: 52,
                   decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.12),
+                      color: Colors.white.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(16)),
                   child: const Icon(Icons.workspaces_rounded,
                       color: Colors.white, size: 28)),
@@ -82,18 +82,18 @@ class _State extends State<CircleManagementScreen> {
           const SizedBox(height: 24),
 
           // Members list
-          _SHead('Members'),
+          _sectionHead('Members'),
           const SizedBox(height: 12),
           ..._members.map((m) => Container(
-                margin: const EdgeInsets.only(bottom: 10),
+                margin: EdgeInsets.only(bottom: 10),
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                    EdgeInsets.symmetric(horizontal: 14, vertical: 12),
                 decoration: BoxDecoration(
                     color: Palette.surfaceContainerLowest,
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                          color: Palette.primary.withOpacity(0.04),
+                          color: Palette.primary.withValues(alpha: 0.04),
                           blurRadius: 8)
                     ]),
                 child: Row(children: [
@@ -102,7 +102,7 @@ class _State extends State<CircleManagementScreen> {
                         width: 42,
                         height: 42,
                         decoration: BoxDecoration(
-                            gradient: const LinearGradient(
+                            gradient: LinearGradient(
                                 colors: [Palette.primary, Color(0xFF3949AB)]),
                             borderRadius: BorderRadius.circular(14)),
                         child: Center(
@@ -149,7 +149,7 @@ class _State extends State<CircleManagementScreen> {
           const SizedBox(height: 24),
 
           // Permissions matrix
-          _SHead('Role Permissions'),
+          _sectionHead('Role Permissions'),
           const SizedBox(height: 12),
           Container(
             decoration: BoxDecoration(
@@ -157,12 +157,12 @@ class _State extends State<CircleManagementScreen> {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                      color: Palette.primary.withOpacity(0.04), blurRadius: 12)
+                      color: Palette.primary.withValues(alpha: 0.04), blurRadius: 12)
                 ]),
             child: Column(children: [
               // Role header
               Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding: EdgeInsets.all(16),
                   child: Row(children: [
                     const Expanded(flex: 3, child: SizedBox()),
                     ..._roles.map((r) => Expanded(
@@ -179,7 +179,7 @@ class _State extends State<CircleManagementScreen> {
                 final vals = e.value;
                 return Column(children: [
                   Padding(
-                      padding: const EdgeInsets.symmetric(
+                      padding: EdgeInsets.symmetric(
                           horizontal: 16, vertical: 12),
                       child: Row(children: [
                         Expanded(
@@ -198,7 +198,7 @@ class _State extends State<CircleManagementScreen> {
                                   child: Center(
                                       child: AnimatedContainer(
                                           duration:
-                                              const Duration(milliseconds: 200),
+                                              Duration(milliseconds: 200),
                                           width: 24,
                                           height: 24,
                                           decoration: BoxDecoration(
@@ -247,16 +247,16 @@ class _RoleChip extends StatelessWidget {
           : Palette.outline;
   @override
   Widget build(BuildContext context) => Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-          color: _color(role).withOpacity(0.10),
+          color: _color(role).withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(99)),
       child: Text(role,
           style: TextStyle(
               fontSize: 11, fontWeight: FontWeight.w700, color: _color(role))));
 }
 
-Widget _SHead(String t) => Text(t,
+Widget _sectionHead(String t) => Text(t,
     style: TextStyle(
         fontFamily: Palette.fontDisplay,
         fontSize: 16,

@@ -22,7 +22,7 @@ class LiquidTranslationBubble extends StatelessWidget {
         const SizedBox(height: 8),
         LiquidGlassContainer(
           borderRadius: 15,
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           // Subtly different tint for translated glass
           child: Text(
             translatedText,

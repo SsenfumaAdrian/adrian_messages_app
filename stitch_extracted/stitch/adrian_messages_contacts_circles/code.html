@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adrian Messages - Contacts &amp; Circles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#233141",
+                        "outline": "#767683",
+                        "primary-fixed-dim": "#bac8dc",
+                        "secondary-container": "#c2dcff",
+                        "on-tertiary-container": "#00a7bb",
+                        "on-secondary-fixed": "#001d36",
+                        "tertiary": "#001f24",
+                        "on-primary-container": "#8b99ac",
+                        "tertiary-container": "#00363d",
+                        "surface-container-low": "#f3f4f5",
+                        "background": "#f8f9fa",
+                        "secondary-fixed-dim": "#afc9ea",
+                        "surface-variant": "#e1e3e4",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e7e8e9",
+                        "on-background": "#191c1d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary": "#0e1c2b",
+                        "on-error": "#ffffff",
+                        "secondary": "#47607e",
+                        "outline-variant": "#c6c5d4",
+                        "inverse-primary": "#bac8dc",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "on-surface-variant": "#454652",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#edeeef",
+                        "surface-bright": "#f8f9fa",
+                        "primary-fixed": "#d6e4f9",
+                        "on-secondary-container": "#48617e",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#3a4859",
+                        "surface": "#f8f9fa",
+                        "surface-tint": "#525f71",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-dim": "#d9dadb",
+                        "on-surface": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed-variant": "#2f4865",
+                        "on-primary-fixed": "#0f1c2c",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#00daf3",
+                        "secondary-fixed": "#d1e4ff",
+                        "tertiary-fixed": "#9cf0ff",
+                        "on-tertiary-fixed": "#001f24"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        h1, h2, h3, .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #0e1c2b 0%, #233141 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- SideNavBar Component -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#fbf8ff] dark:bg-slate-950 h-screen w-64 border-r-0 z-50 font-manrope antialiased">
+<div class="px-8 mb-10">
+<div class="text-xl font-black text-[#1A237E] flex items-center gap-2">
+<div class="w-8 h-8 bg-[#1A237E] rounded-lg flex items-center justify-center text-white text-sm">A</div>
+<span>Adrian</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">Intelligent Correspondent</p>
+</div>
+<nav class="flex flex-col flex-1">
+<a class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] transition-all hover:bg-[#eae7ef] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Chats</span>
+</a>
+<a class="flex items-center gap-4 py-4 px-8 bg-[#ffffff] dark:bg-slate-800 text-[#1A237E] dark:text-indigo-300 rounded-l-full ml-4 shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Directory</span>
+</a>
+<a class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] transition-all hover:bg-[#eae7ef] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Vault</span>
+</a>
+<a class="flex items-center gap-4 py-4 px-8 text-slate-500 dark:text-slate-500 hover:text-[#1A237E] transition-all hover:bg-[#eae7ef] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-8">
+<div class="flex items-center gap-3 p-3 bg-[#f5f2fb] dark:bg-slate-900 rounded-xl">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXIbFekQKo_ibzQJ67rf8vEtFb94kF_ybBl9mtZuM5RMg4C-s5P7-zMZw35tJFofjfvaScUms1h5mcTipuhcq2hq-8emPp08PVw6njsWjxcNonzx_q2g21fNU1tVcgkSJm3ptmG8ZKk5XShrHl_Q3Dzu5EcP3yPkrUNTFj7Rt1F2wr2YNLSh1yL5uDdK6sXCefHxt2kVj0eXYjvtOogh44_que6nEpziSMOZMP05O1O9TaPWVr1AC4xySbtfyR0r4BuMznZeDi2P84"/>
+<div class="min-w-0">
+<p class="text-xs font-bold text-[#1A237E] truncate">My Profile</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="min-h-screen ml-64">
+<!-- Top Navigation Area -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,35,126,0.06)] font-manrope tracking-tight font-medium">
+<div class="flex items-center gap-4">
+<h1 class="text-2xl font-bold tracking-tighter text-[#1A237E] dark:text-indigo-400">Adrian Messages</h1>
+<div class="h-4 w-px bg-slate-200 dark:bg-slate-700"></div>
+<span class="text-slate-500 dark:text-slate-400">Directory</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-2 w-64 group focus-within:ring-2 ring-[#1A237E]/20 transition-all">
+<span class="material-symbols-outlined text-slate-400 text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs w-full p-0 placeholder:text-slate-400" placeholder="Search members..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-[#1A237E] dark:text-indigo-400">
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-full transition-colors">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="pt-24 px-10 pb-10 max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="text-3xl font-extrabold text-primary tracking-tight mb-2">Member Directory</h2>
+<p class="text-on-surface-variant font-medium">Manage your professional network and private circles.</p>
+</div>
+<button class="bg-[#1A237E] text-white px-6 py-3 rounded-lg flex items-center gap-2 font-bold text-sm shadow-md hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">person_add</span>
+    New Contact
+</button>
+</div>
+<!-- Bento Layout for Contacts & Circles -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Circles (The Editorial Sidebar) -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<section>
+<h3 class="text-xs font-bold uppercase tracking-widest text-outline mb-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                            Curated Circles
+                        </h3>
+<div class="space-y-4">
+<!-- Circle Card 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_12px_32px_rgba(25,28,29,0.04)] hover:translate-y-[-2px] transition-transform cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+</div>
+<span class="text-[10px] font-bold px-2 py-1 bg-secondary-container text-on-secondary-container rounded-full">12 Members</span>
+</div>
+<h4 class="font-bold text-primary mb-1">Design Leadership</h4>
+<p class="text-xs text-on-surface-variant mb-4">Strategic discussions and asset reviews for the Q4 project.</p>
+<div class="flex -space-x-2">
+<img alt="User" class="w-7 h-7 rounded-full border-2 border-white object-cover" data-alt="Portrait of a creative professional man with glasses and a stylish haircut in a minimalist studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvlpvtw0yE66BrXMmJQi2QeeCl2COec-u0Gfd3_2Gc0UGZAFZPAxL7bhCbqVjyeAqA9jiABUHb1Q9plVM4VX_AaAMozcxexeP7HAdJ2znaYFqSI8uF3fhBk9f5q7ggTc-TPHcCGV18jMPCt1UKEAGAhAgbcUPNvxzHmknlZdvw04zqoBOPPanO32dDlB8kwwy6i09EbpP6H9yESFRfkWSvaU93-qAbi0bkumWEMc2aG_4imxrbyN_YHLEGG3u7zfW5uwR_JhHavwtO"/>
+<img alt="User" class="w-7 h-7 rounded-full border-2 border-white object-cover" data-alt="Portrait of a smiling young woman with dark hair against a soft pastel background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOTY7j2nGy92j2lodj5sSCN_GL8mxKdqF53qOp2ckwMs_LosEjftUOzHfgtsfKoZZ0VcLXD4s02tmBGQ7iITZVLMFI3DUlThLUR_BAUGXl2kBeNB_FXKAGCxkfwHNkaoKS9VFtwwfgQ52OK0xto47hC4J3x3sh_LDq2lVKqQ4eflc6jIVIei4BVL-iwlMCGY4J8IR-6P8YRfqsi9zRYzFmo8-G20RXhsDhCapUVaIugzu8-08N0-ViUeDkXOyi_GyQUbVTxHK0VVvh"/>
+<img alt="User" class="w-7 h-7 rounded-full border-2 border-white object-cover" data-alt="Close-up of a man with a beard and intense eyes in a professional suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwmWVpBhkylJ9NSUzqdVD6_-lp_CI1Gz_WpKE1L43aDcTXJJosceShoXNd-rmls8ZSpfoJsx8mCZzuM7jr9pv9qnoV_ejujpBWuM12H_5HOYugCI3G3Y8RGuFfXczzF-sB_heFGm98EXtstDaPYtu31HOAtsmZXE8nrlSfCdddQMWfJv0Xih9ZApK6_fCeaQl9KcjyONjsL5mGF8OUCHj6hypb0FI7Vsl-8_qTkrvWTWiUpRfi6tQq7jFhiYffFAmt1vWyfWcjonAo"/>
+<div class="w-7 h-7 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold text-on-surface-variant">+9</div>
+</div>
+</div>
+<!-- Circle Card 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_12px_32px_rgba(25,28,29,0.04)] hover:translate-y-[-2px] transition-transform cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined" data-icon="diamond">diamond</span>
+</div>
+<span class="text-[10px] font-bold px-2 py-1 bg-secondary-container text-on-secondary-container rounded-full">5 Members</span>
+</div>
+<h4 class="font-bold text-primary mb-1">Executive Board</h4>
+<p class="text-xs text-on-surface-variant mb-4">Private circle for steering committee and global partners.</p>
+<div class="flex -space-x-2">
+<img alt="User" class="w-7 h-7 rounded-full border-2 border-white object-cover" data-alt="A confident black female professional in a blazer looking at the camera in a modern boardroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjYRsVcQHFQBU2bvdg99R5IrqkceUZTaDFKoK8tuPrGN_5yz8eNncBRSlAldp7E_AjyqSmh4ggelOQEZ0Y4gtJy_Oiq5_e4FZ-rHmvNJInSXTIImCX3Xdb8Xi6o2kFncBbIWv0PRrBMeFSdWwO6B7JWPBoKvW78McJXtN_FM3DLtio95ycagchyMYiaZ7KNk8hqGwwjLg54RLoD4agPk92uBscbUgZ7qJMo8quI8fCgEsYiJ_B0YoXXlJubMKgrdynlJNTqo8RSk_6"/>
+<img alt="User" class="w-7 h-7 rounded-full border-2 border-white object-cover" data-alt="Professional man in a light blue shirt with a friendly smile in a bright office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-cZy17FWGs7Bi1AGFNVZBGVCujB9Wa3wY8uplp7gHHHsNqwYDHqGZD9Sm3OUtoqw83TmJdfar_0lGYOmlUCBR-sXGpuxMz_5BkaMfHQhPMurmD_42Cc9X0Xgk3CPvVmsJKvhfqa9JQoMpCORdnjEFL_--6Vyo0jIRcBkMHDFqGIeJEzsZdirS5M_fWQQFnOh80flBNcj-JgRbUn29YhC4rQWRVVIcZoXwSe-f9gG7D6KU0GT2KgjU-jqVSxcFSffSJelss1HzI9OA"/>
+<div class="w-7 h-7 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold text-on-surface-variant">+3</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Individual Contacts (The Main Feed) -->
+<div class="col-span-12 lg:col-span-8">
+<section class="bg-surface-container-low rounded-3xl p-8 min-h-[600px]">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xs font-bold uppercase tracking-widest text-outline">Frequent Contacts</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-variant rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button class="p-2 hover:bg-surface-variant rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="sort_by_alpha">sort_by_alpha</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Contact Card 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex items-center gap-4 group hover:shadow-md transition-shadow cursor-pointer">
+<div class="relative">
+<img alt="Contact" class="w-14 h-14 rounded-full object-cover" data-alt="Close-up profile of a stylish man with groomed facial hair and a thoughtful expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTJh5g-7xXoCjU0K91O-Iood8DcslJaSed5WSxuI-VgUtrPcZJzcBxGq9pd7ewbGPy_49ZiwR0bti_MXbLIzNQR0jeKKfYa2WlU_UQ-F3PeUV3N9G_UeAZQQZZ9MU1aQ2-0PM1NNLqR4GzjpRpixHGQ4Dzxb0BizVc0BHSk3UDTUIuinVPNuE3huFi8Hs3pQJuT1pnlgR40qb7ZH6a-Dc2zzuU0Uv6AYDMYSN1Mh-ThkGVdk_U343Rk01RF9taF9xcoalGTcYS2t0p"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary-fixed-dim border-2 border-white rounded-full"></span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-primary truncate">Adrian Thorne</h4>
+<p class="text-xs text-on-surface-variant truncate">Principal Architect</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Contact Card 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex items-center gap-4 group hover:shadow-md transition-shadow cursor-pointer">
+<div class="relative">
+<img alt="Contact" class="w-14 h-14 rounded-full object-cover" data-alt="Young woman with curly hair and a gentle smile looking directly into the lens with natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtWgjradPkoagA8_LV5B7JU_3-BLAPLya1oYwZN8520iKyy6FbKkU6xbeDZ85EYtNByB3PyFJdcCwUVumYJquxKvvpVoIJtXwSxkhYTnPB3J0r0VlsFllDqDlMUlWyXhC0BMJxJPtYwM28u7og5iLA6G0VrWwuKW5BzTAHFD2iXp1Gc_fDz1E9g5BPBxdz22tZrtrXkQsO9-tn1NknseHOOlt2mXuCZvDhwILfslgeS--Q6P45OnYR0AR8nAaijOCLo9bqRe7ZS3w1"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-surface-variant border-2 border-white rounded-full"></span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-primary truncate">Elena Rossi</h4>
+<p class="text-xs text-on-surface-variant truncate">Global Creative Director</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Contact Card 3 -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex items-center gap-4 group hover:shadow-md transition-shadow cursor-pointer">
+<div class="relative">
+<img alt="Contact" class="w-14 h-14 rounded-full object-cover" data-alt="Middle-aged man with salt and pepper hair in a crisp white shirt against a neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeY64phl9FxaPXIjzghgQBmru1LuKbdkfqBbcsYyqfxZSEPy5gypqm7LpmaPeiFRZujKq0pJr_f7xhEqoboJAbIsuoDr_pSVPYAlGln7XkrKk-HI7tQtFGrBOZlW4g_dj7_OCsGAQ3JxV174h5PtAD-hg6Nef4pzdhh8l8a-5gSiDheOUs0BcPOKLYNbKwVaxsWlbPmDAfcDoY3_P-jykh0xrY-ah0UKGrb4xsqX96SSsTaW7TlADhxR7wPoerReZ7W42fbYnwouNt"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary-fixed-dim border-2 border-white rounded-full"></span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-primary truncate">Marcus Sterling</h4>
+<p class="text-xs text-on-surface-variant truncate">Managing Partner</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Contact Card 4 -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex items-center gap-4 group hover:shadow-md transition-shadow cursor-pointer">
+<div class="relative">
+<img alt="Contact" class="w-14 h-14 rounded-full object-cover" data-alt="Young black woman with braided hair and a confident gaze in professional casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzBrbIRyXOC21OXGP76kkYYg7qgMn8lDyqE4Tbn9ReCSpof6S0O-3r-D34qXEKXEiP5ojoESHaDw-m2nl_rzbHlIIK1WaqrORsFkOcMSDzmAwPgnEbzjxI6k5LBbpzXyOWBjwbQzKyDEv4OfEdN9FaJEiVocIrb3y0eclhXOyZDwEnY7MfzTc9gPMKkHHDKSr3bFOc55rKos8uZ9SHIQh9UavTdSKmb5ECAAPuosBNVZb1AYJehB1NkBEAzHc4epiXA5HxsgUHOlzW"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary-fixed-dim border-2 border-white rounded-full"></span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-primary truncate">Serena Williams</h4>
+<p class="text-xs text-on-surface-variant truncate">Head of Experience</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Full Directory List Section -->
+<div class="mt-12">
+<h3 class="text-xs font-bold uppercase tracking-widest text-outline mb-6">Full Directory</h3>
+<div class="space-y-px">
+<!-- List Header -->
+<div class="grid grid-cols-12 px-6 py-3 text-[10px] font-bold text-outline uppercase tracking-wider">
+<div class="col-span-5">Member</div>
+<div class="col-span-4">Role / Department</div>
+<div class="col-span-3 text-right">Status</div>
+</div>
+<!-- List Item 1 -->
+<div class="grid grid-cols-12 items-center px-6 py-4 bg-surface-container-lowest rounded-xl hover:bg-white transition-colors cursor-pointer group mb-2 shadow-sm">
+<div class="col-span-5 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-primary font-bold text-[10px]">BM</div>
+<div>
+<p class="text-sm font-bold text-primary">Beatrix Muller</p>
+<p class="text-[10px] text-on-surface-variant">beatrix.m@adrianmessages.com</p>
+</div>
+</div>
+<div class="col-span-4 text-xs font-medium text-on-secondary-container">Legal Compliance</div>
+<div class="col-span-3 flex justify-end">
+<span class="flex items-center gap-1.5 text-[10px] font-bold text-tertiary-fixed-dim">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim shadow-[0_0_8px_#00daf3]"></span>
+                                            Online
+                                        </span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="grid grid-cols-12 items-center px-6 py-4 bg-surface-container-lowest rounded-xl hover:bg-white transition-colors cursor-pointer group mb-2 shadow-sm">
+<div class="col-span-5 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-[10px]">DJ</div>
+<div>
+<p class="text-sm font-bold text-primary">David Jenkins</p>
+<p class="text-[10px] text-on-surface-variant">beatrix.m@adrianmessages.com</p>
+</div>
+</div>
+<div class="col-span-4 text-xs font-medium text-on-secondary-container">Brand Strategy</div>
+<div class="col-span-3 flex justify-end">
+<span class="flex items-center gap-1.5 text-[10px] font-bold text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+                                            Offline
+                                        </span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="grid grid-cols-12 items-center px-6 py-4 bg-surface-container-lowest rounded-xl hover:bg-white transition-colors cursor-pointer group mb-2 shadow-sm">
+<div class="col-span-5 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-primary font-bold text-[10px]">LL</div>
+<div>
+<p class="text-sm font-bold text-primary">Lila Laurent</p>
+<p class="text-[10px] text-on-surface-variant">beatrix.m@adrianmessages.com</p>
+</div>
+</div>
+<div class="col-span-4 text-xs font-medium text-on-secondary-container">Operations</div>
+<div class="col-span-3 flex justify-end">
+<span class="flex items-center gap-1.5 text-[10px] font-bold text-tertiary-fixed-dim">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim shadow-[0_0_8px_#00daf3]"></span>
+                                            Online
+                                        </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Dock (Mobile Only Simulation Style) -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] glass-nav h-16 rounded-full shadow-lg border border-white/20 flex items-center justify-around px-6 z-50">
+<span class="material-symbols-outlined text-primary" data-icon="chat">chat</span>
+<span class="material-symbols-outlined text-primary font-bold" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<div class="w-12 h-12 primary-gradient rounded-full flex items-center justify-center text-white shadow-lg -translate-y-4">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="call">call</span>
+<span class="material-symbols-outlined text-outline" data-icon="settings">settings</span>
+</div>
+</body></html>
