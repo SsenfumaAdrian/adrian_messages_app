@@ -519,3 +519,5 @@ class _Circle {
   final int members;
   final IconData icon;
 }
+
+// ─────────────────────────────────────────────────────────────

@@ -72,6 +72,7 @@ class LiquidRouter {
   static const String systemHealth    = '/system/health';
 
   // ── Route map ─────────────────────────────────────────────
+  // Full map including splash — use with initialRoute (no home:)
   static Map<String, WidgetBuilder> get routes => {
     splash:          (_) => const LiquidSplashScreen(),
     shell:           (_) => const MainShell(),
@@ -102,6 +103,15 @@ class LiquidRouter {
     marketplace:     (_) => const ExtensionsMarketplaceScreen(),
     systemHealth:    (_) => const SystemHealthScreen(),
   };
+
+  /// Routes without the splash '/' entry.
+  /// Use this when MaterialApp has home: set, to avoid the
+  /// "home + routes['/'] conflict" assertion.
+  static Map<String, WidgetBuilder> get routesNoSplash {
+    final m = Map<String, WidgetBuilder>.from(routes);
+    m.remove(splash);
+    return m;
+  }
 
   // ── Named route generator (handles routes with arguments) ──
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {

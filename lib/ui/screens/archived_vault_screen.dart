@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/archived_vault_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class ArchivedVaultScreen extends StatefulWidget {
   const ArchivedVaultScreen({super.key});
@@ -27,8 +26,7 @@ class _State extends State<ArchivedVaultScreen>
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.archive,
+    return AppScaffold(
       title: 'Vault & Archive',
       child: Column(children: [
         // Tabs

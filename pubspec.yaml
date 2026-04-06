@@ -13,6 +13,7 @@ dependencies:
   provider: ^6.0.5       # For LiquidProvider State
   video_player: ^2.8.1   # For Liquid Media Engine
   flutter_blurhash: ^0.8.2 # For the 'Crystallized' preview effect
+  shared_preferences: ^2.3.2  # Persist nav state across reloads
 
 dev_dependencies:
   flutter_test:

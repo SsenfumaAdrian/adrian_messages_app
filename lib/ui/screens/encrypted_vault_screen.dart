@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/encrypted_vault_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class EncryptedVaultScreen extends StatelessWidget {
   const EncryptedVaultScreen({super.key});
@@ -42,8 +41,7 @@ class EncryptedVaultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.vault,
+    return AppScaffold(
       title: 'Encrypted Team Vault',
       actions: [
         _Badge('AES-256', Palette.accentCyan),

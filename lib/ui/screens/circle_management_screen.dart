@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/circle_management_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class CircleManagementScreen extends StatefulWidget {
   const CircleManagementScreen({super.key});
@@ -32,8 +31,7 @@ class _State extends State<CircleManagementScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.circleManage,
+    return AppScaffold(
       title: 'Circle Management',
       child: SingleChildScrollView(
         padding: EdgeInsets.all(20),

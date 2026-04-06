@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/admin_dashboard_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
   const AdminDashboardScreen({super.key});
@@ -12,8 +11,7 @@ class AdminDashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.adminDashboard,
+    return AppScaffold(
       title: 'Admin Dashboard',
       actions: [_LiveChip()],
       child: SingleChildScrollView(

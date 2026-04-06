@@ -2,8 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class GroupCreationScreen extends StatefulWidget {
   const GroupCreationScreen({super.key});
@@ -36,8 +35,7 @@ class _GroupCreationScreenState extends State<GroupCreationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.groupCreation,
+    return AppScaffold(
       title: 'Create New Circle',
       child: SingleChildScrollView(
         padding: EdgeInsets.all(24),

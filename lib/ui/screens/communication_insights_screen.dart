@@ -1,14 +1,12 @@
 // FILE: lib/ui/screens/communication_insights_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class CommunicationInsightsScreen extends StatelessWidget {
   const CommunicationInsightsScreen({super.key});
   @override
-  Widget build(BuildContext ctx) => AppShell(
-      activeRoute: LiquidRouter.insights,
+  Widget build(BuildContext ctx) => AppScaffold(
       title: 'Communication Intelligence',
       child: SingleChildScrollView(
           padding: EdgeInsets.all(20),

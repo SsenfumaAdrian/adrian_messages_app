@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/system_health_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class SystemHealthScreen extends StatelessWidget {
   const SystemHealthScreen({super.key});
@@ -17,8 +16,7 @@ class SystemHealthScreen extends StatelessWidget {
   ];
 
   @override
-  Widget build(BuildContext ctx) => AppShell(
-      activeRoute: LiquidRouter.systemHealth,
+  Widget build(BuildContext ctx) => AppScaffold(
       title: 'System Health',
       child: SingleChildScrollView(
           padding: EdgeInsets.all(20),

@@ -2,8 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class GlobalDiscoveryScreen extends StatelessWidget {
   const GlobalDiscoveryScreen({super.key});
@@ -17,9 +16,9 @@ class GlobalDiscoveryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.discovery,
+    return AppScaffold(
       title: 'Global Discovery',
+      showBack: false,
       child: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Column(

@@ -4,8 +4,7 @@ import 'dart:async' show unawaited;
 import 'package:flutter/material.dart';
 
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class AiAssistantScreen extends StatefulWidget {
   const AiAssistantScreen({super.key});
@@ -72,9 +71,9 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.aiAssistant,
+    return AppScaffold(
       title: 'Adrian AI',
+      showBack: false,
       child: Column(children: [
         // ── Quick action chips ───────────────────────────────
         SizedBox(

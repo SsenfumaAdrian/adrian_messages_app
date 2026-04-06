@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/extensions_marketplace_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class ExtensionsMarketplaceScreen extends StatefulWidget {
   const ExtensionsMarketplaceScreen({super.key});
@@ -73,8 +72,7 @@ class _State extends State<ExtensionsMarketplaceScreen> {
   ];
 
   @override
-  Widget build(BuildContext ctx) => AppShell(
-      activeRoute: LiquidRouter.marketplace,
+  Widget build(BuildContext ctx) => AppScaffold(
       title: 'Extensions Marketplace',
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         // Hero

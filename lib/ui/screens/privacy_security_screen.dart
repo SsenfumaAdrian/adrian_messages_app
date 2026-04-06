@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
 import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class PrivacySecurityScreen extends StatefulWidget {
   const PrivacySecurityScreen({super.key});
@@ -18,8 +18,7 @@ class _State extends State<PrivacySecurityScreen> {
       _vpn = false;
 
   @override
-  Widget build(BuildContext ctx) => AppShell(
-      activeRoute: LiquidRouter.privacy,
+  Widget build(BuildContext ctx) => AppScaffold(
       title: 'Privacy & Security',
       child: SingleChildScrollView(
           padding: EdgeInsets.all(20),

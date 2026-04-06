@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/developer_console_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class DeveloperConsoleScreen extends StatefulWidget {
   const DeveloperConsoleScreen({super.key});
@@ -26,8 +25,7 @@ class _State extends State<DeveloperConsoleScreen>
   }
 
   @override
-  Widget build(BuildContext ctx) => AppShell(
-      activeRoute: LiquidRouter.devConsole,
+  Widget build(BuildContext ctx) => AppScaffold(
       title: 'Developer API Console',
       child: Column(children: [
         Container(

@@ -1,17 +1,17 @@
 // FILE: lib/ui/screens/main_shell.dart
 //
-// App-level navigation shell for authenticated screens.
+// Unified app-level navigation shell — all screen sizes.
 //
-// Mobile  (< 600 px)  → Liquid glass curved bottom nav bar
-// Tablet  (600–900)   → Floating centred glass pill, hides on scroll-down
-// Desktop (> 900 px)  → Each screen's own AppShell sidebar
+// Mobile   (< 600px)  → Slim glass rail (68px), tap to slide open overlay drawer
+// Tablet   (600-900)  → Inline rail (80px), tap to expand to 240px sidebar
+// Desktop  (> 900px)  → Always-expanded 256px glass sidebar
 
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-
 import '../../core/constants/palette.dart';
+import '../../core/utils/nav_persistence.dart';
+import '../components/liquid_glass.dart';
+import '../components/logo_card.dart';
 import 'ai_assistant_screen.dart';
 import 'contacts_screen.dart';
 import 'conversations_list_screen.dart';
@@ -19,46 +19,35 @@ import 'global_discovery_screen.dart';
 import 'user_profile_screen.dart';
 
 // ─────────────────────────────────────────────────────────────
-// NAV ITEMS
+// NAV ITEM MODEL
 // ─────────────────────────────────────────────────────────────
 class _NavItem {
-  const _NavItem({
-    required this.icon,
-    required this.activeIcon,
-    required this.label,
-  });
+  const _NavItem({required this.icon, required this.activeIcon, required this.label});
   final IconData icon;
   final IconData activeIcon;
   final String label;
 }
 
-const _items = [
-  _NavItem(
-    icon: Icons.chat_bubble_outline_rounded,
-    activeIcon: Icons.chat_bubble_rounded,
-    label: 'Chats',
-  ),
-  _NavItem(
-    icon: Icons.people_outline_rounded,
-    activeIcon: Icons.people_rounded,
-    label: 'Contacts',
-  ),
-  _NavItem(
-    icon: Icons.explore_outlined,
-    activeIcon: Icons.explore_rounded,
-    label: 'Discover',
-  ),
-  _NavItem(
-    icon: Icons.auto_awesome_outlined,
-    activeIcon: Icons.auto_awesome_rounded,
-    label: 'AI',
-  ),
-  _NavItem(
-    icon: Icons.person_outline_rounded,
-    activeIcon: Icons.person_rounded,
-    label: 'Profile',
-  ),
+const _kItems = [
+  _NavItem(icon: Icons.chat_bubble_outline_rounded,  activeIcon: Icons.chat_bubble_rounded,  label: 'Chats'),
+  _NavItem(icon: Icons.people_outline_rounded,        activeIcon: Icons.people_rounded,        label: 'Contacts'),
+  _NavItem(icon: Icons.explore_outlined,              activeIcon: Icons.explore_rounded,       label: 'Discover'),
+  _NavItem(icon: Icons.auto_awesome_outlined,         activeIcon: Icons.auto_awesome_rounded,  label: 'Adrian AI'),
+  _NavItem(icon: Icons.person_outline_rounded,        activeIcon: Icons.person_rounded,        label: 'Profile'),
 ];
+
+const _kPages = [
+  ConversationsListScreen(),
+  ContactsScreen(),
+  GlobalDiscoveryScreen(),
+  AiAssistantScreen(),
+  UserProfileScreen(),
+];
+
+const double _kRailMobile  = 68.0;
+const double _kRailTablet  = 80.0;
+const double _kSidebarW    = 240.0;
+const double _kDesktopW    = 256.0;
 
 // ─────────────────────────────────────────────────────────────
 // MAIN SHELL
@@ -71,552 +60,411 @@ class MainShell extends StatefulWidget {
   State<MainShell> createState() => _MainShellState();
 }
 
-class _MainShellState extends State<MainShell> {
+class _MainShellState extends State<MainShell> with SingleTickerProviderStateMixin {
   late int _index;
-
-  static const _pages = [
-    ConversationsListScreen(),
-    ContactsScreen(),
-    GlobalDiscoveryScreen(),
-    AiAssistantScreen(),
-    UserProfileScreen(),
-  ];
+  bool _expanded = false;
+  late final AnimationController _ctrl;
+  late final Animation<double> _anim;
 
   @override
   void initState() {
     super.initState();
     _index = widget.initialIndex;
+    _ctrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 280));
+    _anim = CurvedAnimation(parent: _ctrl, curve: Curves.easeInOutCubic);
+  }
+
+  @override
+  void dispose() { _ctrl.dispose(); super.dispose(); }
+
+  void _toggle() {
+    setState(() => _expanded = !_expanded);
+    _expanded ? _ctrl.forward() : _ctrl.reverse();
+  }
+
+  void _pick(int i) {
+    setState(() => _index = i);
+    NavPersistence.saveTab(i);   // persist so reload returns here
+    final w = MediaQuery.sizeOf(context).width;
+    if (w < 600 && _expanded) _toggle();
   }
 
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.sizeOf(context).width;
-
-    // Desktop → each screen owns its own AppShell sidebar
-    if (w >= 900) return _pages[_index];
-
-    if (w >= 600) {
-      return _TabletShell(
-        index: _index,
-        onTap: (i) => setState(() => _index = i),
-        pages: _pages,
-      );
-    }
-
-    return _MobileShell(
-      index: _index,
-      onTap: (i) => setState(() => _index = i),
-      pages: _pages,
-    );
+    if (w >= 900) return _DesktopLayout(index: _index, onTap: _pick);
+    if (w >= 600) return _TabletLayout(index: _index, onTap: _pick, expanded: _expanded, anim: _anim, onToggle: _toggle);
+    return _MobileLayout(index: _index, onTap: _pick, expanded: _expanded, anim: _anim, onToggle: _toggle);
   }
 }
 
-// ═════════════════════════════════════════════════════════════
-// MOBILE SHELL  — liquid glass curved bottom bar
-// ═════════════════════════════════════════════════════════════
-class _MobileShell extends StatelessWidget {
-  const _MobileShell({
+// ─────────────────────────────────────────────────────────────
+// GLASS SIDEBAR  (shared by all layouts)
+// ─────────────────────────────────────────────────────────────
+class _GlassSidebar extends StatelessWidget {
+  const _GlassSidebar({
     required this.index,
     required this.onTap,
-    required this.pages,
+    required this.anim,
+    required this.width,
+    this.onToggle,
+    this.rounded = false,
   });
+
   final int index;
   final ValueChanged<int> onTap;
-  final List<Widget> pages;
+  final Animation<double> anim;
+  final double width;
+  final VoidCallback? onToggle;
+  final bool rounded;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Palette.surface,
-      extendBody: true, // content bleeds under the glass bar
-      body: pages[index],
-      bottomNavigationBar: _LiquidCurvedBar(index: index, onTap: onTap),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(rounded ? 22 : 0),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 28, sigmaY: 28),
+        child: Container(
+          width: width,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              stops: const [0.0, 0.55, 1.0],
+              colors: [
+                Palette.primary.withValues(alpha: 0.86),
+                Color.lerp(Palette.primary, const Color(0xFF0D1A4A), 0.45)!.withValues(alpha: 0.90),
+                const Color(0xFF080F30).withValues(alpha: 0.95),
+              ],
+            ),
+            borderRadius: BorderRadius.circular(rounded ? 22 : 0),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.13), width: 1.0),
+            boxShadow: [
+              BoxShadow(color: Palette.primary.withValues(alpha: 0.28), blurRadius: 32, offset: const Offset(6, 0)),
+            ],
+          ),
+          child: SafeArea(
+            right: false,
+            child: Column(children: [
+              // Brand header
+              _SidebarHeader(anim: anim, onToggle: onToggle),
+              const SizedBox(height: 6),
+              // Nav items
+              Expanded(
+                child: Column(
+                  children: List.generate(_kItems.length, (i) => _SidebarItem(
+                    item: _kItems[i],
+                    active: i == index,
+                    anim: anim,
+                    onTap: () => onTap(i),
+                  )),
+                ),
+              ),
+              // Bottom avatar strip
+              _SidebarAvatar(anim: anim),
+              const SizedBox(height: 12),
+            ]),
+          ),
+        ),
+      ),
     );
   }
 }
 
-// ─────────────────────────────────────────────────────────────
-// LIQUID CURVED BAR
-// ─────────────────────────────────────────────────────────────
-class _LiquidCurvedBar extends StatefulWidget {
-  const _LiquidCurvedBar({required this.index, required this.onTap});
-  final int index;
-  final ValueChanged<int> onTap;
-
-  @override
-  State<_LiquidCurvedBar> createState() => _LiquidCurvedBarState();
-}
-
-class _LiquidCurvedBarState extends State<_LiquidCurvedBar>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _bounceCtrl;
-  late Animation<double> _bounce;
-
-  @override
-  void initState() {
-    super.initState();
-    _bounceCtrl = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 450));
-    _bounce =
-        CurvedAnimation(parent: _bounceCtrl, curve: Curves.elasticOut);
-  }
-
-  @override
-  void didUpdateWidget(_LiquidCurvedBar old) {
-    super.didUpdateWidget(old);
-    if (old.index != widget.index) _bounceCtrl.forward(from: 0);
-  }
-
-  @override
-  void dispose() {
-    _bounceCtrl.dispose();
-    super.dispose();
-  }
+// ── Sidebar header ──────────────────────────────────────────
+class _SidebarHeader extends StatelessWidget {
+  const _SidebarHeader({required this.anim, this.onToggle});
+  final Animation<double> anim;
+  final VoidCallback? onToggle;
 
   @override
   Widget build(BuildContext context) {
-    final pad = MediaQuery.viewPaddingOf(context).bottom;
-    final w   = MediaQuery.sizeOf(context).width;
-    final itemW = w / _items.length;
-    final activeX = itemW * widget.index + itemW / 2;
-
-    return AnimatedBuilder(
-      animation: _bounce,
-      builder: (_, __) {
-        return ClipPath(
-          clipper: _CurvedClipper(activeX: activeX),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
-            child: Container(
-              height: 70 + pad,
-              decoration: BoxDecoration(
-                // Liquid glass: very slight white fill + gradient shimmer
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Colors.white.withValues(alpha: 0.72),
-                    Colors.white.withValues(alpha: 0.58),
-                  ],
-                ),
-                border: Border(
-                  top: BorderSide(
-                    color: Colors.white.withValues(alpha: 0.85),
-                    width: 1.2,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(10, 14, 10, 6),
+      child: GestureDetector(
+        onTap: onToggle,
+        child: AnimatedBuilder(
+          animation: anim,
+          builder: (_, __) {
+            final show = anim.value > 0.45;
+            return Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                LogoCard(size: 42, rounded: true),
+                if (show) ...[
+                  const SizedBox(width: 10),
+                  Flexible(
+                    child: FadeTransition(
+                      opacity: anim,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Adrian', style: TextStyle(fontFamily: Palette.fontDisplay, fontSize: 16, fontWeight: FontWeight.w900, color: Colors.white, height: 1.1)),
+                          Text('Messages', style: TextStyle(fontFamily: Palette.fontBody, fontSize: 9, fontWeight: FontWeight.w600, color: Colors.white.withValues(alpha: 0.50), letterSpacing: 0.7)),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Palette.primary.withValues(alpha: 0.10),
-                    blurRadius: 30,
-                    offset: const Offset(0, -6),
-                  ),
-                  BoxShadow(
-                    color: Colors.white.withValues(alpha: 0.60),
-                    blurRadius: 1,
-                    offset: const Offset(0, -0.5),
-                  ),
+                  if (onToggle != null)
+                    Padding(
+                      padding: const EdgeInsets.only(left: 4),
+                      child: FadeTransition(
+                        opacity: anim,
+                        child: Icon(Icons.chevron_left_rounded, color: Colors.white.withValues(alpha: 0.55), size: 18),
+                      ),
+                    ),
                 ],
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+// ── Sidebar nav item ────────────────────────────────────────
+class _SidebarItem extends StatelessWidget {
+  const _SidebarItem({required this.item, required this.active, required this.anim, required this.onTap});
+  final _NavItem item;
+  final bool active;
+  final Animation<double> anim;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: AnimatedBuilder(
+        animation: anim,
+        builder: (_, __) {
+          final showLabel = anim.value > 0.4;
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2.5),
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 220),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              decoration: BoxDecoration(
+                color: active ? Colors.white.withValues(alpha: 0.17) : Colors.transparent,
+                borderRadius: BorderRadius.circular(13),
+                border: active ? Border.all(color: Colors.white.withValues(alpha: 0.22), width: 0.8) : null,
               ),
-              child: Padding(
-                padding: EdgeInsets.only(bottom: pad),
-                child: Row(
-                  children: List.generate(_items.length, (i) {
-                    final active = i == widget.index;
-                    final item   = _items[i];
-                    return Expanded(
-                      child: GestureDetector(
-                        behavior: HitTestBehavior.opaque,
-                        onTap: () => widget.onTap(i),
-                        child: SizedBox(
-                          height: 70,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              // Icon — bumps up when active
-                              AnimatedContainer(
-                                duration: const Duration(milliseconds: 320),
-                                curve: Curves.easeOutBack,
-                                transform: Matrix4.translationValues(
-                                    0, active ? -8 : 0, 0),
-                                child: _GlassIconBubble(
-                                  icon: active
-                                      ? item.activeIcon
-                                      : item.icon,
-                                  active: active,
-                                  bounce: _bounce.value,
-                                ),
-                              ),
-                              const SizedBox(height: 3),
-                              // Label
-                              AnimatedDefaultTextStyle(
-                                duration: const Duration(milliseconds: 200),
-                                style: TextStyle(
-                                  fontFamily: Palette.fontDisplay,
-                                  fontSize: 9.5,
-                                  fontWeight: active
-                                      ? FontWeight.w800
-                                      : FontWeight.w500,
-                                  color: active
-                                      ? Palette.primary
-                                      : Palette.outline,
-                                  letterSpacing: active ? 0.2 : 0,
-                                ),
-                                child: Text(item.label),
-                              ),
-                            ],
-                          ),
+              child: Row(children: [
+                // Icon bubble
+                Container(
+                  width: 36, height: 36,
+                  decoration: active
+                      ? BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.18),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Colors.white.withValues(alpha: 0.28), width: 0.8),
+                        )
+                      : null,
+                  child: Icon(
+                    active ? item.activeIcon : item.icon,
+                    size: 19,
+                    color: active ? Colors.white : Colors.white.withValues(alpha: 0.52),
+                  ),
+                ),
+                // Label
+                if (showLabel) ...[
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: FadeTransition(
+                      opacity: Tween<double>(begin: 0, end: 1).animate(anim),
+                      child: Text(
+                        item.label,
+                        style: TextStyle(
+                          fontFamily: Palette.fontDisplay,
+                          fontSize: 13.5,
+                          fontWeight: active ? FontWeight.w700 : FontWeight.w500,
+                          color: active ? Colors.white : Colors.white.withValues(alpha: 0.62),
                         ),
                       ),
-                    );
-                  }),
+                    ),
+                  ),
+                ],
+              ]),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+// ── Sidebar avatar (bottom) ─────────────────────────────────
+class _SidebarAvatar extends StatelessWidget {
+  const _SidebarAvatar({required this.anim});
+  final Animation<double> anim;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: anim,
+      builder: (_, __) {
+        final show = anim.value > 0.5;
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+          child: Row(children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(11),
+              child: Container(
+                width: 36, height: 36,
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(colors: [Color(0xFF3949AB), Palette.primary], begin: Alignment.topLeft, end: Alignment.bottomRight),
+                  borderRadius: BorderRadius.circular(11),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.22), width: 0.8),
                 ),
+                child: const Center(child: Text('A', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 15))),
               ),
             ),
-          ),
+            if (show) ...[
+              const SizedBox(width: 10),
+              Expanded(
+                child: FadeTransition(
+                  opacity: anim,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Adrian User', style: TextStyle(fontFamily: Palette.fontDisplay, fontSize: 11.5, fontWeight: FontWeight.w700, color: Colors.white)),
+                      Text('Demo Mode', style: TextStyle(fontSize: 9, color: Colors.white.withValues(alpha: 0.48))),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ]),
         );
       },
     );
   }
 }
 
-// ── Glass icon bubble ──────────────────────────────────────────
-class _GlassIconBubble extends StatelessWidget {
-  const _GlassIconBubble({
-    required this.icon,
-    required this.active,
-    required this.bounce,
-  });
-  final IconData icon;
-  final bool active;
-  final double bounce;
-
-  @override
-  Widget build(BuildContext context) {
-    if (!active) {
-      return SizedBox(
-        width: 28, height: 28,
-        child: Icon(icon, size: 22, color: Palette.outline),
-      );
-    }
-
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(14),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        child: Container(
-          width: 44 + bounce * 2,
-          height: 44 + bounce * 2,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Palette.primary,
-                Color.lerp(Palette.primary, Palette.accentCyan, 0.30)!,
-              ],
-            ),
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.35),
-              width: 1,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Palette.primary.withValues(alpha: 0.38),
-                blurRadius: 14,
-                offset: const Offset(0, 5),
-              ),
-              BoxShadow(
-                color: Colors.white.withValues(alpha: 0.20),
-                blurRadius: 2,
-                offset: const Offset(0, -1),
-              ),
-            ],
-          ),
-          child: Icon(icon, size: 22, color: Colors.white),
-        ),
-      ),
-    );
-  }
-}
-
-// ── Curved clip path ───────────────────────────────────────────
-class _CurvedClipper extends CustomClipper<Path> {
-  const _CurvedClipper({required this.activeX});
-  final double activeX;
-
-  @override
-  Path getClip(Size size) {
-    const notchR = 22.0;
-    const curveH = 16.0;
-    final path = Path();
-
-    path.moveTo(0, curveH);
-
-    // Left side up to notch
-    path.cubicTo(
-      activeX - notchR * 2.4, curveH,
-      activeX - notchR * 1.2, 0,
-      activeX - notchR, 0,
-    );
-    // Notch arc (dips up)
-    path.arcToPoint(
-      Offset(activeX + notchR, 0),
-      radius: const Radius.circular(notchR),
-      clockwise: false,
-    );
-    // Right side back down
-    path.cubicTo(
-      activeX + notchR * 1.2, 0,
-      activeX + notchR * 2.4, curveH,
-      size.width, curveH,
-    );
-
-    path
-      ..lineTo(size.width, size.height)
-      ..lineTo(0, size.height)
-      ..close();
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(_CurvedClipper old) => old.activeX != activeX;
-}
-
 // ═════════════════════════════════════════════════════════════
-// TABLET SHELL  — floating glass pill, hides on scroll-down
+// MOBILE LAYOUT
 // ═════════════════════════════════════════════════════════════
-class _TabletShell extends StatefulWidget {
-  const _TabletShell({
-    required this.index,
-    required this.onTap,
-    required this.pages,
-  });
+class _MobileLayout extends StatelessWidget {
+  const _MobileLayout({required this.index, required this.onTap, required this.expanded, required this.anim, required this.onToggle});
   final int index;
   final ValueChanged<int> onTap;
-  final List<Widget> pages;
-
-  @override
-  State<_TabletShell> createState() => _TabletShellState();
-}
-
-class _TabletShellState extends State<_TabletShell>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _visCtrl;
-  late Animation<double>   _vis;
-  bool _navVisible = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _visCtrl = AnimationController(
-        vsync: this,
-        duration: const Duration(milliseconds: 320),
-        value: 1.0);
-    _vis = CurvedAnimation(parent: _visCtrl, curve: Curves.easeInOutCubic);
-  }
-
-  @override
-  void dispose() {
-    _visCtrl.dispose();
-    super.dispose();
-  }
-
-  void _onScroll(ScrollNotification n) {
-    if (n is! UserScrollNotification) return;
-    if (n.direction == ScrollDirection.reverse && _navVisible) {
-      _navVisible = false;
-      _visCtrl.reverse();
-    } else if (n.direction == ScrollDirection.forward && !_navVisible) {
-      _navVisible = true;
-      _visCtrl.forward();
-    }
-  }
+  final bool expanded;
+  final Animation<double> anim;
+  final VoidCallback onToggle;
 
   @override
   Widget build(BuildContext context) {
-    final pad = MediaQuery.viewPaddingOf(context).bottom;
-
+    final topPad = MediaQuery.viewPaddingOf(context).top;
     return Scaffold(
       backgroundColor: Palette.surface,
-      body: NotificationListener<ScrollNotification>(
-        onNotification: (n) {
-          _onScroll(n);
-          return false;
-        },
-        child: Stack(
-          children: [
-            // Page content with bottom room for the pill
-            Padding(
-              padding: EdgeInsets.only(bottom: 84 + pad),
-              child: widget.pages[widget.index],
-            ),
+      body: Stack(children: [
+        // Page — padded for rail
+        Positioned.fill(
+          child: Padding(
+            padding: const EdgeInsets.only(left: _kRailMobile),
+            child: _kPages[index],
+          ),
+        ),
 
-            // Floating glass pill
-            Positioned(
-              bottom: 16 + pad,
-              left: 0,
-              right: 0,
+        // Scrim
+        if (expanded)
+          Positioned.fill(
+            child: GestureDetector(
+              onTap: onToggle,
               child: FadeTransition(
-                opacity: _vis,
-                child: SlideTransition(
-                  position: Tween<Offset>(
-                    begin: const Offset(0, 2),
-                    end: Offset.zero,
-                  ).animate(_vis),
-                  child: Center(
-                    child: _GlassPill(
-                      index: widget.index,
-                      onTap: widget.onTap,
-                    ),
-                  ),
-                ),
+                opacity: anim,
+                child: Container(color: Colors.black.withValues(alpha: 0.32)),
               ),
             ),
-          ],
+          ),
+
+        // Sidebar
+        Positioned(
+          top: 0, bottom: 0, left: 0,
+          child: AnimatedBuilder(
+            animation: anim,
+            builder: (_, __) => _GlassSidebar(
+              index: index,
+              onTap: onTap,
+              anim: anim,
+              width: _kRailMobile + (_kSidebarW - _kRailMobile) * anim.value,
+              onToggle: onToggle,
+              rounded: true,
+            ),
+          ),
         ),
-      ),
+
+        // Expand chevron — only when collapsed
+        if (!expanded)
+          Positioned(
+            top: topPad + 14,
+            left: _kRailMobile - 12,
+            child: LiquidGlassButton(
+              icon: Icons.chevron_right_rounded,
+              size: 26,
+              iconSize: 14,
+              iconColor: Palette.primary,
+              onTap: onToggle,
+            ),
+          ),
+      ]),
     );
   }
 }
 
-// ─────────────────────────────────────────────────────────────
-// GLASS PILL  — liquid glass floating nav for tablet
-// ─────────────────────────────────────────────────────────────
-class _GlassPill extends StatelessWidget {
-  const _GlassPill({required this.index, required this.onTap});
+// ═════════════════════════════════════════════════════════════
+// TABLET LAYOUT
+// ═════════════════════════════════════════════════════════════
+class _TabletLayout extends StatelessWidget {
+  const _TabletLayout({required this.index, required this.onTap, required this.expanded, required this.anim, required this.onToggle});
+  final int index;
+  final ValueChanged<int> onTap;
+  final bool expanded;
+  final Animation<double> anim;
+  final VoidCallback onToggle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Palette.surface,
+      body: Row(children: [
+        AnimatedBuilder(
+          animation: anim,
+          builder: (_, __) => _GlassSidebar(
+            index: index,
+            onTap: onTap,
+            anim: anim,
+            width: _kRailTablet + (_kSidebarW - _kRailTablet) * anim.value,
+            onToggle: onToggle,
+          ),
+        ),
+        Expanded(child: _kPages[index]),
+      ]),
+    );
+  }
+}
+
+// ═════════════════════════════════════════════════════════════
+// DESKTOP LAYOUT
+// ═════════════════════════════════════════════════════════════
+class _DesktopLayout extends StatelessWidget {
+  const _DesktopLayout({required this.index, required this.onTap});
   final int index;
   final ValueChanged<int> onTap;
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(50),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 28, sigmaY: 28),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
-          decoration: BoxDecoration(
-            // Liquid glass: translucent white + subtle gradient
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Colors.white.withValues(alpha: 0.75),
-                Colors.white.withValues(alpha: 0.55),
-              ],
-            ),
-            borderRadius: BorderRadius.circular(50),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.90),
-              width: 1.2,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Palette.primary.withValues(alpha: 0.14),
-                blurRadius: 32,
-                offset: const Offset(0, 10),
-              ),
-              BoxShadow(
-                color: Colors.white.withValues(alpha: 0.60),
-                blurRadius: 1,
-                offset: const Offset(0, -0.5),
-              ),
-            ],
-          ),
-          child: IntrinsicWidth(
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: List.generate(_items.length, (i) {
-                final active = i == index;
-                final item   = _items[i];
-
-                return GestureDetector(
-                  onTap: () => onTap(i),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 280),
-                    curve: Curves.easeOutCubic,
-                    margin: const EdgeInsets.symmetric(horizontal: 3),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: active ? 20 : 12,
-                      vertical: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      gradient: active
-                          ? LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Palette.primary,
-                                Color.lerp(
-                                    Palette.primary,
-                                    Palette.accentCyan,
-                                    0.25)!,
-                              ],
-                            )
-                          : null,
-                      color: active ? null : Colors.transparent,
-                      borderRadius: BorderRadius.circular(40),
-                      border: active
-                          ? Border.all(
-                              color: Colors.white.withValues(alpha: 0.30),
-                              width: 1,
-                            )
-                          : null,
-                      boxShadow: active
-                          ? [
-                              BoxShadow(
-                                color:
-                                    Palette.primary.withValues(alpha: 0.30),
-                                blurRadius: 12,
-                                offset: const Offset(0, 4),
-                              ),
-                            ]
-                          : null,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          active ? item.activeIcon : item.icon,
-                          size: 20,
-                          color: active
-                              ? Colors.white
-                              : Palette.outline,
-                        ),
-                        AnimatedSize(
-                          duration: const Duration(milliseconds: 280),
-                          curve: Curves.easeOutCubic,
-                          child: active
-                              ? Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    const SizedBox(width: 7),
-                                    Text(
-                                      item.label,
-                                      style: const TextStyle(
-                                        fontFamily: 'Manrope',
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
-                                        letterSpacing: 0.1,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              : const SizedBox.shrink(),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              }),
-            ),
-          ),
+    return Scaffold(
+      backgroundColor: Palette.surface,
+      body: Row(children: [
+        _GlassSidebar(
+          index: index,
+          onTap: onTap,
+          anim: const AlwaysStoppedAnimation<double>(1.0),
+          width: _kDesktopW,
         ),
-      ),
+        Expanded(child: _kPages[index]),
+      ]),
     );
   }
 }

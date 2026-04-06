@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/voice_studio_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class VoiceStudioScreen extends StatefulWidget {
   const VoiceStudioScreen({super.key});
@@ -33,8 +32,7 @@ class _State extends State<VoiceStudioScreen>
   }
 
   @override
-  Widget build(BuildContext ctx) => AppShell(
-      activeRoute: LiquidRouter.voiceStudio,
+  Widget build(BuildContext ctx) => AppScaffold(
       title: 'Voice Studio',
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         // Library sidebar

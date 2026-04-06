@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/personalization_gallery_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class PersonalizationGalleryScreen extends StatefulWidget {
   const PersonalizationGalleryScreen({super.key});
@@ -16,8 +15,7 @@ class _State extends State<PersonalizationGalleryScreen> {
   bool _compactMode = false;
 
   @override
-  Widget build(BuildContext ctx) => AppShell(
-      activeRoute: LiquidRouter.personalization,
+  Widget build(BuildContext ctx) => AppScaffold(
       title: 'Personalization',
       child: SingleChildScrollView(
           padding: EdgeInsets.all(20),

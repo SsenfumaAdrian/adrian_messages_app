@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/compliance_audit_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class ComplianceAuditScreen extends StatelessWidget {
   const ComplianceAuditScreen({super.key});
@@ -31,8 +30,7 @@ class ComplianceAuditScreen extends StatelessWidget {
   ];
 
   @override
-  Widget build(BuildContext ctx) => AppShell(
-      activeRoute: LiquidRouter.compliance,
+  Widget build(BuildContext ctx) => AppScaffold(
       title: 'Compliance Audit',
       actions: [
         TextButton.icon(

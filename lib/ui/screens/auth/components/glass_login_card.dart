@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/palette.dart';
 import '../../../../core/navigation/liquid_router.dart';
+import '../../../../core/utils/nav_persistence.dart';
 import '../../components/glass_text_field.dart';
 
 class GlassLoginCard extends StatefulWidget {
@@ -78,6 +79,9 @@ class _GlassLoginCardState extends State<GlassLoginCard> {
     setState(() => _loading = false);
 
     // Navigate to onboarding (clears back stack so user can't go back to login)
+    await NavPersistence.setLoggedIn(true);
+    await NavPersistence.saveTab(0);
+    if (!mounted) return;
     unawaited(LiquidRouter.clearAndGo(context, LiquidRouter.onboarding));
   }
 

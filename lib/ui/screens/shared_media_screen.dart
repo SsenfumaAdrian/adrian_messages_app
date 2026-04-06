@@ -2,8 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class SharedMediaScreen extends StatefulWidget {
   const SharedMediaScreen({super.key});
@@ -30,8 +29,7 @@ class _SharedMediaScreenState extends State<SharedMediaScreen>
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.sharedMedia,
+    return AppScaffold(
       title: 'Shared Media & Files',
       child: Column(children: [
         // ── Tab bar ──────────────────────────────────────────

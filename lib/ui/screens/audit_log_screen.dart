@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/audit_log_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class AuditLogScreen extends StatefulWidget {
   const AuditLogScreen({super.key});
@@ -83,8 +82,7 @@ class _State extends State<AuditLogScreen> {
         ? _events
         : _events.where((e) => e.type.index == _filter - 1).toList();
 
-    return AppShell(
-      activeRoute: LiquidRouter.auditLog,
+    return AppScaffold(
       title: 'Audit Log & Security',
       child: Column(children: [
         // Security score banner

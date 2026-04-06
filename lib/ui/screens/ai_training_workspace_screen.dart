@@ -1,8 +1,7 @@
 // FILE: lib/ui/screens/ai_training_workspace_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class AiTrainingWorkspaceScreen extends StatefulWidget {
   const AiTrainingWorkspaceScreen({super.key});
@@ -36,8 +35,7 @@ class _State extends State<AiTrainingWorkspaceScreen> {
   }
 
   @override
-  Widget build(BuildContext ctx) => AppShell(
-      activeRoute: LiquidRouter.aiTraining,
+  Widget build(BuildContext ctx) => AppScaffold(
       title: 'AI Training Workspace',
       child: SingleChildScrollView(
           padding: EdgeInsets.all(20),

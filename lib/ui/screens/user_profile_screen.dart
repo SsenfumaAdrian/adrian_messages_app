@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/palette.dart';
 import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 
 class UserProfileScreen extends StatefulWidget {
   const UserProfileScreen({super.key});
@@ -18,9 +18,9 @@ class _State extends State<UserProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.profile,
+    return AppScaffold(
       title: 'Profile & Settings',
+      showBack: false,
       child: SingleChildScrollView(
         padding: EdgeInsets.all(24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

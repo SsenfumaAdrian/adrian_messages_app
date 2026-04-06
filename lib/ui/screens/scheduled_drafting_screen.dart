@@ -2,8 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/palette.dart';
-import '../../core/navigation/liquid_router.dart';
-import '../components/app_shell.dart';
+import '../components/app_scaffold.dart';
 import '../components/shared_widgets.dart';
 
 class ScheduledDraftingScreen extends StatelessWidget {
@@ -19,8 +18,7 @@ class ScheduledDraftingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppShell(
-      activeRoute: LiquidRouter.scheduledDraft,
+    return AppScaffold(
       title: 'Scheduled & AI Drafting',
       child: SingleChildScrollView(
         padding: EdgeInsets.all(20),
