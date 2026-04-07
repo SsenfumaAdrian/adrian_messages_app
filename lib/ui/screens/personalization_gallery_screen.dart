@@ -212,7 +212,7 @@ class _State extends State<PersonalizationGalleryScreen> {
                   Switch.adaptive(
                       value: _compactMode,
                       onChanged: (v) => setState(() => _compactMode = v),
-                      activeColor: Palette.primary),
+                      activeThumbColor: Palette.primary),
                 ])),
             const SizedBox(height: 28),
 

@@ -200,7 +200,7 @@ class _SecurityTile extends StatelessWidget {
                   fontSize: 11, color: Palette.onSurfaceVariant)),
         ])),
         Switch.adaptive(
-            value: value, onChanged: onChanged, activeColor: Palette.primary),
+            value: value, onChanged: onChanged, activeThumbColor: Palette.primary),
       ]));
 }
 

@@ -26,7 +26,7 @@ class LiquidDissolvingBubble extends StatelessWidget {
         margin: EdgeInsets.symmetric(vertical: 8),
         // When dissolving, the bubble 'shrinks' into the background
         transform: isDissolving
-            ? (Matrix4.identity()..scale(0.8))
+            ? (Matrix4.identity()..scaleByDouble(0.8))
             : Matrix4.identity(),
         child: LiquidGlassContainer(
           borderRadius: 20,

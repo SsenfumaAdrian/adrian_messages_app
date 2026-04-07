@@ -252,7 +252,7 @@ class _ToggleTile extends StatelessWidget {
             style:
                 const TextStyle(fontSize: 12, color: Palette.onSurfaceVariant)),
         trailing: Switch.adaptive(
-            value: value, onChanged: onChanged, activeColor: Palette.primary),
+            value: value, onChanged: onChanged, activeThumbColor: Palette.primary),
       );
 }
 
