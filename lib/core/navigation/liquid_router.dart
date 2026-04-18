@@ -35,6 +35,20 @@ import '../../ui/screens/system_health_screen.dart';
 import '../../ui/screens/user_profile_screen.dart';
 import '../../ui/screens/main_shell.dart';
 import '../../ui/screens/voice_studio_screen.dart';
+import '../../ui/screens/automated_workflow_builder_screen.dart';
+import '../../ui/screens/biometric_hardware_key_management_screen.dart';
+import '../../ui/screens/circle_onboarding_rules_screen.dart';
+import '../../ui/screens/community_public_channels_screen.dart';
+import '../../ui/screens/cross_platform_device_management_screen.dart';
+import '../../ui/screens/custom_ai_persona_builder_screen.dart';
+import '../../ui/screens/data_export_portability_screen.dart';
+import '../../ui/screens/digital_will_data_legacy_screen.dart';
+import '../../ui/screens/encrypted_notes_whiteboard_screen.dart';
+import '../../ui/screens/enterprise_usage_analytics_screen.dart';
+import '../../ui/screens/global_translation_localization_screen.dart';
+import '../../ui/screens/platform_wide_search_archive_screen.dart';
+import '../../ui/screens/security_audit_report_screen.dart';
+
 
 class LiquidRouter {
   LiquidRouter._();
@@ -70,6 +84,20 @@ class LiquidRouter {
   static const String enterprise      = '/enterprise';
   static const String marketplace     = '/marketplace';
   static const String systemHealth    = '/system/health';
+  static const String workflowBuilder     = '/workflows';
+  static const String biometricKeys       = '/security/biometric';
+  static const String circleOnboarding    = '/circles/onboarding';
+  static const String communityChannels   = '/community';
+  static const String deviceManagement    = '/devices';
+  static const String aiPersonaBuilder    = '/ai/persona';
+  static const String dataExport          = '/data/export';
+  static const String digitalWill         = '/digital-will';
+  static const String encryptedNotes      = '/notes';
+  static const String enterpriseAnalytics = '/enterprise/analytics';
+  static const String translation         = '/translate';
+  static const String searchArchive       = '/search/archive';
+  static const String securityAudit       = '/security/audit';
+
 
   // ── Route map ─────────────────────────────────────────────
   // Full map including splash — use with initialRoute (no home:)
@@ -102,6 +130,20 @@ class LiquidRouter {
     enterprise:      (_) => const EnterpriseSupportScreen(),
     marketplace:     (_) => const ExtensionsMarketplaceScreen(),
     systemHealth:    (_) => const SystemHealthScreen(),
+    workflowBuilder:     (_) => const AutomatedWorkflowBuilderScreen(),
+    biometricKeys:       (_) => const BiometricKeyManagementScreen(),
+    circleOnboarding:    (_) => const CircleOnboardingRulesScreen(),
+    communityChannels:   (_) => const CommunityPublicChannelsScreen(),
+    deviceManagement:    (_) => const CrossPlatformDeviceManagementScreen(),
+    aiPersonaBuilder:    (_) => const CustomAiPersonaBuilderScreen(),
+    dataExport:          (_) => const DataExportPortabilityScreen(),
+    digitalWill:         (_) => const DigitalWillDataLegacyScreen(),
+    encryptedNotes:      (_) => const EncryptedNotesWhiteboardScreen(),
+    enterpriseAnalytics: (_) => const EnterpriseUsageAnalyticsScreen(),
+    translation:         (_) => const GlobalTranslationLocalizationScreen(),
+    searchArchive:       (_) => const PlatformWideSearchArchiveScreen(),
+    securityAudit:       (_) => const SecurityAuditReportScreen(),
+
   };
 
   /// Routes without the splash '/' entry.

@@ -251,35 +251,39 @@ class _SidebarItem extends StatelessWidget {
               ),
               child: Row(children: [
                 // Icon bubble
-                Container(
+                SizedBox(
                   width: 36, height: 36,
-                  decoration: active
-                      ? BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.18),
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.white.withValues(alpha: 0.28), width: 0.8),
-                        )
-                      : null,
-                  child: Icon(
-                    active ? item.activeIcon : item.icon,
-                    size: 19,
-                    color: active ? Colors.white : Colors.white.withValues(alpha: 0.52),
+                  child: Container(
+                    decoration: active
+                        ? BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.18),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.white.withValues(alpha: 0.28), width: 0.8),
+                          )
+                        : null,
+                    child: Icon(
+                      active ? item.activeIcon : item.icon,
+                      size: 19,
+                      color: active ? Colors.white : Colors.white.withValues(alpha: 0.52),
+                    ),
                   ),
                 ),
-                // Label
+                // Label — only shown when sidebar is expanding/expanded
                 if (showLabel) ...[
-                  const SizedBox(width: 10),
-                  Expanded(
+                  const SizedBox(width: 8),
+                  Flexible(
                     child: FadeTransition(
                       opacity: Tween<double>(begin: 0, end: 1).animate(anim),
                       child: Text(
                         item.label,
                         style: TextStyle(
                           fontFamily: Palette.fontDisplay,
-                          fontSize: 13.5,
+                          fontSize: 13,
                           fontWeight: active ? FontWeight.w700 : FontWeight.w500,
                           color: active ? Colors.white : Colors.white.withValues(alpha: 0.62),
                         ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
                     ),
                   ),
@@ -327,8 +331,8 @@ class _SidebarAvatar extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Adrian User', style: TextStyle(fontFamily: Palette.fontDisplay, fontSize: 11.5, fontWeight: FontWeight.w700, color: Colors.white)),
-                      Text('Demo Mode', style: TextStyle(fontSize: 9, color: Colors.white.withValues(alpha: 0.48))),
+                      Text('Adrian User', style: TextStyle(fontFamily: Palette.fontDisplay, fontSize: 11.5, fontWeight: FontWeight.w700, color: Colors.white), overflow: TextOverflow.ellipsis),
+                      Text('Demo Mode', style: TextStyle(fontSize: 9, color: Colors.white.withValues(alpha: 0.48)), overflow: TextOverflow.ellipsis),
                     ],
                   ),
                 ),
